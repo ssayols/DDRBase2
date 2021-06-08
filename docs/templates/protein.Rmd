@@ -1,0 +1,34 @@
+---
+title: "<<GENE.ID>>"
+description: |
+  <<GENE.NAME>> ❯ <<PROTEIN.NAME>>
+output:
+  html_document:
+    toc: true
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+```
+
+# <<GENE.ID>> ❯ <<PROTEIN.ID>>
+
+## Gene names
+<<GENE.NAME>>
+
+## Protein names
+<<PROTEIN.NAME>>
+
+## Function
+<<FUNCTION>>
+
+## Keywords
+<<KEYWORDS>>
+
+## Test plot
+<<TEST.PLOT>>
