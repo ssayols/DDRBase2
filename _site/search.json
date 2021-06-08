@@ -1,0 +1,37 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About DDRBase",
+      "description": "Some additional details about DDRBase",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-06-08T11:57:43+02:00"
+    },
+    {
+      "path": "datasets.html",
+      "title": "DDRBase",
+      "description": "Welcome to the datasets section of DDRBase. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-06-08T11:57:43+02:00"
+    },
+    {
+      "path": "downloads.html",
+      "title": "DDRBase",
+      "description": "Welcome to the downloads section of DDRBase. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-06-08T11:57:44+02:00"
+    },
+    {
+      "path": "index.html",
+      "title": "DDRBase",
+      "description": "Welcome to DDRBase. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-06-08T11:57:44+02:00"
+    }
+  ],
+  "collections": []
+}

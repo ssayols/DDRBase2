@@ -1,0 +1,10 @@
+---
+title: "About DDRBase"
+description: |
+  Some additional details about DDRBase
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
