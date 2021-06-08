@@ -4,81 +4,51 @@
       "path": "about.html",
       "title": "About DDRBase",
       "description": "Some additional details about DDRBase",
-      "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-06-08T13:54:25+02:00"
     },
     {
       "path": "datasets.html",
       "title": "DDRBase",
       "description": "Welcome to the datasets section of DDRBase. I hope you enjoy it!\n",
-      "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-06-08T13:54:26+02:00"
     },
     {
       "path": "downloads.html",
       "title": "DDRBase",
       "description": "Welcome to the downloads section of DDRBase. I hope you enjoy it!\n",
-      "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-06-08T13:54:27+02:00"
     },
     {
       "path": "index.html",
       "title": "DDRBase",
       "description": "Welcome to DDRBase. I hope you enjoy it!\n",
-      "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-06-08T13:54:27+02:00"
     },
     {
       "path": "Q66K14.html",
       "title": "TBC1D9B",
-      "description": "TBC1D9B KIAA0676\n",
-      "author": [],
-      "contents": "\n\n\n\n\n\n\n\n\n\n\nDDRBase\n\n\nHome\nDatasets\nDownloads\nAbout\n☰\n\n\n  \n    \n      \n        \n        \n        \n      \n      \n    \n    \n      \n  Home\n\n\n  Datasets\n\n\n  Downloads\n\n\n  About\n\n      \n  \n\n\n\n\n\n\nTBC1D9B\n\n\n\n\nTBC1D9B ❯ Q66K14\nGene names\nProtein names\nFunction\nKeywords\nTest plot\n\n\n\n\nTBC1D9B ❯ Q66K14\n\nGene names\nTBC1D9B KIAA0676\n\n\nProtein names\nTBC1 domain family member 9B\n\n\nFunction\nFUNCTION: May act as a GTPase-activating protein for Rab family protein(s).\n\n\nKeywords\nAlternative splicing;GTPase activation;Membrane;Phosphoprotein;Reference proteome;Repeat;Transmembrane;Transmembrane helix\n\n\nTest plot\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// add bootstrap table styles to pandoc tables\nfunction bootstrapStylePandocTables() {\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\n}\n$(document).ready(function () {\n  bootstrapStylePandocTables();\n});\n\n\n\n$(document).ready(function () {\n  window.buildTabsets(\"TOC\");\n});\n\n$(document).ready(function () {\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\n    $(this).parent().toggleClass('nav-tabs-open');\n  });\n});\n\n  (function () {\n    var script = document.createElement(\"script\");\n    script.type = \"text/javascript\";\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\n  })();\n",
-      "last_modified": "2021-06-08T13:54:27+02:00"
+      "description": "TBC1D9B KIAA0676 ❯ TBC1 domain family member 9B\n",
     },
     {
       "path": "Q6PEY2.html",
       "title": "TUBA3E",
-      "description": "TUBA3E\n",
-      "author": [],
-      "contents": "\n\n\n\n\n\n\n\n\n\n\nDDRBase\n\n\nHome\nDatasets\nDownloads\nAbout\n☰\n\n\n  \n    \n      \n        \n        \n        \n      \n      \n    \n    \n      \n  Home\n\n\n  Datasets\n\n\n  Downloads\n\n\n  About\n\n      \n  \n\n\n\n\n\n\nTUBA3E\n\n\n\n\nTUBA3E ❯ Q6PEY2\nGene names\nProtein names\nFunction\nKeywords\nTest plot\n\n\n\n\nTUBA3E ❯ Q6PEY2\n\nGene names\nTUBA3E\n\n\nProtein names\nTubulin alpha-3E chain (Alpha-tubulin 3E) [Cleaved into: Detyrosinated tubulin alpha-3E chain]\n\n\nFunction\nFUNCTION: Tubulin is the major constituent of microtubules. It binds two moles of GTP, one at an exchangeable site on the beta chain and one at a non-exchangeable site on the alpha chain (By similarity). {ECO:0000250}.\n\n\nKeywords\nAcetylation;Cytoplasm;Cytoskeleton;GTP-binding;Methylation;Microtubule;Nitration;Nucleotide-binding;Phosphoprotein;Reference proteome\n\n\nTest plot\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// add bootstrap table styles to pandoc tables\nfunction bootstrapStylePandocTables() {\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\n}\n$(document).ready(function () {\n  bootstrapStylePandocTables();\n});\n\n\n\n$(document).ready(function () {\n  window.buildTabsets(\"TOC\");\n});\n\n$(document).ready(function () {\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\n    $(this).parent().toggleClass('nav-tabs-open');\n  });\n});\n\n  (function () {\n    var script = document.createElement(\"script\");\n    script.type = \"text/javascript\";\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\n  })();\n",
-      "last_modified": "2021-06-08T13:54:28+02:00"
+      "description": "TUBA3E ❯ Tubulin alpha-3E chain (Alpha-tubulin 3E) [Cleaved into: Detyrosinated tubulin alpha-3E chain]\n",
     },
     {
       "path": "Q71RH2.html",
       "title": "TLCD3B",
-      "description": "TLCD3B FAM57B FP1188\n",
-      "author": [],
-      "contents": "\n\n\n\n\n\n\n\n\n\n\nDDRBase\n\n\nHome\nDatasets\nDownloads\nAbout\n☰\n\n\n  \n    \n      \n        \n        \n        \n      \n      \n    \n    \n      \n  Home\n\n\n  Datasets\n\n\n  Downloads\n\n\n  About\n\n      \n  \n\n\n\n\n\n\nTLCD3B\n\n\n\n\nTLCD3B ❯ Q71RH2\nGene names\nProtein names\nFunction\nKeywords\nTest plot\n\n\n\n\nTLCD3B ❯ Q71RH2\n\nGene names\nTLCD3B FAM57B FP1188\n\n\nProtein names\nCeramide synthase (EC 2.3.1.-) (Protein FAM57B) (TLC domain-containing protein 3B)\n\n\nFunction\nFUNCTION: Involved in ceramide synthesis. {ECO:0000250}.\n\n\nKeywords\nAlternative promoter usage;Endoplasmic reticulum;Golgi apparatus;Lipid biosynthesis;Lipid metabolism;Membrane;Reference proteome;Transferase;Transmembrane;Transmembrane helix\n\n\nTest plot\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// add bootstrap table styles to pandoc tables\nfunction bootstrapStylePandocTables() {\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\n}\n$(document).ready(function () {\n  bootstrapStylePandocTables();\n});\n\n\n\n$(document).ready(function () {\n  window.buildTabsets(\"TOC\");\n});\n\n$(document).ready(function () {\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\n    $(this).parent().toggleClass('nav-tabs-open');\n  });\n});\n\n  (function () {\n    var script = document.createElement(\"script\");\n    script.type = \"text/javascript\";\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\n  })();\n",
-      "last_modified": "2021-06-08T13:54:28+02:00"
+      "description": "TLCD3B FAM57B FP1188 ❯ Ceramide synthase (EC 2.3.1.-) (Protein FAM57B) (TLC domain-containing protein 3B)\n",
     },
     {
       "path": "Q9P016.html",
       "title": "THYN1",
-      "description": "THYN1 THY28 HSPC144 MDS012 My0054\n",
-      "author": [],
-      "contents": "\n\n\n\n\n\n\n\n\n\n\nDDRBase\n\n\nHome\nDatasets\nDownloads\nAbout\n☰\n\n\n  \n    \n      \n        \n        \n        \n      \n      \n    \n    \n      \n  Home\n\n\n  Datasets\n\n\n  Downloads\n\n\n  About\n\n      \n  \n\n\n\n\n\n\nTHYN1\n\n\n\n\nTHYN1 ❯ Q9P016\nGene names\nProtein names\nFunction\nKeywords\nTest plot\n\n\n\n\nTHYN1 ❯ Q9P016\n\nGene names\nTHYN1 THY28 HSPC144 MDS012 My0054\n\n\nProtein names\nThymocyte nuclear protein 1 (Thymocyte protein Thy28)\n\n\nFunction\nFUNCTION: Specifically binds 5-hydroxymethylcytosine (5hmC), suggesting that it acts as a specific reader of 5hmC. {ECO:0000250}.\n\n\nKeywords\n3D-structure;Alternative splicing;Nucleus;Phosphoprotein;Reference proteome\n\n\nTest plot\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// add bootstrap table styles to pandoc tables\nfunction bootstrapStylePandocTables() {\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\n}\n$(document).ready(function () {\n  bootstrapStylePandocTables();\n});\n\n\n\n$(document).ready(function () {\n  window.buildTabsets(\"TOC\");\n});\n\n$(document).ready(function () {\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\n    $(this).parent().toggleClass('nav-tabs-open');\n  });\n});\n\n  (function () {\n    var script = document.createElement(\"script\");\n    script.type = \"text/javascript\";\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\n  })();\n",
-      "last_modified": "2021-06-08T13:54:28+02:00"
+      "description": "THYN1 THY28 HSPC144 MDS012 My0054 ❯ Thymocyte nuclear protein 1 (Thymocyte protein Thy28)\n",
     },
     {
       "path": "Q9P031.html",
       "title": "CCDC59",
-      "description": "CCDC59 BR22 TAP26 HSPC128\n",
-      "author": [],
-      "contents": "\n\n\n\n\n\n\n\n\n\n\nDDRBase\n\n\nHome\nDatasets\nDownloads\nAbout\n☰\n\n\n  \n    \n      \n        \n        \n        \n      \n      \n    \n    \n      \n  Home\n\n\n  Datasets\n\n\n  Downloads\n\n\n  About\n\n      \n  \n\n\n\n\n\n\nCCDC59\n\n\n\n\nCCDC59 ❯ Q9P031\nGene names\nProtein names\nFunction\nKeywords\nTest plot\n\n\n\n\nCCDC59 ❯ Q9P031\n\nGene names\nCCDC59 BR22 TAP26 HSPC128\n\n\nProtein names\nThyroid transcription factor 1-associated protein 26 (TTF-1-associated protein 26) (Coiled-coil domain-containing protein 59) (TTF-1-associated protein BR2)\n\n\nFunction\nFUNCTION: Component of the transcription complexes of the pulmonary surfactant-associated protein-B (SFTPB) and -C (SFTPC). Enhances homeobox protein Nkx-2.1-activated SFTPB and SFTPC promoter activities. {ECO:0000269|PubMed:12882447, ECO:0000269|PubMed:16630564}.\n\n\nKeywords\nNucleus;Reference proteome;Transcription;Transcription regulation\n\n\nTest plot\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// add bootstrap table styles to pandoc tables\nfunction bootstrapStylePandocTables() {\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\n}\n$(document).ready(function () {\n  bootstrapStylePandocTables();\n});\n\n\n\n$(document).ready(function () {\n  window.buildTabsets(\"TOC\");\n});\n\n$(document).ready(function () {\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\n    $(this).parent().toggleClass('nav-tabs-open');\n  });\n});\n\n  (function () {\n    var script = document.createElement(\"script\");\n    script.type = \"text/javascript\";\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\n  })();\n",
-      "last_modified": "2021-06-08T13:54:28+02:00"
+      "description": "CCDC59 BR22 TAP26 HSPC128 ❯ Thyroid transcription factor 1-associated protein 26 (TTF-1-associated protein 26) (Coiled-coil domain-containing protein 59) (TTF-1-associated protein BR2)\n",
     },
     {
       "path": "Q9UMR3.html",
       "title": "TBX20",
-      "description": "TBX20\n",
-      "author": [],
-      "contents": "\n\n\n\n\n\n\n\n\n\n\nDDRBase\n\n\nHome\nDatasets\nDownloads\nAbout\n☰\n\n\n  \n    \n      \n        \n        \n        \n      \n      \n    \n    \n      \n  Home\n\n\n  Datasets\n\n\n  Downloads\n\n\n  About\n\n      \n  \n\n\n\n\n\n\nTBX20\n\n\n\n\nTBX20 ❯ Q9UMR3\nGene names\nProtein names\nFunction\nKeywords\nTest plot\n\n\n\n\nTBX20 ❯ Q9UMR3\n\nGene names\nTBX20\n\n\nProtein names\nT-box transcription factor TBX20 (T-box protein 20)\n\n\nFunction\nFUNCTION: Acts as a transcriptional activator and repressor required for cardiac development and may have key roles in the maintenance of functional and structural phenotypes in adult heart. {ECO:0000250}.\n\n\nKeywords\nAtrial septal defect;Cardiomyopathy;DNA-binding;Developmental protein;Disease variant;Nucleus;Reference proteome;Transcription;Transcription regulation\n\n\nTest plot\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// add bootstrap table styles to pandoc tables\nfunction bootstrapStylePandocTables() {\n  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');\n}\n$(document).ready(function () {\n  bootstrapStylePandocTables();\n});\n\n\n\n$(document).ready(function () {\n  window.buildTabsets(\"TOC\");\n});\n\n$(document).ready(function () {\n  $('.tabset-dropdown > .nav-tabs > li').click(function () {\n    $(this).parent().toggleClass('nav-tabs-open');\n  });\n});\n\n  (function () {\n    var script = document.createElement(\"script\");\n    script.type = \"text/javascript\";\n    script.src  = \"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\";\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\n  })();\n",
-      "last_modified": "2021-06-08T13:54:28+02:00"
+      "description": "TBX20 ❯ T-box transcription factor TBX20 (T-box protein 20)\n",
     }
   ],
   "collections": []
