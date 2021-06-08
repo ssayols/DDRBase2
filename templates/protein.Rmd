@@ -2,10 +2,6 @@
 title: "<<GENE.ID>>"
 description: |
   <<GENE.NAME>> ❯ <<PROTEIN.NAME>>
-output:
-  html_document:
-    toc: true
-    toc_float: true
 site: distill::distill_website
 ---
 
