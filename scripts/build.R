@@ -31,6 +31,7 @@ template <- paste(readLines("templates/protein.Rmd"), collapse="\n")
 
 i <- proteins$Gene.names...primary.. == ""
 proteins[i, "Gene.names...primary.."] <- proteins$Entry.name[i]
+phospho$Mod..position <- sapply(strsplit(phospho$Mod..position, ";"), function(x) paste(sort(unique(x)), collapse=";"))
 
 ## 3-fills in the template/protein.Rmd as <<uniprot_id>>.Rmd and renders it to html
 system.time({
