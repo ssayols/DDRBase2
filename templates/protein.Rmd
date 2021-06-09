@@ -30,23 +30,25 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ## Phosphorilation
-```{r read_data}
-data <- readRDS("<<DATA>>")
-```
 
 ```{r phospho_plot}
-# convert back to wide. Some positions have to read-outs: aggregate them (max log2FC)
-try({
+# read data
+data <- readRDS("<<DATA>>")
+
+if(nrow(data) > 0) {
+  # convert back to wide. Some positions have to read-outs: aggregate them (max log2FC)
   treatments <- c("Aphidicoline",  "Camptothecin", "Etoposide", "Formaldehyd", "Gemcitabine", "Hydrogen peroxide",  "Hydroxyurea", "Methyl methanesulfonate", "Sodium Arsentie (NaAsO2)", "UV-C", "X-ray")
   m <- reshape2::dcast(data[, c("Mod..position", "Treatment", "log2FC")],
                        Mod..position ~ Treatment,
                        value.var="log2FC",
                        fun.aggregate=max) %>% reshape2::melt()
-  o    <- rev(order(as.numeric(sapply(unique(m$Mod..position), function(x) strsplit(x, ";")[[1]][1]))))  # coord order
-  m$Mod..position <- factor(m$Mod..position, levels=unique(m$Mod..position)[o])
+  o    <- rev(order(as.numeric(sapply(unique(m$Mod..position), function(x) strsplit(x, ";")[[1]][1]))))  # 1st coord order
+  m$position  <- factor(m$Mod..position, levels=unique(m$Mod..position)[o])
+  m$treatment <- m$variable
+  m$log2FC    <- m$value
   
   ggplotly(
-    ggplot(m, aes(x=variable, y=Mod..position, fill=value)) +
+    ggplot(m, aes(x=treatment, y=position, fill=log2FC)) +
       geom_tile() +
       scale_fill_gradient2(name="log2 FC") +
       labs(x="", y="") +
@@ -55,5 +57,7 @@ try({
   ) %>% config(displaylogo= FALSE, 
                modeBarButtonsToRemove=c("zoom2d", "pan2d", "select2d", "lasso2d",
                                         "zoomIn2d", "zoomOut2d", "autoScale2d", "toggleSpikelines"))
-})
+} else {
+  cat("Not detected.", fill=TRUE)
+}
 ```

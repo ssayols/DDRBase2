@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>DDRBase: ZC3H13</title>
+
+  <meta property="description" itemprop="description" content="Zinc finger CCCH domain-containing protein 13"/>
+
+
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="DDRBase: ZC3H13"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Zinc finger CCCH domain-containing protein 13"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="DDRBase"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="DDRBase: ZC3H13"/>
+  <meta property="twitter:description" content="Zinc finger CCCH domain-containing protein 13"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["ZC3H13"]},{"type":"character","attributes":{},"value":["Zinc finger CCCH domain-containing protein 13\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  <meta name="distill:offset" content=""/>
+
+  <script type="application/javascript">
+
+    window.headroom_prevent_pin = false;
+
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        tolerance: 5,
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <style type="text/css">
+
+  /* Theme (user-documented overrideables for nav appearance) */
+
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #0F2E3D;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: white;
+  }
+
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+
+  .distill-site-header {
+
+  }
+
+  .distill-site-footer {
+
+  }
+
+
+  /* Site Header */
+
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+
+
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+
+  .distill-site-header .title {
+    font-size: 18px;
+    min-width: 150px;
+  }
+
+  .distill-site-header .logo {
+    padding: 0;
+  }
+
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+
+
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-dropdown-active {
+    display: block;
+  }
+
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative; min-height: 500px; }
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* Site Footer */
+
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Headroom */
+
+  d-title {
+    padding-top: 6rem;
+  }
+
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+
+  .headroom--unpinned {
+    top: -100px;
+  }
+
+  .headroom--pinned {
+    top: 0;
+  }
+
+  /* adjust viewport for navbar height */
+  /* helps vertically center bootstrap (non-distill) content */
+  .min-vh-100 {
+    min-height: calc(100vh - 100px) !important;
+  }
+
+  </style>
+
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+  <script type="application/javascript">
+
+  function getMeta(metaName) {
+    var metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+    return '';
+  }
+
+  function offsetURL(url) {
+    var offset = getMeta('distill:offset');
+    return offset ? offset + '/' + url : url;
+  }
+
+  function createFuseIndex() {
+
+    // create fuse index
+    var options = {
+      keys: [
+        { name: 'title', weight: 20 },
+        { name: 'categories', weight: 15 },
+        { name: 'description', weight: 10 },
+        { name: 'contents', weight: 5 },
+      ],
+      ignoreLocation: true,
+      threshold: 0
+    };
+    var fuse = new window.Fuse([], options);
+
+    // fetch the main search.json
+    return fetch(offsetURL('search.json'))
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.json().then(function(json) {
+            // index main articles
+            json.articles.forEach(function(article) {
+              fuse.add(article);
+            });
+            // download collections and index their articles
+            return Promise.all(json.collections.map(function(collection) {
+              return fetch(offsetURL(collection)).then(function(response) {
+                if (response.status === 200) {
+                  return response.json().then(function(articles) {
+                    articles.forEach(function(article) {
+                      fuse.add(article);
+                    });
+                  })
+                } else {
+                  return Promise.reject(
+                    new Error('Unexpected status from search index request: ' +
+                              response.status)
+                  );
+                }
+              });
+            })).then(function() {
+              return fuse;
+            });
+          });
+
+        } else {
+          return Promise.reject(
+            new Error('Unexpected status from search index request: ' +
+                        response.status)
+          );
+        }
+      });
+  }
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // get search element (bail if we don't have one)
+    var searchEl = window.document.getElementById('distill-search');
+    if (!searchEl)
+      return;
+
+    createFuseIndex()
+      .then(function(fuse) {
+
+        // make search box visible
+        searchEl.classList.remove('hidden');
+
+        // initialize autocomplete
+        var options = {
+          autoselect: true,
+          hint: false,
+          minLength: 2,
+        };
+        window.autocomplete(searchEl, options, [{
+          source: function(query, callback) {
+            const searchOptions = {
+              isCaseSensitive: false,
+              shouldSort: true,
+              minMatchCharLength: 2,
+              limit: 10,
+            };
+            var results = fuse.search(query, searchOptions);
+            callback(results
+              .map(function(result) { return result.item; })
+            );
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+                : '';
+              var html = `
+                <div class="search-item">
+                  <h3>${suggestion.title}</h3>
+                  <div class="search-item-description">
+                    ${suggestion.description || ''}
+                  </div>
+                  <div class="search-item-preview">
+                    ${img}
+                  </div>
+                </div>
+              `;
+              return html;
+            }
+          }
+        }]).on('autocomplete:selected', function(event, suggestion) {
+          window.location.href = offsetURL(suggestion.path);
+        });
+        // remove inline display style on autocompleter (we want to
+        // manage responsive display via css)
+        $('.algolia-autocomplete').css("display", "");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+  });
+
+  </script>
+
+  <style type="text/css">
+
+  .nav-search {
+    font-size: x-small;
+  }
+
+  /* Algolioa Autocomplete */
+
+  .algolia-autocomplete {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: sub;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    border-radius: 6px;
+    border: 1px #0F2E3D solid;
+    width: 180px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-nav .algolia-autocomplete {
+      display: none;
+      visibility: hidden;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete {
+      display: inline-block;
+      visibility: visible;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+      margin-left: 0;
+      width: 400px;
+      max-height: 400px;
+    }
+  }
+
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 90%;
+    outline: none;
+    border: none;
+  }
+
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 550px;
+    max-height: 70vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    border-top: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+    overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    font-size: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+    display: inline-block;
+    overflow: hidden;
+    height: 2.8em;
+    width: 80%;
+    margin-right: 4%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+    display: inline-block;
+    width: 15%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+    height: 3em;
+    width: auto;
+    display: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+    display: initial;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  </style>
+
+
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.9.4/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"ZC3H13","description":"Zinc finger CCCH domain-containing protein 13","authors":[]}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a class="logo" href="https://www.imb.de/research/beli/research">
+<img src="images/logo.png" alt="Logo"/>
+</a>
+<a href="index.html" class="title">DDRBase</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="index.html">Home</a>
+<a href="datasets.html">Datasets</a>
+<a href="downloads.html">Downloads</a>
+<a href="about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>ZC3H13</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Zinc finger CCCH domain-containing protein 13</p></p>
+</div>
+
+
+<div class="d-article">
+<h1 id="zc3h13-q5t200">ZC3H13 ❯ Q5T200</h1>
+<h2 id="gene-names">Gene names</h2>
+<p>ZC3H13 KIAA0853</p>
+<h2 id="function">Function</h2>
+<p>FUNCTION: Associated component of the WMM complex, a complex that mediates N6-methyladenosine (m6A) methylation of RNAs, a modification that plays a role in the efficiency of mRNA splicing and RNA processing (PubMed:29507755). Acts as a key regulator of m6A methylation by promoting m6A methylation of mRNAs at the 3’-UTR (By similarity). Controls embryonic stem cells (ESCs) pluripotency via its role in m6A methylation (By similarity). In the WMM complex, anchors component of the MACOM subcomplex in the nucleus (By similarity). Also required for bridging WTAP to the RNA-binding component RBM15 (RBM15 or RBM15B) (By similarity). {ECO:0000250|UniProtKB:E9Q784}.</p>
+<h2 id="keywords">Keywords</h2>
+<p>Alternative splicing;Coiled coil;Developmental protein;Isopeptide bond;Metal-binding;Nucleus;Phosphoprotein;Reference proteome;Repeat;Ubl conjugation;Zinc;Zinc-finger;mRNA processing;mRNA splicing</p>
+<p>
+Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+</p>
+<h2 id="phosphorilation">Phosphorilation</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-ab0c312dab57e0afd0f0" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ab0c312dab57e0afd0f0">{"x":{"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11],"y":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],"z":[[0.497444722474548,0.529544992390859,0.651367814031634,0.539833846173641,0.515244708322731,0.634991789759338,0.600073452073898,0.540697726506292,0.591356608879818,0.485551780532713,0.601892191878211],[0.232245350911787,0.0497011210596052,0.255748140837901,0.28738387400653,0.122523700417621,0.625015238856863,0.164673854420881,0.313746586848871,0.903351253639953,0.464783113183169,0.39801831097945],[0.513791122044644,0.440768206454991,0.51290138679543,0.415222917914629,0.466297671238101,0.562095553177625,0.455625578781674,0.457093426637487,0.484621572508431,0.424392774603935,0.427686149793247],[0.513263202224618,0.524169051469335,0.424686722514006,0.558451355062825,0.464506738313606,1,0.430344237528764,0.660260517180065,0.88112778253612,0.52790664781227,0.487830879890163],[0.543842259162421,0.351842222469293,0.325849170317673,0.460726926610743,0.415984091060798,0.524258182951853,0.481634179831175,0.400784439534564,0.477870445996265,0.552956203016009,0.343138813505753],[0.574664845457087,0.468000732911866,0.531746385871641,0.520725868291162,0.567008998242234,0.700872750784368,0.550420510578519,0.570770492414154,0.56653853576561,0.512662165178424,0.50790669080112],[0.505100154920919,0.471064906560549,0.509508472372958,0.567509650809926,0.4441527464146,0.54720241690308,0.459601413892636,0.480115939083488,0.505881508205695,0.482735035463934,0.482233985791165],[0.474061693109446,0.48046032378544,0.485095808550791,0.518512209229724,0.425132005439359,0.520641940564487,0.450143357879817,0.449290083183377,0.470845250046341,0.447778020487158,0.444271905702633],[0.47063189191243,0.442485670357127,0.407457938924606,0.483227774412413,0.434984084916423,0.353778199939404,0.426311282282676,0.42259477549371,0.366667888979307,0.432651234040874,0.446866797698408],[0.452571408248999,0.440449155343,0.455268499390088,0.434361963635325,0.391257699813366,0.396827139688099,0.39703787063364,0.40870529111186,0.415275127952606,0.405733936680924,0.410780488676616],[0.498080071990707,0.532491461316106,0.65860147081408,0.586390959304666,0.529218198984673,0.652010973609895,0.688597450402816,0.622886199385304,0.577408805992134,0.526496991048865,0.694629367465707],[0.498080071990707,0.532491461316106,0.65860147081408,0.586390959304666,0.529218198984673,0.652010973609895,0.688597450402816,0.622886199385304,0.577408805992134,0.526496991048865,0.694629367465707],[0.498080071990707,0.532491461316106,0.65860147081408,0.586390959304666,0.529218198984673,0.652010973609895,0.688597450402816,0.622886199385304,0.577408805992134,0.526496991048865,0.694629367465707],[0.347667617828988,0.325229077358905,0.388917594935128,0.367850488943358,0.364477308341639,0.367542773095234,0.408492470783631,0.332591386184565,0.320399612927773,0.33869884271785,0.496860713193585],[0.617345574504636,0.628625752174996,0.618310657440697,0.581078727678801,0.571509242026794,0.761783830457231,0.5548383084074,0.631595165075734,0.804881509444304,0.66222902331019,0.50175967463899],[0.295898534224299,0.171153648066116,0.284058596491155,0.17211333557864,0.274400370873242,0.397283984968152,0.328868656056379,0.259058578445976,0.322710264605105,0.270040375363265,0.459999914065313],[0.442292567875549,0.496368626439117,0.467367677807883,0.478562535579491,0.425125621527747,0.317238814685727,0.430399871525603,0.332707040333028,0.394790353781346,0.404731668694852,0.416200467519443],[0.453179131636622,0.469169252371449,0.441104329619722,0.463452797459492,0.41619569638744,0.406163781653812,0.464202448465998,0.392823944719275,0.381201007263286,0.450568878759883,0.455298841499797],[0.436051492783585,0.366071714382334,0.424219101873389,0.349711969456231,0.416926653514569,0.345216108454971,0.436629515111199,0.385839254068128,0.239248715671886,0.438056588989996,0.444565829908974],[0.503322342687574,0.526295301090773,0.608464136138754,0.453955608910314,0.523767630836481,0.468804055707349,0.573222711821874,0.483985239901078,0.424150216258295,0.452865989325343,0.624076350973308],[0.431738805838129,0.401927585350516,0.503379695470313,0.384032701412843,0.490918881366467,0.398237137599662,0.653642467031371,0.479751496263024,0.469053630446551,0.470453402848804,0.572359779628969],[0.464410222972354,0.438083411073353,0.503391047159408,0.433761982562571,0.467014898761495,0.464540352074962,0.561867549145216,0.474386345296783,0.417487992140728,0.453290934273451,0.528804964938369],[0.492699019782397,0.538773677644265,0.610059712863911,0.450525794874809,0.471721701037385,0.473465541476254,0.573222711821874,0.483985239901078,0.424150216258295,0.452865989325343,0.63308687819483],[0.510085010802306,0.515428865114025,0.602873859121922,0.447690447478063,0.514860797620627,0.459831149728816,0.561004856412725,0.510284848668804,0.398227688343426,0.474687195807669,0.630902002799276],[0.524802140814691,0.512070482489398,0.568066655625143,0.396393719184894,0.453411353266458,0.465589736603029,0.437418725378823,0.492401150658339,0.332103301646883,0.430420643707251,0.668137518948437],[0.514115218705633,0.542872887126636,0.611716780847327,0.45136928710925,0.512255252424349,0.477984249076093,0.560146063330834,0.515077896493921,0.41535436494649,0.482449905798145,0.641216760441589],[0.441511614444476,0.439627263547892,0.411723965379999,0.43854971719327,0.426313735189895,0.398532904067074,0.388210129464551,0.398068980036086,0.36840157840967,0.436034588910524,0.416135171543182],[0.460713503356388,0.444838527491841,0.411777691458622,0.437586027408475,0.424256773718947,0.403750684027558,0.38635624415916,0.41038407718522,0.403419348342254,0.427113919082148,0.432359839656947],[0.4758170384232,0.410764234303643,0.430052373179254,0.363519614281287,0.441763391450784,0.517514694696535,0.458921588386743,0.354162388644536,0.442533383858464,0.421130664510811,0.481193393126212],[0.593482420153436,0.480909801617998,0.483437766768056,0.53375460287523,0.460742991866188,0.728046688951004,0.422859360864665,0.598521087843587,0.885197281481981,0.515176461637761,0.504377662075921],[0.401445945217981,0.456766180523154,0.445255599231356,0.431757583136756,0.446219828020652,0.386816555974269,0.446893306495837,0.407442539949201,0.372730346412207,0.455333614152113,0.443283217970911],[0.428297080393881,0.456004183206578,0.457338374136548,0.459208642412026,0.458818952164572,0.457226119805465,0.391531233342316,0.418920971374663,0.358311233927302,0.461683790710794,0.37548157896702],[0.530935698786803,0.586890039041714,0.576610332990421,0.492439007833748,0.53056182858076,0.528363130158342,0.471190117930378,0.535648430590391,0.461751262401498,0.459239944447043,0.510913592841807],[0.492544010382251,0.503545511114032,0.526755505692963,0.48482246629982,0.513454408832055,0.492965854573886,0.49161598104374,0.535364387479612,0.43486440835155,0.479606794744631,0.454887111536616],[0.41232798506084,0.446032773142324,0.442082407867971,0.431541212091902,0.44925684786587,0.419153553192415,0.426760581022966,0.409688972570176,0.383751531869208,0.447327233301882,0.429451905459611],[0.490373060431548,0.544723764821454,0.588188129233775,0.467770635320878,0.514772044596627,0.486439015159085,0.471184098914005,0.498015495163117,0.402756335388582,0.461148051805084,0.489144792076322],[0.406681078254021,0.418145050246635,0.501065262213751,0.440276145284126,0.459158997443342,0.406581900129875,0.489703776831267,0.4274636227078,0.342572273111171,0.362595186189359,0.502707656557807],[0.478937377608593,0.443778329709733,0.456204424539028,0.469622482724584,0.433679464699632,0.424320401271821,0.430573802722214,0.378946205517235,0.431418424130102,0.43052964274107,0.416060075447434],[0.478937377608593,0.443778329709733,0.456204424539028,0.469622482724584,0.433679464699632,0.424320401271821,0.430573802722214,0.378946205517235,0.431418424130102,0.43052964274107,0.416060075447434],[0.337895750034137,0.416921991905406,0.356250043819639,0.342325314290579,0.254757358202236,0.161910461388535,0.34801119497243,0.377457597980424,0.362697254546521,0.332911897766051,0.397144020202126],[0.436002716879881,0.467473986114721,0.457922392151243,0.488957867010071,0.392457026884949,0.345015589292264,0.373937074943278,0.404804812556103,0.439815511853163,0.482105461861644,0.411866100565589],[0.45291015310296,0.474941481325396,0.474933709774353,0.49452994035847,0.403056986585369,0.380721794043995,0.371869315247172,0.436868639315846,0.420419539254868,0.471123320417585,0.423611939529933],[0.488732515227894,0.496350553329961,0.462452321001321,0.459907675716441,0.406034694079135,0.432760100190427,0.373579387635711,0.411957658120718,0.356464101484941,0.39372766572906,0.379489554859706],[0.422414055327295,0.380230659062129,0.40899886529019,0.39562752471052,0.386225269195712,0.349923037490389,0.36681392641149,0.377936499381447,0.321757188073656,0.404738995086472,0.343079353868036],[0.448202990525315,0.495102625448716,0.475380599142206,0.469451313696585,0.480578993559165,0.425054271725061,0.474145901093275,0.406842469134908,0.392649529702756,0.462182028853752,0.488347921372247],[0.448202990525315,0.439021720041952,0.511565622312093,0.460409341123889,0.447941611030762,0.471710992077349,0.419914480755263,0.406842469134908,0.392649529702756,0.500561799859567,0.45274027600221],[0.389174534067535,0.320087417594465,0.361483577224213,0.275082434597961,0.399578410228462,0.30530543929772,0.410325859037085,0.35002565604777,0.289679245138953,0.409145383172781,0.396030007347025],[0.409293987929767,0.317149679000145,0.41645612695947,0.418514574594181,0.435947648686746,0.463225200290888,0.447465569896604,0.409139087509907,0.35903114168356,0.375170266754548,0.439476186048442],[0.490613844522736,0.550607082699041,0.489728977291342,0.446982942942765,0.45024002456183,0.468574412238914,0.461516836404237,0.458324203723936,0.530383743926367,0.496534075132667,0.528656544457437],[0.496837596177051,0.514855704671602,0.509250187863775,0.45977133815252,0.445084867376893,0.471344661127741,0.477930896548045,0.455481313356501,0.445620971930484,0.508494273716283,0.520636909458983],[0.428470382229049,0.432863231516272,0.434413116231584,0.415401499813798,0.428597464381176,0.403067587703011,0.40536289885457,0.405621329070352,0.394182421416057,0.422933961875865,0.413801517399433],[0.476163292200932,0.408457223486908,0.438092044349619,0.399106044445762,0.44507029426732,0.381665356455015,0.443001932588861,0.426132227573801,0.35331496886556,0.442406454114991,0.482009620980737],[0.468575755522943,0.460346689893614,0.426437959567966,0.446465223892589,0.432482484983871,0.413187409965317,0.420719055658206,0.410980100770176,0.391366925562409,0.434967339213083,0.424438737273327],[0.211347443555993,0.273672844405265,0,0.240790224531237,0.223535478885747,0.0826355432839098,0.128749480934448,0.136716610957804,0.0199281929330291,0.227999398737484,0.207187820308246]],"text":[["treatment: Aphidicoline<br />position: 1438<br />log2FC:  0.1455726748","treatment: Camptothecin<br />position: 1438<br />log2FC:  0.2282634380","treatment: Etoposide<br />position: 1438<br />log2FC:  0.5420808024","treatment: Formaldehyd<br />position: 1438<br />log2FC:  0.2547676754","treatment: Gemcitabine<br />position: 1438<br />log2FC:  0.1914256978","treatment: Hydrogen peroxide<br />position: 1438<br />log2FC:  0.4998959251","treatment: Hydroxyurea<br />position: 1438<br />log2FC:  0.4099457783","treatment: Methyl methanesulfonate<br />position: 1438<br />log2FC:  0.2569930437","treatment: Sodium Arsentie (NaAsO2)<br />position: 1438<br />log2FC:  0.3874910631","treatment: UV-C<br />position: 1438<br />log2FC:  0.1149362830","treatment: X-ray<br />position: 1438<br />log2FC:  0.4146308785"],["treatment: Aphidicoline<br />position: 1409;1409<br />log2FC: -0.5375847721","treatment: Camptothecin<br />position: 1409;1409<br />log2FC: -1.0078213691","treatment: Etoposide<br />position: 1409;1409<br />log2FC: -0.4770412427","treatment: Formaldehyd<br />position: 1409;1409<br />log2FC: -0.3955471329","treatment: Gemcitabine<br />position: 1409;1409<br />log2FC: -0.8202293432","treatment: Hydrogen peroxide<br />position: 1409;1409<br />log2FC:  0.4741961846","treatment: Hydroxyurea<br />position: 1409;1409<br />log2FC: -0.7116499320","treatment: Methyl methanesulfonate<br />position: 1409;1409<br />log2FC: -0.3276364003","treatment: Sodium Arsentie (NaAsO2)<br />position: 1409;1409<br />log2FC:  1.1911938159","treatment: UV-C<br />position: 1409;1409<br />log2FC:  0.0614358932","treatment: X-ray<br />position: 1409;1409<br />log2FC: -0.1105512105"],["treatment: Aphidicoline<br />position: 1366;1366<br />log2FC:  0.1876812384","treatment: Camptothecin<br />position: 1366;1366<br />log2FC: -0.0004268566","treatment: Etoposide<br />position: 1366;1366<br />log2FC:  0.1853892674","treatment: Formaldehyd<br />position: 1366;1366<br />log2FC: -0.0662318923","treatment: Gemcitabine<br />position: 1366;1366<br />log2FC:  0.0653374168","treatment: Hydrogen peroxide<br />position: 1366;1366<br />log2FC:  0.3121141571","treatment: Hydroxyurea<br />position: 1366;1366<br />log2FC:  0.0378459511","treatment: Methyl methanesulfonate<br />position: 1366;1366<br />log2FC:  0.0416271485","treatment: Sodium Arsentie (NaAsO2)<br />position: 1366;1366<br />log2FC:  0.1125400536","treatment: UV-C<br />position: 1366;1366<br />log2FC: -0.0426102078","treatment: X-ray<br />position: 1366;1366<br />log2FC: -0.0341264253"],["treatment: Aphidicoline<br />position: 1364;1364<br />log2FC:  0.1863213092","treatment: Camptothecin<br />position: 1364;1364<br />log2FC:  0.2144149359","treatment: Etoposide<br />position: 1364;1364<br />log2FC: -0.0418529937","treatment: Formaldehyd<br />position: 1364;1364<br />log2FC:  0.3027266496","treatment: Gemcitabine<br />position: 1364;1364<br />log2FC:  0.0607239475","treatment: Hydrogen peroxide<br />position: 1364;1364<br />log2FC:  1.4401623954","treatment: Hydroxyurea<br />position: 1364;1364<br />log2FC: -0.0272791525","treatment: Methyl methanesulfonate<br />position: 1364;1364<br />log2FC:  0.5649885353","treatment: Sodium Arsentie (NaAsO2)<br />position: 1364;1364<br />log2FC:  1.1339458304","treatment: UV-C<br />position: 1364;1364<br />log2FC:  0.2240430385","treatment: X-ray<br />position: 1364;1364<br />log2FC:  0.1208072762"],["treatment: Aphidicoline<br />position: 1292;1292<br />log2FC:  0.2650934056","treatment: Camptothecin<br />position: 1292;1292<br />log2FC: -0.2295014876","treatment: Etoposide<br />position: 1292;1292<br />log2FC: -0.2964599689","treatment: Formaldehyd<br />position: 1292;1292<br />log2FC:  0.0509870974","treatment: Gemcitabine<br />position: 1292;1292<br />log2FC: -0.0642710992","treatment: Hydrogen peroxide<br />position: 1292;1292<br />log2FC:  0.2146445399","treatment: Hydroxyurea<br />position: 1292;1292<br />log2FC:  0.1048444865","treatment: Methyl methanesulfonate<br />position: 1292;1292<br />log2FC: -0.1034256230","treatment: Sodium Arsentie (NaAsO2)<br />position: 1292;1292<br />log2FC:  0.0951490533","treatment: UV-C<br />position: 1292;1292<br />log2FC:  0.2885710579","treatment: X-ray<br />position: 1292;1292<br />log2FC: -0.2519215960"],["treatment: Aphidicoline<br />position: 1240;1240<br />log2FC:  0.3444928372","treatment: Camptothecin<br />position: 1240;1240<br />log2FC:  0.0697245285","treatment: Etoposide<br />position: 1240;1240<br />log2FC:  0.2339342597","treatment: Formaldehyd<br />position: 1240;1240<br />log2FC:  0.2055452458","treatment: Gemcitabine<br />position: 1240;1240<br />log2FC:  0.3247712632","treatment: Hydrogen peroxide<br />position: 1240;1240<br />log2FC:  0.6696062411","treatment: Hydroxyurea<br />position: 1240;1240<br />log2FC:  0.2820390772","treatment: Methyl methanesulfonate<br />position: 1240;1240<br />log2FC:  0.3344609270","treatment: Sodium Arsentie (NaAsO2)<br />position: 1240;1240<br />log2FC:  0.3235593450","treatment: UV-C<br />position: 1240;1240<br />log2FC:  0.1847730290","treatment: X-ray<br />position: 1240;1240<br />log2FC:  0.1725228577"],["treatment: Aphidicoline<br />position: 1210;1210<br />log2FC:  0.1652931804","treatment: Camptothecin<br />position: 1210;1210<br />log2FC:  0.0776178845","treatment: Etoposide<br />position: 1210;1210<br />log2FC:  0.1766490704","treatment: Formaldehyd<br />position: 1210;1210<br />log2FC:  0.3260609515","treatment: Gemcitabine<br />position: 1210;1210<br />log2FC:  0.0082917677","treatment: Hydrogen peroxide<br />position: 1210;1210<br />log2FC:  0.2737492210","treatment: Hydroxyurea<br />position: 1210;1210<br />log2FC:  0.0480877603","treatment: Methyl methanesulfonate<br />position: 1210;1210<br />log2FC:  0.1009334762","treatment: Sodium Arsentie (NaAsO2)<br />position: 1210;1210<br />log2FC:  0.1673059578","treatment: UV-C<br />position: 1210;1210<br />log2FC:  0.1076803066","treatment: X-ray<br />position: 1210;1210<br />log2FC:  0.1063895954"],["treatment: Aphidicoline<br />position: 1208;1208<br />log2FC:  0.0853376503","treatment: Camptothecin<br />position: 1208;1208<br />log2FC:  0.1018206162","treatment: Etoposide<br />position: 1208;1208<br />log2FC:  0.1137616925","treatment: Formaldehyd<br />position: 1208;1208<br />log2FC:  0.1998428278","treatment: Gemcitabine<br />position: 1208;1208<br />log2FC: -0.0407059384","treatment: Hydrogen peroxide<br />position: 1208;1208<br />log2FC:  0.2053290467","treatment: Hydroxyurea<br />position: 1208;1208<br />log2FC:  0.0237236701","treatment: Methyl methanesulfonate<br />position: 1208;1208<br />log2FC:  0.0215256221","treatment: Sodium Arsentie (NaAsO2)<br />position: 1208;1208<br />log2FC:  0.0770520461","treatment: UV-C<br />position: 1208;1208<br />log2FC:  0.0176305265","treatment: X-ray<br />position: 1208;1208<br />log2FC:  0.0085987237"],["treatment: Aphidicoline<br />position: 1191;1191<br />log2FC:  0.0765024324","treatment: Camptothecin<br />position: 1191;1191<br />log2FC:  0.0039973554","treatment: Etoposide<br />position: 1191;1191<br />log2FC: -0.0862345913","treatment: Formaldehyd<br />position: 1191;1191<br />log2FC:  0.1089496094","treatment: Gemcitabine<br />position: 1191;1191<br />log2FC: -0.0153268380","treatment: Hydrogen peroxide<br />position: 1191;1191<br />log2FC: -0.2245143814","treatment: Hydroxyurea<br />position: 1191;1191<br />log2FC: -0.0376681040","treatment: Methyl methanesulfonate<br />position: 1191;1191<br />log2FC: -0.0472418797","treatment: Sodium Arsentie (NaAsO2)<br />position: 1191;1191<br />log2FC: -0.1913103546","treatment: UV-C<br />position: 1191;1191<br />log2FC: -0.0213362959","treatment: X-ray<br />position: 1191;1191<br />log2FC:  0.0152832033"],["treatment: Aphidicoline<br />position: 1033;1033<br />log2FC:  0.0299783633","treatment: Camptothecin<br />position: 1033;1033<br />log2FC: -0.0012487369","treatment: Etoposide<br />position: 1033;1033<br />log2FC:  0.0369261093","treatment: Formaldehyd<br />position: 1033;1033<br />log2FC: -0.0169294315","treatment: Gemcitabine<br />position: 1033;1033<br />log2FC: -0.1279666434","treatment: Hydrogen peroxide<br />position: 1033;1033<br />log2FC: -0.1136196851","treatment: Hydroxyurea<br />position: 1033;1033<br />log2FC: -0.1130768391","treatment: Methyl methanesulfonate<br />position: 1033;1033<br />log2FC: -0.0830213939","treatment: Sodium Arsentie (NaAsO2)<br />position: 1033;1033<br />log2FC: -0.0660973985","treatment: UV-C<br />position: 1033;1033<br />log2FC: -0.0906756462","treatment: X-ray<br />position: 1033;1033<br />log2FC: -0.0776756547"],["treatment: Aphidicoline<br />position: 1017;1017<br />log2FC:  0.1472093444","treatment: Camptothecin<br />position: 1017;1017<br />log2FC:  0.2358535849","treatment: Etoposide<br />position: 1017;1017<br />log2FC:  0.5607148077","treatment: Formaldehyd<br />position: 1017;1017<br />log2FC:  0.3746994774","treatment: Gemcitabine<br />position: 1017;1017<br />log2FC:  0.2274216135","treatment: Hydrogen peroxide<br />position: 1017;1017<br />log2FC:  0.5437375908","treatment: Hydroxyurea<br />position: 1017;1017<br />log2FC:  0.6379848883","treatment: Methyl methanesulfonate<br />position: 1017;1017<br />log2FC:  0.4687117479","treatment: Sodium Arsentie (NaAsO2)<br />position: 1017;1017<br />log2FC:  0.3515613196","treatment: UV-C<br />position: 1017;1017<br />log2FC:  0.2204117421","treatment: X-ray<br />position: 1017;1017<br />log2FC:  0.6535231946"],["treatment: Aphidicoline<br />position: 1014;1014<br />log2FC:  0.1472093444","treatment: Camptothecin<br />position: 1014;1014<br />log2FC:  0.2358535849","treatment: Etoposide<br />position: 1014;1014<br />log2FC:  0.5607148077","treatment: Formaldehyd<br />position: 1014;1014<br />log2FC:  0.3746994774","treatment: Gemcitabine<br />position: 1014;1014<br />log2FC:  0.2274216135","treatment: Hydrogen peroxide<br />position: 1014;1014<br />log2FC:  0.5437375908","treatment: Hydroxyurea<br />position: 1014;1014<br />log2FC:  0.6379848883","treatment: Methyl methanesulfonate<br />position: 1014;1014<br />log2FC:  0.4687117479","treatment: Sodium Arsentie (NaAsO2)<br />position: 1014;1014<br />log2FC:  0.3515613196","treatment: UV-C<br />position: 1014;1014<br />log2FC:  0.2204117421","treatment: X-ray<br />position: 1014;1014<br />log2FC:  0.6535231946"],["treatment: Aphidicoline<br />position: 1010;1010<br />log2FC:  0.1472093444","treatment: Camptothecin<br />position: 1010;1010<br />log2FC:  0.2358535849","treatment: Etoposide<br />position: 1010;1010<br />log2FC:  0.5607148077","treatment: Formaldehyd<br />position: 1010;1010<br />log2FC:  0.3746994774","treatment: Gemcitabine<br />position: 1010;1010<br />log2FC:  0.2274216135","treatment: Hydrogen peroxide<br />position: 1010;1010<br />log2FC:  0.5437375908","treatment: Hydroxyurea<br />position: 1010;1010<br />log2FC:  0.6379848883","treatment: Methyl methanesulfonate<br />position: 1010;1010<br />log2FC:  0.4687117479","treatment: Sodium Arsentie (NaAsO2)<br />position: 1010;1010<br />log2FC:  0.3515613196","treatment: UV-C<br />position: 1010;1010<br />log2FC:  0.2204117421","treatment: X-ray<br />position: 1010;1010<br />log2FC:  0.6535231946"],["treatment: Aphidicoline<br />position: 993;993<br />log2FC: -0.2402553300","treatment: Camptothecin<br />position: 993;993<br />log2FC: -0.2980573374","treatment: Etoposide<br />position: 993;993<br />log2FC: -0.1339947877","treatment: Formaldehyd<br />position: 993;993<br />log2FC: -0.1882639598","treatment: Gemcitabine<br />position: 993;993<br />log2FC: -0.1969533222","treatment: Hydrogen peroxide<br />position: 993;993<br />log2FC: -0.1890566403","treatment: Hydroxyurea<br />position: 993;993<br />log2FC: -0.0835696222","treatment: Methyl methanesulfonate<br />position: 993;993<br />log2FC: -0.2790919225","treatment: Sodium Arsentie (NaAsO2)<br />position: 993;993<br />log2FC: -0.3104981081","treatment: UV-C<br />position: 993;993<br />log2FC: -0.2633590255","treatment: X-ray<br />position: 993;993<br />log2FC:  0.1440682584"],["treatment: Aphidicoline<br />position: 986;986<br />log2FC:  0.4544390174","treatment: Camptothecin<br />position: 986;986<br />log2FC:  0.4834969195","treatment: Etoposide<br />position: 986;986<br />log2FC:  0.4569250851","treatment: Formaldehyd<br />position: 986;986<br />log2FC:  0.3610150913","treatment: Gemcitabine<br />position: 986;986<br />log2FC:  0.3363639568","treatment: Hydrogen peroxide<br />position: 986;986<br />log2FC:  0.8265140702","treatment: Hydroxyurea<br />position: 986;986<br />log2FC:  0.2934193888","treatment: Methyl methanesulfonate<br />position: 986;986<br />log2FC:  0.4911461704","treatment: Sodium Arsentie (NaAsO2)<br />position: 986;986<br />log2FC:  0.9375343195","treatment: UV-C<br />position: 986;986<br />log2FC:  0.5700594358","treatment: X-ray<br />position: 986;986<br />log2FC:  0.1566880545"],["treatment: Aphidicoline<br />position: 985;985<br />log2FC: -0.3736132440","treatment: Camptothecin<br />position: 985;985<br />log2FC: -0.6949578891","treatment: Etoposide<br />position: 985;985<br />log2FC: -0.4041130962","treatment: Formaldehyd<br />position: 985;985<br />log2FC: -0.6924857201","treatment: Gemcitabine<br />position: 985;985<br />log2FC: -0.4289928262","treatment: Hydrogen peroxide<br />position: 985;985<br />log2FC: -0.1124428450","treatment: Hydroxyurea<br />position: 985;985<br />log2FC: -0.2886817296","treatment: Methyl methanesulfonate<br />position: 985;985<br />log2FC: -0.4685135071","treatment: Sodium Arsentie (NaAsO2)<br />position: 985;985<br />log2FC: -0.3045458357","treatment: UV-C<br />position: 985;985<br />log2FC: -0.4402242382","treatment: X-ray<br />position: 985;985<br />log2FC:  0.0491143025"],["treatment: Aphidicoline<br />position: 879;879<br />log2FC:  0.0034999206","treatment: Camptothecin<br />position: 879;879<br />log2FC:  0.1428006357","treatment: Etoposide<br />position: 879;879<br />log2FC:  0.0680937693","treatment: Formaldehyd<br />position: 879;879<br />log2FC:  0.0969318861","treatment: Gemcitabine<br />position: 879;879<br />log2FC: -0.0407223834","treatment: Hydrogen peroxide<br />position: 879;879<br />log2FC: -0.3186403705","treatment: Hydroxyurea<br />position: 879;879<br />log2FC: -0.0271358385","treatment: Methyl methanesulfonate<br />position: 879;879<br />log2FC: -0.2787939957","treatment: Sodium Arsentie (NaAsO2)<br />position: 879;879<br />log2FC: -0.1188664753","treatment: UV-C<br />position: 879;879<br />log2FC: -0.0932575032","treatment: X-ray<br />position: 879;879<br />log2FC: -0.0637137102"],["treatment: Aphidicoline<br />position: 877;877<br />log2FC:  0.0315438676","treatment: Camptothecin<br />position: 877;877<br />log2FC:  0.0727346517","treatment: Etoposide<br />position: 877;877<br />log2FC:  0.0004390016","treatment: Formaldehyd<br />position: 877;877<br />log2FC:  0.0580089805","treatment: Gemcitabine<br />position: 877;877<br />log2FC: -0.0637260007","treatment: Hydrogen peroxide<br />position: 877;877<br />log2FC: -0.0895683593","treatment: Hydroxyurea<br />position: 877;877<br />log2FC:  0.0599400924","treatment: Methyl methanesulfonate<br />position: 877;877<br />log2FC: -0.1239319737","treatment: Sodium Arsentie (NaAsO2)<br />position: 877;877<br />log2FC: -0.1538728300","treatment: UV-C<br />position: 877;877<br />log2FC:  0.0248198181","treatment: X-ray<br />position: 877;877<br />log2FC:  0.0370042711"],["treatment: Aphidicoline<br />position: 875;875<br />log2FC: -0.0125771798","treatment: Camptothecin<br />position: 875;875<br />log2FC: -0.1928461090","treatment: Etoposide<br />position: 875;875<br />log2FC: -0.0430575913","treatment: Formaldehyd<br />position: 875;875<br />log2FC: -0.2349890504","treatment: Gemcitabine<br />position: 875;875<br />log2FC: -0.0618430445","treatment: Hydrogen peroxide<br />position: 875;875<br />log2FC: -0.2465704539","treatment: Hydroxyurea<br />position: 875;875<br />log2FC: -0.0110881859","treatment: Methyl methanesulfonate<br />position: 875;875<br />log2FC: -0.1419246387","treatment: Sodium Arsentie (NaAsO2)<br />position: 875;875<br />log2FC: -0.5195440024","treatment: UV-C<br />position: 875;875<br />log2FC: -0.0074120227","treatment: X-ray<br />position: 875;875<br />log2FC:  0.0093558768"],["treatment: Aphidicoline<br />position: 853;853<br />log2FC:  0.1607135102","treatment: Camptothecin<br />position: 853;853<br />log2FC:  0.2198921859","treatment: Etoposide<br />position: 853;853<br />log2FC:  0.4315603027","treatment: Formaldehyd<br />position: 853;853<br />log2FC:  0.0335440843","treatment: Gemcitabine<br />position: 853;853<br />log2FC:  0.2133808705","treatment: Hydrogen peroxide<br />position: 853;853<br />log2FC:  0.0717938997","treatment: Hydroxyurea<br />position: 853;853<br />log2FC:  0.3407778800","treatment: Methyl methanesulfonate<br />position: 853;853<br />log2FC:  0.1109008515","treatment: Sodium Arsentie (NaAsO2)<br />position: 853;853<br />log2FC: -0.0432350416","treatment: UV-C<br />position: 853;853<br />log2FC:  0.0307372084","treatment: X-ray<br />position: 853;853<br />log2FC:  0.4717775957"],["treatment: Aphidicoline<br />position: 851;851<br />log2FC: -0.0236867242","treatment: Camptothecin<br />position: 851;851<br />log2FC: -0.1004808628","treatment: Etoposide<br />position: 851;851<br />log2FC:  0.1608612518","treatment: Formaldehyd<br />position: 851;851<br />log2FC: -0.1465783446","treatment: Gemcitabine<br />position: 851;851<br />log2FC:  0.1287620130","treatment: Hydrogen peroxide<br />position: 851;851<br />log2FC: -0.1099875100","treatment: Hydroxyurea<br />position: 851;851<br />log2FC:  0.5479403416","treatment: Methyl methanesulfonate<br />position: 851;851<br />log2FC:  0.0999946662","treatment: Sodium Arsentie (NaAsO2)<br />position: 851;851<br />log2FC:  0.0724368079","treatment: UV-C<br />position: 851;851<br />log2FC:  0.0760426420","treatment: X-ray<br />position: 851;851<br />log2FC:  0.3385549541"],["treatment: Aphidicoline<br />position: 848;848<br />log2FC:  0.0604753226","treatment: Camptothecin<br />position: 848;848<br />log2FC: -0.0073429287","treatment: Etoposide<br />position: 848;848<br />log2FC:  0.1608904939","treatment: Formaldehyd<br />position: 848;848<br />log2FC: -0.0184749915","treatment: Gemcitabine<br />position: 848;848<br />log2FC:  0.0671850054","treatment: Hydrogen peroxide<br />position: 848;848<br />log2FC:  0.0608105370","treatment: Hydroxyurea<br />position: 848;848<br />log2FC:  0.3115268154","treatment: Methyl methanesulfonate<br />position: 848;848<br />log2FC:  0.0861739591","treatment: Sodium Arsentie (NaAsO2)<br />position: 848;848<br />log2FC: -0.0603970280","treatment: UV-C<br />position: 848;848<br />log2FC:  0.0318318728","treatment: X-ray<br />position: 848;848<br />log2FC:  0.2263571165"],["treatment: Aphidicoline<br />position: 845;845<br />log2FC:  0.1333476755","treatment: Camptothecin<br />position: 845;845<br />log2FC:  0.2520366658","treatment: Etoposide<br />position: 845;845<br />log2FC:  0.4356705316","treatment: Formaldehyd<br />position: 845;845<br />log2FC:  0.0247088334","treatment: Gemcitabine<br />position: 845;845<br />log2FC:  0.0793097966","treatment: Hydrogen peroxide<br />position: 845;845<br />log2FC:  0.0838019550","treatment: Hydroxyurea<br />position: 845;845<br />log2FC:  0.3407778800","treatment: Methyl methanesulfonate<br />position: 845;845<br />log2FC:  0.1109008515","treatment: Sodium Arsentie (NaAsO2)<br />position: 845;845<br />log2FC: -0.0432350416","treatment: UV-C<br />position: 845;845<br />log2FC:  0.0307372084","treatment: X-ray<br />position: 845;845<br />log2FC:  0.4949888452"],["treatment: Aphidicoline<br />position: 837;837<br />log2FC:  0.1781342418","treatment: Camptothecin<br />position: 837;837<br />log2FC:  0.1919000884","treatment: Etoposide<br />position: 837;837<br />log2FC:  0.4171596676","treatment: Formaldehyd<br />position: 837;837<br />log2FC:  0.0174049372","treatment: Gemcitabine<br />position: 837;837<br />log2FC:  0.1904367383","treatment: Hydrogen peroxide<br />position: 837;837<br />log2FC:  0.0486795631","treatment: Hydroxyurea<br />position: 837;837<br />log2FC:  0.3093045063","treatment: Methyl methanesulfonate<br />position: 837;837<br />log2FC:  0.1786490271","treatment: Sodium Arsentie (NaAsO2)<br />position: 837;837<br />log2FC: -0.1100118514","treatment: UV-C<br />position: 837;837<br />log2FC:  0.0869489544","treatment: X-ray<br />position: 837;837<br />log2FC:  0.4893605743"],["treatment: Aphidicoline<br />position: 833;833<br />log2FC:  0.2160457832","treatment: Camptothecin<br />position: 833;833<br />log2FC:  0.1832488458","treatment: Etoposide<br />position: 833;833<br />log2FC:  0.3274958040","treatment: Formaldehyd<br />position: 833;833<br />log2FC: -0.1147361827","treatment: Gemcitabine<br />position: 833;833<br />log2FC:  0.0321420739","treatment: Hydrogen peroxide<br />position: 833;833<br />log2FC:  0.0635137669","treatment: Hydroxyurea<br />position: 833;833<br />log2FC: -0.0090551687","treatment: Methyl methanesulfonate<br />position: 833;833<br />log2FC:  0.1325803603","treatment: Sodium Arsentie (NaAsO2)<br />position: 833;833<br />log2FC: -0.2803492354","treatment: UV-C<br />position: 833;833<br />log2FC: -0.0270823291","treatment: X-ray<br />position: 833;833<br />log2FC:  0.5852798067"],["treatment: Aphidicoline<br />position: 831;831<br />log2FC:  0.1885161161","treatment: Camptothecin<br />position: 831;831<br />log2FC:  0.2625962891","treatment: Etoposide<br />position: 831;831<br />log2FC:  0.4399391629","treatment: Formaldehyd<br />position: 831;831<br />log2FC:  0.0268816817","treatment: Gemcitabine<br />position: 831;831<br />log2FC:  0.1837248158","treatment: Hydrogen peroxide<br />position: 831;831<br />log2FC:  0.0954422117","treatment: Hydroxyurea<br />position: 831;831<br />log2FC:  0.3070922428","treatment: Methyl methanesulfonate<br />position: 831;831<br />log2FC:  0.1909959881","treatment: Sodium Arsentie (NaAsO2)<br />position: 831;831<br />log2FC: -0.0658932828","treatment: UV-C<br />position: 831;831<br />log2FC:  0.1069458085","treatment: X-ray<br />position: 831;831<br />log2FC:  0.5159315403"],["treatment: Aphidicoline<br />position: 643;643<br />log2FC:  0.0014881732","treatment: Camptothecin<br />position: 643;643<br />log2FC: -0.0033659422","treatment: Etoposide<br />position: 643;643<br />log2FC: -0.0752452450","treatment: Formaldehyd<br />position: 643;643<br />log2FC: -0.0061417173","treatment: Gemcitabine<br />position: 643;643<br />log2FC: -0.0376617853","treatment: Hydrogen peroxide<br />position: 643;643<br />log2FC: -0.1092256112","treatment: Hydroxyurea<br />position: 643;643<br />log2FC: -0.1358172291","treatment: Methyl methanesulfonate<br />position: 643;643<br />log2FC: -0.1104206863","treatment: Sodium Arsentie (NaAsO2)<br />position: 643;643<br />log2FC: -0.1868443453","treatment: UV-C<br />position: 643;643<br />log2FC: -0.0126207244","treatment: X-ray<br />position: 643;643<br />log2FC: -0.0638819136"],["treatment: Aphidicoline<br />position: 642;642<br />log2FC:  0.0509525189","treatment: Camptothecin<br />position: 642;642<br />log2FC:  0.0100583497","treatment: Etoposide<br />position: 642;642<br />log2FC: -0.0751068458","treatment: Formaldehyd<br />position: 642;642<br />log2FC: -0.0086241962","treatment: Gemcitabine<br />position: 642;642<br />log2FC: -0.0429605480","treatment: Hydrogen peroxide<br />position: 642;642<br />log2FC: -0.0957845340","treatment: Hydroxyurea<br />position: 642;642<br />log2FC: -0.1405928646","treatment: Methyl methanesulfonate<br />position: 642;642<br />log2FC: -0.0786968165","treatment: Sodium Arsentie (NaAsO2)<br />position: 642;642<br />log2FC: -0.0966380595","treatment: UV-C<br />position: 642;642<br />log2FC: -0.0356004999","treatment: X-ray<br />position: 642;642<br />log2FC: -0.0220869321"],["treatment: Aphidicoline<br />position: 621;621<br />log2FC:  0.0898594454","treatment: Camptothecin<br />position: 621;621<br />log2FC: -0.0777175262","treatment: Etoposide<br />position: 621;621<br />log2FC: -0.0280309993","treatment: Formaldehyd<br />position: 621;621<br />log2FC: -0.1994203561","treatment: Gemcitabine<br />position: 621;621<br />log2FC:  0.0021367544","treatment: Hydrogen peroxide<br />position: 621;621<br />log2FC:  0.1972732158","treatment: Hydroxyurea<br />position: 621;621<br />log2FC:  0.0463365199","treatment: Methyl methanesulfonate<br />position: 621;621<br />log2FC: -0.2235247057","treatment: Sodium Arsentie (NaAsO2)<br />position: 621;621<br />log2FC:  0.0041202661","treatment: UV-C<br />position: 621;621<br />log2FC: -0.0510134509","treatment: X-ray<br />position: 621;621<br />log2FC:  0.1037090135"],["treatment: Aphidicoline<br />position: 473;473<br />log2FC:  0.3929671840","treatment: Camptothecin<br />position: 473;473<br />log2FC:  0.1029784777","treatment: Etoposide<br />position: 473;473<br />log2FC:  0.1094905527","treatment: Formaldehyd<br />position: 473;473<br />log2FC:  0.2391074560","treatment: Gemcitabine<br />position: 473;473<br />log2FC:  0.0510284818","treatment: Hydrogen peroxide<br />position: 473;473<br />log2FC:  0.7396067019","treatment: Hydroxyurea<br />position: 473;473<br />log2FC: -0.0465603039","treatment: Methyl methanesulfonate<br />position: 473;473<br />log2FC:  0.4059468654","treatment: Sodium Arsentie (NaAsO2)<br />position: 473;473<br />log2FC:  1.1444289190","treatment: UV-C<br />position: 473;473<br />log2FC:  0.1912498934","treatment: X-ray<br />position: 473;473<br />log2FC:  0.1634320283"],["treatment: Aphidicoline<br />position: 381;381<br />log2FC: -0.1017215748","treatment: Camptothecin<br />position: 381;381<br />log2FC:  0.0407841578","treatment: Etoposide<br />position: 381;381<br />log2FC:  0.0111327326","treatment: Formaldehyd<br />position: 381;381<br />log2FC: -0.0236383536","treatment: Gemcitabine<br />position: 381;381<br />log2FC:  0.0136166000","treatment: Hydrogen peroxide<br />position: 381;381<br />log2FC: -0.1394070947","treatment: Hydroxyurea<br />position: 381;381<br />log2FC:  0.0153514904","treatment: Methyl methanesulfonate<br />position: 381;381<br />log2FC: -0.0862742593","treatment: Sodium Arsentie (NaAsO2)<br />position: 381;381<br />log2FC: -0.1756933759","treatment: UV-C<br />position: 381;381<br />log2FC:  0.0370938459","treatment: X-ray<br />position: 381;381<br />log2FC:  0.0060518497"],["treatment: Aphidicoline<br />position: 380;380<br />log2FC: -0.0325526591","treatment: Camptothecin<br />position: 380;380<br />log2FC:  0.0388212416","treatment: Etoposide<br />position: 380;380<br />log2FC:  0.0422581369","treatment: Formaldehyd<br />position: 380;380<br />log2FC:  0.0470759752","treatment: Gemcitabine<br />position: 380;380<br />log2FC:  0.0460721274","treatment: Hydrogen peroxide<br />position: 380;380<br />log2FC:  0.0419689681","treatment: Hydroxyurea<br />position: 380;380<br />log2FC: -0.1272620171","treatment: Methyl methanesulfonate<br />position: 380;380<br />log2FC: -0.0567056527","treatment: Sodium Arsentie (NaAsO2)<br />position: 380;380<br />log2FC: -0.2128372198","treatment: UV-C<br />position: 380;380<br />log2FC:  0.0534519933","treatment: X-ray<br />position: 380;380<br />log2FC: -0.1686061607"],["treatment: Aphidicoline<br />position: 376;376<br />log2FC:  0.2318459180","treatment: Camptothecin<br />position: 376;376<br />log2FC:  0.3759851141","treatment: Etoposide<br />position: 376;376<br />log2FC:  0.3495044415","treatment: Formaldehyd<br />position: 376;376<br />log2FC:  0.1326778809","treatment: Gemcitabine<br />position: 376;376<br />log2FC:  0.2308828229","treatment: Hydrogen peroxide<br />position: 376;376<br />log2FC:  0.2252189437","treatment: Hydroxyurea<br />position: 376;376<br />log2FC:  0.0779404308","treatment: Methyl methanesulfonate<br />position: 376;376<br />log2FC:  0.2439859838","treatment: Sodium Arsentie (NaAsO2)<br />position: 376;376<br />log2FC:  0.0536258014","treatment: UV-C<br />position: 376;376<br />log2FC:  0.0471566097","treatment: X-ray<br />position: 376;376<br />log2FC:  0.1802686812"],["treatment: Aphidicoline<br />position: 374;374<br />log2FC:  0.1329483690","treatment: Camptothecin<br />position: 374;374<br />log2FC:  0.1612883953","treatment: Etoposide<br />position: 374;374<br />log2FC:  0.2210776796","treatment: Formaldehyd<br />position: 374;374<br />log2FC:  0.1130575589","treatment: Gemcitabine<br />position: 374;374<br />log2FC:  0.1868138602","treatment: Hydrogen peroxide<br />position: 374;374<br />log2FC:  0.1340350458","treatment: Hydroxyurea<br />position: 374;374<br />log2FC:  0.1305577519","treatment: Methyl methanesulfonate<br />position: 374;374<br />log2FC:  0.2432542846","treatment: Sodium Arsentie (NaAsO2)<br />position: 374;374<br />log2FC: -0.0156351266","treatment: UV-C<br />position: 374;374<br />log2FC:  0.0996219130","treatment: X-ray<br />position: 374;374<br />log2FC:  0.0359436487"],["treatment: Aphidicoline<br />position: 372;372<br />log2FC: -0.0736892815","treatment: Camptothecin<br />position: 372;372<br />log2FC:  0.0131347439","treatment: Etoposide<br />position: 372;372<br />log2FC:  0.0029585454","treatment: Formaldehyd<br />position: 372;372<br />log2FC: -0.0241957286","treatment: Gemcitabine<br />position: 372;372<br />log2FC:  0.0214400074","treatment: Hydrogen peroxide<br />position: 372;372<br />log2FC: -0.0561065185","treatment: Hydroxyurea<br />position: 372;372<br />log2FC: -0.0365107039","treatment: Methyl methanesulfonate<br />position: 372;372<br />log2FC: -0.0804874161","treatment: Sodium Arsentie (NaAsO2)<br />position: 372;372<br />log2FC: -0.1473026415","treatment: UV-C<br />position: 372;372<br />log2FC:  0.0164692921","treatment: X-ray<br />position: 372;372<br />log2FC: -0.0295778129"],["treatment: Aphidicoline<br />position: 370;370<br />log2FC:  0.1273559703","treatment: Camptothecin<br />position: 370;370<br />log2FC:  0.2673641771","treatment: Etoposide<br />position: 370;370<br />log2FC:  0.3793290134","treatment: Formaldehyd<br />position: 370;370<br />log2FC:  0.0691317937","treatment: Gemcitabine<br />position: 370;370<br />log2FC:  0.1902081092","treatment: Hydrogen peroxide<br />position: 370;370<br />log2FC:  0.1172218123","treatment: Hydroxyurea<br />position: 370;370<br />log2FC:  0.0779249257","treatment: Methyl methanesulfonate<br />position: 370;370<br />log2FC:  0.1470429936","treatment: Sodium Arsentie (NaAsO2)<br />position: 370;370<br />log2FC: -0.0983459906","treatment: UV-C<br />position: 370;370<br />log2FC:  0.0520719221","treatment: X-ray<br />position: 370;370<br />log2FC:  0.1241919331"],["treatment: Aphidicoline<br />position: 362;362<br />log2FC: -0.0882357957","treatment: Camptothecin<br />position: 362;362<br />log2FC: -0.0587044368","treatment: Etoposide<br />position: 362;362<br />log2FC:  0.1548992380","treatment: Formaldehyd<br />position: 362;362<br />log2FC: -0.0016944134","treatment: Gemcitabine<br />position: 362;362<br />log2FC:  0.0469480890","treatment: Hydrogen peroxide<br />position: 362;362<br />log2FC: -0.0884912800","treatment: Hydroxyurea<br />position: 362;362<br />log2FC:  0.1256318860","treatment: Methyl methanesulfonate<br />position: 362;362<br />log2FC: -0.0346996583","treatment: Sodium Arsentie (NaAsO2)<br />position: 362;362<br />log2FC: -0.2533810123","treatment: UV-C<br />position: 362;362<br />log2FC: -0.2018016963","treatment: X-ray<br />position: 362;362<br />log2FC:  0.1591300697"],["treatment: Aphidicoline<br />position: 356;356<br />log2FC:  0.0978974847","treatment: Camptothecin<br />position: 356;356<br />log2FC:  0.0073272648","treatment: Etoposide<br />position: 356;356<br />log2FC:  0.0393370662","treatment: Formaldehyd<br />position: 356;356<br />log2FC:  0.0739021797","treatment: Gemcitabine<br />position: 356;356<br />log2FC: -0.0186875587","treatment: Hydrogen peroxide<br />position: 356;356<br />log2FC: -0.0427966425","treatment: Hydroxyurea<br />position: 356;356<br />log2FC: -0.0266877892","treatment: Methyl methanesulfonate<br />position: 356;356<br />log2FC: -0.1596812322","treatment: Sodium Arsentie (NaAsO2)<br />position: 356;356<br />log2FC: -0.0245120322","treatment: UV-C<br />position: 356;356<br />log2FC: -0.0268015460","treatment: X-ray<br />position: 356;356<br />log2FC: -0.0640753623"],["treatment: Aphidicoline<br />position: 354;354<br />log2FC:  0.0978974847","treatment: Camptothecin<br />position: 354;354<br />log2FC:  0.0073272648","treatment: Etoposide<br />position: 354;354<br />log2FC:  0.0393370662","treatment: Formaldehyd<br />position: 354;354<br />log2FC:  0.0739021797","treatment: Gemcitabine<br />position: 354;354<br />log2FC: -0.0186875587","treatment: Hydrogen peroxide<br />position: 354;354<br />log2FC: -0.0427966425","treatment: Hydroxyurea<br />position: 354;354<br />log2FC: -0.0266877892","treatment: Methyl methanesulfonate<br />position: 354;354<br />log2FC: -0.1596812322","treatment: Sodium Arsentie (NaAsO2)<br />position: 354;354<br />log2FC: -0.0245120322","treatment: UV-C<br />position: 354;354<br />log2FC: -0.0268015460","treatment: X-ray<br />position: 354;354<br />log2FC: -0.0640753623"],["treatment: Aphidicoline<br />position: 328;328<br />log2FC: -0.2654278039","treatment: Camptothecin<br />position: 328;328<br />log2FC: -0.0618550529","treatment: Etoposide<br />position: 328;328<br />log2FC: -0.2181468756","treatment: Formaldehyd<br />position: 328;328<br />log2FC: -0.2540171818","treatment: Gemcitabine<br />position: 328;328<br />log2FC: -0.4795935132","treatment: Hydrogen peroxide<br />position: 328;328<br />log2FC: -0.7187684728","treatment: Hydroxyurea<br />position: 328;328<br />log2FC: -0.2393702703","treatment: Methyl methanesulfonate<br />position: 328;328<br />log2FC: -0.1635159069","treatment: Sodium Arsentie (NaAsO2)<br />position: 328;328<br />log2FC: -0.2015387668","treatment: UV-C<br />position: 328;328<br />log2FC: -0.2782662800","treatment: X-ray<br />position: 328;328<br />log2FC: -0.1128033963"],["treatment: Aphidicoline<br />position: 325;325<br />log2FC: -0.0127028272","treatment: Camptothecin<br />position: 325;325<br />log2FC:  0.0683676211","treatment: Etoposide<br />position: 325;325<br />log2FC:  0.0437625758","treatment: Formaldehyd<br />position: 325;325<br />log2FC:  0.1237104114","treatment: Gemcitabine<br />position: 325;325<br />log2FC: -0.1248771594","treatment: Hydrogen peroxide<br />position: 325;325<br />log2FC: -0.2470869942","treatment: Hydroxyurea<br />position: 325;325<br />log2FC: -0.1725848256","treatment: Methyl methanesulfonate<br />position: 325;325<br />log2FC: -0.0930690835","treatment: Sodium Arsentie (NaAsO2)<br />position: 325;325<br />log2FC: -0.0028810118","treatment: UV-C<br />position: 325;325<br />log2FC:  0.1060585159","treatment: X-ray<br />position: 325;325<br />log2FC: -0.0748791027"],["treatment: Aphidicoline<br />position: 318;318<br />log2FC:  0.0308509749","treatment: Camptothecin<br />position: 318;318<br />log2FC:  0.0876039976","treatment: Etoposide<br />position: 318;318<br />log2FC:  0.0875839780","treatment: Formaldehyd<br />position: 318;318<br />log2FC:  0.1380641536","treatment: Gemcitabine<br />position: 318;318<br />log2FC: -0.0975715087","treatment: Hydrogen peroxide<br />position: 318;318<br />log2FC: -0.1551072903","treatment: Hydroxyurea<br />position: 318;318<br />log2FC: -0.1779114047","treatment: Methyl methanesulfonate<br />position: 318;318<br />log2FC: -0.0104721984","treatment: Sodium Arsentie (NaAsO2)<br />position: 318;318<br />log2FC: -0.0528453199","treatment: UV-C<br />position: 318;318<br />log2FC:  0.0777683594","treatment: X-ray<br />position: 318;318<br />log2FC: -0.0446216503"],["treatment: Aphidicoline<br />position: 317;317<br />log2FC:  0.1231299019","treatment: Camptothecin<br />position: 317;317<br />log2FC:  0.1427540791","treatment: Etoposide<br />position: 317;317<br />log2FC:  0.0554317385","treatment: Formaldehyd<br />position: 317;317<br />log2FC:  0.0488766952","treatment: Gemcitabine<br />position: 317;317<br />log2FC: -0.0899008908","treatment: Hydrogen peroxide<br />position: 317;317<br />log2FC: -0.0210558551","treatment: Hydroxyurea<br />position: 317;317<br />log2FC: -0.1735062333","treatment: Methyl methanesulfonate<br />position: 317;317<br />log2FC: -0.0746432491","treatment: Sodium Arsentie (NaAsO2)<br />position: 317;317<br />log2FC: -0.2175954599","treatment: UV-C<br />position: 317;317<br />log2FC: -0.1216039752","treatment: X-ray<br />position: 317;317<br />log2FC: -0.1582815564"],["treatment: Aphidicoline<br />position: 316;316<br />log2FC: -0.0477074175","treatment: Camptothecin<br />position: 316;316<br />log2FC: -0.1563724611","treatment: Etoposide<br />position: 316;316<br />log2FC: -0.0822651426","treatment: Formaldehyd<br />position: 316;316<br />log2FC: -0.1167099108","treatment: Gemcitabine<br />position: 316;316<br />log2FC: -0.1409302581","treatment: Hydrogen peroxide<br />position: 316;316<br />log2FC: -0.2344453361","treatment: Hydroxyurea<br />position: 316;316<br />log2FC: -0.1909341600","treatment: Methyl methanesulfonate<br />position: 316;316<br />log2FC: -0.1622822499","treatment: Sodium Arsentie (NaAsO2)<br />position: 316;316<br />log2FC: -0.3070009748","treatment: UV-C<br />position: 316;316<br />log2FC: -0.0932386303","treatment: X-ray<br />position: 316;316<br />log2FC: -0.2520747649"],["treatment: Aphidicoline<br />position: 265;265<br />log2FC:  0.0187252555","treatment: Camptothecin<br />position: 265;265<br />log2FC:  0.1395393987","treatment: Etoposide<br />position: 265;265<br />log2FC:  0.0887351715","treatment: Formaldehyd<br />position: 265;265<br />log2FC:  0.0734612457","treatment: Gemcitabine<br />position: 265;265<br />log2FC:  0.1021263113","treatment: Hydrogen peroxide<br />position: 265;265<br />log2FC: -0.0409061815","treatment: Hydroxyurea<br />position: 265;265<br />log2FC:  0.0855545713","treatment: Methyl methanesulfonate<br />position: 265;265<br />log2FC: -0.0878200505","treatment: Sodium Arsentie (NaAsO2)<br />position: 265;265<br />log2FC: -0.1243812694","treatment: UV-C<br />position: 265;265<br />log2FC:  0.0547354620","treatment: X-ray<br />position: 265;265<br />log2FC:  0.1221391826"],["treatment: Aphidicoline<br />position: 263;263<br />log2FC:  0.0187252555","treatment: Camptothecin<br />position: 263;263<br />log2FC: -0.0049258311","treatment: Etoposide<br />position: 263;263<br />log2FC:  0.1819483186","treatment: Formaldehyd<br />position: 263;263<br />log2FC:  0.0501689926","treatment: Gemcitabine<br />position: 263;263<br />log2FC:  0.0180519381","treatment: Hydrogen peroxide<br />position: 263;263<br />log2FC:  0.0792822102","treatment: Hydroxyurea<br />position: 263;263<br />log2FC: -0.0541463580","treatment: Methyl methanesulfonate<br />position: 263;263<br />log2FC: -0.0878200505","treatment: Sodium Arsentie (NaAsO2)<br />position: 263;263<br />log2FC: -0.1243812694","treatment: UV-C<br />position: 263;263<br />log2FC:  0.1536023116","treatment: X-ray<br />position: 263;263<br />log2FC:  0.0304133690"],["treatment: Aphidicoline<br />position: 242;106;242<br />log2FC: -0.1333329088","treatment: Camptothecin<br />position: 242;106;242<br />log2FC: -0.3113023279","treatment: Etoposide<br />position: 242;106;242<br />log2FC: -0.2046652172","treatment: Formaldehyd<br />position: 242;106;242<br />log2FC: -0.4272358201","treatment: Gemcitabine<br />position: 242;106;242<br />log2FC: -0.1065323721","treatment: Hydrogen peroxide<br />position: 242;106;242<br />log2FC: -0.3493809194","treatment: Hydroxyurea<br />position: 242;106;242<br />log2FC: -0.0788467873","treatment: Methyl methanesulfonate<br />position: 242;106;242<br />log2FC: -0.2341809892","treatment: Sodium Arsentie (NaAsO2)<br />position: 242;106;242<br />log2FC: -0.3896342234","treatment: UV-C<br />position: 242;106;242<br />log2FC: -0.0818877104","treatment: X-ray<br />position: 242;106;242<br />log2FC: -0.1156731097"],["treatment: Aphidicoline<br />position: 211;75;211<br />log2FC: -0.0815049023","treatment: Camptothecin<br />position: 211;75;211<br />log2FC: -0.3188699853","treatment: Etoposide<br />position: 211;75;211<br />log2FC: -0.0630551278","treatment: Formaldehyd<br />position: 211;75;211<br />log2FC: -0.0577525367","treatment: Gemcitabine<br />position: 211;75;211<br />log2FC: -0.0128446837","treatment: Hydrogen peroxide<br />position: 211;75;211<br />log2FC:  0.0574226869","treatment: Hydroxyurea<br />position: 211;75;211<br />log2FC:  0.0168256492","treatment: Methyl methanesulfonate<br />position: 211;75;211<br />log2FC: -0.0819039281","treatment: Sodium Arsentie (NaAsO2)<br />position: 211;75;211<br />log2FC: -0.2109827269","treatment: UV-C<br />position: 211;75;211<br />log2FC: -0.1694081055","treatment: X-ray<br />position: 211;75;211<br />log2FC: -0.0037551200"],["treatment: Aphidicoline<br />position: 209;73;209<br />log2FC:  0.1279762336","treatment: Camptothecin<br />position: 209;73;209<br />log2FC:  0.2825196897","treatment: Etoposide<br />position: 209;73;209<br />log2FC:  0.1256968027","treatment: Formaldehyd<br />position: 209;73;209<br />log2FC:  0.0155823952","treatment: Gemcitabine<br />position: 209;73;209<br />log2FC:  0.0239726849","treatment: Hydrogen peroxide<br />position: 209;73;209<br />log2FC:  0.0712023348","treatment: Hydroxyurea<br />position: 209;73;209<br />log2FC:  0.0530219166","treatment: Methyl methanesulfonate<br />position: 209;73;209<br />log2FC:  0.0447976483","treatment: Sodium Arsentie (NaAsO2)<br />position: 209;73;209<br />log2FC:  0.2304240742","treatment: UV-C<br />position: 209;73;209<br />log2FC:  0.1432268340","treatment: X-ray<br />position: 209;73;209<br />log2FC:  0.2259747832"],["treatment: Aphidicoline<br />position: 207;71;207<br />log2FC:  0.1440087086","treatment: Camptothecin<br />position: 207;71;207<br />log2FC:  0.1904236187","treatment: Etoposide<br />position: 207;71;207<br />log2FC:  0.1759837257","treatment: Formaldehyd<br />position: 207;71;207<br />log2FC:  0.0485254876","treatment: Gemcitabine<br />position: 207;71;207<br />log2FC:  0.0106929248","treatment: Hydrogen peroxide<br />position: 207;71;207<br />log2FC:  0.0783385363","treatment: Hydroxyurea<br />position: 207;71;207<br />log2FC:  0.0953047748","treatment: Methyl methanesulfonate<br />position: 207;71;207<br />log2FC:  0.0374743212","treatment: Sodium Arsentie (NaAsO2)<br />position: 207;71;207<br />log2FC:  0.0120739380","treatment: UV-C<br />position: 207;71;207<br />log2FC:  0.1740364799","treatment: X-ray<br />position: 207;71;207<br />log2FC:  0.2053160865"],["treatment: Aphidicoline<br />position: 198;62;198<br />log2FC: -0.0321062311","treatment: Camptothecin<br />position: 198;62;198<br />log2FC: -0.0207901873","treatment: Etoposide<br />position: 198;62;198<br />log2FC: -0.0167976617","treatment: Formaldehyd<br />position: 198;62;198<br />log2FC: -0.0657718627","treatment: Gemcitabine<br />position: 198;62;198<br />log2FC: -0.0317788656","treatment: Hydrogen peroxide<br />position: 198;62;198<br />log2FC: -0.0975442001","treatment: Hydroxyurea<br />position: 198;62;198<br />log2FC: -0.0916314451","treatment: Methyl methanesulfonate<br />position: 198;62;198<br />log2FC: -0.0909657251","treatment: Sodium Arsentie (NaAsO2)<br />position: 198;62;198<br />log2FC: -0.1204325180","treatment: UV-C<br />position: 198;62;198<br />log2FC: -0.0463681306","treatment: X-ray<br />position: 198;62;198<br />log2FC: -0.0698934407"],["treatment: Aphidicoline<br />position: 110;110<br />log2FC:  0.0907514002","treatment: Camptothecin<br />position: 110;110<br />log2FC: -0.0836604197","treatment: Etoposide<br />position: 110;110<br />log2FC: -0.0073206892","treatment: Formaldehyd<br />position: 110;110<br />log2FC: -0.1077491933","treatment: Gemcitabine<br />position: 110;110<br />log2FC:  0.0106553843","treatment: Hydrogen peroxide<br />position: 110;110<br />log2FC: -0.1526766598","treatment: Hydroxyurea<br />position: 110;110<br />log2FC:  0.0053272545","treatment: Methyl methanesulfonate<br />position: 110;110<br />log2FC: -0.0381293516","treatment: Sodium Arsentie (NaAsO2)<br />position: 110;110<br />log2FC: -0.2257076714","treatment: UV-C<br />position: 110;110<br />log2FC:  0.0037932932","treatment: X-ray<br />position: 110;110<br />log2FC:  0.1058116284"],["treatment: Aphidicoline<br />position: 77;77;77<br />log2FC:  0.0712057951","treatment: Camptothecin<br />position: 77;77;77<br />log2FC:  0.0500076021","treatment: Etoposide<br />position: 77;77;77<br />log2FC: -0.0373417815","treatment: Formaldehyd<br />position: 77;77;77<br />log2FC:  0.0142487433","treatment: Gemcitabine<br />position: 77;77;77<br />log2FC: -0.0217709959","treatment: Hydrogen peroxide<br />position: 77;77;77<br />log2FC: -0.0714753904","treatment: Hydroxyurea<br />position: 77;77;77<br />log2FC: -0.0520737613","treatment: Methyl methanesulfonate<br />position: 77;77;77<br />log2FC: -0.0771614511","treatment: Sodium Arsentie (NaAsO2)<br />position: 77;77;77<br />log2FC: -0.1276852763","treatment: UV-C<br />position: 77;77;77<br />log2FC: -0.0153699752","treatment: X-ray<br />position: 77;77;77<br />log2FC: -0.0424918073"],["treatment: Aphidicoline<br />position: 64;64;64<br />log2FC: -0.5914180861","treatment: Camptothecin<br />position: 64;64;64<br />log2FC: -0.4308669450","treatment: Etoposide<br />position: 64;64;64<br />log2FC: -1.1358521814","treatment: Formaldehyd<br />position: 64;64;64<br />log2FC: -0.5155730531","treatment: Gemcitabine<br />position: 64;64;64<br />log2FC: -0.5600215294","treatment: Hydrogen peroxide<br />position: 64;64;64<br />log2FC: -0.9229818174","treatment: Hydroxyurea<br />position: 64;64;64<br />log2FC: -0.8041916418","treatment: Methyl methanesulfonate<br />position: 64;64;64<br />log2FC: -0.7836681987","treatment: Sodium Arsentie (NaAsO2)<br />position: 64;64;64<br />log2FC: -1.0845168660","treatment: UV-C<br />position: 64;64;64<br />log2FC: -0.5485224068","treatment: X-ray<br />position: 64;64;64<br />log2FC: -0.6021333362"]],"colorscale":[[0,"#A2534C"],[0.0199281929330291,"#A75A54"],[0.0497011210596052,"#AE665F"],[0.0826355432839098,"#B6726B"],[0.122523700417621,"#BF817A"],[0.128749480934448,"#C0847D"],[0.136716610957804,"#C28780"],[0.161910461388535,"#C8908A"],[0.164673854420881,"#C8918B"],[0.171153648066116,"#CA948D"],[0.17211333557864,"#CA948E"],[0.207187820308246,"#D2A29C"],[0.211347443555993,"#D3A39D"],[0.223535478885747,"#D5A8A2"],[0.227999398737484,"#D6AAA4"],[0.232245350911787,"#D7ABA6"],[0.239248715671886,"#D8AEA9"],[0.240790224531237,"#D9AFA9"],[0.254757358202236,"#DCB4AF"],[0.255748140837901,"#DCB5B0"],[0.259058578445976,"#DDB6B1"],[0.270040375363265,"#DFBAB6"],[0.273672844405265,"#DFBCB7"],[0.274400370873242,"#E0BCB7"],[0.275082434597961,"#E0BCB8"],[0.284058596491155,"#E2C0BB"],[0.28738387400653,"#E2C1BD"],[0.289679245138953,"#E3C2BE"],[0.295898534224299,"#E4C4C0"],[0.30530543929772,"#E6C8C4"],[0.313746586848871,"#E7CCC8"],[0.317149679000145,"#E8CDC9"],[0.317238814685727,"#E8CDC9"],[0.320087417594465,"#E9CECB"],[0.320399612927773,"#E9CECB"],[0.321757188073656,"#E9CFCB"],[0.322710264605105,"#E9CFCC"],[0.325229077358905,"#EAD0CD"],[0.325849170317673,"#EAD0CD"],[0.328868656056379,"#EAD2CE"],[0.332103301646883,"#EBD3D0"],[0.332591386184565,"#EBD3D0"],[0.332707040333028,"#EBD3D0"],[0.332911897766051,"#EBD3D0"],[0.337895750034137,"#ECD5D2"],[0.33869884271785,"#ECD5D3"],[0.342325314290579,"#EDD7D4"],[0.342572273111171,"#EDD7D4"],[0.343079353868036,"#EDD7D4"],[0.343138813505753,"#EDD7D4"],[0.345015589292264,"#EDD8D5"],[0.345216108454971,"#EED8D5"],[0.347667617828988,"#EED9D6"],[0.34801119497243,"#EED9D6"],[0.349711969456231,"#EEDAD7"],[0.349923037490389,"#EEDAD7"],[0.35002565604777,"#EEDAD7"],[0.351842222469293,"#EFDBD8"],[0.35331496886556,"#EFDBD9"],[0.353778199939404,"#EFDCD9"],[0.354162388644536,"#EFDCD9"],[0.356250043819639,"#F0DDDA"],[0.356464101484941,"#F0DDDA"],[0.358311233927302,"#F0DDDB"],[0.35903114168356,"#F0DEDB"],[0.361483577224213,"#F1DFDC"],[0.362595186189359,"#F1DFDD"],[0.362697254546521,"#F1DFDD"],[0.363519614281287,"#F1DFDD"],[0.364477308341639,"#F1E0DE"],[0.366071714382334,"#F1E0DE"],[0.366667888979307,"#F2E1DF"],[0.36681392641149,"#F2E1DF"],[0.367542773095234,"#F2E1DF"],[0.367850488943358,"#F2E1DF"],[0.36840157840967,"#F2E1DF"],[0.371869315247172,"#F3E3E1"],[0.372730346412207,"#F3E3E1"],[0.373579387635711,"#F3E4E2"],[0.373937074943278,"#F3E4E2"],[0.375170266754548,"#F3E4E2"],[0.37548157896702,"#F3E4E2"],[0.377457597980424,"#F4E5E3"],[0.377936499381447,"#F4E5E3"],[0.378946205517235,"#F4E6E4"],[0.379489554859706,"#F4E6E4"],[0.380230659062129,"#F4E6E4"],[0.380721794043995,"#F4E6E5"],[0.381201007263286,"#F4E7E5"],[0.381665356455015,"#F4E7E5"],[0.383751531869208,"#F5E8E6"],[0.384032701412843,"#F5E8E6"],[0.385839254068128,"#F5E8E7"],[0.386225269195712,"#F5E9E7"],[0.38635624415916,"#F5E9E7"],[0.386816555974269,"#F5E9E7"],[0.388210129464551,"#F6E9E8"],[0.388917594935128,"#F6EAE8"],[0.389174534067535,"#F6EAE8"],[0.391257699813366,"#F6EBE9"],[0.391366925562409,"#F6EBE9"],[0.391531233342316,"#F6EBE9"],[0.392457026884949,"#F6EBEA"],[0.392649529702756,"#F6EBEA"],[0.392823944719275,"#F6EBEA"],[0.39372766572906,"#F7ECEA"],[0.394182421416057,"#F7ECEA"],[0.394790353781346,"#F7ECEB"],[0.39562752471052,"#F7ECEB"],[0.396030007347025,"#F7EDEB"],[0.396393719184894,"#F7EDEB"],[0.396827139688099,"#F7EDEC"],[0.39703787063364,"#F7EDEC"],[0.397144020202126,"#F7EDEC"],[0.397283984968152,"#F7EDEC"],[0.39801831097945,"#F7EDEC"],[0.398068980036086,"#F7EDEC"],[0.398227688343426,"#F7EEEC"],[0.398237137599662,"#F7EEEC"],[0.398532904067074,"#F7EEEC"],[0.399106044445762,"#F8EEED"],[0.399578410228462,"#F8EEED"],[0.400784439534564,"#F8EFED"],[0.401445945217981,"#F8EFEE"],[0.401927585350516,"#F8EFEE"],[0.402756335388582,"#F8EFEE"],[0.403056986585369,"#F8EFEE"],[0.403067587703011,"#F8F0EE"],[0.403419348342254,"#F8F0EE"],[0.403750684027558,"#F8F0EF"],[0.404731668694852,"#F9F0EF"],[0.404738995086472,"#F9F0EF"],[0.404804812556103,"#F9F0EF"],[0.40536289885457,"#F9F0EF"],[0.405621329070352,"#F9F1EF"],[0.405733936680924,"#F9F1F0"],[0.406034694079135,"#F9F1F0"],[0.406163781653812,"#F9F1F0"],[0.406581900129875,"#F9F1F0"],[0.406681078254021,"#F9F1F0"],[0.406842469134908,"#F9F1F0"],[0.407442539949201,"#F9F1F0"],[0.407457938924606,"#F9F1F0"],[0.408457223486908,"#F9F2F1"],[0.408492470783631,"#F9F2F1"],[0.40870529111186,"#F9F2F1"],[0.40899886529019,"#F9F2F1"],[0.409139087509907,"#F9F2F1"],[0.409145383172781,"#F9F2F1"],[0.409293987929767,"#F9F2F1"],[0.409688972570176,"#F9F2F1"],[0.410325859037085,"#FAF2F2"],[0.41038407718522,"#FAF2F2"],[0.410764234303643,"#FAF3F2"],[0.410780488676616,"#FAF3F2"],[0.410980100770176,"#FAF3F2"],[0.411723965379999,"#FAF3F2"],[0.411777691458622,"#FAF3F2"],[0.411866100565589,"#FAF3F2"],[0.411957658120718,"#FAF3F2"],[0.41232798506084,"#FAF3F2"],[0.413187409965317,"#FAF4F3"],[0.413801517399433,"#FAF4F3"],[0.415222917914629,"#FAF4F4"],[0.415275127952606,"#FAF4F4"],[0.41535436494649,"#FAF5F4"],[0.415401499813798,"#FAF5F4"],[0.415984091060798,"#FBF5F4"],[0.416060075447434,"#FBF5F4"],[0.416135171543182,"#FBF5F4"],[0.41619569638744,"#FBF5F4"],[0.416200467519443,"#FBF5F4"],[0.41645612695947,"#FBF5F4"],[0.416921991905406,"#FBF5F4"],[0.416926653514569,"#FBF5F4"],[0.417487992140728,"#FBF5F5"],[0.418145050246635,"#FBF6F5"],[0.418514574594181,"#FBF6F5"],[0.418920971374663,"#FBF6F5"],[0.419153553192415,"#FBF6F5"],[0.419914480755263,"#FBF6F6"],[0.420419539254868,"#FBF7F6"],[0.420719055658206,"#FBF7F6"],[0.421130664510811,"#FCF7F6"],[0.422414055327295,"#FCF7F7"],[0.42259477549371,"#FCF7F7"],[0.422859360864665,"#FCF8F7"],[0.422933961875865,"#FCF8F7"],[0.423611939529933,"#FCF8F7"],[0.424150216258295,"#FCF8F8"],[0.424219101873389,"#FCF8F8"],[0.424256773718947,"#FCF8F8"],[0.424320401271821,"#FCF8F8"],[0.424392774603935,"#FCF8F8"],[0.424438737273327,"#FCF8F8"],[0.424686722514006,"#FCF8F8"],[0.425054271725061,"#FCF8F8"],[0.425125621527747,"#FCF9F8"],[0.425132005439359,"#FCF9F8"],[0.426132227573801,"#FCF9F8"],[0.426311282282676,"#FCF9F9"],[0.426313735189895,"#FCF9F9"],[0.426437959567966,"#FCF9F9"],[0.426760581022966,"#FDF9F9"],[0.427113919082148,"#FDF9F9"],[0.4274636227078,"#FDF9F9"],[0.427686149793247,"#FDFAF9"],[0.428297080393881,"#FDFAF9"],[0.428470382229049,"#FDFAF9"],[0.428597464381176,"#FDFAFA"],[0.429451905459611,"#FDFAFA"],[0.430052373179254,"#FDFBFA"],[0.430344237528764,"#FDFBFA"],[0.430399871525603,"#FDFBFA"],[0.430420643707251,"#FDFBFA"],[0.43052964274107,"#FDFBFA"],[0.430573802722214,"#FDFBFA"],[0.431418424130102,"#FDFBFB"],[0.431541212091902,"#FDFBFB"],[0.431738805838129,"#FDFBFB"],[0.431757583136756,"#FDFBFB"],[0.432359839656947,"#FDFBFB"],[0.432482484983871,"#FEFCFB"],[0.432651234040874,"#FEFCFB"],[0.432760100190427,"#FEFCFB"],[0.432863231516272,"#FEFCFB"],[0.433679464699632,"#FEFCFC"],[0.433761982562571,"#FEFCFC"],[0.434361963635325,"#FEFCFC"],[0.434413116231584,"#FEFCFC"],[0.43486440835155,"#FEFDFC"],[0.434967339213083,"#FEFDFC"],[0.434984084916423,"#FEFDFC"],[0.435947648686746,"#FEFDFD"],[0.436002716879881,"#FEFDFD"],[0.436034588910524,"#FEFDFD"],[0.436051492783585,"#FEFDFD"],[0.436629515111199,"#FEFDFD"],[0.436868639315846,"#FEFDFD"],[0.437418725378823,"#FEFEFD"],[0.437586027408475,"#FEFEFE"],[0.438056588989996,"#FEFEFE"],[0.438083411073353,"#FFFEFE"],[0.438092044349619,"#FFFEFE"],[0.43854971719327,"#FFFEFE"],[0.439021720041952,"#FFFEFE"],[0.439476186048442,"#FFFEFE"],[0.439627263547892,"#FFFEFE"],[0.439815511853163,"#FFFFFF"],[0.440276145284126,"#FFFFFF"],[0.440449155343,"#FFFFFF"],[0.440768206454991,"#FFFFFF"],[0.441104329619722,"#FFFFFF"],[0.441511614444476,"#FFFFFF"],[0.441763391450784,"#FFFFFF"],[0.442082407867971,"#FFFFFF"],[0.442292567875549,"#FFFEFF"],[0.442406454114991,"#FFFEFF"],[0.442485670357127,"#FEFEFF"],[0.442533383858464,"#FEFEFF"],[0.443001932588861,"#FEFEFF"],[0.443283217970911,"#FEFEFF"],[0.443778329709733,"#FEFEFE"],[0.4441527464146,"#FEFEFE"],[0.444271905702633,"#FEFEFE"],[0.444565829908974,"#FEFEFE"],[0.444838527491841,"#FEFDFE"],[0.44507029426732,"#FEFDFE"],[0.445084867376893,"#FEFDFE"],[0.445255599231356,"#FEFDFE"],[0.445620971930484,"#FDFDFE"],[0.446032773142324,"#FDFDFE"],[0.446219828020652,"#FDFDFE"],[0.446465223892589,"#FDFDFE"],[0.446866797698408,"#FDFDFE"],[0.446893306495837,"#FDFDFE"],[0.446982942942765,"#FDFDFE"],[0.447327233301882,"#FDFDFE"],[0.447465569896604,"#FDFCFE"],[0.447690447478063,"#FDFCFE"],[0.447778020487158,"#FDFCFE"],[0.447941611030762,"#FDFCFE"],[0.448202990525315,"#FDFCFE"],[0.44925684786587,"#FCFCFD"],[0.449290083183377,"#FCFCFD"],[0.450143357879817,"#FCFBFD"],[0.45024002456183,"#FCFBFD"],[0.450525794874809,"#FCFBFD"],[0.450568878759883,"#FCFBFD"],[0.45136928710925,"#FBFBFD"],[0.452571408248999,"#FBFAFD"],[0.45274027600221,"#FBFAFD"],[0.452865989325343,"#FBFAFD"],[0.45291015310296,"#FBFAFD"],[0.453179131636622,"#FBFAFD"],[0.453290934273451,"#FBFAFD"],[0.453411353266458,"#FBFAFD"],[0.453955608910314,"#FBFAFD"],[0.454887111536616,"#FAFAFC"],[0.455268499390088,"#FAF9FC"],[0.455298841499797,"#FAF9FC"],[0.455333614152113,"#FAF9FC"],[0.455481313356501,"#FAF9FC"],[0.455625578781674,"#FAF9FC"],[0.456004183206578,"#FAF9FC"],[0.456204424539028,"#FAF9FC"],[0.456766180523154,"#FAF9FC"],[0.457093426637487,"#FAF9FC"],[0.457226119805465,"#F9F9FC"],[0.457338374136548,"#F9F9FC"],[0.457922392151243,"#F9F8FC"],[0.458324203723936,"#F9F8FC"],[0.458818952164572,"#F9F8FC"],[0.458921588386743,"#F9F8FC"],[0.459158997443342,"#F9F8FC"],[0.459208642412026,"#F9F8FC"],[0.459239944447043,"#F9F8FC"],[0.459601413892636,"#F9F8FC"],[0.45977133815252,"#F9F8FC"],[0.459831149728816,"#F9F8FC"],[0.459907675716441,"#F9F8FC"],[0.459999914065313,"#F9F8FC"],[0.460346689893614,"#F8F7FB"],[0.460409341123889,"#F8F7FB"],[0.460713503356388,"#F8F7FB"],[0.460726926610743,"#F8F7FB"],[0.460742991866188,"#F8F7FB"],[0.461148051805084,"#F8F7FB"],[0.461516836404237,"#F8F7FB"],[0.461683790710794,"#F8F7FB"],[0.461751262401498,"#F8F7FB"],[0.462182028853752,"#F8F7FB"],[0.462452321001321,"#F8F7FB"],[0.463225200290888,"#F7F6FB"],[0.463452797459492,"#F7F6FB"],[0.464202448465998,"#F7F6FB"],[0.464410222972354,"#F7F6FB"],[0.464506738313606,"#F7F6FB"],[0.464540352074962,"#F7F6FB"],[0.464783113183169,"#F7F6FB"],[0.465589736603029,"#F7F5FA"],[0.466297671238101,"#F6F5FA"],[0.467014898761495,"#F6F5FA"],[0.467367677807883,"#F6F5FA"],[0.467473986114721,"#F6F5FA"],[0.467770635320878,"#F6F5FA"],[0.468000732911866,"#F6F5FA"],[0.468574412238914,"#F6F4FA"],[0.468575755522943,"#F6F4FA"],[0.468804055707349,"#F6F4FA"],[0.469053630446551,"#F5F4FA"],[0.469169252371449,"#F5F4FA"],[0.469451313696585,"#F5F4FA"],[0.469622482724584,"#F5F4FA"],[0.470453402848804,"#F5F4FA"],[0.47063189191243,"#F5F3FA"],[0.470845250046341,"#F5F3FA"],[0.471064906560549,"#F5F3F9"],[0.471123320417585,"#F5F3F9"],[0.471184098914005,"#F5F3F9"],[0.471190117930378,"#F5F3F9"],[0.471344661127741,"#F5F3F9"],[0.471710992077349,"#F5F3F9"],[0.471721701037385,"#F5F3F9"],[0.473465541476254,"#F4F2F9"],[0.474061693109446,"#F4F2F9"],[0.474145901093275,"#F4F2F9"],[0.474386345296783,"#F4F2F9"],[0.474687195807669,"#F4F2F9"],[0.474933709774353,"#F3F2F9"],[0.474941481325396,"#F3F2F9"],[0.475380599142206,"#F3F2F9"],[0.4758170384232,"#F3F1F9"],[0.476163292200932,"#F3F1F9"],[0.477870445996265,"#F3F1F8"],[0.477930896548045,"#F2F1F8"],[0.477984249076093,"#F2F1F8"],[0.478562535579491,"#F2F0F8"],[0.478937377608593,"#F2F0F8"],[0.479606794744631,"#F2F0F8"],[0.479751496263024,"#F2F0F8"],[0.480115939083488,"#F2F0F8"],[0.48046032378544,"#F2F0F8"],[0.480578993559165,"#F2F0F8"],[0.480909801617998,"#F1F0F8"],[0.481193393126212,"#F1EFF8"],[0.481634179831175,"#F1EFF8"],[0.482009620980737,"#F1EFF7"],[0.482105461861644,"#F1EFF7"],[0.482233985791165,"#F1EFF7"],[0.482449905798145,"#F1EFF7"],[0.482735035463934,"#F1EFF7"],[0.483227774412413,"#F1EFF7"],[0.483437766768056,"#F1EFF7"],[0.483985239901078,"#F0EEF7"],[0.484621572508431,"#F0EEF7"],[0.48482246629982,"#F0EEF7"],[0.485095808550791,"#F0EEF7"],[0.485551780532713,"#F0EEF7"],[0.486439015159085,"#F0EDF7"],[0.487830879890163,"#EFEDF6"],[0.488347921372247,"#EFEDF6"],[0.488732515227894,"#EFEDF6"],[0.488957867010071,"#EFECF6"],[0.489144792076322,"#EFECF6"],[0.489703776831267,"#EFECF6"],[0.489728977291342,"#EFECF6"],[0.490373060431548,"#EEECF6"],[0.490613844522736,"#EEECF6"],[0.490918881366467,"#EEECF6"],[0.49161598104374,"#EEEBF6"],[0.492401150658339,"#EEEBF6"],[0.492439007833748,"#EEEBF6"],[0.492544010382251,"#EEEBF6"],[0.492699019782397,"#EDEBF6"],[0.492965854573886,"#EDEBF5"],[0.49452994035847,"#EDEAF5"],[0.495102625448716,"#EDEAF5"],[0.496350553329961,"#ECEAF5"],[0.496368626439117,"#ECEAF5"],[0.496534075132667,"#ECEAF5"],[0.496837596177051,"#ECE9F5"],[0.496860713193585,"#ECE9F5"],[0.497444722474548,"#ECE9F5"],[0.498015495163117,"#ECE9F5"],[0.498080071990707,"#ECE9F5"],[0.500561799859567,"#EBE8F4"],[0.501065262213751,"#EBE8F4"],[0.50175967463899,"#EAE8F4"],[0.502707656557807,"#EAE7F4"],[0.503322342687574,"#EAE7F4"],[0.503379695470313,"#EAE7F4"],[0.503391047159408,"#EAE7F4"],[0.503545511114032,"#EAE7F4"],[0.504377662075921,"#EAE7F3"],[0.505100154920919,"#E9E6F3"],[0.505881508205695,"#E9E6F3"],[0.50790669080112,"#E8E5F3"],[0.508494273716283,"#E8E5F3"],[0.509250187863775,"#E8E5F2"],[0.509508472372958,"#E8E5F2"],[0.510085010802306,"#E8E4F2"],[0.510284848668804,"#E8E4F2"],[0.510913592841807,"#E7E4F2"],[0.511565622312093,"#E7E4F2"],[0.512070482489398,"#E7E4F2"],[0.512255252424349,"#E7E4F2"],[0.512662165178424,"#E7E3F2"],[0.51290138679543,"#E7E3F2"],[0.513263202224618,"#E7E3F2"],[0.513454408832055,"#E6E3F2"],[0.513791122044644,"#E6E3F2"],[0.514115218705633,"#E6E3F2"],[0.514772044596627,"#E6E3F1"],[0.514855704671602,"#E6E3F1"],[0.514860797620627,"#E6E3F1"],[0.515077896493921,"#E6E2F1"],[0.515176461637761,"#E6E2F1"],[0.515244708322731,"#E6E2F1"],[0.515428865114025,"#E6E2F1"],[0.517514694696535,"#E5E2F1"],[0.518512209229724,"#E5E1F1"],[0.520636909458983,"#E4E0F0"],[0.520641940564487,"#E4E0F0"],[0.520725868291162,"#E4E0F0"],[0.523767630836481,"#E3DFF0"],[0.524169051469335,"#E3DFF0"],[0.524258182951853,"#E3DFF0"],[0.524802140814691,"#E3DFF0"],[0.526295301090773,"#E2DEEF"],[0.526496991048865,"#E2DEEF"],[0.526755505692963,"#E2DEEF"],[0.52790664781227,"#E2DEEF"],[0.528363130158342,"#E1DDEF"],[0.528656544457437,"#E1DDEF"],[0.528804964938369,"#E1DDEF"],[0.529218198984673,"#E1DDEF"],[0.529544992390859,"#E1DDEF"],[0.530383743926367,"#E1DDEF"],[0.53056182858076,"#E1DDEF"],[0.530935698786803,"#E1DCEF"],[0.531746385871641,"#E0DCEE"],[0.532491461316106,"#E0DCEE"],[0.53375460287523,"#E0DBEE"],[0.535364387479612,"#DFDBEE"],[0.535648430590391,"#DFDBEE"],[0.538773677644265,"#DED9ED"],[0.539833846173641,"#DED9ED"],[0.540697726506292,"#DDD9ED"],[0.542872887126636,"#DDD8EC"],[0.543842259162421,"#DCD8EC"],[0.544723764821454,"#DCD7EC"],[0.54720241690308,"#DBD6EC"],[0.550420510578519,"#DAD5EB"],[0.550607082699041,"#DAD5EB"],[0.552956203016009,"#D9D4EA"],[0.5548383084074,"#D9D3EA"],[0.558451355062825,"#D7D2E9"],[0.560146063330834,"#D7D1E9"],[0.561004856412725,"#D6D1E9"],[0.561867549145216,"#D6D1E9"],[0.562095553177625,"#D6D1E9"],[0.56653853576561,"#D5CFE8"],[0.567008998242234,"#D4CFE8"],[0.567509650809926,"#D4CFE8"],[0.568066655625143,"#D4CEE8"],[0.570770492414154,"#D3CDE7"],[0.571509242026794,"#D3CDE7"],[0.572359779628969,"#D3CDE7"],[0.573222711821874,"#D2CDE7"],[0.574664845457087,"#D2CCE7"],[0.576610332990421,"#D1CBE6"],[0.577408805992134,"#D1CBE6"],[0.581078727678801,"#D0CAE5"],[0.586390959304666,"#CEC8E4"],[0.586890039041714,"#CEC7E4"],[0.588188129233775,"#CDC7E4"],[0.591356608879818,"#CCC6E3"],[0.593482420153436,"#CCC5E3"],[0.598521087843587,"#CAC3E2"],[0.600073452073898,"#C9C3E2"],[0.601892191878211,"#C9C2E2"],[0.602873859121922,"#C8C1E1"],[0.608464136138754,"#C7BFE0"],[0.610059712863911,"#C6BFE0"],[0.611716780847327,"#C5BEE0"],[0.617345574504636,"#C4BCDF"],[0.618310657440697,"#C3BCDE"],[0.622886199385304,"#C2BADE"],[0.624076350973308,"#C1BADD"],[0.625015238856863,"#C1B9DD"],[0.628625752174996,"#C0B8DD"],[0.630902002799276,"#BFB7DC"],[0.631595165075734,"#BFB7DC"],[0.63308687819483,"#BEB6DC"],[0.634991789759338,"#BEB6DB"],[0.641216760441589,"#BCB3DA"],[0.651367814031634,"#B8B0D8"],[0.652010973609895,"#B8AFD8"],[0.653642467031371,"#B7AFD8"],[0.65860147081408,"#B6ADD7"],[0.660260517180065,"#B5ACD7"],[0.66222902331019,"#B4ACD6"],[0.668137518948437,"#B2AAD5"],[0.688597450402816,"#ACA2D2"],[0.694629367465707,"#AAA0D0"],[0.700872750784368,"#A79ECF"],[0.728046688951004,"#9E94CA"],[0.761783830457231,"#9388C4"],[0.804881509444304,"#8479BC"],[0.88112778253612,"#6960AE"],[0.885197281481981,"#685EAD"],[0.903351253639953,"#6159AA"],[1,"#3A3A98"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1],"name":"99_0a8d7d4893d2170ba36f85ae4fa81386","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#A2534C"],[0.00334448160535114,"#A3544E"],[0.00668896321070237,"#A3554F"],[0.0100334448160535,"#A45750"],[0.0133779264214047,"#A55851"],[0.0167224080267559,"#A65952"],[0.020066889632107,"#A75A54"],[0.0234113712374582,"#A85C55"],[0.0267558528428094,"#A85D56"],[0.0301003344481605,"#A95E57"],[0.0334448160535117,"#AA6059"],[0.0367892976588629,"#AB615A"],[0.040133779264214,"#AC625B"],[0.0434782608695652,"#AC635C"],[0.0468227424749164,"#AD655D"],[0.0501672240802676,"#AE665F"],[0.0535117056856187,"#AF6760"],[0.0568561872909699,"#B06861"],[0.0602006688963211,"#B16A62"],[0.0635451505016723,"#B16B64"],[0.0668896321070234,"#B26C65"],[0.0702341137123746,"#B36D66"],[0.0735785953177258,"#B46F67"],[0.0769230769230769,"#B47069"],[0.0802675585284281,"#B5716A"],[0.0836120401337793,"#B6726B"],[0.0869565217391305,"#B7746D"],[0.0903010033444816,"#B8756E"],[0.0936454849498328,"#B8766F"],[0.096989966555184,"#B97770"],[0.100334448160535,"#BA7972"],[0.103678929765886,"#BB7A73"],[0.107023411371237,"#BB7B74"],[0.110367892976589,"#BC7D75"],[0.11371237458194,"#BD7E77"],[0.117056856187291,"#BE7F78"],[0.120401337792642,"#BF8079"],[0.123745819397993,"#BF827B"],[0.127090301003345,"#C0837C"],[0.130434782608696,"#C1847D"],[0.133779264214047,"#C2857F"],[0.137123745819398,"#C28780"],[0.140468227424749,"#C38881"],[0.1438127090301,"#C48982"],[0.147157190635452,"#C58B84"],[0.150501672240803,"#C58C85"],[0.153846153846154,"#C68D86"],[0.157190635451505,"#C78E88"],[0.160535117056856,"#C89089"],[0.163879598662207,"#C8918A"],[0.167224080267559,"#C9928C"],[0.17056856187291,"#CA948D"],[0.173913043478261,"#CB958E"],[0.177257525083612,"#CB9690"],[0.180602006688963,"#CC9791"],[0.183946488294314,"#CD9992"],[0.187290969899666,"#CD9A94"],[0.190635451505017,"#CE9B95"],[0.193979933110368,"#CF9D96"],[0.197324414715719,"#D09E98"],[0.20066889632107,"#D09F99"],[0.204013377926421,"#D1A09A"],[0.207357859531773,"#D2A29C"],[0.210702341137124,"#D2A39D"],[0.214046822742475,"#D3A49F"],[0.217391304347826,"#D4A6A0"],[0.220735785953177,"#D5A7A1"],[0.224080267558528,"#D5A8A3"],[0.22742474916388,"#D6AAA4"],[0.230769230769231,"#D7ABA5"],[0.234113712374582,"#D7ACA7"],[0.237458193979933,"#D8ADA8"],[0.240802675585284,"#D9AFA9"],[0.244147157190635,"#D9B0AB"],[0.247491638795987,"#DAB1AC"],[0.250836120401338,"#DBB3AE"],[0.254180602006689,"#DCB4AF"],[0.25752508361204,"#DCB5B0"],[0.260869565217391,"#DDB7B2"],[0.264214046822742,"#DEB8B3"],[0.267558528428094,"#DEB9B5"],[0.270903010033445,"#DFBBB6"],[0.274247491638796,"#E0BCB7"],[0.277591973244147,"#E0BDB9"],[0.280936454849498,"#E1BFBA"],[0.284280936454849,"#E2C0BB"],[0.287625418060201,"#E2C1BD"],[0.290969899665552,"#E3C2BE"],[0.294314381270903,"#E4C4C0"],[0.297658862876254,"#E4C5C1"],[0.301003344481605,"#E5C6C3"],[0.304347826086956,"#E6C8C4"],[0.307692307692308,"#E6C9C5"],[0.311036789297659,"#E7CAC7"],[0.31438127090301,"#E8CCC8"],[0.317725752508361,"#E8CDCA"],[0.321070234113712,"#E9CECB"],[0.324414715719063,"#EAD0CC"],[0.327759197324415,"#EAD1CE"],[0.331103678929766,"#EBD2CF"],[0.334448160535117,"#EBD4D1"],[0.337792642140468,"#ECD5D2"],[0.341137123745819,"#EDD6D4"],[0.344481605351171,"#EDD8D5"],[0.347826086956522,"#EED9D6"],[0.351170568561873,"#EFDAD8"],[0.354515050167224,"#EFDCD9"],[0.357859531772575,"#F0DDDB"],[0.361204013377926,"#F1DFDC"],[0.364548494983278,"#F1E0DE"],[0.367892976588629,"#F2E1DF"],[0.37123745819398,"#F2E3E0"],[0.374581939799331,"#F3E4E2"],[0.377926421404682,"#F4E5E3"],[0.381270903010033,"#F4E7E5"],[0.384615384615385,"#F5E8E6"],[0.387959866220736,"#F6E9E8"],[0.391304347826087,"#F6EBE9"],[0.394648829431438,"#F7ECEB"],[0.397993311036789,"#F7EDEC"],[0.40133779264214,"#F8EFEE"],[0.404682274247492,"#F9F0EF"],[0.408026755852843,"#F9F2F1"],[0.411371237458194,"#FAF3F2"],[0.414715719063545,"#FAF4F3"],[0.418060200668896,"#FBF6F5"],[0.421404682274247,"#FCF7F6"],[0.424749163879599,"#FCF8F8"],[0.42809364548495,"#FDFAF9"],[0.431438127090301,"#FDFBFB"],[0.434782608695652,"#FEFCFC"],[0.438127090301003,"#FFFEFE"],[0.441471571906354,"#FFFFFF"],[0.444816053511706,"#FEFDFE"],[0.448160535117057,"#FDFCFE"],[0.451505016722408,"#FBFBFD"],[0.454849498327759,"#FAFAFC"],[0.45819397993311,"#F9F8FC"],[0.461538461538462,"#F8F7FB"],[0.464882943143813,"#F7F6FB"],[0.468227424749164,"#F6F4FA"],[0.471571906354515,"#F5F3F9"],[0.474916387959866,"#F4F2F9"],[0.478260869565217,"#F2F1F8"],[0.481605351170569,"#F1EFF8"],[0.48494983277592,"#F0EEF7"],[0.488294314381271,"#EFEDF6"],[0.491638795986622,"#EEEBF6"],[0.494983277591973,"#EDEAF5"],[0.498327759197324,"#ECE9F4"],[0.501672240802675,"#EAE8F4"],[0.505016722408027,"#E9E6F3"],[0.508361204013378,"#E8E5F3"],[0.511705685618729,"#E7E4F2"],[0.51505016722408,"#E6E2F1"],[0.518394648829431,"#E5E1F1"],[0.521739130434783,"#E4E0F0"],[0.525083612040134,"#E3DFF0"],[0.528428093645485,"#E1DDEF"],[0.531772575250836,"#E0DCEE"],[0.535117056856187,"#DFDBEE"],[0.538461538461538,"#DEDAED"],[0.54180602006689,"#DDD8ED"],[0.545150501672241,"#DCD7EC"],[0.548494983277592,"#DBD6EB"],[0.551839464882943,"#DAD5EB"],[0.555183946488294,"#D8D3EA"],[0.558528428093645,"#D7D2E9"],[0.561872909698997,"#D6D1E9"],[0.565217391304348,"#D5D0E8"],[0.568561872909699,"#D4CEE8"],[0.57190635451505,"#D3CDE7"],[0.575250836120401,"#D2CCE6"],[0.578595317725752,"#D1CAE6"],[0.581939799331104,"#CFC9E5"],[0.585284280936455,"#CEC8E5"],[0.588628762541806,"#CDC7E4"],[0.591973244147157,"#CCC6E3"],[0.595317725752508,"#CBC4E3"],[0.598662207357859,"#CAC3E2"],[0.602006688963211,"#C9C2E1"],[0.605351170568562,"#C8C1E1"],[0.608695652173913,"#C6BFE0"],[0.612040133779264,"#C5BEE0"],[0.615384615384615,"#C4BDDF"],[0.618729096989966,"#C3BCDE"],[0.622073578595318,"#C2BADE"],[0.625418060200669,"#C1B9DD"],[0.62876254180602,"#C0B8DD"],[0.632107023411371,"#BFB7DC"],[0.635451505016722,"#BDB5DB"],[0.638795986622073,"#BCB4DB"],[0.642140468227425,"#BBB3DA"],[0.645484949832776,"#BAB2D9"],[0.648829431438127,"#B9B1D9"],[0.652173913043478,"#B8AFD8"],[0.655518394648829,"#B7AED8"],[0.658862876254181,"#B6ADD7"],[0.662207357859532,"#B4ACD6"],[0.665551839464883,"#B3ABD6"],[0.668896321070234,"#B2A9D5"],[0.672240802675585,"#B1A8D5"],[0.675585284280936,"#B0A7D4"],[0.678929765886288,"#AFA6D3"],[0.682274247491639,"#AEA4D3"],[0.68561872909699,"#ADA3D2"],[0.688963210702341,"#ABA2D2"],[0.692307692307692,"#AAA1D1"],[0.695652173913043,"#A9A0D0"],[0.698996655518395,"#A89ED0"],[0.702341137123746,"#A79DCF"],[0.705685618729097,"#A69CCE"],[0.709030100334448,"#A59BCE"],[0.712374581939799,"#A49ACD"],[0.71571906354515,"#A299CD"],[0.719063545150502,"#A197CC"],[0.722408026755853,"#A096CB"],[0.725752508361204,"#9F95CB"],[0.729096989966555,"#9E94CA"],[0.732441471571906,"#9D93C9"],[0.735785953177257,"#9C91C9"],[0.739130434782609,"#9A90C8"],[0.74247491638796,"#998FC8"],[0.745819397993311,"#988EC7"],[0.749163879598662,"#978DC6"],[0.752508361204013,"#968CC6"],[0.755852842809364,"#958AC5"],[0.759197324414716,"#9489C5"],[0.762541806020067,"#9388C4"],[0.765886287625418,"#9187C3"],[0.769230769230769,"#9086C3"],[0.77257525083612,"#8F85C2"],[0.775919732441471,"#8E83C1"],[0.779264214046823,"#8D82C1"],[0.782608695652174,"#8C81C0"],[0.785953177257525,"#8B80C0"],[0.789297658862876,"#897FBF"],[0.792642140468227,"#887EBE"],[0.795986622073579,"#877CBE"],[0.79933110367893,"#867BBD"],[0.802675585284281,"#857ABD"],[0.806020066889632,"#8479BC"],[0.809364548494983,"#8278BB"],[0.812709030100334,"#8177BB"],[0.816053511705686,"#8076BA"],[0.819397993311037,"#7F74B9"],[0.822742474916388,"#7E73B9"],[0.826086956521739,"#7D72B8"],[0.82943143812709,"#7B71B8"],[0.832775919732441,"#7A70B7"],[0.836120401337793,"#796FB6"],[0.839464882943144,"#786EB6"],[0.842809364548495,"#776DB5"],[0.846153846153846,"#766BB5"],[0.849498327759197,"#746AB4"],[0.852842809364548,"#7369B3"],[0.8561872909699,"#7268B3"],[0.859531772575251,"#7167B2"],[0.862876254180602,"#7066B1"],[0.866220735785953,"#6E65B1"],[0.869565217391304,"#6D64B0"],[0.872909698996655,"#6C63B0"],[0.876254180602007,"#6B61AF"],[0.879598662207358,"#6A60AE"],[0.882943143812709,"#685FAE"],[0.88628762541806,"#675EAD"],[0.889632107023411,"#665DAC"],[0.892976588628762,"#655CAC"],[0.896321070234114,"#645BAB"],[0.899665551839465,"#625AAB"],[0.903010033444816,"#6159AA"],[0.906354515050167,"#6058A9"],[0.909698996655518,"#5F56A9"],[0.91304347826087,"#5D55A8"],[0.916387959866221,"#5C54A8"],[0.919732441471572,"#5B53A7"],[0.923076923076923,"#5A52A6"],[0.926421404682274,"#5851A6"],[0.929765886287625,"#5750A5"],[0.933110367892977,"#564FA4"],[0.936454849498328,"#554EA4"],[0.939799331103679,"#534DA3"],[0.94314381270903,"#524CA3"],[0.946488294314381,"#514BA2"],[0.949832775919732,"#4F4AA1"],[0.953177257525084,"#4E49A1"],[0.956521739130435,"#4D48A0"],[0.959866220735786,"#4B469F"],[0.963210702341137,"#4A459F"],[0.966555183946488,"#49449E"],[0.969899665551839,"#47439E"],[0.973244147157191,"#46429D"],[0.976588628762542,"#44419C"],[0.979933110367893,"#43409C"],[0.983277591973244,"#413F9B"],[0.986622073578595,"#403E9A"],[0.989966555183946,"#3F3D9A"],[0.993311036789298,"#3D3C99"],[0.996655518394649,"#3C3B99"],[1,"#3A3A98"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.04,"title":"log2 FC","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"tickmode":"array","ticktext":["-1.0","-0.5","0.0","0.5","1.0"],"tickvals":[0.0527373496497581,0.246835630188671,0.440933910727585,0.635032191266498,0.829130471805411],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":27.8721461187215,"r":7.30593607305936,"b":155.799086757991,"l":75.2511415525114},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,11.6],"tickmode":"array","ticktext":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11],"categoryorder":"array","categoryarray":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,54.6],"tickmode":"array","ticktext":["1438","1409;1409","1366;1366","1364;1364","1292;1292","1240;1240","1210;1210","1208;1208","1191;1191","1033;1033","1017;1017","1014;1014","1010;1010","993;993","986;986","985;985","879;879","877;877","875;875","853;853","851;851","848;848","845;845","837;837","833;833","831;831","643;643","642;642","621;621","473;473","381;381","380;380","376;376","374;374","372;372","370;370","362;362","356;356","354;354","328;328","325;325","318;318","317;317","316;316","265;265","263;263","242;106;242","211;75;211","209;73;209","207;71;207","198;62;198","110;110","77;77;77","64;64;64"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],"categoryorder":"array","categoryarray":["1438","1409;1409","1366;1366","1364;1364","1292;1292","1240;1240","1210;1210","1208;1208","1191;1191","1033;1033","1017;1017","1014;1014","1010;1010","993;993","986;986","985;985","879;879","877;877","875;875","853;853","851;851","848;848","845;845","837;837","833;833","831;831","643;643","642;642","621;621","473;473","381;381","380;380","376;376","374;374","372;372","370;370","362;362","356;356","354;354","328;328","325;325","318;318","317;317","316;316","265;265","263;263","242;106;242","211;75;211","209;73;209","207;71;207","198;62;198","110;110","77;77;77","64;64;64"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"4a0954a0917da":{"x":{},"y":{},"fill":{},"type":"heatmap"}},"cur_data":"4a0954a0917da","visdat":{"4a0954a0917da":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<p>DDRBase - 2021</p>
+</div>
+<!--/radix_placeholder_navigation_after_body-->
+
+
+</body>
+
+</html>

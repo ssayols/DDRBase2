@@ -25,43 +25,55 @@ file.copy(c("_site.yml", "_footer.html", "about.Rmd", "datasets.Rmd", "downloads
 rmarkdown::render_site("staging")#, quiet=TRUE)
 
 ## 3-for each protein listed in data/uniprot.tab
-proteins <- head(read.delim("data/uniprot.tab"))
+proteins <- head(read.delim("data/uniprot.tab"), n=1000)
 phospho  <- read.delim(gzfile("data/Phospho_database.processed.txt.gz"))
 template <- paste(readLines("templates/protein.Rmd"), collapse="\n")
 
+i <- proteins$Gene.names...primary.. == ""
+proteins[i, "Gene.names...primary.."] <- proteins$Entry.name[i]
+
 ## 3-fills in the template/protein.Rmd as <<uniprot_id>>.Rmd and renders it to html
 system.time({
-#  lapply(split(proteins, cut(seq_len(nrow(proteins)), CORES)), function(proteins) {
-#    # copy build environment to a temp location
-#    dir.create(cwd <- tempfile())
-#    file.copy("staging", cwd, recursive=TRUE)
+  mclapply(split(proteins, cut(seq_len(nrow(proteins)), CORES)), function(proteins) {
+    # hack for parallel pandoc processing
+    clean_tmpfiles_mod <- function() { invisible(0) }
+    assignInNamespace("clean_tmpfiles", clean_tmpfiles_mod, ns = "rmarkdown")
     
-    cwd="."
+    # copy build environment to a temp location
+    dir.create(cwd <- tempfile("buildenv"))
+    file.copy("staging", cwd, recursive=TRUE)
+    
     # process protein RMD one by one
-    lapply(seq_len(nrow(proteins)), function(i) {
-      # the metadata section
-      x <- gsub("<<GENE.ID>>", proteins$Gene.names...primary..[i],
-           gsub("<<PROTEIN.ID>>", proteins$Entry[i],
-           gsub("<<GENE.NAME>>", proteins$Gene.names[i],
-           gsub("<<PROTEIN.NAME>>", proteins$Protein.names[i],
-           gsub("<<FUNCTION>>", proteins$Function..CC.[i],
-           gsub("<<KEYWORDS>>", proteins$Keywords[i],
-           gsub("<<DATA>>", tmp <- tempfile(proteins$Entry[i]), template)))))))
-      
-      # pass data to template
-      saveRDS(phospho[grepl(proteins$Entry[i], phospho$Uniprot.IDs), ], tmp)
-      
-      # save RMD file and compile
-      rmd  <- file.path(cwd, "staging", paste0(proteins$Entry[i], ".Rmd"))
-      html <- paste0(proteins$Entry[i], ".html")
-      writeLines(x, rmd)
-      rmarkdown::render_site(rmd, quiet=TRUE)
-      file.remove(rmd, tmp)
-    })
+    invisible(
+      lapply(seq_len(nrow(proteins)), function(i) {
+          # the metadata section
+          x <- gsub("<<GENE.ID>>", proteins$Gene.names...primary..[i],
+               gsub("<<PROTEIN.ID>>", proteins$Entry[i],
+               gsub("<<GENE.NAME>>", proteins$Gene.names[i],
+               gsub("<<PROTEIN.NAME>>", proteins$Protein.names[i],
+               gsub("<<FUNCTION>>", proteins$Function..CC.[i],
+               gsub("<<KEYWORDS>>", proteins$Keywords[i],
+               gsub("<<DATA>>", tmp <- tempfile(proteins$Entry[i]), template)))))))
+          
+          # pass data to template
+          saveRDS(phospho[grepl(proteins$Entry[i], phospho$Uniprot.IDs), ], tmp)
+          
+          # save RMD file and compile
+          rmd  <- file.path(cwd, "staging", paste0(proteins$Entry[i], ".Rmd"))
+          html <- paste0(proteins$Entry[i], ".html")
+          writeLines(x, rmd)
+          try(suppressWarnings(rmarkdown::render_site(rmd, envir=new.env(), quiet=TRUE)))
+          file.remove(rmd, tmp)
+      })
+    )
     
     # merge staging folders from each core
-    #file.copy(file.path(cwd, "staging/_site"), "staging/_site")
-#  }, mc.cores=CORES)
+    invisible({
+      lapply(list.files(file.path(cwd, "staging/_site"), pattern="\\.html$", full=TRUE), file.copy, to="staging/_site")
+      file.copy(file.path(cwd, "staging/_site/site_libs"), to="staging/_site", recursive=TRUE)
+      unlink(cwd)
+    })
+  }, mc.cores=CORES)
 })
 
 ## 4-generate help like in distill:::write_search_json("staging", rmarkdown:::site_config("staging"))
