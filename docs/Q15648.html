@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>DDRBase: MED1</title>
+
+  <meta property="description" itemprop="description" content="Mediator of RNA polymerase II transcription subunit 1 (Activator-recruited cofactor 205 kDa component) (ARC205) (Mediator complex subunit 1) (Peroxisome proliferator-activated receptor-binding protein) (PBP) (PPAR-binding protein) (Thyroid hormone receptor-associated protein complex 220 kDa component) (Trap220) (Thyroid receptor-interacting protein 2) (TR-interacting protein 2) (TRIP-2) (Vitamin D receptor-interacting protein complex component DRIP205) (p53 regulatory protein RB18A)"/>
+
+
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="DDRBase: MED1"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Mediator of RNA polymerase II transcription subunit 1 (Activator-recruited cofactor 205 kDa component) (ARC205) (Mediator complex subunit 1) (Peroxisome proliferator-activated receptor-binding protein) (PBP) (PPAR-binding protein) (Thyroid hormone receptor-associated protein complex 220 kDa component) (Trap220) (Thyroid receptor-interacting protein 2) (TR-interacting protein 2) (TRIP-2) (Vitamin D receptor-interacting protein complex component DRIP205) (p53 regulatory protein RB18A)"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="DDRBase"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="DDRBase: MED1"/>
+  <meta property="twitter:description" content="Mediator of RNA polymerase II transcription subunit 1 (Activator-recruited cofactor 205 kDa component) (ARC205) (Mediator complex subunit 1) (Peroxisome proliferator-activated receptor-binding protein) (PBP) (PPAR-binding protein) (Thyroid hormone receptor-associated protein complex 220 kDa component) (Trap220) (Thyroid receptor-interacting protein 2) (TR-interacting protein 2) (TRIP-2) (Vitamin D receptor-interacting protein complex component DRIP205) (p53 regulatory protein RB18A)"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["MED1"]},{"type":"character","attributes":{},"value":["Mediator of RNA polymerase II transcription subunit 1 (Activator-recruited cofactor 205 kDa component) (ARC205) (Mediator complex subunit 1) (Peroxisome proliferator-activated receptor-binding protein) (PBP) (PPAR-binding protein) (Thyroid hormone receptor-associated protein complex 220 kDa component) (Trap220) (Thyroid receptor-interacting protein 2) (TR-interacting protein 2) (TRIP-2) (Vitamin D receptor-interacting protein complex component DRIP205) (p53 regulatory protein RB18A)\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  <meta name="distill:offset" content=""/>
+
+  <script type="application/javascript">
+
+    window.headroom_prevent_pin = false;
+
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        tolerance: 5,
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <style type="text/css">
+
+  /* Theme (user-documented overrideables for nav appearance) */
+
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #0F2E3D;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: white;
+  }
+
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+
+  .distill-site-header {
+
+  }
+
+  .distill-site-footer {
+
+  }
+
+
+  /* Site Header */
+
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+
+
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+
+  .distill-site-header .title {
+    font-size: 18px;
+    min-width: 150px;
+  }
+
+  .distill-site-header .logo {
+    padding: 0;
+  }
+
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+
+
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-dropdown-active {
+    display: block;
+  }
+
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative; min-height: 500px; }
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* Site Footer */
+
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Headroom */
+
+  d-title {
+    padding-top: 6rem;
+  }
+
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+
+  .headroom--unpinned {
+    top: -100px;
+  }
+
+  .headroom--pinned {
+    top: 0;
+  }
+
+  /* adjust viewport for navbar height */
+  /* helps vertically center bootstrap (non-distill) content */
+  .min-vh-100 {
+    min-height: calc(100vh - 100px) !important;
+  }
+
+  </style>
+
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+  <script type="application/javascript">
+
+  function getMeta(metaName) {
+    var metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+    return '';
+  }
+
+  function offsetURL(url) {
+    var offset = getMeta('distill:offset');
+    return offset ? offset + '/' + url : url;
+  }
+
+  function createFuseIndex() {
+
+    // create fuse index
+    var options = {
+      keys: [
+        { name: 'title', weight: 20 },
+        { name: 'categories', weight: 15 },
+        { name: 'description', weight: 10 },
+        { name: 'contents', weight: 5 },
+      ],
+      ignoreLocation: true,
+      threshold: 0
+    };
+    var fuse = new window.Fuse([], options);
+
+    // fetch the main search.json
+    return fetch(offsetURL('search.json'))
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.json().then(function(json) {
+            // index main articles
+            json.articles.forEach(function(article) {
+              fuse.add(article);
+            });
+            // download collections and index their articles
+            return Promise.all(json.collections.map(function(collection) {
+              return fetch(offsetURL(collection)).then(function(response) {
+                if (response.status === 200) {
+                  return response.json().then(function(articles) {
+                    articles.forEach(function(article) {
+                      fuse.add(article);
+                    });
+                  })
+                } else {
+                  return Promise.reject(
+                    new Error('Unexpected status from search index request: ' +
+                              response.status)
+                  );
+                }
+              });
+            })).then(function() {
+              return fuse;
+            });
+          });
+
+        } else {
+          return Promise.reject(
+            new Error('Unexpected status from search index request: ' +
+                        response.status)
+          );
+        }
+      });
+  }
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // get search element (bail if we don't have one)
+    var searchEl = window.document.getElementById('distill-search');
+    if (!searchEl)
+      return;
+
+    createFuseIndex()
+      .then(function(fuse) {
+
+        // make search box visible
+        searchEl.classList.remove('hidden');
+
+        // initialize autocomplete
+        var options = {
+          autoselect: true,
+          hint: false,
+          minLength: 2,
+        };
+        window.autocomplete(searchEl, options, [{
+          source: function(query, callback) {
+            const searchOptions = {
+              isCaseSensitive: false,
+              shouldSort: true,
+              minMatchCharLength: 2,
+              limit: 10,
+            };
+            var results = fuse.search(query, searchOptions);
+            callback(results
+              .map(function(result) { return result.item; })
+            );
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+                : '';
+              var html = `
+                <div class="search-item">
+                  <h3>${suggestion.title}</h3>
+                  <div class="search-item-description">
+                    ${suggestion.description || ''}
+                  </div>
+                  <div class="search-item-preview">
+                    ${img}
+                  </div>
+                </div>
+              `;
+              return html;
+            }
+          }
+        }]).on('autocomplete:selected', function(event, suggestion) {
+          window.location.href = offsetURL(suggestion.path);
+        });
+        // remove inline display style on autocompleter (we want to
+        // manage responsive display via css)
+        $('.algolia-autocomplete').css("display", "");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+  });
+
+  </script>
+
+  <style type="text/css">
+
+  .nav-search {
+    font-size: x-small;
+  }
+
+  /* Algolioa Autocomplete */
+
+  .algolia-autocomplete {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: sub;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    border-radius: 6px;
+    border: 1px #0F2E3D solid;
+    width: 180px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-nav .algolia-autocomplete {
+      display: none;
+      visibility: hidden;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete {
+      display: inline-block;
+      visibility: visible;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+      margin-left: 0;
+      width: 400px;
+      max-height: 400px;
+    }
+  }
+
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 90%;
+    outline: none;
+    border: none;
+  }
+
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 550px;
+    max-height: 70vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    border-top: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+    overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    font-size: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+    display: inline-block;
+    overflow: hidden;
+    height: 2.8em;
+    width: 80%;
+    margin-right: 4%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+    display: inline-block;
+    width: 15%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+    height: 3em;
+    width: auto;
+    display: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+    display: initial;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  </style>
+
+
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.9.2.1/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"MED1","description":"Mediator of RNA polymerase II transcription subunit 1 (Activator-recruited cofactor 205 kDa component) (ARC205) (Mediator complex subunit 1) (Peroxisome proliferator-activated receptor-binding protein) (PBP) (PPAR-binding protein) (Thyroid hormone receptor-associated protein complex 220 kDa component) (Trap220) (Thyroid receptor-interacting protein 2) (TR-interacting protein 2) (TRIP-2) (Vitamin D receptor-interacting protein complex component DRIP205) (p53 regulatory protein RB18A)","authors":[]}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a class="logo" href="https://www.imb.de/research/beli/research">
+<img src="images/logo.png" alt="Logo"/>
+</a>
+<a href="index.html" class="title">DDRBase</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="index.html">Home</a>
+<a href="datasets.html">Datasets</a>
+<a href="downloads.html">Downloads</a>
+<a href="about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>MED1</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Mediator of RNA polymerase II transcription subunit 1 (Activator-recruited cofactor 205 kDa component) (ARC205) (Mediator complex subunit 1) (Peroxisome proliferator-activated receptor-binding protein) (PBP) (PPAR-binding protein) (Thyroid hormone receptor-associated protein complex 220 kDa component) (Trap220) (Thyroid receptor-interacting protein 2) (TR-interacting protein 2) (TRIP-2) (Vitamin D receptor-interacting protein complex component DRIP205) (p53 regulatory protein RB18A)</p></p>
+</div>
+
+
+<div class="d-article">
+<h1 id="med1-q15648">MED1 ❯ Q15648</h1>
+<h2 id="gene-names">Gene names</h2>
+<p>MED1 ARC205 CRSP1 CRSP200 DRIP205 DRIP230 PBP PPARBP PPARGBP RB18A TRAP220 TRIP2</p>
+<h2 id="function">Function</h2>
+<p>FUNCTION: Component of the Mediator complex, a coactivator involved in the regulated transcription of nearly all RNA polymerase II-dependent genes. Mediator functions as a bridge to convey information from gene-specific regulatory proteins to the basal RNA polymerase II transcription machinery. Mediator is recruited to promoters by direct interactions with regulatory proteins and serves as a scaffold for the assembly of a functional preinitiation complex with RNA polymerase II and the general transcription factors (PubMed:10406464, PubMed:11867769, PubMed:12037571, PubMed:12218053, PubMed:12556447, PubMed:14636573, PubMed:15340084, PubMed:15471764, PubMed:15989967, PubMed:16574658, PubMed:9653119). Acts as a coactivator for GATA1-mediated transcriptional activation during erythroid differentiation of K562 erythroleukemia cells (PubMed:24245781). {ECO:0000269|PubMed:10406464, ECO:0000269|PubMed:11867769, ECO:0000269|PubMed:12037571, ECO:0000269|PubMed:12218053, ECO:0000269|PubMed:12556447, ECO:0000269|PubMed:14636573, ECO:0000269|PubMed:15340084, ECO:0000269|PubMed:15471764, ECO:0000269|PubMed:15989967, ECO:0000269|PubMed:16574658, ECO:0000269|PubMed:24245781, ECO:0000269|PubMed:9653119}.</p>
+<h2 id="keywords">Keywords</h2>
+<p>3D-structure;Acetylation;Activator;Alternative splicing;DNA-binding;Direct protein sequencing;Nucleus;Phosphoprotein;Reference proteome;Repeat;Transcription;Transcription regulation</p>
+<p>
+Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+</p>
+<h2 id="phosphorilation">Phosphorilation</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-dd5d1a603498d1285571" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dd5d1a603498d1285571">{"x":{"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11],"y":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"z":[[0.293167296298396,0.318036271379912,0.268430104670234,0.274173872096468,0.270994893378446,0.252220052961632,0.28868672877439,0.298320174873536,0.498214863221262,0.34239642540197,0.287626798769528],[0.340519316145812,0.353915583745515,0.371956528697801,0.340266996783815,0.365854898143749,0.336417168190091,0.346938872449235,0.347282800430689,0.367886188361584,0.368785741499518,0.359146769672157],[0.377344895641971,0.384755483360076,0.372279334163524,0.343538716954687,0.372006296794931,0.284134163707261,0.337127606458633,0.353513650484442,0.35153404324286,0.354586728500307,0.365524624321217],[0.294411320440158,0.349546882964682,0.365940462249447,0.318038808455772,0.350479478185006,0.281746822393459,0.321672137055363,0.323102489179528,0.331423715844612,0.374342530062258,0.331741328895313],[0.233572276756019,0.247425785157873,0.263255826703366,0.253030883667551,0.182327340484911,0.274703722999938,0.291632188126906,0.225365872370964,0.323734865659998,0.333640983048682,0.141358107444533],[0.424151427985957,0.179831013240278,0.307776491419219,0.215575726948791,0.389506375802437,0.205005769287732,0.462191342994979,0.321819375619408,0.152675414735139,0.19567307891216,0.321659274559962],[0.275598846756392,0.3647658314381,0.391561512628311,0.373575365163518,0.317207080244522,0.0988251575957809,0.231618505268066,0.361649699528806,0.172052260360186,0.329762232064671,0.242565284628711],[0.276450592840023,0.345407020359369,0.331857323335306,0.458033808571754,0.227824816576775,0.212118694871214,0.217273611780041,0.34140423527215,0.38965327636174,0.48340107048723,0.268202278296466],[0.139695358503226,0.235849989477515,0.139998416781647,0.237700854770739,0.202536663651824,0.158531471068696,0.282619710046113,0.169245085996412,0.288290706770147,0.256977666558105,0.238377565870945],[0.0556686064226273,0.172671774093184,0.0460995315068094,0.172166936686779,0.168656448627067,0,0.227450703700228,0.024855500252325,0.109241648989563,0.230180615546892,0.103609690031637],[0.515619604652195,0.488463309678779,0.494929401223737,0.473327989593699,0.584059577699666,0.773942405765299,0.497340211703867,0.655025646258399,0.673975750745066,0.542769186673598,0.265579167719568],[0.195465328723564,0.353369370686368,0.284544043206036,0.301851771532672,0.212965309682586,0.174118054976842,0.22202537865149,0.244317402652526,0.426580590516549,0.359169582785314,0.252739022640996],[0.198039422432998,0.216600127699043,0.254730466345415,0.26289491905011,0.216048504230842,0.274572819030197,0.248124732694169,0.260376715345299,0.349423980862637,0.22271490577262,0.35243844035508],[0.136972614150638,0.415375275181705,0.334273058877856,0.391750029767032,0.15054964050469,0.189057255015145,0.232847533512996,0.263756022333678,0.397582819367274,0.431970409394249,0.239679261301117],[0.213414399592701,0.368937379350727,0.394471013544357,0.389027399646096,0.247327613417271,0.249388743266633,0.346349044615545,0.322312557874586,0.330291716160754,0.439771161660876,0.36708873664967],[0.238448222897104,0.326497397128982,0.246434683966241,0.320184125417586,0.266563049015809,0.222070834898289,0.236682373628087,0.292834955276647,0.40788230521171,0.305158259480083,0.264329066830836],[0.0988879516272367,0.685217388389995,0.413357019383617,0.571009594558657,0.0356249682802207,0.0943898253269646,0.139327670667924,0.430412316860405,1,0.689580411534965,0.0870205040435754],[0.194253930604352,0.651441422799656,0.340174313934023,0.541641756043918,0.244424233680618,0.230909051561753,0.197536651456033,0.409764843076609,0.920168939776505,0.63523710764153,0.253541270813674],[0.290619126203525,0.505500031448749,0.560238066707626,0.388578499779596,0.375108446465033,0.412048374563127,0.30385802848292,0.442405393730266,0.539679207783048,0.396975003344007,0.314827026357429],[0.307054159661933,0.345870736276383,0.378856443253295,0.324366437505052,0.313151615286346,0.292653761896138,0.28314795329582,0.317084652855103,0.328044056262323,0.34654935657689,0.292342256373554],[0.300862574046314,0.303631378831426,0.262849540768783,0.377466697499348,0.263018473364643,0.270977621978698,0.240265387025937,0.301180553150876,0.439870510890669,0.338699381463656,0.221836156715746]],"text":[["treatment: Aphidicoline<br />position: 1536<br />log2FC: -0.0795505014","treatment: Camptothecin<br />position: 1536<br />log2FC: -0.0136332590","treatment: Etoposide<br />position: 1536<br />log2FC: -0.1451184411","treatment: Formaldehyd<br />position: 1536<br />log2FC: -0.1298941180","treatment: Gemcitabine<br />position: 1536<br />log2FC: -0.1383202598","treatment: Hydrogen peroxide<br />position: 1536<br />log2FC: -0.1880845024","treatment: Hydroxyurea<br />position: 1536<br />log2FC: -0.0914266103","treatment: Methyl methanesulfonate<br />position: 1536<br />log2FC: -0.0658923774","treatment: Sodium Arsentie (NaAsO2)<br />position: 1536<br />log2FC:  0.4639447624","treatment: UV-C<br />position: 1536<br />log2FC:  0.0509353118","treatment: X-ray<br />position: 1536<br />log2FC: -0.0942360410"],["treatment: Aphidicoline<br />position: 1482<br />log2FC:  0.0459598809","treatment: Camptothecin<br />position: 1482<br />log2FC:  0.0814677784","treatment: Etoposide<br />position: 1482<br />log2FC:  0.1292867713","treatment: Formaldehyd<br />position: 1482<br />log2FC:  0.0452910879","treatment: Gemcitabine<br />position: 1482<br />log2FC:  0.1131139029","treatment: Hydrogen peroxide<br />position: 1482<br />log2FC:  0.0350868039","treatment: Hydroxyurea<br />position: 1482<br />log2FC:  0.0629754374","treatment: Methyl methanesulfonate<br />position: 1482<br />log2FC:  0.0638870465","treatment: Sodium Arsentie (NaAsO2)<br />position: 1482<br />log2FC:  0.1184980030","treatment: UV-C<br />position: 1482<br />log2FC:  0.1208823418","treatment: X-ray<br />position: 1482<br />log2FC:  0.0953334625"],["treatment: Aphidicoline<br />position: 1481<br />log2FC:  0.1435690764","treatment: Camptothecin<br />position: 1481<br />log2FC:  0.1632114423","treatment: Etoposide<br />position: 1481<br />log2FC:  0.1301423935","treatment: Formaldehyd<br />position: 1481<br />log2FC:  0.0539630485","treatment: Gemcitabine<br />position: 1481<br />log2FC:  0.1294186857","treatment: Hydrogen peroxide<br />position: 1481<br />log2FC: -0.1034935545","treatment: Hydroxyurea<br />position: 1481<br />log2FC:  0.0369698784","treatment: Methyl methanesulfonate<br />position: 1481<br />log2FC:  0.0804024216","treatment: Sodium Arsentie (NaAsO2)<br />position: 1481<br />log2FC:  0.0751553115","treatment: UV-C<br />position: 1481<br />log2FC:  0.0832467022","treatment: X-ray<br />position: 1481<br />log2FC:  0.1122384853"],["treatment: Aphidicoline<br />position: 1479<br />log2FC: -0.0762531142","treatment: Camptothecin<br />position: 1479<br />log2FC:  0.0698881815","treatment: Etoposide<br />position: 1479<br />log2FC:  0.1133406976","treatment: Formaldehyd<br />position: 1479<br />log2FC: -0.0136265343","treatment: Gemcitabine<br />position: 1479<br />log2FC:  0.0723601010","treatment: Hydrogen peroxide<br />position: 1479<br />log2FC: -0.1098213970","treatment: Hydroxyurea<br />position: 1479<br />log2FC: -0.0039961011","treatment: Methyl methanesulfonate<br />position: 1479<br />log2FC: -0.0002048364","treatment: Sodium Arsentie (NaAsO2)<br />position: 1479<br />log2FC:  0.0218512521","treatment: UV-C<br />position: 1479<br />log2FC:  0.1356110621","treatment: X-ray<br />position: 1479<br />log2FC:  0.0226931113"],["treatment: Aphidicoline<br />position: 1475<br />log2FC: -0.2375119508","treatment: Camptothecin<br />position: 1475<br />log2FC: -0.2007920994","treatment: Etoposide<br />position: 1475<br />log2FC: -0.1588332859","treatment: Formaldehyd<br />position: 1475<br />log2FC: -0.1859353296","treatment: Gemcitabine<br />position: 1475<br />log2FC: -0.3733408250","treatment: Hydrogen peroxide<br />position: 1475<br />log2FC: -0.1284897051","treatment: Hydroxyurea<br />position: 1475<br />log2FC: -0.0836194306","treatment: Methyl methanesulfonate<br />position: 1475<br />log2FC: -0.2592636935","treatment: Sodium Arsentie (NaAsO2)<br />position: 1475<br />log2FC:  0.0014713289","treatment: UV-C<br />position: 1475<br />log2FC:  0.0277282993","treatment: X-ray<br />position: 1475<br />log2FC: -0.4819331114"],["treatment: Aphidicoline<br />position: 1463<br />log2FC:  0.2676335997","treatment: Camptothecin<br />position: 1463<br />log2FC: -0.3799575435","treatment: Etoposide<br />position: 1463<br />log2FC: -0.0408276408","treatment: Formaldehyd<br />position: 1463<br />log2FC: -0.2852132707","treatment: Gemcitabine<br />position: 1463<br />log2FC:  0.1758040693","treatment: Hydrogen peroxide<br />position: 1463<br />log2FC: -0.3132298038","treatment: Hydroxyurea<br />position: 1463<br />log2FC:  0.3684614903","treatment: Methyl methanesulfonate<br />position: 1463<br />log2FC: -0.0036058333","treatment: Sodium Arsentie (NaAsO2)<br />position: 1463<br />log2FC: -0.4519356674","treatment: UV-C<br />position: 1463<br />log2FC: -0.3379668591","treatment: X-ray<br />position: 1463<br />log2FC: -0.0040301942"],["treatment: Aphidicoline<br />position: 1453<br />log2FC: -0.1261171067","treatment: Camptothecin<br />position: 1453<br />log2FC:  0.1102272430","treatment: Etoposide<br />position: 1453<br />log2FC:  0.1812513767","treatment: Formaldehyd<br />position: 1453<br />log2FC:  0.1335776291","treatment: Gemcitabine<br />position: 1453<br />log2FC: -0.0158310976","treatment: Hydrogen peroxide<br />position: 1453<br />log2FC: -0.5946701565","treatment: Hydroxyurea<br />position: 1453<br />log2FC: -0.2426905812","treatment: Methyl methanesulfonate<br />position: 1453<br />log2FC:  0.1019676818","treatment: Sodium Arsentie (NaAsO2)<br />position: 1453<br />log2FC: -0.4005757611","treatment: UV-C<br />position: 1453<br />log2FC:  0.0174473541","treatment: X-ray<br />position: 1453<br />log2FC: -0.2136752516"],["treatment: Aphidicoline<br />position: 1440<br />log2FC: -0.1238594844","treatment: Camptothecin<br />position: 1440<br />log2FC:  0.0589151387","treatment: Etoposide<br />position: 1440<br />log2FC:  0.0230005640","treatment: Formaldehyd<br />position: 1440<br />log2FC:  0.3574416070","treatment: Gemcitabine<br />position: 1440<br />log2FC: -0.2527460618","treatment: Hydrogen peroxide<br />position: 1440<br />log2FC: -0.2943764156","treatment: Hydroxyurea<br />position: 1440<br />log2FC: -0.2807128888","treatment: Methyl methanesulfonate<br />position: 1440<br />log2FC:  0.0483054311","treatment: Sodium Arsentie (NaAsO2)<br />position: 1440<br />log2FC:  0.1761934412","treatment: UV-C<br />position: 1440<br />log2FC:  0.4246795992","treatment: X-ray<br />position: 1440<br />log2FC: -0.1457223134"],["treatment: Aphidicoline<br />position: 1433<br />log2FC: -0.4863403628","treatment: Camptothecin<br />position: 1433<br />log2FC: -0.2314746879","treatment: Etoposide<br />position: 1433<br />log2FC: -0.4855370822","treatment: Formaldehyd<br />position: 1433<br />log2FC: -0.2265688188","treatment: Gemcitabine<br />position: 1433<br />log2FC: -0.3197743692","treatment: Hydrogen peroxide<br />position: 1433<br />log2FC: -0.4364137135","treatment: Hydroxyurea<br />position: 1433<br />log2FC: -0.1075077372","treatment: Methyl methanesulfonate<br />position: 1433<br />log2FC: -0.4080164052","treatment: Sodium Arsentie (NaAsO2)<br />position: 1433<br />log2FC: -0.0924762988","treatment: UV-C<br />position: 1433<br />log2FC: -0.1754740603","treatment: X-ray<br />position: 1433<br />log2FC: -0.2247751410"],["treatment: Aphidicoline<br />position: 1401<br />log2FC: -0.7090601077","treatment: Camptothecin<br />position: 1401<br />log2FC: -0.3989336895","treatment: Etoposide<br />position: 1401<br />log2FC: -0.7344237195","treatment: Formaldehyd<br />position: 1401<br />log2FC: -0.4002718021","treatment: Gemcitabine<br />position: 1401<br />log2FC: -0.4095766364","treatment: Hydrogen peroxide<br />position: 1401<br />log2FC: -0.8566142796","treatment: Hydroxyurea<br />position: 1401<br />log2FC: -0.2537376784","treatment: Methyl methanesulfonate<br />position: 1401<br />log2FC: -0.7907327533","treatment: Sodium Arsentie (NaAsO2)<br />position: 1401<br />log2FC: -0.5670603983","treatment: UV-C<br />position: 1401<br />log2FC: -0.2465018249","treatment: X-ray<br />position: 1401<br />log2FC: -0.5819883639"],["treatment: Aphidicoline<br />position: 1302<br />log2FC:  0.5100774461","treatment: Camptothecin<br />position: 1302<br />log2FC:  0.4380974762","treatment: Etoposide<br />position: 1302<br />log2FC:  0.4552363780","treatment: Formaldehyd<br />position: 1302<br />log2FC:  0.3979800785","treatment: Gemcitabine<br />position: 1302<br />log2FC:  0.6914831646","treatment: Hydrogen peroxide<br />position: 1302<br />log2FC:  1.1947830540","treatment: Hydroxyurea<br />position: 1302<br />log2FC:  0.4616264274","treatment: Methyl methanesulfonate<br />position: 1302<br />log2FC:  0.8795845049","treatment: Sodium Arsentie (NaAsO2)<br />position: 1302<br />log2FC:  0.9298132991","treatment: UV-C<br />position: 1302<br />log2FC:  0.5820396228","treatment: X-ray<br />position: 1302<br />log2FC: -0.1526750815"],["treatment: Aphidicoline<br />position: 1215<br />log2FC: -0.3385175179","treatment: Camptothecin<br />position: 1215<br />log2FC:  0.0800199963","treatment: Etoposide<br />position: 1215<br />log2FC: -0.1024071355","treatment: Formaldehyd<br />position: 1215<br />log2FC: -0.0565315930","treatment: Gemcitabine<br />position: 1215<br />log2FC: -0.2921323942","treatment: Hydrogen peroxide<br />position: 1215<br />log2FC: -0.3951002043","treatment: Hydroxyurea<br />position: 1215<br />log2FC: -0.2681179440","treatment: Methyl methanesulfonate<br />position: 1215<br />log2FC: -0.2090311202","treatment: Sodium Arsentie (NaAsO2)<br />position: 1215<br />log2FC:  0.2740722927","treatment: UV-C<br />position: 1215<br />log2FC:  0.0953939305","treatment: X-ray<br />position: 1215<br />log2FC: -0.1867089310"],["treatment: Aphidicoline<br />position: 1207<br />log2FC: -0.3316946730","treatment: Camptothecin<br />position: 1207<br />log2FC: -0.2824980132","treatment: Etoposide<br />position: 1207<br />log2FC: -0.1814304474","treatment: Formaldehyd<br />position: 1207<br />log2FC: -0.1597899010","treatment: Gemcitabine<br />position: 1207<br />log2FC: -0.2839601361","treatment: Hydrogen peroxide<br />position: 1207<br />log2FC: -0.1288366767","treatment: Hydroxyurea<br />position: 1207<br />log2FC: -0.1989394820","treatment: Methyl methanesulfonate<br />position: 1207<br />log2FC: -0.1664646049","treatment: Sodium Arsentie (NaAsO2)<br />position: 1207<br />log2FC:  0.0695624195","treatment: UV-C<br />position: 1207<br />log2FC: -0.2662902962","treatment: X-ray<br />position: 1207<br />log2FC:  0.0775524897"],["treatment: Aphidicoline<br />position: 1192<br />log2FC: -0.4935572183","treatment: Camptothecin<br />position: 1192<br />log2FC:  0.2443716925","treatment: Etoposide<br />position: 1192<br />log2FC:  0.0294036677","treatment: Formaldehyd<br />position: 1192<br />log2FC:  0.1817510568","treatment: Gemcitabine<br />position: 1192<br />log2FC: -0.4575702050","treatment: Hydrogen peroxide<br />position: 1192<br />log2FC: -0.3555026388","treatment: Hydroxyurea<br />position: 1192<br />log2FC: -0.2394329418","treatment: Methyl methanesulfonate<br />position: 1192<br />log2FC: -0.1575074767","treatment: Sodium Arsentie (NaAsO2)<br />position: 1192<br />log2FC:  0.1972113403","treatment: UV-C<br />position: 1192<br />log2FC:  0.2883584463","treatment: X-ray<br />position: 1192<br />log2FC: -0.2213248913"],["treatment: Aphidicoline<br />position: 1156<br />log2FC: -0.2909420448","treatment: Camptothecin<br />position: 1156<br />log2FC:  0.1212842702","treatment: Etoposide<br />position: 1156<br />log2FC:  0.1889632457","treatment: Formaldehyd<br />position: 1156<br />log2FC:  0.1745345041","treatment: Gemcitabine<br />position: 1156<br />log2FC: -0.2010523115","treatment: Hydrogen peroxide<br />position: 1156<br />log2FC: -0.1955891191","treatment: Hydroxyurea<br />position: 1156<br />log2FC:  0.0614120507","treatment: Methyl methanesulfonate<br />position: 1156<br />log2FC: -0.0022986136","treatment: Sodium Arsentie (NaAsO2)<br />position: 1156<br />log2FC:  0.0188507948","treatment: UV-C<br />position: 1156<br />log2FC:  0.3090349750","treatment: X-ray<br />position: 1156<br />log2FC:  0.1163842923"],["treatment: Aphidicoline<br />position: 1051<br />log2FC: -0.2245878588","treatment: Camptothecin<br />position: 1051<br />log2FC:  0.0087936434","treatment: Etoposide<br />position: 1051<br />log2FC: -0.2034190937","treatment: Formaldehyd<br />position: 1051<br />log2FC: -0.0079401971","treatment: Gemcitabine<br />position: 1051<br />log2FC: -0.1500672240","treatment: Hydrogen peroxide<br />position: 1051<br />log2FC: -0.2679974585","treatment: Hydroxyurea<br />position: 1051<br />log2FC: -0.2292683860","treatment: Methyl methanesulfonate<br />position: 1051<br />log2FC: -0.0804313983","treatment: Sodium Arsentie (NaAsO2)<br />position: 1051<br />log2FC:  0.2245109658","treatment: UV-C<br />position: 1051<br />log2FC: -0.0477674776","treatment: X-ray<br />position: 1051<br />log2FC: -0.1559885756"],["treatment: Aphidicoline<br />position: 1032<br />log2FC: -0.5945037158","treatment: Camptothecin<br />position: 1032<br />log2FC:  0.9596101745","treatment: Etoposide<br />position: 1032<br />log2FC:  0.2390221412","treatment: Formaldehyd<br />position: 1032<br />log2FC:  0.6568931222","treatment: Gemcitabine<br />position: 1032<br />log2FC: -0.7621874018","treatment: Hydrogen peroxide<br />position: 1032<br />log2FC: -0.6064263657","treatment: Hydroxyurea<br />position: 1032<br />log2FC: -0.4873149493","treatment: Methyl methanesulfonate<br />position: 1032<br />log2FC:  0.2842285952","treatment: Sodium Arsentie (NaAsO2)<br />position: 1032<br />log2FC:  1.7939671051","treatment: UV-C<br />position: 1032<br />log2FC:  0.9711747225","treatment: X-ray<br />position: 1032<br />log2FC: -0.6259593515"],["treatment: Aphidicoline<br />position: 1021<br />log2FC: -0.3417284272","treatment: Camptothecin<br />position: 1021<br />log2FC:  0.8700842289","treatment: Etoposide<br />position: 1021<br />log2FC:  0.0450454245","treatment: Formaldehyd<br />position: 1021<br />log2FC:  0.5790512762","treatment: Gemcitabine<br />position: 1021<br />log2FC: -0.2087479558","treatment: Hydrogen peroxide<br />position: 1021<br />log2FC: -0.2445710460","treatment: Hydroxyurea<br />position: 1021<br />log2FC: -0.3330273084","treatment: Methyl methanesulfonate<br />position: 1021<br />log2FC:  0.2295007856","treatment: Sodium Arsentie (NaAsO2)<br />position: 1021<br />log2FC:  1.5823683830","treatment: UV-C<br />position: 1021<br />log2FC:  0.8271333728","treatment: X-ray<br />position: 1021<br />log2FC: -0.1845825069"],["treatment: Aphidicoline<br />position: 953<br />log2FC: -0.0863046336","treatment: Camptothecin<br />position: 953<br />log2FC:  0.4832546937","treatment: Etoposide<br />position: 953<br />log2FC:  0.6283423110","treatment: Formaldehyd<br />position: 953<br />log2FC:  0.1733446584","treatment: Gemcitabine<br />position: 953<br />log2FC:  0.1376411859","treatment: Hydrogen peroxide<br />position: 953<br />log2FC:  0.2355534716","treatment: Hydroxyurea<br />position: 953<br />log2FC: -0.0512138457","treatment: Methyl methanesulfonate<br />position: 953<br />log2FC:  0.3160172215","treatment: Sodium Arsentie (NaAsO2)<br />position: 953<br />log2FC:  0.5738493823","treatment: UV-C<br />position: 953<br />log2FC:  0.1956002745","treatment: X-ray<br />position: 953<br />log2FC: -0.0221396241"],["treatment: Aphidicoline<br />position: 805<br />log2FC: -0.0427422399","treatment: Camptothecin<br />position: 805<br />log2FC:  0.0601442555","treatment: Etoposide<br />position: 805<br />log2FC:  0.1475755564","treatment: Formaldehyd<br />position: 805<br />log2FC:  0.0031453615","treatment: Gemcitabine<br />position: 805<br />log2FC: -0.0265804375","treatment: Hydrogen peroxide<br />position: 805<br />log2FC: -0.0809116661","treatment: Hydroxyurea<br />position: 805<br />log2FC: -0.1061075855","treatment: Methyl methanesulfonate<br />position: 805<br />log2FC: -0.0161556014","treatment: Sodium Arsentie (NaAsO2)<br />position: 805<br />log2FC:  0.0128931893","treatment: UV-C<br />position: 805<br />log2FC:  0.0619429938","treatment: X-ray<br />position: 805<br />log2FC: -0.0817373369"],["treatment: Aphidicoline<br />position: 664<br />log2FC: -0.0591535415","treatment: Camptothecin<br />position: 664<br />log2FC: -0.0518145990","treatment: Etoposide<br />position: 664<br />log2FC: -0.1599101798","treatment: Formaldehyd<br />position: 664<br />log2FC:  0.1438919221","treatment: Gemcitabine<br />position: 664<br />log2FC: -0.1594624103","treatment: Hydrogen peroxide<br />position: 664<br />log2FC: -0.1383660391","treatment: Hydroxyurea<br />position: 664<br />log2FC: -0.2197713173","treatment: Methyl methanesulfonate<br />position: 664<br />log2FC: -0.0583107120","treatment: Sodium Arsentie (NaAsO2)<br />position: 664<br />log2FC:  0.3092983083","treatment: UV-C<br />position: 664<br />log2FC:  0.0411359959","treatment: X-ray<br />position: 664<br />log2FC: -0.2686194921"]],"colorscale":[[0,"#CB958E"],[0.024855500252325,"#CF9D97"],[0.0356249682802207,"#D1A09A"],[0.0460995315068094,"#D3A49E"],[0.0556686064226273,"#D4A7A1"],[0.0870205040435754,"#DAB1AC"],[0.0943898253269646,"#DBB3AE"],[0.0988251575957809,"#DCB5B0"],[0.0988879516272367,"#DCB5B0"],[0.103609690031637,"#DDB6B1"],[0.109241648989563,"#DEB8B3"],[0.136972614150638,"#E2C1BD"],[0.139327670667924,"#E3C2BD"],[0.139695358503226,"#E3C2BE"],[0.139998416781647,"#E3C2BE"],[0.141358107444533,"#E3C2BE"],[0.15054964050469,"#E4C5C1"],[0.152675414735139,"#E5C6C2"],[0.158531471068696,"#E6C8C4"],[0.168656448627067,"#E7CBC8"],[0.169245085996412,"#E7CCC8"],[0.172052260360186,"#E8CCC9"],[0.172166936686779,"#E8CCC9"],[0.172671774093184,"#E8CDC9"],[0.174118054976842,"#E8CDCA"],[0.179831013240278,"#E9CFCC"],[0.182327340484911,"#EAD0CC"],[0.189057255015145,"#EBD2CF"],[0.194253930604352,"#EBD4D1"],[0.195465328723564,"#ECD4D1"],[0.19567307891216,"#ECD4D1"],[0.197536651456033,"#ECD5D2"],[0.198039422432998,"#ECD5D2"],[0.202536663651824,"#EDD7D4"],[0.205005769287732,"#EDD7D4"],[0.212118694871214,"#EEDAD7"],[0.212965309682586,"#EEDAD7"],[0.213414399592701,"#EEDAD7"],[0.215575726948791,"#EFDBD8"],[0.216048504230842,"#EFDBD8"],[0.216600127699043,"#EFDBD9"],[0.217273611780041,"#EFDBD9"],[0.221836156715746,"#F0DDDA"],[0.22202537865149,"#F0DDDB"],[0.222070834898289,"#F0DDDB"],[0.22271490577262,"#F0DDDB"],[0.225365872370964,"#F0DEDC"],[0.227450703700228,"#F1DFDC"],[0.227824816576775,"#F1DFDD"],[0.230180615546892,"#F1E0DD"],[0.230909051561753,"#F1E0DE"],[0.231618505268066,"#F1E0DE"],[0.232847533512996,"#F2E1DE"],[0.233572276756019,"#F2E1DF"],[0.235849989477515,"#F2E2DF"],[0.236682373628087,"#F2E2E0"],[0.237700854770739,"#F2E2E0"],[0.238377565870945,"#F2E2E0"],[0.238448222897104,"#F2E2E0"],[0.239679261301117,"#F3E3E1"],[0.240265387025937,"#F3E3E1"],[0.242565284628711,"#F3E4E2"],[0.244317402652526,"#F3E4E2"],[0.244424233680618,"#F3E4E3"],[0.246434683966241,"#F4E5E3"],[0.247327613417271,"#F4E5E4"],[0.247425785157873,"#F4E5E4"],[0.248124732694169,"#F4E6E4"],[0.249388743266633,"#F4E6E4"],[0.252220052961632,"#F4E7E5"],[0.252739022640996,"#F5E7E5"],[0.253030883667551,"#F5E7E6"],[0.253541270813674,"#F5E8E6"],[0.254730466345415,"#F5E8E6"],[0.256977666558105,"#F5E9E7"],[0.260376715345299,"#F6EAE8"],[0.262849540768783,"#F6EBE9"],[0.26289491905011,"#F6EBE9"],[0.263018473364643,"#F6EBE9"],[0.263255826703366,"#F6EBE9"],[0.263756022333678,"#F6EBE9"],[0.264329066830836,"#F6EBEA"],[0.265579167719568,"#F6ECEA"],[0.266563049015809,"#F7ECEA"],[0.268202278296466,"#F7ECEB"],[0.268430104670234,"#F7EDEB"],[0.270977621978698,"#F7EDEC"],[0.270994893378446,"#F7EDEC"],[0.274173872096468,"#F8EEED"],[0.274572819030197,"#F8EFED"],[0.274703722999938,"#F8EFED"],[0.275598846756392,"#F8EFEE"],[0.276450592840023,"#F8EFEE"],[0.281746822393459,"#F9F1F0"],[0.282619710046113,"#F9F1F0"],[0.28314795329582,"#F9F1F0"],[0.284134163707261,"#F9F2F1"],[0.284544043206036,"#F9F2F1"],[0.287626798769528,"#FAF3F2"],[0.288290706770147,"#FAF3F2"],[0.28868672877439,"#FAF3F2"],[0.290619126203525,"#FAF4F3"],[0.291632188126906,"#FAF4F4"],[0.292342256373554,"#FAF5F4"],[0.292653761896138,"#FBF5F4"],[0.292834955276647,"#FBF5F4"],[0.293167296298396,"#FBF5F4"],[0.294411320440158,"#FBF5F5"],[0.298320174873536,"#FBF7F6"],[0.300862574046314,"#FCF7F7"],[0.301180553150876,"#FCF8F7"],[0.301851771532672,"#FCF8F7"],[0.303631378831426,"#FCF8F8"],[0.30385802848292,"#FCF8F8"],[0.305158259480083,"#FCF9F8"],[0.307054159661933,"#FDFAF9"],[0.307776491419219,"#FDFAF9"],[0.313151615286346,"#FEFCFB"],[0.314827026357429,"#FEFCFC"],[0.317084652855103,"#FEFDFD"],[0.317207080244522,"#FEFDFD"],[0.318036271379912,"#FEFDFD"],[0.318038808455772,"#FEFDFD"],[0.320184125417586,"#FFFEFE"],[0.321659274559962,"#FFFEFE"],[0.321672137055363,"#FFFEFE"],[0.321819375619408,"#FFFFFF"],[0.322312557874586,"#FFFFFF"],[0.323102489179528,"#FFFFFF"],[0.323734865659998,"#FFFFFF"],[0.324366437505052,"#FFFFFF"],[0.326497397128982,"#FEFEFE"],[0.328044056262323,"#FEFDFE"],[0.329762232064671,"#FDFDFE"],[0.330291716160754,"#FDFDFE"],[0.331423715844612,"#FDFCFE"],[0.331741328895313,"#FDFCFE"],[0.331857323335306,"#FDFCFE"],[0.333640983048682,"#FCFCFD"],[0.334273058877856,"#FCFBFD"],[0.336417168190091,"#FBFBFD"],[0.337127606458633,"#FBFBFD"],[0.338699381463656,"#FBFAFD"],[0.340174313934023,"#FAFAFC"],[0.340266996783815,"#FAFAFC"],[0.340519316145812,"#FAF9FC"],[0.34140423527215,"#FAF9FC"],[0.34239642540197,"#FAF9FC"],[0.343538716954687,"#F9F8FC"],[0.345407020359369,"#F9F8FC"],[0.345870736276383,"#F9F8FC"],[0.346349044615545,"#F9F8FB"],[0.34654935657689,"#F8F8FB"],[0.346938872449235,"#F8F7FB"],[0.347282800430689,"#F8F7FB"],[0.349423980862637,"#F8F7FB"],[0.349546882964682,"#F8F7FB"],[0.350479478185006,"#F7F6FB"],[0.35153404324286,"#F7F6FB"],[0.35243844035508,"#F7F6FB"],[0.353369370686368,"#F7F5FA"],[0.353513650484442,"#F7F5FA"],[0.353915583745515,"#F6F5FA"],[0.354586728500307,"#F6F5FA"],[0.359146769672157,"#F5F3FA"],[0.359169582785314,"#F5F3FA"],[0.361649699528806,"#F4F3F9"],[0.3647658314381,"#F3F2F9"],[0.365524624321217,"#F3F1F9"],[0.365854898143749,"#F3F1F9"],[0.365940462249447,"#F3F1F9"],[0.36708873664967,"#F3F1F8"],[0.367886188361584,"#F3F1F8"],[0.368785741499518,"#F2F0F8"],[0.368937379350727,"#F2F0F8"],[0.371956528697801,"#F1EFF8"],[0.372006296794931,"#F1EFF8"],[0.372279334163524,"#F1EFF8"],[0.373575365163518,"#F1EFF7"],[0.374342530062258,"#F1EFF7"],[0.375108446465033,"#F0EEF7"],[0.377344895641971,"#F0EEF7"],[0.377466697499348,"#F0EEF7"],[0.378856443253295,"#EFEDF7"],[0.384755483360076,"#EEEBF6"],[0.388578499779596,"#EDEAF5"],[0.389027399646096,"#EDEAF5"],[0.389506375802437,"#ECEAF5"],[0.38965327636174,"#ECEAF5"],[0.391561512628311,"#ECE9F5"],[0.391750029767032,"#ECE9F5"],[0.394471013544357,"#EBE8F4"],[0.396975003344007,"#EAE7F4"],[0.397582819367274,"#EAE7F4"],[0.40788230521171,"#E7E4F2"],[0.409764843076609,"#E7E3F2"],[0.412048374563127,"#E6E3F2"],[0.413357019383617,"#E6E2F1"],[0.415375275181705,"#E5E2F1"],[0.424151427985957,"#E3DFF0"],[0.426580590516549,"#E2DEEF"],[0.430412316860405,"#E1DDEF"],[0.431970409394249,"#E1DCEF"],[0.439771161660876,"#DEDAED"],[0.439870510890669,"#DEDAED"],[0.442405393730266,"#DED9ED"],[0.458033808571754,"#D9D4EB"],[0.462191342994979,"#D8D3EA"],[0.473327989593699,"#D5D0E8"],[0.48340107048723,"#D2CCE7"],[0.488463309678779,"#D1CBE6"],[0.494929401223737,"#CFC9E5"],[0.497340211703867,"#CEC8E5"],[0.498214863221262,"#CEC8E5"],[0.505500031448749,"#CCC6E3"],[0.515619604652195,"#C9C3E2"],[0.539679207783048,"#C3BBDE"],[0.541641756043918,"#C2BBDE"],[0.542769186673598,"#C2BADE"],[0.560238066707626,"#BDB5DB"],[0.571009594558657,"#BAB2D9"],[0.584059577699666,"#B6AED7"],[0.63523710764153,"#A89FD0"],[0.651441422799656,"#A49ACD"],[0.655025646258399,"#A399CD"],[0.673975750745066,"#9D93CA"],[0.685217388389995,"#9A90C8"],[0.689580411534965,"#998FC7"],[0.773942405765299,"#8177BB"],[0.920168939776505,"#554FA4"],[1,"#3A3A98"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1],"name":"99_806958f584bb5faf7989d35349a7b103","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#CB958E"],[0.00334448160535117,"#CB9690"],[0.00668896321070234,"#CC9791"],[0.0100334448160535,"#CC9892"],[0.0133779264214047,"#CD9993"],[0.0167224080267559,"#CE9A94"],[0.020066889632107,"#CE9B95"],[0.0234113712374582,"#CF9C96"],[0.0267558528428094,"#CF9D97"],[0.0301003344481605,"#D09E98"],[0.0334448160535117,"#D09F9A"],[0.0367892976588629,"#D1A19B"],[0.040133779264214,"#D2A29C"],[0.0434782608695652,"#D2A39D"],[0.0468227424749164,"#D3A49E"],[0.0501672240802676,"#D3A59F"],[0.0535117056856187,"#D4A6A0"],[0.0568561872909699,"#D5A7A1"],[0.0602006688963211,"#D5A8A2"],[0.0635451505016722,"#D6A9A4"],[0.0668896321070234,"#D6AAA5"],[0.0702341137123746,"#D7ABA6"],[0.0735785953177258,"#D8ACA7"],[0.0769230769230769,"#D8ADA8"],[0.0802675585284281,"#D9AFA9"],[0.0836120401337793,"#D9B0AA"],[0.0869565217391304,"#DAB1AC"],[0.0903010033444816,"#DAB2AD"],[0.0936454849498328,"#DBB3AE"],[0.096989966555184,"#DCB4AF"],[0.100334448160535,"#DCB5B0"],[0.103678929765886,"#DDB6B1"],[0.107023411371237,"#DDB7B2"],[0.110367892976589,"#DEB8B4"],[0.11371237458194,"#DEB9B5"],[0.117056856187291,"#DFBAB6"],[0.120401337792642,"#DFBCB7"],[0.123745819397993,"#E0BDB8"],[0.127090301003344,"#E1BEB9"],[0.130434782608696,"#E1BFBA"],[0.133779264214047,"#E2C0BC"],[0.137123745819398,"#E2C1BD"],[0.140468227424749,"#E3C2BE"],[0.1438127090301,"#E3C3BF"],[0.147157190635452,"#E4C4C0"],[0.150501672240803,"#E4C5C1"],[0.153846153846154,"#E5C6C3"],[0.157190635451505,"#E6C8C4"],[0.160535117056856,"#E6C9C5"],[0.163879598662207,"#E7CAC6"],[0.167224080267559,"#E7CBC7"],[0.17056856187291,"#E8CCC8"],[0.173913043478261,"#E8CDCA"],[0.177257525083612,"#E9CECB"],[0.180602006688963,"#E9CFCC"],[0.183946488294314,"#EAD0CD"],[0.187290969899666,"#EAD1CE"],[0.190635451505017,"#EBD3CF"],[0.193979933110368,"#EBD4D1"],[0.197324414715719,"#ECD5D2"],[0.20066889632107,"#ECD6D3"],[0.204013377926421,"#EDD7D4"],[0.207357859531773,"#EED8D5"],[0.210702341137124,"#EED9D6"],[0.214046822742475,"#EFDAD8"],[0.217391304347826,"#EFDBD9"],[0.220735785953177,"#F0DDDA"],[0.224080267558528,"#F0DEDB"],[0.22742474916388,"#F1DFDC"],[0.230769230769231,"#F1E0DE"],[0.234113712374582,"#F2E1DF"],[0.237458193979933,"#F2E2E0"],[0.240802675585284,"#F3E3E1"],[0.244147157190635,"#F3E4E2"],[0.247491638795987,"#F4E5E4"],[0.250836120401338,"#F4E7E5"],[0.254180602006689,"#F5E8E6"],[0.25752508361204,"#F5E9E7"],[0.260869565217391,"#F6EAE8"],[0.264214046822742,"#F6EBEA"],[0.267558528428094,"#F7ECEB"],[0.270903010033445,"#F7EDEC"],[0.274247491638796,"#F8EEED"],[0.277591973244147,"#F8F0EE"],[0.280936454849498,"#F9F1F0"],[0.284280936454849,"#F9F2F1"],[0.287625418060201,"#FAF3F2"],[0.290969899665552,"#FAF4F3"],[0.294314381270903,"#FBF5F4"],[0.297658862876254,"#FBF6F6"],[0.301003344481605,"#FCF7F7"],[0.304347826086957,"#FCF9F8"],[0.307692307692308,"#FDFAF9"],[0.311036789297659,"#FDFBFB"],[0.31438127090301,"#FEFCFC"],[0.317725752508361,"#FEFDFD"],[0.321070234113712,"#FFFEFE"],[0.324414715719064,"#FFFFFF"],[0.327759197324415,"#FEFEFE"],[0.331103678929766,"#FDFCFE"],[0.334448160535117,"#FCFBFD"],[0.337792642140468,"#FBFAFD"],[0.341137123745819,"#FAF9FC"],[0.344481605351171,"#F9F8FC"],[0.347826086956522,"#F8F7FB"],[0.351170568561873,"#F7F6FB"],[0.354515050167224,"#F6F5FA"],[0.357859531772575,"#F5F4FA"],[0.361204013377926,"#F4F3F9"],[0.364548494983278,"#F3F2F9"],[0.367892976588629,"#F3F1F8"],[0.37123745819398,"#F2F0F8"],[0.374581939799331,"#F1EFF7"],[0.377926421404682,"#F0EEF7"],[0.381270903010033,"#EFECF6"],[0.384615384615385,"#EEEBF6"],[0.387959866220736,"#EDEAF5"],[0.391304347826087,"#ECE9F5"],[0.394648829431438,"#EBE8F4"],[0.397993311036789,"#EAE7F4"],[0.40133779264214,"#E9E6F3"],[0.404682274247492,"#E8E5F3"],[0.408026755852843,"#E7E4F2"],[0.411371237458194,"#E6E3F2"],[0.414715719063545,"#E5E2F1"],[0.418060200668896,"#E5E1F1"],[0.421404682274247,"#E4E0F0"],[0.424749163879599,"#E3DFF0"],[0.42809364548495,"#E2DEEF"],[0.431438127090301,"#E1DDEF"],[0.434782608695652,"#E0DCEE"],[0.438127090301003,"#DFDBEE"],[0.441471571906354,"#DEDAED"],[0.444816053511706,"#DDD8ED"],[0.448160535117057,"#DCD7EC"],[0.451505016722408,"#DBD6EC"],[0.454849498327759,"#DAD5EB"],[0.45819397993311,"#D9D4EB"],[0.461538461538462,"#D8D3EA"],[0.464882943143813,"#D8D2EA"],[0.468227424749164,"#D7D1E9"],[0.471571906354515,"#D6D0E9"],[0.474916387959866,"#D5CFE8"],[0.478260869565217,"#D4CEE8"],[0.481605351170569,"#D3CDE7"],[0.48494983277592,"#D2CCE7"],[0.488294314381271,"#D1CBE6"],[0.491638795986622,"#D0CAE6"],[0.494983277591973,"#CFC9E5"],[0.498327759197324,"#CEC8E4"],[0.501672240802676,"#CDC7E4"],[0.505016722408027,"#CCC6E3"],[0.508361204013378,"#CBC5E3"],[0.511705685618729,"#CBC4E2"],[0.51505016722408,"#CAC3E2"],[0.518394648829431,"#C9C2E1"],[0.521739130434783,"#C8C1E1"],[0.525083612040134,"#C7C0E0"],[0.528428093645485,"#C6BFE0"],[0.531772575250836,"#C5BEDF"],[0.535117056856187,"#C4BDDF"],[0.538461538461538,"#C3BCDE"],[0.54180602006689,"#C2BBDE"],[0.545150501672241,"#C1BADD"],[0.548494983277592,"#C0B9DD"],[0.551839464882943,"#BFB8DC"],[0.555183946488294,"#BEB7DC"],[0.558528428093645,"#BEB6DB"],[0.561872909698997,"#BDB5DB"],[0.565217391304348,"#BCB3DA"],[0.568561872909699,"#BBB2DA"],[0.57190635451505,"#BAB1D9"],[0.575250836120401,"#B9B0D9"],[0.578595317725752,"#B8AFD8"],[0.581939799331104,"#B7AED8"],[0.585284280936455,"#B6ADD7"],[0.588628762541806,"#B5ACD7"],[0.591973244147157,"#B4ABD6"],[0.595317725752508,"#B3AAD6"],[0.59866220735786,"#B2A9D5"],[0.602006688963211,"#B1A8D5"],[0.605351170568562,"#B0A7D4"],[0.608695652173913,"#B0A6D4"],[0.612040133779264,"#AFA5D3"],[0.615384615384615,"#AEA4D3"],[0.618729096989967,"#ADA3D2"],[0.622073578595318,"#ACA2D2"],[0.625418060200669,"#ABA1D1"],[0.62876254180602,"#AAA0D1"],[0.632107023411371,"#A9A0D0"],[0.635451505016722,"#A89FD0"],[0.638795986622074,"#A79ECF"],[0.642140468227425,"#A69DCF"],[0.645484949832776,"#A59CCE"],[0.648829431438127,"#A49BCE"],[0.652173913043478,"#A39ACD"],[0.655518394648829,"#A399CD"],[0.658862876254181,"#A298CC"],[0.662207357859532,"#A197CC"],[0.665551839464883,"#A096CB"],[0.668896321070234,"#9F95CB"],[0.672240802675585,"#9E94CA"],[0.675585284280936,"#9D93CA"],[0.678929765886288,"#9C92C9"],[0.682274247491639,"#9B91C9"],[0.68561872909699,"#9A90C8"],[0.688963210702341,"#998FC8"],[0.692307692307692,"#988EC7"],[0.695652173913043,"#978DC7"],[0.698996655518395,"#968CC6"],[0.702341137123746,"#958BC5"],[0.705685618729097,"#948AC5"],[0.709030100334448,"#9489C4"],[0.712374581939799,"#9388C4"],[0.71571906354515,"#9287C3"],[0.719063545150502,"#9186C3"],[0.722408026755853,"#9085C2"],[0.725752508361204,"#8F84C2"],[0.729096989966555,"#8E83C1"],[0.732441471571906,"#8D82C1"],[0.735785953177257,"#8C81C0"],[0.739130434782609,"#8B80C0"],[0.74247491638796,"#8A7FBF"],[0.745819397993311,"#897FBF"],[0.749163879598662,"#887EBE"],[0.752508361204013,"#877DBE"],[0.755852842809365,"#867CBD"],[0.759197324414716,"#857BBD"],[0.762541806020067,"#847ABC"],[0.765886287625418,"#8379BC"],[0.769230769230769,"#8278BB"],[0.77257525083612,"#8177BB"],[0.775919732441472,"#8176BA"],[0.779264214046823,"#8075BA"],[0.782608695652174,"#7F74B9"],[0.785953177257525,"#7E73B9"],[0.789297658862876,"#7D72B8"],[0.792642140468227,"#7C71B8"],[0.795986622073579,"#7B70B7"],[0.79933110367893,"#7A6FB7"],[0.802675585284281,"#796FB6"],[0.806020066889632,"#786EB6"],[0.809364548494983,"#776DB5"],[0.812709030100334,"#766CB5"],[0.816053511705686,"#756BB4"],[0.819397993311037,"#746AB4"],[0.822742474916388,"#7369B3"],[0.826086956521739,"#7268B3"],[0.82943143812709,"#7167B2"],[0.832775919732441,"#7066B2"],[0.836120401337793,"#6F65B1"],[0.839464882943144,"#6E64B1"],[0.842809364548495,"#6D63B0"],[0.846153846153846,"#6C63B0"],[0.849498327759197,"#6B62AF"],[0.852842809364548,"#6A61AF"],[0.8561872909699,"#6960AE"],[0.859531772575251,"#685FAE"],[0.862876254180602,"#675EAD"],[0.866220735785953,"#665DAC"],[0.869565217391304,"#655CAC"],[0.872909698996655,"#645BAB"],[0.876254180602007,"#635AAB"],[0.879598662207358,"#6259AA"],[0.882943143812709,"#6159AA"],[0.88628762541806,"#6058A9"],[0.889632107023411,"#5F57A9"],[0.892976588628763,"#5E56A8"],[0.896321070234114,"#5D55A8"],[0.899665551839465,"#5C54A7"],[0.903010033444816,"#5B53A7"],[0.906354515050167,"#5A52A6"],[0.909698996655518,"#5951A6"],[0.91304347826087,"#5851A5"],[0.916387959866221,"#5750A5"],[0.919732441471572,"#564FA4"],[0.923076923076923,"#554EA4"],[0.926421404682274,"#534DA3"],[0.929765886287625,"#524CA3"],[0.933110367892977,"#514BA2"],[0.936454849498328,"#504AA2"],[0.939799331103679,"#4F49A1"],[0.94314381270903,"#4E49A1"],[0.946488294314381,"#4D48A0"],[0.949832775919732,"#4C47A0"],[0.953177257525084,"#4B469F"],[0.956521739130435,"#4A459F"],[0.959866220735786,"#48449E"],[0.963210702341137,"#47439E"],[0.966555183946488,"#46439D"],[0.969899665551839,"#45429D"],[0.973244147157191,"#44419C"],[0.976588628762542,"#43409C"],[0.979933110367893,"#413F9B"],[0.983277591973244,"#403E9B"],[0.986622073578595,"#3F3D9A"],[0.989966555183946,"#3E3D9A"],[0.993311036789298,"#3D3C99"],[0.996655518394649,"#3B3B99"],[1,"#3A3A98"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.04,"title":"log2 FC","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"tickmode":"array","ticktext":["0","1"],"tickvals":[0.323179768986389,0.700455488863254],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":27.8721461187215,"r":7.30593607305936,"b":155.799086757991,"l":34.337899543379},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,11.6],"tickmode":"array","ticktext":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11],"categoryorder":"array","categoryarray":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,21.6],"tickmode":"array","ticktext":["1536","1482","1481","1479","1475","1463","1453","1440","1433","1401","1302","1215","1207","1192","1156","1051","1032","1021","953","805","664"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],"categoryorder":"array","categoryarray":["1536","1482","1481","1479","1475","1463","1453","1440","1433","1401","1302","1215","1207","1192","1156","1051","1032","1021","953","805","664"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"e59e304fd0cc":{"x":{},"y":{},"fill":{},"type":"heatmap"}},"cur_data":"e59e304fd0cc","visdat":{"e59e304fd0cc":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<p>DDRBase - 2021</p>
+</div>
+<!--/radix_placeholder_navigation_after_body-->
+
+
+</body>
+
+</html>

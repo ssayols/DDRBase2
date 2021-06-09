@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>DDRBase: EHBP1</title>
+
+  <meta property="description" itemprop="description" content="EH domain-binding protein 1"/>
+
+
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="DDRBase: EHBP1"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="EH domain-binding protein 1"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="DDRBase"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="DDRBase: EHBP1"/>
+  <meta property="twitter:description" content="EH domain-binding protein 1"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["EHBP1"]},{"type":"character","attributes":{},"value":["EH domain-binding protein 1\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  <meta name="distill:offset" content=""/>
+
+  <script type="application/javascript">
+
+    window.headroom_prevent_pin = false;
+
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        tolerance: 5,
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <style type="text/css">
+
+  /* Theme (user-documented overrideables for nav appearance) */
+
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #0F2E3D;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: white;
+  }
+
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+
+  .distill-site-header {
+
+  }
+
+  .distill-site-footer {
+
+  }
+
+
+  /* Site Header */
+
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+
+
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+
+  .distill-site-header .title {
+    font-size: 18px;
+    min-width: 150px;
+  }
+
+  .distill-site-header .logo {
+    padding: 0;
+  }
+
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+
+
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-dropdown-active {
+    display: block;
+  }
+
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative; min-height: 500px; }
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* Site Footer */
+
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Headroom */
+
+  d-title {
+    padding-top: 6rem;
+  }
+
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+
+  .headroom--unpinned {
+    top: -100px;
+  }
+
+  .headroom--pinned {
+    top: 0;
+  }
+
+  /* adjust viewport for navbar height */
+  /* helps vertically center bootstrap (non-distill) content */
+  .min-vh-100 {
+    min-height: calc(100vh - 100px) !important;
+  }
+
+  </style>
+
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+  <script type="application/javascript">
+
+  function getMeta(metaName) {
+    var metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+    return '';
+  }
+
+  function offsetURL(url) {
+    var offset = getMeta('distill:offset');
+    return offset ? offset + '/' + url : url;
+  }
+
+  function createFuseIndex() {
+
+    // create fuse index
+    var options = {
+      keys: [
+        { name: 'title', weight: 20 },
+        { name: 'categories', weight: 15 },
+        { name: 'description', weight: 10 },
+        { name: 'contents', weight: 5 },
+      ],
+      ignoreLocation: true,
+      threshold: 0
+    };
+    var fuse = new window.Fuse([], options);
+
+    // fetch the main search.json
+    return fetch(offsetURL('search.json'))
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.json().then(function(json) {
+            // index main articles
+            json.articles.forEach(function(article) {
+              fuse.add(article);
+            });
+            // download collections and index their articles
+            return Promise.all(json.collections.map(function(collection) {
+              return fetch(offsetURL(collection)).then(function(response) {
+                if (response.status === 200) {
+                  return response.json().then(function(articles) {
+                    articles.forEach(function(article) {
+                      fuse.add(article);
+                    });
+                  })
+                } else {
+                  return Promise.reject(
+                    new Error('Unexpected status from search index request: ' +
+                              response.status)
+                  );
+                }
+              });
+            })).then(function() {
+              return fuse;
+            });
+          });
+
+        } else {
+          return Promise.reject(
+            new Error('Unexpected status from search index request: ' +
+                        response.status)
+          );
+        }
+      });
+  }
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // get search element (bail if we don't have one)
+    var searchEl = window.document.getElementById('distill-search');
+    if (!searchEl)
+      return;
+
+    createFuseIndex()
+      .then(function(fuse) {
+
+        // make search box visible
+        searchEl.classList.remove('hidden');
+
+        // initialize autocomplete
+        var options = {
+          autoselect: true,
+          hint: false,
+          minLength: 2,
+        };
+        window.autocomplete(searchEl, options, [{
+          source: function(query, callback) {
+            const searchOptions = {
+              isCaseSensitive: false,
+              shouldSort: true,
+              minMatchCharLength: 2,
+              limit: 10,
+            };
+            var results = fuse.search(query, searchOptions);
+            callback(results
+              .map(function(result) { return result.item; })
+            );
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+                : '';
+              var html = `
+                <div class="search-item">
+                  <h3>${suggestion.title}</h3>
+                  <div class="search-item-description">
+                    ${suggestion.description || ''}
+                  </div>
+                  <div class="search-item-preview">
+                    ${img}
+                  </div>
+                </div>
+              `;
+              return html;
+            }
+          }
+        }]).on('autocomplete:selected', function(event, suggestion) {
+          window.location.href = offsetURL(suggestion.path);
+        });
+        // remove inline display style on autocompleter (we want to
+        // manage responsive display via css)
+        $('.algolia-autocomplete').css("display", "");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+  });
+
+  </script>
+
+  <style type="text/css">
+
+  .nav-search {
+    font-size: x-small;
+  }
+
+  /* Algolioa Autocomplete */
+
+  .algolia-autocomplete {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: sub;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    border-radius: 6px;
+    border: 1px #0F2E3D solid;
+    width: 180px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-nav .algolia-autocomplete {
+      display: none;
+      visibility: hidden;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete {
+      display: inline-block;
+      visibility: visible;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+      margin-left: 0;
+      width: 400px;
+      max-height: 400px;
+    }
+  }
+
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 90%;
+    outline: none;
+    border: none;
+  }
+
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 550px;
+    max-height: 70vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    border-top: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+    overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    font-size: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+    display: inline-block;
+    overflow: hidden;
+    height: 2.8em;
+    width: 80%;
+    margin-right: 4%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+    display: inline-block;
+    width: 15%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+    height: 3em;
+    width: auto;
+    display: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+    display: initial;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  </style>
+
+
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.9.2.1/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"EHBP1","description":"EH domain-binding protein 1","authors":[]}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a class="logo" href="https://www.imb.de/research/beli/research">
+<img src="images/logo.png" alt="Logo"/>
+</a>
+<a href="index.html" class="title">DDRBase</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="index.html">Home</a>
+<a href="datasets.html">Datasets</a>
+<a href="downloads.html">Downloads</a>
+<a href="about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>EHBP1</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>EH domain-binding protein 1</p></p>
+</div>
+
+
+<div class="d-article">
+<h1 id="ehbp1-q8ndi1">EHBP1 ❯ Q8NDI1</h1>
+<h2 id="gene-names">Gene names</h2>
+<p>EHBP1 KIAA0903 NACSIN</p>
+<h2 id="function">Function</h2>
+<p>FUNCTION: May play a role in actin reorganization. Links clathrin-mediated endocytosis to the actin cytoskeleton. May act as Rab effector protein and play a role in vesicle trafficking (PubMed:14676205, PubMed:27552051). Required for perinuclear sorting and insulin-regulated recycling of SLC2A4/GLUT4 in adipocytes (By similarity). {ECO:0000250|UniProtKB:Q69ZW3, ECO:0000269|PubMed:14676205, ECO:0000305|PubMed:27552051}.</p>
+<h2 id="keywords">Keywords</h2>
+<p>3D-structure;Alternative splicing;Coiled coil;Cytoplasm;Endocytosis;Endosome;Lipoprotein;Membrane;Phosphoprotein;Prenylation;Protein transport;Reference proteome;Transport</p>
+<p>
+Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+</p>
+<h2 id="phosphorilation">Phosphorilation</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-b07853f70c623c733097" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b07853f70c623c733097">{"x":{"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11],"y":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],"z":[[0.330803379584441,0.341080269803917,0.352319862680647,0.472547985494006,0.2915004874387,0.565085672732968,0.31183391726529,0.487613443425619,0.561586443889589,0.297435119736458,0.413513467613724],[0.265712731225159,0.306174702469527,0.383812520506195,0.372946597187129,0.305059597421301,0.377680108026859,0.327827406167809,0.461020971244246,0.46499312252432,0.356934488539831,0.343234324330447],[0.273859451658319,0.273841350221436,0.277502804143506,0.33658500242582,0.273978040930132,0.306921183755919,0.275470097611316,0.317839666738459,0.365706628050691,0.244084668881043,0.289953610009049],[0,0.191275297900999,0.168052160067373,0.447301269959006,0.207964861487016,0.185904616905065,0.300744493969491,0.229996294613942,0.544268131429965,0.257497353656104,0.212312152719737],[0.423842383056853,0.365473921998377,0.354291820438403,0.717883695737107,0.322396506958659,0.869938486779008,0.302236884575724,0.821061598358071,0.880426844744268,0.467690983541309,0.474931333209584],[0.271595279991488,0.276679955457825,0.353623242192244,0.276303983595938,0.281560739813141,0.281885720173197,0.318099337238077,0.328948387487699,0.288723017997421,0.271994041072283,0.354471080037077],[0.271946873126429,0.231462012819982,0.276828290632947,0.237207563855715,0.26467239249012,0.276672331839257,0.314742764075728,0.238150812182376,0.200703666293899,0.23317815978587,0.311485085028744],[0.268135301577789,0.273950454111798,0.347630912038262,0.281252380517665,0.274063579846299,0.278105181387805,0.325211751077627,0.317495764543211,0.276960756061907,0.27028876356184,0.356090514700486],[0.260618509288032,0.229441200486668,0.17621264935859,0.232314451725193,0.247409485791512,0.213686384040645,0.271443411436769,0.299650492838963,0.374987021975955,0.234709101198319,0.196169149916153],[0.25190016451944,0.249190799093078,0.251879001292372,0.229941481332047,0.259952689728377,0.250383717281122,0.270353105920034,0.309854771759299,0.279267684056768,0.247905118063916,0.271563075266495],[0.233406411627593,0.282821923240597,0.215912421232506,0.241371151840041,0.211551268032946,0.246949922163743,0.207060646734785,0.289295526074221,0.301021952586701,0.273360548103391,0.223735446977758],[0.253007753600186,0.268451714706332,0.254345980633455,0.244694856964961,0.269709118958017,0.235838693400092,0.23256059054671,0.246453499928716,0.192385160453508,0.226333547938454,0.260854603429138],[0.273784227652309,0.289684104368639,0.263757979899365,0.25691109967416,0.298341146592178,0.23674635153684,0.233468248683458,0.256463835283168,0.193608496686249,0.239652468804239,0.291053185622922],[0.203140310897,0.18040403516048,0.0918141196007912,0.262050883498385,0.18523278047171,0.124440865852944,0.274349864826729,0.184363268207323,0.215110240736205,0.262328865036215,0.0765826833880054],[0.344609419152994,0.328313272593052,0.36349548306568,0.348715762730656,0.306756575979662,0.417223934668659,0.18933409336733,0.70257270306255,1,0.354402814147754,0.386451852261996],[0.334491445131833,0.29502522192985,0.280858054451042,0.265354345405634,0.259250079138232,0.410297223946103,0.211958318275881,0.275702052414412,0.374496800841599,0.343609137839906,0.249050790797399],[0.230785888802257,0.280840392289046,0.2216621666633,0.377932081914418,0.199224550483282,0.357795407598534,0.272082442674076,0.426280740299094,0.400382456321276,0.270061456266949,0.2574606916015],[0.202007247469403,0.222330724627533,0.218907159904528,0.226163263617492,0.212662136326961,0.241611157054042,0.245528100105318,0.255540551151319,0.216868480662676,0.238309432827748,0.273971297534651]],"text":[["treatment: Aphidicoline<br />position: 1023;1058;987<br />log2FC:  0.286574274","treatment: Camptothecin<br />position: 1023;1058;987<br />log2FC:  0.324137293","treatment: Etoposide<br />position: 1023;1058;987<br />log2FC:  0.365219084","treatment: Formaldehyd<br />position: 1023;1058;987<br />log2FC:  0.804664410","treatment: Gemcitabine<br />position: 1023;1058;987<br />log2FC:  0.142918431","treatment: Hydrogen peroxide<br />position: 1023;1058;987<br />log2FC:  1.142898538","treatment: Hydroxyurea<br />position: 1023;1058;987<br />log2FC:  0.217239068","treatment: Methyl methanesulfonate<br />position: 1023;1058;987<br />log2FC:  0.859730105","treatment: Sodium Arsentie (NaAsO2)<br />position: 1023;1058;987<br />log2FC:  1.130108520","treatment: UV-C<br />position: 1023;1058;987<br />log2FC:  0.164610082","treatment: X-ray<br />position: 1023;1058;987<br />log2FC:  0.588887582"],["treatment: Aphidicoline<br />position: 1000;1035;195;964<br />log2FC:  0.048661707","treatment: Camptothecin<br />position: 1000;1035;195;964<br />log2FC:  0.196554095","treatment: Etoposide<br />position: 1000;1035;195;964<br />log2FC:  0.480327771","treatment: Formaldehyd<br />position: 1000;1035;195;964<br />log2FC:  0.440611778","treatment: Gemcitabine<br />position: 1000;1035;195;964<br />log2FC:  0.192478279","treatment: Hydrogen peroxide<br />position: 1000;1035;195;964<br />log2FC:  0.457913214","treatment: Hydroxyurea<br />position: 1000;1035;195;964<br />log2FC:  0.275696805","treatment: Methyl methanesulfonate<br />position: 1000;1035;195;964<br />log2FC:  0.762532067","treatment: Sodium Arsentie (NaAsO2)<br />position: 1000;1035;195;964<br />log2FC:  0.777050661","treatment: UV-C<br />position: 1000;1035;195;964<br />log2FC:  0.382085984","treatment: X-ray<br />position: 1000;1035;195;964<br />log2FC:  0.332010569"],["treatment: Aphidicoline<br />position: 675;710<br />log2FC:  0.078438752","treatment: Camptothecin<br />position: 675;710<br />log2FC:  0.078372590","treatment: Etoposide<br />position: 675;710<br />log2FC:  0.091755555","treatment: Formaldehyd<br />position: 675;710<br />log2FC:  0.307706660","treatment: Gemcitabine<br />position: 675;710<br />log2FC:  0.078872208","treatment: Hydrogen peroxide<br />position: 675;710<br />log2FC:  0.199282556","treatment: Hydroxyurea<br />position: 675;710<br />log2FC:  0.084325818","treatment: Methyl methanesulfonate<br />position: 675;710<br />log2FC:  0.239190659","treatment: Sodium Arsentie (NaAsO2)<br />position: 675;710<br />log2FC:  0.414148996","treatment: UV-C<br />position: 675;710<br />log2FC: -0.030390936","treatment: X-ray<br />position: 675;710<br />log2FC:  0.137264446"],["treatment: Aphidicoline<br />position: 659;694<br />log2FC: -0.922543824","treatment: Camptothecin<br />position: 659;694<br />log2FC: -0.223414255","treatment: Etoposide<br />position: 659;694<br />log2FC: -0.308297052","treatment: Formaldehyd<br />position: 659;694<br />log2FC:  0.712385242","treatment: Gemcitabine<br />position: 659;694<br />log2FC: -0.162412298","treatment: Hydrogen peroxide<br />position: 659;694<br />log2FC: -0.243044609","treatment: Hydroxyurea<br />position: 659;694<br />log2FC:  0.176706162","treatment: Methyl methanesulfonate<br />position: 659;694<br />log2FC: -0.081885296","treatment: Sodium Arsentie (NaAsO2)<br />position: 659;694<br />log2FC:  1.066808426","treatment: UV-C<br />position: 659;694<br />log2FC:  0.018633714","treatment: X-ray<br />position: 659;694<br />log2FC: -0.146522532"],["treatment: Aphidicoline<br />position: 614;649<br />log2FC:  0.626640760","treatment: Camptothecin<br />position: 614;649<br />log2FC:  0.413298433","treatment: Etoposide<br />position: 614;649<br />log2FC:  0.372426779","treatment: Formaldehyd<br />position: 614;649<br />log2FC:  1.701389975","treatment: Gemcitabine<br />position: 614;649<br />log2FC:  0.255846347","treatment: Hydrogen peroxide<br />position: 614;649<br />log2FC:  2.257164828","treatment: Hydroxyurea<br />position: 614;649<br />log2FC:  0.182160993","treatment: Methyl methanesulfonate<br />position: 614;649<br />log2FC:  2.078515110","treatment: Sodium Arsentie (NaAsO2)<br />position: 614;649<br />log2FC:  2.295500783","treatment: UV-C<br />position: 614;649<br />log2FC:  0.786911602","treatment: X-ray<br />position: 614;649<br />log2FC:  0.813375775"],["treatment: Aphidicoline<br />position: 401;436<br />log2FC:  0.070162988","treatment: Camptothecin<br />position: 401;436<br />log2FC:  0.088747964","treatment: Etoposide<br />position: 401;436<br />log2FC:  0.369983061","treatment: Formaldehyd<br />position: 401;436<br />log2FC:  0.087373751","treatment: Gemcitabine<br />position: 401;436<br />log2FC:  0.106587700","treatment: Hydrogen peroxide<br />position: 401;436<br />log2FC:  0.107775534","treatment: Hydroxyurea<br />position: 401;436<br />log2FC:  0.240139780","treatment: Methyl methanesulfonate<br />position: 401;436<br />log2FC:  0.279794099","treatment: Sodium Arsentie (NaAsO2)<br />position: 401;436<br />log2FC:  0.132766514","treatment: UV-C<br />position: 401;436<br />log2FC:  0.071620498","treatment: X-ray<br />position: 401;436<br />log2FC:  0.373081990"],["treatment: Aphidicoline<br />position: 397;432<br />log2FC:  0.071448094","treatment: Camptothecin<br />position: 397;432<br />log2FC: -0.076527955","treatment: Etoposide<br />position: 397;432<br />log2FC:  0.089290144","treatment: Formaldehyd<br />position: 397;432<br />log2FC: -0.055527415","treatment: Gemcitabine<br />position: 397;432<br />log2FC:  0.044859170","treatment: Hydrogen peroxide<br />position: 397;432<br />log2FC:  0.088720099","treatment: Hydroxyurea<br />position: 397;432<br />log2FC:  0.227871183","treatment: Methyl methanesulfonate<br />position: 397;432<br />log2FC: -0.052079752","treatment: Sodium Arsentie (NaAsO2)<br />position: 397;432<br />log2FC: -0.188952663","treatment: UV-C<br />position: 397;432<br />log2FC: -0.070255273","treatment: X-ray<br />position: 397;432<br />log2FC:  0.215964053"],["treatment: Aphidicoline<br />position: 393;428<br />log2FC:  0.057516435","treatment: Camptothecin<br />position: 393;428<br />log2FC:  0.078771375","treatment: Etoposide<br />position: 393;428<br />log2FC:  0.348080519","treatment: Formaldehyd<br />position: 393;428<br />log2FC:  0.105460617","treatment: Gemcitabine<br />position: 393;428<br />log2FC:  0.079184861","treatment: Hydrogen peroxide<br />position: 393;428<br />log2FC:  0.093957302","treatment: Hydroxyurea<br />position: 393;428<br />log2FC:  0.266136335","treatment: Methyl methanesulfonate<br />position: 393;428<br />log2FC:  0.237933663","treatment: Sodium Arsentie (NaAsO2)<br />position: 393;428<br />log2FC:  0.089774318","treatment: UV-C<br />position: 393;428<br />log2FC:  0.065387545","treatment: X-ray<br />position: 393;428<br />log2FC:  0.379001179"],["treatment: Aphidicoline<br />position: 373;408<br />log2FC:  0.030041837","treatment: Camptothecin<br />position: 373;408<br />log2FC: -0.083914218","treatment: Etoposide<br />position: 373;408<br />log2FC: -0.278469681","treatment: Formaldehyd<br />position: 373;408<br />log2FC: -0.073412209","treatment: Gemcitabine<br />position: 373;408<br />log2FC: -0.018238411","treatment: Hydrogen peroxide<br />position: 373;408<br />log2FC: -0.141499584","treatment: Hydroxyurea<br />position: 373;408<br />log2FC:  0.069607894","treatment: Methyl methanesulfonate<br />position: 373;408<br />log2FC:  0.172707483","treatment: Sodium Arsentie (NaAsO2)<br />position: 373;408<br />log2FC:  0.448069726","treatment: UV-C<br />position: 373;408<br />log2FC: -0.064659536","treatment: X-ray<br />position: 373;408<br />log2FC: -0.205526756"],["treatment: Aphidicoline<br />position: 300;335<br />log2FC: -0.001824549","treatment: Camptothecin<br />position: 300;335<br />log2FC: -0.011727540","treatment: Etoposide<br />position: 300;335<br />log2FC: -0.001901903","treatment: Formaldehyd<br />position: 300;335<br />log2FC: -0.082085644","treatment: Gemcitabine<br />position: 300;335<br />log2FC:  0.027608203","treatment: Hydrogen peroxide<br />position: 300;335<br />log2FC: -0.007367310","treatment: Hydroxyurea<br />position: 300;335<br />log2FC:  0.065622722","treatment: Methyl methanesulfonate<br />position: 300;335<br />log2FC:  0.210005102","treatment: Sodium Arsentie (NaAsO2)<br />position: 300;335<br />log2FC:  0.098206361","treatment: UV-C<br />position: 300;335<br />log2FC: -0.016426828","treatment: X-ray<br />position: 300;335<br />log2FC:  0.070045276"],["treatment: Aphidicoline<br />position: 260;295<br />log2FC: -0.069420991","treatment: Camptothecin<br />position: 260;295<br />log2FC:  0.111197446","treatment: Etoposide<br />position: 260;295<br />log2FC: -0.133363205","treatment: Formaldehyd<br />position: 260;295<br />log2FC: -0.040309101","treatment: Gemcitabine<br />position: 260;295<br />log2FC: -0.149303638","treatment: Hydrogen peroxide<br />position: 260;295<br />log2FC: -0.019918160","treatment: Hydroxyurea<br />position: 260;295<br />log2FC: -0.165717290","treatment: Methyl methanesulfonate<br />position: 260;295<br />log2FC:  0.134859086","treatment: Sodium Arsentie (NaAsO2)<br />position: 260;295<br />log2FC:  0.177720300","treatment: UV-C<br />position: 260;295<br />log2FC:  0.076615212","treatment: X-ray<br />position: 260;295<br />log2FC: -0.104769295"],["treatment: Aphidicoline<br />position: 174;54<br />log2FC:  0.002223795","treatment: Camptothecin<br />position: 174;54<br />log2FC:  0.058672955","treatment: Etoposide<br />position: 174;54<br />log2FC:  0.007115143","treatment: Formaldehyd<br />position: 174;54<br />log2FC: -0.028160640","treatment: Gemcitabine<br />position: 174;54<br />log2FC:  0.063268888","treatment: Hydrogen peroxide<br />position: 174;54<br />log2FC: -0.060530768","treatment: Hydroxyurea<br />position: 174;54<br />log2FC: -0.072512548","treatment: Methyl methanesulfonate<br />position: 174;54<br />log2FC: -0.021732631","treatment: Sodium Arsentie (NaAsO2)<br />position: 174;54<br />log2FC: -0.219357601","treatment: UV-C<br />position: 174;54<br />log2FC: -0.095272986","treatment: X-ray<br />position: 174;54<br />log2FC:  0.030904784"],["treatment: Aphidicoline<br />position: 171;51<br />log2FC:  0.078163801","treatment: Camptothecin<br />position: 171;51<br />log2FC:  0.136279377","treatment: Etoposide<br />position: 171;51<br />log2FC:  0.041516904","treatment: Formaldehyd<br />position: 171;51<br />log2FC:  0.016490899","treatment: Gemcitabine<br />position: 171;51<br />log2FC:  0.167921697","treatment: Hydrogen peroxide<br />position: 171;51<br />log2FC: -0.057213190","treatment: Hydroxyurea<br />position: 171;51<br />log2FC: -0.069194971","treatment: Methyl methanesulfonate<br />position: 171;51<br />log2FC:  0.014856105","treatment: Sodium Arsentie (NaAsO2)<br />position: 171;51<br />log2FC: -0.214886189","treatment: UV-C<br />position: 171;51<br />log2FC: -0.046591053","treatment: X-ray<br />position: 171;51<br />log2FC:  0.141283500"],["treatment: Aphidicoline<br />position: 124;893;929;964<br />log2FC: -0.180046494","treatment: Camptothecin<br />position: 124;893;929;964<br />log2FC: -0.263149763","treatment: Etoposide<br />position: 124;893;929;964<br />log2FC: -0.586954406","treatment: Formaldehyd<br />position: 124;893;929;964<br />log2FC:  0.035277303","treatment: Gemcitabine<br />position: 124;893;929;964<br />log2FC: -0.245500236","treatment: Hydrogen peroxide<br />position: 124;893;929;964<br />log2FC: -0.467700517","treatment: Hydroxyurea<br />position: 124;893;929;964<br />log2FC:  0.080231260","treatment: Methyl methanesulfonate<br />position: 124;893;929;964<br />log2FC: -0.248678387","treatment: Sodium Arsentie (NaAsO2)<br />position: 124;893;929;964<br />log2FC: -0.136295251","treatment: UV-C<br />position: 124;893;929;964<br />log2FC:  0.036293352","treatment: X-ray<br />position: 124;893;929;964<br />log2FC: -0.642626767"],["treatment: Aphidicoline<br />position: 79;819;854<br />log2FC:  0.337036673","treatment: Camptothecin<br />position: 79;819;854<br />log2FC:  0.277472693","treatment: Etoposide<br />position: 79;819;854<br />log2FC:  0.406067049","treatment: Formaldehyd<br />position: 79;819;854<br />log2FC:  0.352045753","treatment: Gemcitabine<br />position: 79;819;854<br />log2FC:  0.198680899","treatment: Hydrogen peroxide<br />position: 79;819;854<br />log2FC:  0.602449696","treatment: Hydroxyurea<br />position: 79;819;854<br />log2FC: -0.230509544","treatment: Methyl methanesulfonate<br />position: 79;819;854<br />log2FC:  1.645426827","treatment: Sodium Arsentie (NaAsO2)<br />position: 79;819;854<br />log2FC:  2.732552140","treatment: UV-C<br />position: 79;819;854<br />log2FC:  0.372832472","treatment: X-ray<br />position: 79;819;854<br />log2FC:  0.489974781"],["treatment: Aphidicoline<br />position: 57;752;787<br />log2FC:  0.300054507","treatment: Camptothecin<br />position: 57;752;787<br />log2FC:  0.155801674","treatment: Etoposide<br />position: 57;752;787<br />log2FC:  0.104019317","treatment: Formaldehyd<br />position: 57;752;787<br />log2FC:  0.047351773","treatment: Gemcitabine<br />position: 57;752;787<br />log2FC:  0.025040094","treatment: Hydrogen peroxide<br />position: 57;752;787<br />log2FC:  0.577131903","treatment: Hydroxyurea<br />position: 57;752;787<br />log2FC: -0.147815830","treatment: Methyl methanesulfonate<br />position: 57;752;787<br />log2FC:  0.085173635","treatment: Sodium Arsentie (NaAsO2)<br />position: 57;752;787<br />log2FC:  0.446277921","treatment: UV-C<br />position: 57;752;787<br />log2FC:  0.333380549","treatment: X-ray<br />position: 57;752;787<br />log2FC: -0.012239284"],["treatment: Aphidicoline<br />position: 29;724;759<br />log2FC: -0.078999253","treatment: Camptothecin<br />position: 29;724;759<br />log2FC:  0.103954760","treatment: Etoposide<br />position: 29;724;759<br />log2FC: -0.112347333","treatment: Formaldehyd<br />position: 29;724;759<br />log2FC:  0.458834203","treatment: Gemcitabine<br />position: 29;724;759<br />log2FC: -0.194358974","treatment: Hydrogen peroxide<br />position: 29;724;759<br />log2FC:  0.385232726","treatment: Hydroxyurea<br />position: 29;724;759<br />log2FC:  0.071943614","treatment: Methyl methanesulfonate<br />position: 29;724;759<br />log2FC:  0.635553189","treatment: Sodium Arsentie (NaAsO2)<br />position: 29;724;759<br />log2FC:  0.540892476","treatment: UV-C<br />position: 29;724;759<br />log2FC:  0.064556715","treatment: X-ray<br />position: 29;724;759<br />log2FC:  0.018499711"],["treatment: Aphidicoline<br />position: 21;716;751<br />log2FC: -0.184187949","treatment: Camptothecin<br />position: 21;716;751<br />log2FC: -0.109903690","treatment: Etoposide<br />position: 21;716;751<br />log2FC: -0.122417147","treatment: Formaldehyd<br />position: 21;716;751<br />log2FC: -0.095895392","treatment: Gemcitabine<br />position: 21;716;751<br />log2FC: -0.145243308","treatment: Hydrogen peroxide<br />position: 21;716;751<br />log2FC: -0.039431859","treatment: Hydroxyurea<br />position: 21;716;751<br />log2FC: -0.025115056","treatment: Methyl methanesulfonate<br />position: 21;716;751<br />log2FC:  0.011481413","treatment: Sodium Arsentie (NaAsO2)<br />position: 21;716;751<br />log2FC: -0.129868716","treatment: UV-C<br />position: 21;716;751<br />log2FC: -0.051499978","treatment: X-ray<br />position: 21;716;751<br />log2FC:  0.078847560"]],"colorscale":[[0,"#DBB3AE"],[0.0765826833880054,"#E7CAC6"],[0.0918141196007912,"#E9CECB"],[0.124440865852944,"#EED8D5"],[0.168052160067373,"#F4E5E3"],[0.17621264935859,"#F5E8E6"],[0.18040403516048,"#F5E9E7"],[0.184363268207323,"#F6EAE9"],[0.18523278047171,"#F6EAE9"],[0.185904616905065,"#F6EBE9"],[0.18933409336733,"#F7ECEA"],[0.191275297900999,"#F7ECEB"],[0.192385160453508,"#F7EDEB"],[0.193608496686249,"#F7EDEC"],[0.196169149916153,"#F8EEED"],[0.199224550483282,"#F8EFEE"],[0.200703666293899,"#F8EFEE"],[0.202007247469403,"#F8F0EE"],[0.203140310897,"#F8F0EF"],[0.207060646734785,"#F9F1F0"],[0.207964861487016,"#F9F1F0"],[0.211551268032946,"#FAF2F2"],[0.211958318275881,"#FAF3F2"],[0.212312152719737,"#FAF3F2"],[0.212662136326961,"#FAF3F2"],[0.213686384040645,"#FAF3F2"],[0.215110240736205,"#FAF4F3"],[0.215912421232506,"#FAF4F3"],[0.216868480662676,"#FAF4F3"],[0.218907159904528,"#FBF5F4"],[0.2216621666633,"#FBF6F5"],[0.222330724627533,"#FBF6F5"],[0.223735446977758,"#FBF6F6"],[0.226163263617492,"#FCF7F6"],[0.226333547938454,"#FCF7F6"],[0.229441200486668,"#FCF8F7"],[0.229941481332047,"#FCF8F8"],[0.229996294613942,"#FCF8F8"],[0.230785888802257,"#FCF8F8"],[0.231462012819982,"#FCF9F8"],[0.232314451725193,"#FCF9F8"],[0.23256059054671,"#FCF9F8"],[0.23317815978587,"#FCF9F9"],[0.233406411627593,"#FDF9F9"],[0.233468248683458,"#FDF9F9"],[0.234709101198319,"#FDFAF9"],[0.235838693400092,"#FDFAFA"],[0.23674635153684,"#FDFAFA"],[0.237207563855715,"#FDFAFA"],[0.238150812182376,"#FDFBFA"],[0.238309432827748,"#FDFBFA"],[0.239652468804239,"#FDFBFB"],[0.241371151840041,"#FEFCFB"],[0.241611157054042,"#FEFCFB"],[0.244084668881043,"#FEFCFC"],[0.244694856964961,"#FEFDFC"],[0.245528100105318,"#FEFDFD"],[0.246453499928716,"#FEFDFD"],[0.246949922163743,"#FEFDFD"],[0.247409485791512,"#FEFDFD"],[0.247905118063916,"#FEFEFE"],[0.249050790797399,"#FFFEFE"],[0.249190799093078,"#FFFEFE"],[0.250383717281122,"#FFFEFE"],[0.251879001292372,"#FFFFFF"],[0.25190016451944,"#FFFFFF"],[0.253007753600186,"#FFFFFF"],[0.254345980633455,"#FFFEFF"],[0.255540551151319,"#FEFEFF"],[0.256463835283168,"#FEFEFE"],[0.25691109967416,"#FEFEFE"],[0.2574606916015,"#FEFEFE"],[0.257497353656104,"#FEFEFE"],[0.259250079138232,"#FDFDFE"],[0.259952689728377,"#FDFDFE"],[0.260618509288032,"#FDFDFE"],[0.260854603429138,"#FDFDFE"],[0.262050883498385,"#FDFCFE"],[0.262328865036215,"#FCFCFE"],[0.263757979899365,"#FCFCFD"],[0.26467239249012,"#FCFBFD"],[0.265354345405634,"#FCFBFD"],[0.265712731225159,"#FCFBFD"],[0.268135301577789,"#FBFAFD"],[0.268451714706332,"#FBFAFD"],[0.269709118958017,"#FBFAFD"],[0.270061456266949,"#FBFAFD"],[0.27028876356184,"#FAFAFD"],[0.270353105920034,"#FAFAFD"],[0.271443411436769,"#FAF9FC"],[0.271563075266495,"#FAF9FC"],[0.271595279991488,"#FAF9FC"],[0.271946873126429,"#FAF9FC"],[0.271994041072283,"#FAF9FC"],[0.272082442674076,"#FAF9FC"],[0.273360548103391,"#FAF9FC"],[0.273784227652309,"#FAF9FC"],[0.273841350221436,"#FAF9FC"],[0.273859451658319,"#FAF9FC"],[0.273950454111798,"#FAF9FC"],[0.273971297534651,"#FAF9FC"],[0.273978040930132,"#FAF9FC"],[0.274063579846299,"#FAF9FC"],[0.274349864826729,"#F9F9FC"],[0.275470097611316,"#F9F8FC"],[0.275702052414412,"#F9F8FC"],[0.276303983595938,"#F9F8FC"],[0.276672331839257,"#F9F8FC"],[0.276679955457825,"#F9F8FC"],[0.276828290632947,"#F9F8FC"],[0.276960756061907,"#F9F8FC"],[0.277502804143506,"#F9F8FC"],[0.278105181387805,"#F8F8FB"],[0.279267684056768,"#F8F7FB"],[0.280840392289046,"#F8F7FB"],[0.280858054451042,"#F8F7FB"],[0.281252380517665,"#F8F7FB"],[0.281560739813141,"#F8F7FB"],[0.281885720173197,"#F8F6FB"],[0.282821923240597,"#F7F6FB"],[0.288723017997421,"#F6F4FA"],[0.289295526074221,"#F6F4FA"],[0.289684104368639,"#F6F4FA"],[0.289953610009049,"#F5F4FA"],[0.291053185622922,"#F5F4FA"],[0.2915004874387,"#F5F4FA"],[0.29502522192985,"#F4F3F9"],[0.297435119736458,"#F4F2F9"],[0.298341146592178,"#F3F2F9"],[0.299650492838963,"#F3F1F9"],[0.300744493969491,"#F3F1F8"],[0.301021952586701,"#F3F1F8"],[0.302236884575724,"#F2F1F8"],[0.305059597421301,"#F2F0F8"],[0.306174702469527,"#F1EFF8"],[0.306756575979662,"#F1EFF8"],[0.306921183755919,"#F1EFF8"],[0.309854771759299,"#F0EEF7"],[0.311485085028744,"#F0EEF7"],[0.31183391726529,"#F0EEF7"],[0.314742764075728,"#EFEDF6"],[0.317495764543211,"#EFECF6"],[0.317839666738459,"#EEECF6"],[0.318099337238077,"#EEECF6"],[0.322396506958659,"#EDEBF5"],[0.325211751077627,"#EDEAF5"],[0.327827406167809,"#ECE9F5"],[0.328313272593052,"#ECE9F5"],[0.328948387487699,"#ECE9F5"],[0.330803379584441,"#EBE8F4"],[0.334491445131833,"#EAE7F4"],[0.33658500242582,"#EAE7F3"],[0.341080269803917,"#E9E5F3"],[0.343234324330447,"#E8E5F3"],[0.343609137839906,"#E8E5F3"],[0.344609419152994,"#E8E4F2"],[0.347630912038262,"#E7E4F2"],[0.348715762730656,"#E7E3F2"],[0.352319862680647,"#E6E2F1"],[0.353623242192244,"#E5E2F1"],[0.354291820438403,"#E5E2F1"],[0.354402814147754,"#E5E2F1"],[0.354471080037077,"#E5E2F1"],[0.356090514700486,"#E5E1F1"],[0.356934488539831,"#E5E1F1"],[0.357795407598534,"#E4E1F1"],[0.36349548306568,"#E3DFF0"],[0.365473921998377,"#E2DEF0"],[0.365706628050691,"#E2DEEF"],[0.372946597187129,"#E1DCEE"],[0.374496800841599,"#E0DCEE"],[0.374987021975955,"#E0DCEE"],[0.377680108026859,"#DFDBEE"],[0.377932081914418,"#DFDBEE"],[0.383812520506195,"#DED9ED"],[0.386451852261996,"#DDD9ED"],[0.400382456321276,"#DAD5EB"],[0.410297223946103,"#D7D2E9"],[0.413513467613724,"#D6D1E9"],[0.417223934668659,"#D5D0E8"],[0.423842383056853,"#D4CEE8"],[0.426280740299094,"#D3CDE7"],[0.447301269959006,"#CEC7E4"],[0.461020971244246,"#CAC4E2"],[0.46499312252432,"#C9C3E2"],[0.467690983541309,"#C9C2E1"],[0.472547985494006,"#C8C0E1"],[0.474931333209584,"#C7C0E1"],[0.487613443425619,"#C4BCDF"],[0.544268131429965,"#B5ADD7"],[0.561586443889589,"#B1A8D5"],[0.565085672732968,"#B0A7D4"],[0.70257270306255,"#8D83C1"],[0.717883695737107,"#897FBF"],[0.821061598358071,"#6E65B1"],[0.869938486779008,"#6159AA"],[0.880426844744268,"#5E56A9"],[1,"#3A3A98"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1],"name":"99_8e5045ca8df2d380010c870a8b76314f","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#DBB3AE"],[0.00334448160535118,"#DCB4AF"],[0.00668896321070235,"#DCB5B0"],[0.0100334448160535,"#DDB6B1"],[0.0133779264214047,"#DDB7B2"],[0.0167224080267558,"#DEB8B3"],[0.020066889632107,"#DEB9B4"],[0.0234113712374582,"#DFBAB5"],[0.0267558528428094,"#DFBBB6"],[0.0301003344481605,"#E0BCB7"],[0.0334448160535117,"#E0BDB9"],[0.0367892976588629,"#E1BEBA"],[0.0401337792642141,"#E1BFBB"],[0.0434782608695652,"#E2C0BC"],[0.0468227424749164,"#E2C1BD"],[0.0501672240802676,"#E3C2BE"],[0.0535117056856187,"#E3C3BF"],[0.0568561872909699,"#E4C4C0"],[0.0602006688963211,"#E4C5C1"],[0.0635451505016723,"#E5C6C2"],[0.0668896321070234,"#E5C7C3"],[0.0702341137123746,"#E6C8C4"],[0.0735785953177257,"#E6C9C5"],[0.0769230769230769,"#E7CAC6"],[0.0802675585284281,"#E7CBC7"],[0.0836120401337793,"#E8CCC8"],[0.0869565217391304,"#E8CDC9"],[0.0903010033444816,"#E9CECA"],[0.0936454849498328,"#E9CFCB"],[0.096989966555184,"#EAD0CD"],[0.100334448160535,"#EAD1CE"],[0.103678929765886,"#EBD2CF"],[0.107023411371237,"#EBD3D0"],[0.110367892976589,"#ECD4D1"],[0.11371237458194,"#ECD5D2"],[0.117056856187291,"#ECD6D3"],[0.120401337792642,"#EDD7D4"],[0.123745819397993,"#EDD8D5"],[0.127090301003344,"#EED9D6"],[0.130434782608696,"#EEDAD7"],[0.133779264214047,"#EFDBD8"],[0.137123745819398,"#EFDCD9"],[0.140468227424749,"#F0DDDA"],[0.1438127090301,"#F0DEDC"],[0.147157190635451,"#F1DFDD"],[0.150501672240803,"#F1E0DE"],[0.153846153846154,"#F2E1DF"],[0.157190635451505,"#F2E2E0"],[0.160535117056856,"#F3E3E1"],[0.163879598662207,"#F3E4E2"],[0.167224080267559,"#F4E5E3"],[0.17056856187291,"#F4E6E4"],[0.173913043478261,"#F4E7E5"],[0.177257525083612,"#F5E8E6"],[0.180602006688963,"#F5E9E7"],[0.183946488294314,"#F6EAE9"],[0.187290969899666,"#F6EBEA"],[0.190635451505017,"#F7ECEB"],[0.193979933110368,"#F7EDEC"],[0.197324414715719,"#F8EEED"],[0.20066889632107,"#F8EFEE"],[0.204013377926421,"#F9F0EF"],[0.207357859531773,"#F9F1F0"],[0.210702341137124,"#F9F2F1"],[0.214046822742475,"#FAF3F2"],[0.217391304347826,"#FAF4F3"],[0.220735785953177,"#FBF5F5"],[0.224080267558528,"#FBF6F6"],[0.22742474916388,"#FCF7F7"],[0.230769230769231,"#FCF8F8"],[0.234113712374582,"#FDF9F9"],[0.237458193979933,"#FDFAFA"],[0.240802675585284,"#FDFBFB"],[0.244147157190635,"#FEFCFC"],[0.247491638795987,"#FEFDFD"],[0.250836120401338,"#FFFFFE"],[0.254180602006689,"#FFFEFF"],[0.25752508361204,"#FEFEFE"],[0.260869565217391,"#FDFDFE"],[0.264214046822742,"#FCFCFD"],[0.267558528428094,"#FBFBFD"],[0.270903010033445,"#FAFAFC"],[0.274247491638796,"#F9F9FC"],[0.277591973244147,"#F9F8FC"],[0.280936454849498,"#F8F7FB"],[0.284280936454849,"#F7F6FB"],[0.287625418060201,"#F6F5FA"],[0.290969899665552,"#F5F4FA"],[0.294314381270903,"#F4F3F9"],[0.297658862876254,"#F4F2F9"],[0.301003344481605,"#F3F1F8"],[0.304347826086956,"#F2F0F8"],[0.307692307692308,"#F1EFF7"],[0.311036789297659,"#F0EEF7"],[0.31438127090301,"#EFEDF7"],[0.317725752508361,"#EEECF6"],[0.321070234113712,"#EEEBF6"],[0.324414715719064,"#EDEAF5"],[0.327759197324415,"#ECE9F5"],[0.331103678929766,"#EBE8F4"],[0.334448160535117,"#EAE7F4"],[0.337792642140468,"#E9E6F3"],[0.341137123745819,"#E9E5F3"],[0.344481605351171,"#E8E4F2"],[0.347826086956522,"#E7E4F2"],[0.351170568561873,"#E6E3F1"],[0.354515050167224,"#E5E2F1"],[0.357859531772575,"#E4E1F1"],[0.361204013377926,"#E4E0F0"],[0.364548494983278,"#E3DFF0"],[0.367892976588629,"#E2DEEF"],[0.37123745819398,"#E1DDEF"],[0.374581939799331,"#E0DCEE"],[0.377926421404682,"#DFDBEE"],[0.381270903010033,"#DEDAED"],[0.384615384615385,"#DED9ED"],[0.387959866220736,"#DDD8EC"],[0.391304347826087,"#DCD7EC"],[0.394648829431438,"#DBD6EC"],[0.397993311036789,"#DAD5EB"],[0.40133779264214,"#D9D4EB"],[0.404682274247492,"#D9D3EA"],[0.408026755852843,"#D8D2EA"],[0.411371237458194,"#D7D2E9"],[0.414715719063545,"#D6D1E9"],[0.418060200668896,"#D5D0E8"],[0.421404682274247,"#D4CFE8"],[0.424749163879599,"#D4CEE7"],[0.42809364548495,"#D3CDE7"],[0.431438127090301,"#D2CCE6"],[0.434782608695652,"#D1CBE6"],[0.438127090301003,"#D0CAE6"],[0.441471571906354,"#CFC9E5"],[0.444816053511706,"#CEC8E5"],[0.448160535117057,"#CEC7E4"],[0.451505016722408,"#CDC6E4"],[0.454849498327759,"#CCC5E3"],[0.45819397993311,"#CBC4E3"],[0.461538461538462,"#CAC4E2"],[0.464882943143813,"#C9C3E2"],[0.468227424749164,"#C9C2E1"],[0.471571906354515,"#C8C1E1"],[0.474916387959866,"#C7C0E1"],[0.478260869565217,"#C6BFE0"],[0.481605351170569,"#C5BEE0"],[0.48494983277592,"#C4BDDF"],[0.488294314381271,"#C4BCDF"],[0.491638795986622,"#C3BBDE"],[0.494983277591973,"#C2BADE"],[0.498327759197324,"#C1B9DD"],[0.501672240802676,"#C0B8DD"],[0.505016722408027,"#BFB8DC"],[0.508361204013378,"#BFB7DC"],[0.511705685618729,"#BEB6DB"],[0.51505016722408,"#BDB5DB"],[0.518394648829431,"#BCB4DB"],[0.521739130434783,"#BBB3DA"],[0.525083612040134,"#BAB2DA"],[0.528428093645485,"#B9B1D9"],[0.531772575250836,"#B9B0D9"],[0.535117056856187,"#B8AFD8"],[0.538461538461538,"#B7AED8"],[0.54180602006689,"#B6ADD7"],[0.545150501672241,"#B5ADD7"],[0.548494983277592,"#B4ACD6"],[0.551839464882943,"#B4ABD6"],[0.555183946488294,"#B3AAD5"],[0.558528428093645,"#B2A9D5"],[0.561872909698997,"#B1A8D5"],[0.565217391304348,"#B0A7D4"],[0.568561872909699,"#AFA6D4"],[0.57190635451505,"#AFA5D3"],[0.575250836120401,"#AEA4D3"],[0.578595317725752,"#ADA4D2"],[0.581939799331104,"#ACA3D2"],[0.585284280936455,"#ABA2D1"],[0.588628762541806,"#AAA1D1"],[0.591973244147157,"#A9A0D0"],[0.595317725752508,"#A99FD0"],[0.598662207357859,"#A89ECF"],[0.602006688963211,"#A79DCF"],[0.605351170568562,"#A69CCF"],[0.608695652173913,"#A59BCE"],[0.612040133779264,"#A49BCE"],[0.615384615384615,"#A49ACD"],[0.618729096989967,"#A399CD"],[0.622073578595318,"#A298CC"],[0.625418060200669,"#A197CC"],[0.62876254180602,"#A096CB"],[0.632107023411371,"#9F95CB"],[0.635451505016722,"#9E94CA"],[0.638795986622074,"#9E93CA"],[0.642140468227425,"#9D93CA"],[0.645484949832776,"#9C92C9"],[0.648829431438127,"#9B91C9"],[0.652173913043478,"#9A90C8"],[0.655518394648829,"#998FC8"],[0.65886287625418,"#998EC7"],[0.662207357859532,"#988DC7"],[0.665551839464883,"#978CC6"],[0.668896321070234,"#968CC6"],[0.672240802675585,"#958BC5"],[0.675585284280936,"#948AC5"],[0.678929765886288,"#9389C4"],[0.682274247491639,"#9388C4"],[0.68561872909699,"#9287C4"],[0.688963210702341,"#9186C3"],[0.692307692307692,"#9085C3"],[0.695652173913043,"#8F85C2"],[0.698996655518395,"#8E84C2"],[0.702341137123746,"#8D83C1"],[0.705685618729097,"#8D82C1"],[0.709030100334448,"#8C81C0"],[0.712374581939799,"#8B80C0"],[0.71571906354515,"#8A7FBF"],[0.719063545150502,"#897FBF"],[0.722408026755853,"#887EBE"],[0.725752508361204,"#877DBE"],[0.729096989966555,"#877CBE"],[0.732441471571906,"#867BBD"],[0.735785953177257,"#857ABD"],[0.739130434782609,"#8479BC"],[0.74247491638796,"#8379BC"],[0.745819397993311,"#8278BB"],[0.749163879598662,"#8177BB"],[0.752508361204013,"#8176BA"],[0.755852842809364,"#8075BA"],[0.759197324414716,"#7F74B9"],[0.762541806020067,"#7E73B9"],[0.765886287625418,"#7D73B8"],[0.769230769230769,"#7C72B8"],[0.77257525083612,"#7B71B8"],[0.775919732441471,"#7A70B7"],[0.779264214046823,"#7A6FB7"],[0.782608695652174,"#796EB6"],[0.785953177257525,"#786EB6"],[0.789297658862876,"#776DB5"],[0.792642140468227,"#766CB5"],[0.795986622073579,"#756BB4"],[0.79933110367893,"#746AB4"],[0.802675585284281,"#7369B3"],[0.806020066889632,"#7268B3"],[0.809364548494983,"#7268B2"],[0.812709030100334,"#7167B2"],[0.816053511705686,"#7066B1"],[0.819397993311037,"#6F65B1"],[0.822742474916388,"#6E64B1"],[0.826086956521739,"#6D63B0"],[0.82943143812709,"#6C63B0"],[0.832775919732441,"#6B62AF"],[0.836120401337793,"#6A61AF"],[0.839464882943144,"#6A60AE"],[0.842809364548495,"#695FAE"],[0.846153846153846,"#685FAD"],[0.849498327759197,"#675EAD"],[0.852842809364548,"#665DAC"],[0.8561872909699,"#655CAC"],[0.859531772575251,"#645BAB"],[0.862876254180602,"#635AAB"],[0.866220735785953,"#625AAB"],[0.869565217391304,"#6159AA"],[0.872909698996655,"#6058AA"],[0.876254180602007,"#5F57A9"],[0.879598662207358,"#5F56A9"],[0.882943143812709,"#5E56A8"],[0.88628762541806,"#5D55A8"],[0.889632107023411,"#5C54A7"],[0.892976588628763,"#5B53A7"],[0.896321070234114,"#5A52A6"],[0.899665551839465,"#5952A6"],[0.903010033444816,"#5851A5"],[0.906354515050167,"#5750A5"],[0.909698996655518,"#564FA5"],[0.91304347826087,"#554EA4"],[0.916387959866221,"#544EA4"],[0.919732441471572,"#534DA3"],[0.923076923076923,"#524CA3"],[0.926421404682274,"#514BA2"],[0.929765886287625,"#504AA2"],[0.933110367892977,"#4F4AA1"],[0.936454849498328,"#4E49A1"],[0.939799331103679,"#4D48A0"],[0.94314381270903,"#4C47A0"],[0.946488294314381,"#4B469F"],[0.949832775919732,"#4A469F"],[0.953177257525084,"#49459E"],[0.956521739130435,"#48449E"],[0.959866220735786,"#47439E"],[0.963210702341137,"#46429D"],[0.966555183946488,"#45429D"],[0.969899665551839,"#44419C"],[0.973244147157191,"#43409C"],[0.976588628762542,"#423F9B"],[0.979933110367893,"#413F9B"],[0.983277591973244,"#403E9A"],[0.986622073578595,"#3F3D9A"],[0.989966555183946,"#3D3C99"],[0.993311036789298,"#3C3C99"],[0.996655518394649,"#3B3B98"],[1,"#3A3A98"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.04,"title":"log2 FC","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"tickmode":"array","ticktext":["0","1","2"],"tickvals":[0.252399344133878,0.525989972107646,0.799580600081414],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":27.8721461187215,"r":7.30593607305936,"b":155.799086757991,"l":110.319634703196},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,11.6],"tickmode":"array","ticktext":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11],"categoryorder":"array","categoryarray":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,18.6],"tickmode":"array","ticktext":["1023;1058;987","1000;1035;195;964","675;710","659;694","614;649","401;436","397;432","393;428","373;408","300;335","260;295","174;54","171;51","124;893;929;964","79;819;854","57;752;787","29;724;759","21;716;751"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],"categoryorder":"array","categoryarray":["1023;1058;987","1000;1035;195;964","675;710","659;694","614;649","401;436","397;432","393;428","373;408","300;335","260;295","174;54","171;51","124;893;929;964","79;819;854","57;752;787","29;724;759","21;716;751"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"e5a24d44d0ef":{"x":{},"y":{},"fill":{},"type":"heatmap"}},"cur_data":"e5a24d44d0ef","visdat":{"e5a24d44d0ef":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<p>DDRBase - 2021</p>
+</div>
+<!--/radix_placeholder_navigation_after_body-->
+
+
+</body>
+
+</html>

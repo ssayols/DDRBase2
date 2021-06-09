@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>DDRBase: AHNAK2</title>
+
+  <meta property="description" itemprop="description" content="Protein AHNAK2"/>
+
+
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="DDRBase: AHNAK2"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Protein AHNAK2"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="DDRBase"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="DDRBase: AHNAK2"/>
+  <meta property="twitter:description" content="Protein AHNAK2"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["AHNAK2"]},{"type":"character","attributes":{},"value":["Protein AHNAK2\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  <meta name="distill:offset" content=""/>
+
+  <script type="application/javascript">
+
+    window.headroom_prevent_pin = false;
+
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        tolerance: 5,
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <style type="text/css">
+
+  /* Theme (user-documented overrideables for nav appearance) */
+
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #0F2E3D;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: white;
+  }
+
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+
+  .distill-site-header {
+
+  }
+
+  .distill-site-footer {
+
+  }
+
+
+  /* Site Header */
+
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+
+
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+
+  .distill-site-header .title {
+    font-size: 18px;
+    min-width: 150px;
+  }
+
+  .distill-site-header .logo {
+    padding: 0;
+  }
+
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+
+
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-dropdown-active {
+    display: block;
+  }
+
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative; min-height: 500px; }
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* Site Footer */
+
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Headroom */
+
+  d-title {
+    padding-top: 6rem;
+  }
+
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+
+  .headroom--unpinned {
+    top: -100px;
+  }
+
+  .headroom--pinned {
+    top: 0;
+  }
+
+  /* adjust viewport for navbar height */
+  /* helps vertically center bootstrap (non-distill) content */
+  .min-vh-100 {
+    min-height: calc(100vh - 100px) !important;
+  }
+
+  </style>
+
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+  <script type="application/javascript">
+
+  function getMeta(metaName) {
+    var metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+    return '';
+  }
+
+  function offsetURL(url) {
+    var offset = getMeta('distill:offset');
+    return offset ? offset + '/' + url : url;
+  }
+
+  function createFuseIndex() {
+
+    // create fuse index
+    var options = {
+      keys: [
+        { name: 'title', weight: 20 },
+        { name: 'categories', weight: 15 },
+        { name: 'description', weight: 10 },
+        { name: 'contents', weight: 5 },
+      ],
+      ignoreLocation: true,
+      threshold: 0
+    };
+    var fuse = new window.Fuse([], options);
+
+    // fetch the main search.json
+    return fetch(offsetURL('search.json'))
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.json().then(function(json) {
+            // index main articles
+            json.articles.forEach(function(article) {
+              fuse.add(article);
+            });
+            // download collections and index their articles
+            return Promise.all(json.collections.map(function(collection) {
+              return fetch(offsetURL(collection)).then(function(response) {
+                if (response.status === 200) {
+                  return response.json().then(function(articles) {
+                    articles.forEach(function(article) {
+                      fuse.add(article);
+                    });
+                  })
+                } else {
+                  return Promise.reject(
+                    new Error('Unexpected status from search index request: ' +
+                              response.status)
+                  );
+                }
+              });
+            })).then(function() {
+              return fuse;
+            });
+          });
+
+        } else {
+          return Promise.reject(
+            new Error('Unexpected status from search index request: ' +
+                        response.status)
+          );
+        }
+      });
+  }
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // get search element (bail if we don't have one)
+    var searchEl = window.document.getElementById('distill-search');
+    if (!searchEl)
+      return;
+
+    createFuseIndex()
+      .then(function(fuse) {
+
+        // make search box visible
+        searchEl.classList.remove('hidden');
+
+        // initialize autocomplete
+        var options = {
+          autoselect: true,
+          hint: false,
+          minLength: 2,
+        };
+        window.autocomplete(searchEl, options, [{
+          source: function(query, callback) {
+            const searchOptions = {
+              isCaseSensitive: false,
+              shouldSort: true,
+              minMatchCharLength: 2,
+              limit: 10,
+            };
+            var results = fuse.search(query, searchOptions);
+            callback(results
+              .map(function(result) { return result.item; })
+            );
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+                : '';
+              var html = `
+                <div class="search-item">
+                  <h3>${suggestion.title}</h3>
+                  <div class="search-item-description">
+                    ${suggestion.description || ''}
+                  </div>
+                  <div class="search-item-preview">
+                    ${img}
+                  </div>
+                </div>
+              `;
+              return html;
+            }
+          }
+        }]).on('autocomplete:selected', function(event, suggestion) {
+          window.location.href = offsetURL(suggestion.path);
+        });
+        // remove inline display style on autocompleter (we want to
+        // manage responsive display via css)
+        $('.algolia-autocomplete').css("display", "");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+  });
+
+  </script>
+
+  <style type="text/css">
+
+  .nav-search {
+    font-size: x-small;
+  }
+
+  /* Algolioa Autocomplete */
+
+  .algolia-autocomplete {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: sub;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    border-radius: 6px;
+    border: 1px #0F2E3D solid;
+    width: 180px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-nav .algolia-autocomplete {
+      display: none;
+      visibility: hidden;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete {
+      display: inline-block;
+      visibility: visible;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+      margin-left: 0;
+      width: 400px;
+      max-height: 400px;
+    }
+  }
+
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 90%;
+    outline: none;
+    border: none;
+  }
+
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 550px;
+    max-height: 70vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    border-top: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+    overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    font-size: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+    display: inline-block;
+    overflow: hidden;
+    height: 2.8em;
+    width: 80%;
+    margin-right: 4%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+    display: inline-block;
+    width: 15%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+    height: 3em;
+    width: auto;
+    display: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+    display: initial;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  </style>
+
+
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.9.2.1/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"AHNAK2","description":"Protein AHNAK2","authors":[]}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a class="logo" href="https://www.imb.de/research/beli/research">
+<img src="images/logo.png" alt="Logo"/>
+</a>
+<a href="index.html" class="title">DDRBase</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="index.html">Home</a>
+<a href="datasets.html">Datasets</a>
+<a href="downloads.html">Downloads</a>
+<a href="about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>AHNAK2</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Protein AHNAK2</p></p>
+</div>
+
+
+<div class="d-article">
+<h1 id="ahnak2-q8ivf2">AHNAK2 ❯ Q8IVF2</h1>
+<h2 id="gene-names">Gene names</h2>
+<p>AHNAK2 C14orf78 KIAA2019</p>
+<h2 id="function">Function</h2>
+<h2 id="keywords">Keywords</h2>
+<p>3D-structure;Acetylation;Alternative splicing;Isopeptide bond;Nucleus;Phosphoprotein;Reference proteome;Ubl conjugation</p>
+<p>
+Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+</p>
+<h2 id="phosphorilation">Phosphorilation</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-2d700ae96b3da7008a54" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2d700ae96b3da7008a54">{"x":{"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11],"y":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"z":[[0.212464738885594,0.231535055108178,0.289951453313741,0.308136123351659,0.208896533746702,0.365971562071196,0.178557387874878,0.642644617553485,0.966831281140433,0.268206648446061,0.202662566860026],[0.0807843264839588,0.0741121303910206,0.041471974464936,0.100590710788585,0.115942571934843,0.0735417680722262,0.131195732953068,0.00639760745258131,0.0167550481812631,0.114958352656553,0.123358968317558],[0.0215080065484506,0.0526898724625183,0.0441069614841174,0.136267987028179,0.0984287353924382,0.0485344164847918,0.116872123440911,0,0.0234261795437966,0.146135763521509,0.0769571155692196],[0.453324256367803,0.364785272407661,0.549728949990173,0.524359707884538,0.404015117093673,0.628599151534841,0.474862550842319,0.492835325834584,0.599231427863356,0.462590211108109,0.385185533914132],[0.155129755781164,0.177975577265285,0.150233744593307,0.150847093097002,0.155681677813753,0.25286885704223,0.164637792683122,0.340760918326866,0.584163266020676,0.181859590093583,0.0625609574313217],[0.119790128255846,0.267543472986092,0.194586176246419,0.267908777638972,0.273163128123736,0.312001406693378,0.302967980956874,0.224672798399351,0.362073894833485,0.237135392214853,0.261761604349771],[0.221012809458814,0.293821407670295,0.380221916501373,0.334664099199312,0.253450183798559,0.382428062700935,0.178716111677608,0.721783492126965,1,0.258731488278004,0.222741925185091],[0.243766787398169,0.273717002647432,0.34392425636069,0.343796294443426,0.25770157918059,0.378590469920558,0.219006142861897,0.6276041441301,0.942788033165809,0.323790230514121,0.261171834890117],[0.0370117447400681,0.187986221168557,0.183075884192762,0.304844471402613,0.192064928133627,0.104305508199161,0.260027356852728,0.162539943164526,0.39454131159479,0.175900252277473,0.255436629472164],[0.0876103508254326,0.242081220423506,0.249172988362757,0.240659215613742,0.172644649883511,0.122883472946789,0.220438902447864,0.127906317557969,0.334410372206298,0.200000791242797,0.248747050494676],[0.294915116405044,0.282624935724847,0.435115024853524,0.321546978962495,0.332618334275565,0.432815060099251,0.231623102794585,0.743617978692826,0.8915595793053,0.304850872577952,0.262714063435027],[0.349708093412729,0.34433361846059,0.445897712575396,0.342306796531854,0.334639695106646,0.464176056965739,0.372825622490822,0.348385299577169,0.486818682805235,0.405426014843445,0.267085523128117],[0.207325548116252,0.244658788449544,0.337759495545502,0.29445353314652,0.316866885447009,0.233019945176244,0.264629332873398,0.222268023016221,0.54886289825918,0.264452234338856,0.348205195499196],[0.0656976115196396,0.147574751342758,0.332963920572014,0.242503095398938,0.147755127632031,0.164129254024951,0.224536372642444,0.162505689883812,0.423103240950019,0.247694837300719,0.248638715192247],[0.00392389777737325,0.219822607819457,0.283668804096234,0.290962606267085,0.241727089703965,0.111595489864774,0.285537693841483,0.136067604858083,0.461807831421132,0.193563833212253,0.310313815225399],[0.25437138784337,0.248644922833725,0.349438283529262,0.354504535356511,0.32823680354659,0.281219764702202,0.33228875178433,0.271170630541218,0.342594200335819,0.306207046615686,0.291121382003748],[0.0825268497537229,0.25858891945869,0.19715309341656,0.226910737022962,0.260487136779719,0.140365900486647,0.30540937622647,0.143637107288101,0.433870445910307,0.200893489786276,0.288899146724182],[0.266622702182068,0.267221404929127,0.318382249796525,0.268067456305911,0.30647798277452,0.390028113950439,0.289378456507012,0.435423813459954,0.718669030903804,0.335962818881567,0.334950374061678],[0.119062748358491,0.0965263366378531,0.125614129272795,0.128894254265504,0.155941666321121,0.0873110067606422,0.149103677848541,0.0305203879795879,0.12733137821035,0.14747955932218,0.167757091210512],[0.189909860911124,0.245087918964467,0.43843864494319,0.316324622412893,0.191669360107525,0.209553873731363,0.206561889771435,0.184047656395238,0.215744957683006,0.0866267366014703,0.25023944186406],[0.167524668233299,0.169594934144359,0.187098986729007,0.193228563578745,0.157358071374551,0.295615486519708,0.205398199968656,0.197802570540349,0.259123857140345,0.226888805773589,0.160262160775573],[0.243993733045714,0.22454406801493,0.20975749138819,0.158955223454236,0.191408624145353,0.135791544357093,0.218263671169001,0.161453765232351,0.182037929336433,0.184550692447601,0.211270279012807],[0.244002044663025,0.220450101194947,0.236048634963628,0.210480650285077,0.217603921595964,0.247811054607733,0.199503241899747,0.215864455908713,0.228029951884585,0.219117722308785,0.223408456429102],[0.247698265144736,0.249117088456265,0.223743422174824,0.244877026836037,0.21636461675385,0.226868630747696,0.176598176414566,0.245615511961739,0.254459257098857,0.237663568916476,0.178715667537506],[0.236137415481474,0.256005409445437,0.33198698050203,0.384642905990093,0.235394736226063,0.365938256232325,0.23019686771274,0.509502864312919,0.720543090753158,0.236586289817072,0.268002497659213],[0.23625299158998,0.221325532451064,0.272372571599196,0.256844246188223,0.240348824493116,0.219045039672233,0.234203696537328,0.263136857375004,0.293863786736807,0.207431859271179,0.292504993047667],[0.169375844994512,0.141676514599816,0.0695970486510491,0.127126899088643,0.141988594385893,0.102129467779606,0.214831979365496,0.0806964075893492,0.141571892666231,0.148119897206619,0.0779711333856641],[0.183966912845203,0.192420314546726,0.199387172031596,0.241929444459405,0.186975285167411,0.148762733992859,0.192053713900848,0.217425576063252,0.381382748266749,0.216939823236062,0.20474207005844],[0.222950761719855,0.201659242127159,0.14543046376129,0.148089549319268,0.194323439301666,0.182491814980763,0.151397371086028,0.19240792991102,0.125889487327404,0.195479315206355,0.16705984676681]],"text":[["treatment: Aphidicoline<br />position: 5641;5741;739<br />log2FC:  0.0181933399","treatment: Camptothecin<br />position: 5641;5741;739<br />log2FC:  0.0876957311","treatment: Etoposide<br />position: 5641;5741;739<br />log2FC:  0.3005962050","treatment: Formaldehyd<br />position: 5641;5741;739<br />log2FC:  0.3668708297","treatment: Gemcitabine<br />position: 5641;5741;739<br />log2FC:  0.0051888996","treatment: Hydrogen peroxide<br />position: 5641;5741;739<br />log2FC:  0.5776539777","treatment: Hydroxyurea<br />position: 5641;5741;739<br />log2FC: -0.1053831098","treatment: Methyl methanesulfonate<br />position: 5641;5741;739<br />log2FC:  1.5859979775","treatment: Sodium Arsentie (NaAsO2)<br />position: 5641;5741;739<br />log2FC:  2.7675068761","treatment: UV-C<br />position: 5641;5741;739<br />log2FC:  0.2213465524","treatment: X-ray<br />position: 5641;5741;739<br />log2FC: -0.0175309966"],["treatment: Aphidicoline<br />position: 5607;5707;705<br />log2FC: -0.4617202299","treatment: Camptothecin<br />position: 5607;5707;705<br />log2FC: -0.4860372668","treatment: Etoposide<br />position: 5607;5707;705<br />log2FC: -0.6049953826","treatment: Formaldehyd<br />position: 5607;5707;705<br />log2FC: -0.3895352145","treatment: Gemcitabine<br />position: 5607;5707;705<br />log2FC: -0.3335848545","treatment: Hydrogen peroxide<br />position: 5607;5707;705<br />log2FC: -0.4881159709","treatment: Hydroxyurea<br />position: 5607;5707;705<br />log2FC: -0.2779942103","treatment: Methyl methanesulfonate<br />position: 5607;5707;705<br />log2FC: -0.7328250604","treatment: Sodium Arsentie (NaAsO2)<br />position: 5607;5707;705<br />log2FC: -0.6950770289","treatment: UV-C<br />position: 5607;5707;705<br />log2FC: -0.3371718738","treatment: X-ray<br />position: 5607;5707;705<br />log2FC: -0.3065555553"],["treatment: Aphidicoline<br />position: 5606;5706;704<br />log2FC: -0.6777547167","treatment: Camptothecin<br />position: 5606;5706;704<br />log2FC: -0.5641113865","treatment: Etoposide<br />position: 5606;5706;704<br />log2FC: -0.5953920863","treatment: Formaldehyd<br />position: 5606;5706;704<br />log2FC: -0.2595082144","treatment: Gemcitabine<br />position: 5606;5706;704<br />log2FC: -0.3974146046","treatment: Hydrogen peroxide<br />position: 5606;5706;704<br />log2FC: -0.5792560817","treatment: Hydroxyurea<br />position: 5606;5706;704<br />log2FC: -0.3301970736","treatment: Methyl methanesulfonate<br />position: 5606;5706;704<br />log2FC: -0.7561413500","treatment: Sodium Arsentie (NaAsO2)<br />position: 5606;5706;704<br />log2FC: -0.6707638724","treatment: UV-C<br />position: 5606;5706;704<br />log2FC: -0.2235447802","treatment: X-ray<br />position: 5606;5706;704<br />log2FC: -0.4756686253"],["treatment: Aphidicoline<br />position: 4862;4962<br />log2FC:  0.8960137291","treatment: Camptothecin<br />position: 4862;4962<br />log2FC:  0.5733305063","treatment: Etoposide<br />position: 4862;4962<br />log2FC:  1.2473637881","treatment: Formaldehyd<br />position: 4862;4962<br />log2FC:  1.1549047555","treatment: Gemcitabine<br />position: 4862;4962<br />log2FC:  0.7163049583","treatment: Hydrogen peroxide<br />position: 4862;4962<br />log2FC:  1.5348088172","treatment: Hydroxyurea<br />position: 4862;4962<br />log2FC:  0.9745107478","treatment: Methyl methanesulfonate<br />position: 4862;4962<br />log2FC:  1.0400131141","treatment: Sodium Arsentie (NaAsO2)<br />position: 4862;4962<br />log2FC:  1.4277771878","treatment: UV-C<br />position: 4862;4962<br />log2FC:  0.9297838042","treatment: X-ray<br />position: 4862;4962<br />log2FC:  0.6476799265"],["treatment: Aphidicoline<br />position: 4377;4477<br />log2FC: -0.1907658813","treatment: Camptothecin<br />position: 4377;4477<br />log2FC: -0.1075035376","treatment: Etoposide<br />position: 4377;4477<br />log2FC: -0.2086095542","treatment: Formaldehyd<br />position: 4377;4477<br />log2FC: -0.2063741855","treatment: Gemcitabine<br />position: 4377;4477<br />log2FC: -0.1887543834","treatment: Hydrogen peroxide<br />position: 4377;4477<br />log2FC:  0.1654474700","treatment: Hydroxyurea<br />position: 4377;4477<br />log2FC: -0.1561135298","treatment: Methyl methanesulfonate<br />position: 4377;4477<br />log2FC:  0.4857729620","treatment: Sodium Arsentie (NaAsO2)<br />position: 4377;4477<br />log2FC:  1.3728607791","treatment: UV-C<br />position: 4377;4477<br />log2FC: -0.0933481259","treatment: X-ray<br />position: 4377;4477<br />log2FC: -0.5281358945"],["treatment: Aphidicoline<br />position: 4372;4472<br />log2FC: -0.3195623096","treatment: Camptothecin<br />position: 4372;4472<br />log2FC:  0.2189295878","treatment: Etoposide<br />position: 4372;4472<br />log2FC: -0.0469656664","treatment: Formaldehyd<br />position: 4372;4472<br />log2FC:  0.2202609525","treatment: Gemcitabine<br />position: 4372;4472<br />log2FC:  0.2394106047","treatment: Hydrogen peroxide<br />position: 4372;4472<br />log2FC:  0.3809579813","treatment: Hydroxyurea<br />position: 4372;4472<br />log2FC:  0.3480353657","treatment: Methyl methanesulfonate<br />position: 4372;4472<br />log2FC:  0.0626860121","treatment: Sodium Arsentie (NaAsO2)<br />position: 4372;4472<br />log2FC:  0.5634488020","treatment: UV-C<br />position: 4372;4472<br />log2FC:  0.1081063429","treatment: X-ray<br />position: 4372;4472<br />log2FC:  0.1978573784"],["treatment: Aphidicoline<br />position: 4085;4185<br />log2FC:  0.0493470627","treatment: Camptothecin<br />position: 4085;4185<br />log2FC:  0.3147003802","treatment: Etoposide<br />position: 4085;4185<br />log2FC:  0.6295898605","treatment: Formaldehyd<br />position: 4085;4185<br />log2FC:  0.4635529053","treatment: Gemcitabine<br />position: 4085;4185<br />log2FC:  0.1675661344","treatment: Hydrogen peroxide<br />position: 4085;4185<br />log2FC:  0.6376302325","treatment: Hydroxyurea<br />position: 4085;4185<br />log2FC: -0.1048046358","treatment: Methyl methanesulfonate<br />position: 4085;4185<br />log2FC:  1.8744221943","treatment: Sodium Arsentie (NaAsO2)<br />position: 4085;4185<br />log2FC:  2.8883913568","treatment: UV-C<br />position: 4085;4185<br />log2FC:  0.1868140213","treatment: X-ray<br />position: 4085;4185<br />log2FC:  0.0556488815"],["treatment: Aphidicoline<br />position: 3308;3408<br />log2FC:  0.1322746795","treatment: Camptothecin<br />position: 3308;3408<br />log2FC:  0.2414292186","treatment: Etoposide<br />position: 3308;3408<br />log2FC:  0.4973018510","treatment: Formaldehyd<br />position: 3308;3408<br />log2FC:  0.4968354896","treatment: Gemcitabine<br />position: 3308;3408<br />log2FC:  0.1830604839","treatment: Hydrogen peroxide<br />position: 3308;3408<br />log2FC:  0.6236440001","treatment: Hydroxyurea<br />position: 3308;3408<br />log2FC:  0.0420337007","treatment: Methyl methanesulfonate<br />position: 3308;3408<br />log2FC:  1.5311824802","treatment: Sodium Arsentie (NaAsO2)<br />position: 3308;3408<br />log2FC:  2.6798804724","treatment: UV-C<br />position: 3308;3408<br />log2FC:  0.4239227353","treatment: X-ray<br />position: 3308;3408<br />log2FC:  0.1957079444"],["treatment: Aphidicoline<br />position: 2236;2336<br />log2FC: -0.6212508357","treatment: Camptothecin<br />position: 2236;2336<br />log2FC: -0.0710194185","treatment: Etoposide<br />position: 2236;2336<br />log2FC: -0.0889153022","treatment: Formaldehyd<br />position: 2236;2336<br />log2FC:  0.3548742965","treatment: Gemcitabine<br />position: 2236;2336<br />log2FC: -0.0561544376","treatment: Hydrogen peroxide<br />position: 2236;2336<br />log2FC: -0.3759965139","treatment: Hydroxyurea<br />position: 2236;2336<br />log2FC:  0.1915368567","treatment: Methyl methanesulfonate<br />position: 2236;2336<br />log2FC: -0.1637592110","treatment: Sodium Arsentie (NaAsO2)<br />position: 2236;2336<br />log2FC:  0.6817773643","treatment: UV-C<br />position: 2236;2336<br />log2FC: -0.1150671274","treatment: X-ray<br />position: 2236;2336<br />log2FC:  0.1748058006"],["treatment: Aphidicoline<br />position: 1897;1997<br />log2FC: -0.4368425610","treatment: Camptothecin<br />position: 1897;1997<br />log2FC:  0.1261315755","treatment: Etoposide<br />position: 1897;1997<br />log2FC:  0.1519777557","treatment: Formaldehyd<br />position: 1897;1997<br />log2FC:  0.1209490325","treatment: Gemcitabine<br />position: 1897;1997<br />log2FC: -0.1269322768","treatment: Hydrogen peroxide<br />position: 1897;1997<br />log2FC: -0.3082885137","treatment: Hydroxyurea<br />position: 1897;1997<br />log2FC:  0.0472554398","treatment: Methyl methanesulfonate<br />position: 1897;1997<br />log2FC: -0.2899825922","treatment: Sodium Arsentie (NaAsO2)<br />position: 1897;1997<br />log2FC:  0.4626281890","treatment: UV-C<br />position: 1897;1997<br />log2FC: -0.0272319249","treatment: X-ray<br />position: 1897;1997<br />log2FC:  0.1504254113"],["treatment: Aphidicoline<br />position: 1610;1710<br />log2FC:  0.3186864375","treatment: Camptothecin<br />position: 1610;1710<br />log2FC:  0.2738944720","treatment: Etoposide<br />position: 1610;1710<br />log2FC:  0.8296495893","treatment: Formaldehyd<br />position: 1610;1710<br />log2FC:  0.4157471316","treatment: Gemcitabine<br />position: 1610;1710<br />log2FC:  0.4560970482","treatment: Hydrogen peroxide<br />position: 1610;1710<br />log2FC:  0.8212672925","treatment: Hydroxyurea<br />position: 1610;1710<br />log2FC:  0.0880166238","treatment: Methyl methanesulfonate<br />position: 1610;1710<br />log2FC:  1.9539986947","treatment: Sodium Arsentie (NaAsO2)<br />position: 1610;1710<br />log2FC:  2.4931766968","treatment: UV-C<br />position: 1610;1710<br />log2FC:  0.3548976258","treatment: X-ray<br />position: 1610;1710<br />log2FC:  0.2013286467"],["treatment: Aphidicoline<br />position: 1318;1418<br />log2FC:  0.5183812343","treatment: Camptothecin<br />position: 1318;1418<br />log2FC:  0.4987937845","treatment: Etoposide<br />position: 1318;1418<br />log2FC:  0.8689474474","treatment: Formaldehyd<br />position: 1318;1418<br />log2FC:  0.4914069657","treatment: Gemcitabine<br />position: 1318;1418<br />log2FC:  0.4634639638","treatment: Hydrogen peroxide<br />position: 1318;1418<br />log2FC:  0.9355634713","treatment: Hydroxyurea<br />position: 1318;1418<br />log2FC:  0.6026338251","treatment: Methyl methanesulfonate<br />position: 1318;1418<br />log2FC:  0.5135602689","treatment: Sodium Arsentie (NaAsO2)<br />position: 1318;1418<br />log2FC:  1.0180852618","treatment: UV-C<br />position: 1318;1418<br />log2FC:  0.7214470213","treatment: X-ray<br />position: 1318;1418<br />log2FC:  0.2172605746"],["treatment: Aphidicoline<br />position: 1081;1181<br />log2FC: -0.0005366089","treatment: Camptothecin<br />position: 1081;1181<br />log2FC:  0.1355256065","treatment: Etoposide<br />position: 1081;1181<br />log2FC:  0.4748341786","treatment: Formaldehyd<br />position: 1081;1181<br />log2FC:  0.3170041822","treatment: Gemcitabine<br />position: 1081;1181<br />log2FC:  0.3986903777","treatment: Hydrogen peroxide<br />position: 1081;1181<br />log2FC:  0.0931074615","treatment: Hydroxyurea<br />position: 1081;1181<br />log2FC:  0.2083089088","treatment: Methyl methanesulfonate<br />position: 1081;1181<br />log2FC:  0.0539217296","treatment: Sodium Arsentie (NaAsO2)<br />position: 1081;1181<br />log2FC:  1.2442074343","treatment: UV-C<br />position: 1081;1181<br />log2FC:  0.2076634674","treatment: X-ray<br />position: 1081;1181<br />log2FC:  0.5129038737"],["treatment: Aphidicoline<br />position: 1072;1172<br />log2FC: -0.5167042560","treatment: Camptothecin<br />position: 1072;1172<br />log2FC: -0.2183003420","treatment: Etoposide<br />position: 1072;1172<br />log2FC:  0.4573565487","treatment: Formaldehyd<br />position: 1072;1172<br />log2FC:  0.1276691127","treatment: Gemcitabine<br />position: 1072;1172<br />log2FC: -0.2176429547","treatment: Hydrogen peroxide<br />position: 1072;1172<br />log2FC: -0.1579669156","treatment: Hydroxyurea<br />position: 1072;1172<br />log2FC:  0.0621888040","treatment: Methyl methanesulfonate<br />position: 1072;1172<br />log2FC: -0.1638840482","treatment: Sodium Arsentie (NaAsO2)<br />position: 1072;1172<br />log2FC:  0.7858722500","treatment: UV-C<br />position: 1072;1172<br />log2FC:  0.1465905859","treatment: X-ray<br />position: 1072;1172<br />log2FC:  0.1500305797"],["treatment: Aphidicoline<br />position: 742;842<br />log2FC: -0.7418405762","treatment: Camptothecin<br />position: 742;842<br />log2FC:  0.0450093339","treatment: Etoposide<br />position: 742;842<br />log2FC:  0.2776988844","treatment: Formaldehyd<br />position: 742;842<br />log2FC:  0.3042813850","treatment: Gemcitabine<br />position: 742;842<br />log2FC:  0.1248409346","treatment: Hydrogen peroxide<br />position: 742;842<br />log2FC: -0.3494279372","treatment: Hydroxyurea<br />position: 742;842<br />log2FC:  0.2845101142","treatment: Methyl methanesulfonate<br />position: 742;842<br />log2FC: -0.2602385138","treatment: Sodium Arsentie (NaAsO2)<br />position: 742;842<br />log2FC:  0.9269323959","treatment: UV-C<br />position: 742;842<br />log2FC: -0.0506916290","treatment: X-ray<br />position: 742;842<br />log2FC:  0.3748074990"],["treatment: Aphidicoline<br />position: 665;765<br />log2FC:  0.1709234927","treatment: Camptothecin<br />position: 665;765<br />log2FC:  0.1500532037","treatment: Etoposide<br />position: 665;765<br />log2FC:  0.5173979033","treatment: Formaldehyd<br />position: 665;765<br />log2FC:  0.5358620238","treatment: Gemcitabine<br />position: 665;765<br />log2FC:  0.4401284161","treatment: Hydrogen peroxide<br />position: 665;765<br />log2FC:  0.2687732803","treatment: Hydroxyurea<br />position: 665;765<br />log2FC:  0.4548958740","treatment: Methyl methanesulfonate<br />position: 665;765<br />log2FC:  0.2321488821","treatment: Sodium Arsentie (NaAsO2)<br />position: 665;765<br />log2FC:  0.4924544183","treatment: UV-C<br />position: 665;765<br />log2FC:  0.3598402464","treatment: X-ray<br />position: 665;765<br />log2FC:  0.3048600484"],["treatment: Aphidicoline<br />position: 593;693<br />log2FC: -0.4553695469","treatment: Camptothecin<br />position: 593;693<br />log2FC:  0.1862944246","treatment: Etoposide<br />position: 593;693<br />log2FC: -0.0376104528","treatment: Formaldehyd<br />position: 593;693<br />log2FC:  0.0708422526","treatment: Gemcitabine<br />position: 593;693<br />log2FC:  0.1932125397","treatment: Hydrogen peroxide<br />position: 593;693<br />log2FC: -0.2445732347","treatment: Hydroxyurea<br />position: 593;693<br />log2FC:  0.3569331106","treatment: Methyl methanesulfonate<br />position: 593;693<br />log2FC: -0.2326512146","treatment: Sodium Arsentie (NaAsO2)<br />position: 593;693<br />log2FC:  0.8251136806","treatment: UV-C<br />position: 593;693<br />log2FC: -0.0239784559","treatment: X-ray<br />position: 593;693<br />log2FC:  0.2967610392"],["treatment: Aphidicoline<br />position: 540;5442;5542<br />log2FC:  0.2155738085","treatment: Camptothecin<br />position: 540;5442;5542<br />log2FC:  0.2177558002","treatment: Etoposide<br />position: 540;5442;5542<br />log2FC:  0.4042131727","treatment: Formaldehyd<br />position: 540;5442;5542<br />log2FC:  0.2208392621","treatment: Gemcitabine<br />position: 540;5442;5542<br />log2FC:  0.3608276821","treatment: Hydrogen peroxide<br />position: 540;5442;5542<br />log2FC:  0.6653288679","treatment: Hydroxyurea<br />position: 540;5442;5542<br />log2FC:  0.2985078994","treatment: Methyl methanesulfonate<br />position: 540;5442;5542<br />log2FC:  0.8307749795","treatment: Sodium Arsentie (NaAsO2)<br />position: 540;5442;5542<br />log2FC:  1.8630714385","treatment: UV-C<br />position: 540;5442;5542<br />log2FC:  0.4682861317","treatment: X-ray<br />position: 540;5442;5542<br />log2FC:  0.4645962434"],["treatment: Aphidicoline<br />position: 493;593<br />log2FC: -0.3222132694","treatment: Camptothecin<br />position: 493;593<br />log2FC: -0.4043479590","treatment: Etoposide<br />position: 493;593<br />log2FC: -0.2983365474","treatment: Formaldehyd<br />position: 493;593<br />log2FC: -0.2863820246","treatment: Gemcitabine<br />position: 493;593<br />log2FC: -0.1878068467","treatment: Hydrogen peroxide<br />position: 493;593<br />log2FC: -0.4379335302","treatment: Hydroxyurea<br />position: 493;593<br />log2FC: -0.2127281194","treatment: Methyl methanesulfonate<br />position: 493;593<br />log2FC: -0.6449087978","treatment: Sodium Arsentie (NaAsO2)<br />position: 493;593<br />log2FC: -0.2920779775","treatment: UV-C<br />position: 493;593<br />log2FC: -0.2186472725","treatment: X-ray<br />position: 493;593<br />log2FC: -0.1447451443"],["treatment: Aphidicoline<br />position: 232;332<br />log2FC: -0.0640086506","treatment: Camptothecin<br />position: 232;332<br />log2FC:  0.1370895867","treatment: Etoposide<br />position: 232;332<br />log2FC:  0.8417626314","treatment: Formaldehyd<br />position: 232;332<br />log2FC:  0.3967140824","treatment: Gemcitabine<br />position: 232;332<br />log2FC: -0.0575960982","treatment: Hydrogen peroxide<br />position: 232;332<br />log2FC:  0.0075845967","treatment: Hydroxyurea<br />position: 232;332<br />log2FC: -0.0033197867","treatment: Methyl methanesulfonate<br />position: 232;332<br />log2FC: -0.0853736467","treatment: Sodium Arsentie (NaAsO2)<br />position: 232;332<br />log2FC:  0.0301482046","treatment: UV-C<br />position: 232;332<br />log2FC: -0.4404273752","treatment: X-ray<br />position: 232;332<br />log2FC:  0.1558644804"],["treatment: Aphidicoline<br />position: 198;298<br />log2FC: -0.1455922174","treatment: Camptothecin<br />position: 198;298<br />log2FC: -0.1380470656","treatment: Etoposide<br />position: 198;298<br />log2FC: -0.0742529735","treatment: Formaldehyd<br />position: 198;298<br />log2FC: -0.0519135301","treatment: Gemcitabine<br />position: 198;298<br />log2FC: -0.1826447122","treatment: Hydrogen peroxide<br />position: 198;298<br />log2FC:  0.3212389593","treatment: Hydroxyurea<br />position: 198;298<br />log2FC: -0.0075608923","treatment: Methyl methanesulfonate<br />position: 198;298<br />log2FC: -0.0352434122","treatment: Sodium Arsentie (NaAsO2)<br />position: 198;298<br />log2FC:  0.1882440225","treatment: UV-C<br />position: 198;298<br />log2FC:  0.0707623235","treatment: X-ray<br />position: 198;298<br />log2FC: -0.1720606634"],["treatment: Aphidicoline<br />position: 197;297<br />log2FC:  0.1331017903","treatment: Camptothecin<br />position: 197;297<br />log2FC:  0.0622168500","treatment: Etoposide<br />position: 197;297<br />log2FC:  0.0083266879","treatment: Formaldehyd<br />position: 197;297<br />log2FC: -0.1768238392","treatment: Gemcitabine<br />position: 197;297<br />log2FC: -0.0585463589","treatment: Hydrogen peroxide<br />position: 197;297<br />log2FC: -0.2612446253","treatment: Hydroxyurea<br />position: 197;297<br />log2FC:  0.0393277383","treatment: Methyl methanesulfonate<br />position: 197;297<br />log2FC: -0.1677178220","treatment: Sodium Arsentie (NaAsO2)<br />position: 197;297<br />log2FC: -0.0926981626","treatment: UV-C<br />position: 197;297<br />log2FC: -0.0835403153","treatment: X-ray<br />position: 197;297<br />log2FC:  0.0138400918"],["treatment: Aphidicoline<br />position: 194;294<br />log2FC:  0.1331320823","treatment: Camptothecin<br />position: 194;294<br />log2FC:  0.0472962540","treatment: Etoposide<br />position: 194;294<br />log2FC:  0.1041456205","treatment: Formaldehyd<br />position: 194;294<br />log2FC:  0.0109622641","treatment: Gemcitabine<br />position: 194;294<br />log2FC:  0.0369232594","treatment: Hydrogen peroxide<br />position: 194;294<br />log2FC:  0.1470141436","treatment: Hydroxyurea<br />position: 194;294<br />log2FC: -0.0290452598","treatment: Methyl methanesulfonate<br />position: 194;294<br />log2FC:  0.0305837198","treatment: Sodium Arsentie (NaAsO2)<br />position: 194;294<br />log2FC:  0.0749212678","treatment: UV-C<br />position: 194;294<br />log2FC:  0.0424403556","treatment: X-ray<br />position: 194;294<br />log2FC:  0.0580780764"],["treatment: Aphidicoline<br />position: 180;280<br />log2FC:  0.1466030787","treatment: Camptothecin<br />position: 180;280<br />log2FC:  0.1517740267","treatment: Etoposide<br />position: 180;280<br />log2FC:  0.0592988701","treatment: Formaldehyd<br />position: 180;280<br />log2FC:  0.1363209835","treatment: Gemcitabine<br />position: 180;280<br />log2FC:  0.0324065724","treatment: Hydrogen peroxide<br />position: 180;280<br />log2FC:  0.0706887949","treatment: Hydroxyurea<br />position: 180;280<br />log2FC: -0.1125235201","treatment: Methyl methanesulfonate<br />position: 180;280<br />log2FC:  0.1390124166","treatment: Sodium Arsentie (NaAsO2)<br />position: 180;280<br />log2FC:  0.1712437351","treatment: UV-C<br />position: 180;280<br />log2FC:  0.1100313001","treatment: X-ray<br />position: 180;280<br />log2FC: -0.1048062544"],["treatment: Aphidicoline<br />position: 173;5075;5175<br />log2FC:  0.1044691840","treatment: Camptothecin<br />position: 173;5075;5175<br />log2FC:  0.1768787378","treatment: Etoposide<br />position: 173;5075;5175<br />log2FC:  0.4537960587","treatment: Formaldehyd<br />position: 173;5075;5175<br />log2FC:  0.6457023013","treatment: Gemcitabine<br />position: 173;5075;5175<br />log2FC:  0.1017624652","treatment: Hydrogen peroxide<br />position: 173;5075;5175<br />log2FC:  0.5775325935","treatment: Hydroxyurea<br />position: 173;5075;5175<br />log2FC:  0.0828186634","treatment: Methyl methanesulfonate<br />position: 173;5075;5175<br />log2FC:  1.1007585032","treatment: Sodium Arsentie (NaAsO2)<br />position: 173;5075;5175<br />log2FC:  1.8699015109","treatment: UV-C<br />position: 173;5075;5175<br />log2FC:  0.1061051212","treatment: X-ray<br />position: 173;5075;5175<br />log2FC:  0.2206025182"],["treatment: Aphidicoline<br />position: 160;260<br />log2FC:  0.1048904049","treatment: Camptothecin<br />position: 160;260<br />log2FC:  0.0504867919","treatment: Etoposide<br />position: 160;260<br />log2FC:  0.2365293956","treatment: Formaldehyd<br />position: 160;260<br />log2FC:  0.1799359058","treatment: Gemcitabine<br />position: 160;260<br />log2FC:  0.1198178019","treatment: Hydrogen peroxide<br />position: 160;260<br />log2FC:  0.0421754614","treatment: Hydroxyurea<br />position: 160;260<br />log2FC:  0.0974216821","treatment: Methyl methanesulfonate<br />position: 160;260<br />log2FC:  0.2028695331","treatment: Sodium Arsentie (NaAsO2)<br />position: 160;260<br />log2FC:  0.3148548321","treatment: UV-C<br />position: 160;260<br />log2FC: -0.0001491544","treatment: X-ray<br />position: 160;260<br />log2FC:  0.3099026641"],["treatment: Aphidicoline<br />position: 128;228<br />log2FC: -0.1388455432","treatment: Camptothecin<br />position: 128;228<br />log2FC: -0.2397966587","treatment: Etoposide<br />position: 128;228<br />log2FC: -0.5024926299","treatment: Formaldehyd<br />position: 128;228<br />log2FC: -0.2928232083","treatment: Gemcitabine<br />position: 128;228<br />log2FC: -0.2386592738","treatment: Hydrogen peroxide<br />position: 128;228<br />log2FC: -0.3839271643","treatment: Hydroxyurea<br />position: 128;228<br />log2FC:  0.0268208253","treatment: Methyl methanesulfonate<br />position: 128;228<br />log2FC: -0.4620406532","treatment: Sodium Arsentie (NaAsO2)<br />position: 128;228<br />log2FC: -0.2401779568","treatment: UV-C<br />position: 128;228<br />log2FC: -0.2163135401","treatment: X-ray<br />position: 128;228<br />log2FC: -0.4719730042"],["treatment: Aphidicoline<br />position: 102;2<br />log2FC: -0.0856679192","treatment: Camptothecin<br />position: 102;2<br />log2FC: -0.0548592202","treatment: Etoposide<br />position: 102;2<br />log2FC: -0.0294682802","treatment: Formaldehyd<br />position: 102;2<br />log2FC:  0.1255784231","treatment: Gemcitabine<br />position: 102;2<br />log2FC: -0.0747038078","treatment: Hydrogen peroxide<br />position: 102;2<br />log2FC: -0.2139707004","treatment: Hydroxyurea<br />position: 102;2<br />log2FC: -0.0561953082","treatment: Methyl methanesulfonate<br />position: 102;2<br />log2FC:  0.0362732733","treatment: Sodium Arsentie (NaAsO2)<br />position: 102;2<br />log2FC:  0.6338205499","treatment: UV-C<br />position: 102;2<br />log2FC:  0.0345029312","treatment: X-ray<br />position: 102;2<br />log2FC: -0.0099521792"],["treatment: Aphidicoline<br />position: 38<br />log2FC:  0.0564099931","treatment: Camptothecin<br />position: 38<br />log2FC: -0.0211876464","treatment: Etoposide<br />position: 38<br />log2FC: -0.2261152682","treatment: Formaldehyd<br />position: 38<br />log2FC: -0.2164241440","treatment: Gemcitabine<br />position: 38<br />log2FC: -0.0479232198","treatment: Hydrogen peroxide<br />position: 38<br />log2FC: -0.0910439616","treatment: Hydroxyurea<br />position: 38<br />log2FC: -0.2043686793","treatment: Methyl methanesulfonate<br />position: 38<br />log2FC: -0.0549043564","treatment: Sodium Arsentie (NaAsO2)<br />position: 38<br />log2FC: -0.2973329960","treatment: UV-C<br />position: 38<br />log2FC: -0.0437105922","treatment: X-ray<br />position: 38<br />log2FC: -0.1472862745"]],"colorscale":[[0,"#E4C4C0"],[0.00392389777737325,"#E4C5C1"],[0.00639760745258131,"#E5C6C2"],[0.0167550481812631,"#E6C9C5"],[0.0215080065484506,"#E7CAC6"],[0.0234261795437966,"#E7CAC7"],[0.0305203879795879,"#E8CCC9"],[0.0370117447400681,"#E9CECB"],[0.041471974464936,"#E9D0CC"],[0.0441069614841174,"#EAD0CD"],[0.0485344164847918,"#EAD2CE"],[0.0526898724625183,"#EBD3D0"],[0.0625609574313217,"#ECD5D3"],[0.0656976115196396,"#EDD6D3"],[0.0695970486510491,"#EDD7D5"],[0.0735417680722262,"#EED9D6"],[0.0741121303910206,"#EED9D6"],[0.0769571155692196,"#EEDAD7"],[0.0779711333856641,"#EEDAD7"],[0.0806964075893492,"#EFDBD8"],[0.0807843264839588,"#EFDBD8"],[0.0825268497537229,"#EFDBD9"],[0.0866267366014703,"#F0DCDA"],[0.0873110067606422,"#F0DDDA"],[0.0876103508254326,"#F0DDDA"],[0.0965263366378531,"#F1DFDD"],[0.0984287353924382,"#F1E0DD"],[0.100590710788585,"#F1E0DE"],[0.102129467779606,"#F2E1DE"],[0.104305508199161,"#F2E1DF"],[0.111595489864774,"#F3E3E1"],[0.114958352656553,"#F3E4E2"],[0.115942571934843,"#F3E5E3"],[0.116872123440911,"#F3E5E3"],[0.119062748358491,"#F4E6E4"],[0.119790128255846,"#F4E6E4"],[0.122883472946789,"#F4E7E5"],[0.123358968317558,"#F4E7E5"],[0.125614129272795,"#F5E7E6"],[0.125889487327404,"#F5E8E6"],[0.127126899088643,"#F5E8E6"],[0.12733137821035,"#F5E8E6"],[0.127906317557969,"#F5E8E6"],[0.128894254265504,"#F5E8E7"],[0.131195732953068,"#F5E9E7"],[0.135791544357093,"#F6EAE9"],[0.136067604858083,"#F6EAE9"],[0.136267987028179,"#F6EAE9"],[0.140365900486647,"#F7ECEA"],[0.141571892666231,"#F7ECEB"],[0.141676514599816,"#F7ECEB"],[0.141988594385893,"#F7ECEB"],[0.143637107288101,"#F7EDEB"],[0.14543046376129,"#F7EDEC"],[0.146135763521509,"#F7EDEC"],[0.14747955932218,"#F7EEEC"],[0.147574751342758,"#F7EEEC"],[0.147755127632031,"#F7EEEC"],[0.148089549319268,"#F8EEED"],[0.148119897206619,"#F8EEED"],[0.148762733992859,"#F8EEED"],[0.149103677848541,"#F8EEED"],[0.150233744593307,"#F8EEED"],[0.150847093097002,"#F8EFED"],[0.151397371086028,"#F8EFEE"],[0.155129755781164,"#F8F0EF"],[0.155681677813753,"#F9F0EF"],[0.155941666321121,"#F9F0EF"],[0.157358071374551,"#F9F1EF"],[0.158955223454236,"#F9F1F0"],[0.160262160775573,"#F9F1F0"],[0.161453765232351,"#F9F2F1"],[0.162505689883812,"#F9F2F1"],[0.162539943164526,"#F9F2F1"],[0.164129254024951,"#FAF2F2"],[0.164637792683122,"#FAF3F2"],[0.16705984676681,"#FAF3F2"],[0.167524668233299,"#FAF3F3"],[0.167757091210512,"#FAF4F3"],[0.169375844994512,"#FAF4F3"],[0.169594934144359,"#FAF4F3"],[0.172644649883511,"#FBF5F4"],[0.175900252277473,"#FBF6F5"],[0.176598176414566,"#FBF6F5"],[0.177975577265285,"#FBF6F6"],[0.178557387874878,"#FBF7F6"],[0.178715667537506,"#FBF7F6"],[0.178716111677608,"#FBF7F6"],[0.181859590093583,"#FCF8F7"],[0.182037929336433,"#FCF8F7"],[0.182491814980763,"#FCF8F7"],[0.183075884192762,"#FCF8F7"],[0.183966912845203,"#FCF8F8"],[0.184047656395238,"#FCF8F8"],[0.184550692447601,"#FCF8F8"],[0.186975285167411,"#FCF9F9"],[0.187098986729007,"#FCF9F9"],[0.187986221168557,"#FDF9F9"],[0.189909860911124,"#FDFAFA"],[0.191408624145353,"#FDFAFA"],[0.191669360107525,"#FDFAFA"],[0.192053713900848,"#FDFBFA"],[0.192064928133627,"#FDFBFA"],[0.19240792991102,"#FDFBFA"],[0.192420314546726,"#FDFBFA"],[0.193228563578745,"#FDFBFB"],[0.193563833212253,"#FDFBFB"],[0.194323439301666,"#FDFBFB"],[0.194586176246419,"#FDFBFB"],[0.195479315206355,"#FEFCFB"],[0.19715309341656,"#FEFCFC"],[0.197802570540349,"#FEFCFC"],[0.199387172031596,"#FEFDFC"],[0.199503241899747,"#FEFDFD"],[0.200000791242797,"#FEFDFD"],[0.200893489786276,"#FEFDFD"],[0.201659242127159,"#FEFDFD"],[0.202662566860026,"#FEFEFD"],[0.20474207005844,"#FFFEFE"],[0.205398199968656,"#FFFEFE"],[0.206561889771435,"#FFFFFF"],[0.207325548116252,"#FFFFFF"],[0.207431859271179,"#FFFFFF"],[0.208896533746702,"#FFFFFF"],[0.209553873731363,"#FFFEFF"],[0.20975749138819,"#FEFEFF"],[0.210480650285077,"#FEFEFF"],[0.211270279012807,"#FEFEFF"],[0.212464738885594,"#FEFEFE"],[0.214831979365496,"#FDFDFE"],[0.215744957683006,"#FDFDFE"],[0.215864455908713,"#FDFDFE"],[0.21636461675385,"#FDFDFE"],[0.216939823236062,"#FDFCFE"],[0.217425576063252,"#FDFCFE"],[0.217603921595964,"#FDFCFE"],[0.218263671169001,"#FCFCFE"],[0.219006142861897,"#FCFCFE"],[0.219045039672233,"#FCFCFE"],[0.219117722308785,"#FCFCFD"],[0.219822607819457,"#FCFCFD"],[0.220438902447864,"#FCFBFD"],[0.220450101194947,"#FCFBFD"],[0.221012809458814,"#FCFBFD"],[0.221325532451064,"#FCFBFD"],[0.222268023016221,"#FBFBFD"],[0.222741925185091,"#FBFBFD"],[0.222950761719855,"#FBFBFD"],[0.223408456429102,"#FBFBFD"],[0.223743422174824,"#FBFBFD"],[0.224536372642444,"#FBFAFD"],[0.22454406801493,"#FBFAFD"],[0.224672798399351,"#FBFAFD"],[0.226868630747696,"#FAFAFC"],[0.226888805773589,"#FAFAFC"],[0.226910737022962,"#FAFAFC"],[0.228029951884585,"#FAF9FC"],[0.23019686771274,"#FAF9FC"],[0.231535055108178,"#F9F8FC"],[0.231623102794585,"#F9F8FC"],[0.233019945176244,"#F9F8FC"],[0.234203696537328,"#F9F8FC"],[0.235394736226063,"#F8F7FB"],[0.236048634963628,"#F8F7FB"],[0.236137415481474,"#F8F7FB"],[0.23625299158998,"#F8F7FB"],[0.236586289817072,"#F8F7FB"],[0.237135392214853,"#F8F7FB"],[0.237663568916476,"#F8F7FB"],[0.240348824493116,"#F7F6FB"],[0.240659215613742,"#F7F6FB"],[0.241727089703965,"#F7F6FB"],[0.241929444459405,"#F7F6FB"],[0.242081220423506,"#F7F6FB"],[0.242503095398938,"#F7F5FA"],[0.243766787398169,"#F6F5FA"],[0.243993733045714,"#F6F5FA"],[0.244002044663025,"#F6F5FA"],[0.244658788449544,"#F6F5FA"],[0.244877026836037,"#F6F5FA"],[0.245087918964467,"#F6F5FA"],[0.245615511961739,"#F6F5FA"],[0.247694837300719,"#F5F4FA"],[0.247698265144736,"#F5F4FA"],[0.247811054607733,"#F5F4FA"],[0.248638715192247,"#F5F4FA"],[0.248644922833725,"#F5F4FA"],[0.248747050494676,"#F5F4FA"],[0.249117088456265,"#F5F4FA"],[0.249172988362757,"#F5F4FA"],[0.25023944186406,"#F5F3F9"],[0.25286885704223,"#F4F3F9"],[0.253450183798559,"#F4F2F9"],[0.25437138784337,"#F4F2F9"],[0.254459257098857,"#F4F2F9"],[0.255436629472164,"#F4F2F9"],[0.256005409445437,"#F3F2F9"],[0.256844246188223,"#F3F2F9"],[0.25770157918059,"#F3F1F9"],[0.25858891945869,"#F3F1F8"],[0.258731488278004,"#F3F1F8"],[0.259123857140345,"#F3F1F8"],[0.260027356852728,"#F2F1F8"],[0.260487136779719,"#F2F1F8"],[0.261171834890117,"#F2F0F8"],[0.261761604349771,"#F2F0F8"],[0.262714063435027,"#F2F0F8"],[0.263136857375004,"#F2F0F8"],[0.264452234338856,"#F1EFF8"],[0.264629332873398,"#F1EFF8"],[0.266622702182068,"#F1EFF7"],[0.267085523128117,"#F1EFF7"],[0.267221404929127,"#F1EFF7"],[0.267543472986092,"#F1EFF7"],[0.267908777638972,"#F1EFF7"],[0.268002497659213,"#F1EEF7"],[0.268067456305911,"#F1EEF7"],[0.268206648446061,"#F1EEF7"],[0.271170630541218,"#F0EEF7"],[0.272372571599196,"#F0EDF7"],[0.273163128123736,"#EFEDF7"],[0.273717002647432,"#EFEDF6"],[0.281219764702202,"#EDEBF5"],[0.282624935724847,"#EDEBF5"],[0.283668804096234,"#EDEAF5"],[0.285537693841483,"#ECEAF5"],[0.288899146724182,"#ECE9F4"],[0.289378456507012,"#EBE9F4"],[0.289951453313741,"#EBE9F4"],[0.290962606267085,"#EBE8F4"],[0.291121382003748,"#EBE8F4"],[0.292504993047667,"#EBE8F4"],[0.293821407670295,"#EAE8F4"],[0.293863786736807,"#EAE7F4"],[0.29445353314652,"#EAE7F4"],[0.294915116405044,"#EAE7F4"],[0.295615486519708,"#EAE7F4"],[0.302967980956874,"#E8E5F3"],[0.304844471402613,"#E8E5F2"],[0.304850872577952,"#E8E5F2"],[0.30540937622647,"#E8E4F2"],[0.306207046615686,"#E7E4F2"],[0.30647798277452,"#E7E4F2"],[0.308136123351659,"#E7E4F2"],[0.310313815225399,"#E6E3F2"],[0.312001406693378,"#E6E3F2"],[0.316324622412893,"#E5E1F1"],[0.316866885447009,"#E5E1F1"],[0.318382249796525,"#E5E1F1"],[0.321546978962495,"#E4E0F0"],[0.323790230514121,"#E3DFF0"],[0.32823680354659,"#E2DEEF"],[0.33198698050203,"#E1DDEF"],[0.33228875178433,"#E1DDEF"],[0.332618334275565,"#E1DDEF"],[0.332963920572014,"#E1DDEF"],[0.334410372206298,"#E1DDEF"],[0.334639695106646,"#E1DDEF"],[0.334664099199312,"#E1DDEF"],[0.334950374061678,"#E1DCEF"],[0.335962818881567,"#E0DCEE"],[0.337759495545502,"#E0DCEE"],[0.340760918326866,"#DFDBEE"],[0.342306796531854,"#DFDAEE"],[0.342594200335819,"#DFDAEE"],[0.343796294443426,"#DFDAED"],[0.34392425636069,"#DFDAED"],[0.34433361846059,"#DEDAED"],[0.348205195499196,"#DDD9ED"],[0.348385299577169,"#DDD9ED"],[0.349438283529262,"#DDD9ED"],[0.349708093412729,"#DDD9ED"],[0.354504535356511,"#DCD7EC"],[0.362073894833485,"#DAD5EB"],[0.364785272407661,"#DAD5EB"],[0.365938256232325,"#D9D4EB"],[0.365971562071196,"#D9D4EB"],[0.372825622490822,"#D8D2EA"],[0.378590469920558,"#D6D1E9"],[0.380221916501373,"#D6D0E9"],[0.381382748266749,"#D6D0E9"],[0.382428062700935,"#D5D0E8"],[0.384642905990093,"#D5CFE8"],[0.385185533914132,"#D5CFE8"],[0.390028113950439,"#D4CEE7"],[0.39454131159479,"#D2CDE7"],[0.404015117093673,"#D0CAE6"],[0.405426014843445,"#D0CAE5"],[0.423103240950019,"#CCC5E3"],[0.432815060099251,"#C9C3E2"],[0.433870445910307,"#C9C2E2"],[0.435115024853524,"#C9C2E2"],[0.435423813459954,"#C9C2E2"],[0.43843864494319,"#C8C1E1"],[0.445897712575396,"#C6BFE0"],[0.453324256367803,"#C5BDDF"],[0.461807831421132,"#C3BBDE"],[0.462590211108109,"#C2BBDE"],[0.464176056965739,"#C2BADE"],[0.474862550842319,"#BFB8DC"],[0.486818682805235,"#BDB5DB"],[0.492835325834584,"#BBB3DA"],[0.509502864312919,"#B7AFD8"],[0.524359707884538,"#B4ABD6"],[0.54886289825918,"#AEA5D3"],[0.549728949990173,"#AEA4D3"],[0.584163266020676,"#A59CCE"],[0.599231427863356,"#A298CC"],[0.6276041441301,"#9B91C9"],[0.628599151534841,"#9B91C8"],[0.642644617553485,"#988DC7"],[0.718669030903804,"#857BBD"],[0.720543090753158,"#857ABD"],[0.721783492126965,"#847ABC"],[0.743617978692826,"#7F75B9"],[0.8915595793053,"#5952A6"],[0.942788033165809,"#4B479F"],[0.966831281140433,"#44419C"],[1,"#3A3A98"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1],"name":"99_57482a770edd11074f71117234c23801","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#E4C4C0"],[0.00334448160535116,"#E4C5C1"],[0.00668896321070236,"#E5C6C2"],[0.0100334448160535,"#E5C7C3"],[0.0133779264214047,"#E6C8C4"],[0.0167224080267558,"#E6C9C5"],[0.020066889632107,"#E6CAC6"],[0.0234113712374582,"#E7CAC7"],[0.0267558528428094,"#E7CBC8"],[0.0301003344481605,"#E8CCC9"],[0.0334448160535117,"#E8CDCA"],[0.0367892976588629,"#E9CECB"],[0.040133779264214,"#E9CFCC"],[0.0434782608695652,"#EAD0CD"],[0.0468227424749164,"#EAD1CE"],[0.0501672240802676,"#EBD2CF"],[0.0535117056856187,"#EBD3D0"],[0.0568561872909699,"#ECD4D1"],[0.0602006688963211,"#ECD5D2"],[0.0635451505016723,"#ECD6D3"],[0.0668896321070234,"#EDD7D4"],[0.0702341137123746,"#EDD8D5"],[0.0735785953177258,"#EED9D6"],[0.0769230769230769,"#EEDAD7"],[0.0802675585284281,"#EFDBD8"],[0.0836120401337793,"#EFDBD9"],[0.0869565217391304,"#F0DCDA"],[0.0903010033444816,"#F0DDDB"],[0.0936454849498328,"#F0DEDC"],[0.0969899665551839,"#F1DFDD"],[0.100334448160535,"#F1E0DE"],[0.103678929765886,"#F2E1DF"],[0.107023411371237,"#F2E2E0"],[0.110367892976589,"#F3E3E1"],[0.11371237458194,"#F3E4E2"],[0.117056856187291,"#F4E5E3"],[0.120401337792642,"#F4E6E4"],[0.123745819397993,"#F4E7E5"],[0.127090301003344,"#F5E8E6"],[0.130434782608696,"#F5E9E7"],[0.133779264214047,"#F6EAE8"],[0.137123745819398,"#F6EBE9"],[0.140468227424749,"#F7ECEA"],[0.1438127090301,"#F7EDEB"],[0.147157190635452,"#F7EEEC"],[0.150501672240803,"#F8EFED"],[0.153846153846154,"#F8F0EE"],[0.157190635451505,"#F9F0EF"],[0.160535117056856,"#F9F1F0"],[0.163879598662207,"#FAF2F1"],[0.167224080267559,"#FAF3F2"],[0.17056856187291,"#FAF4F4"],[0.173913043478261,"#FBF5F5"],[0.177257525083612,"#FBF6F6"],[0.180602006688963,"#FCF7F7"],[0.183946488294314,"#FCF8F8"],[0.187290969899666,"#FCF9F9"],[0.190635451505017,"#FDFAFA"],[0.193979933110368,"#FDFBFB"],[0.197324414715719,"#FEFCFC"],[0.20066889632107,"#FEFDFD"],[0.204013377926421,"#FFFEFE"],[0.207357859531773,"#FFFFFF"],[0.210702341137124,"#FEFEFF"],[0.214046822742475,"#FDFDFE"],[0.217391304347826,"#FDFCFE"],[0.220735785953177,"#FCFBFD"],[0.224080267558528,"#FBFAFD"],[0.22742474916388,"#FAFAFC"],[0.230769230769231,"#F9F9FC"],[0.234113712374582,"#F9F8FC"],[0.237458193979933,"#F8F7FB"],[0.240802675585284,"#F7F6FB"],[0.244147157190635,"#F6F5FA"],[0.247491638795987,"#F5F4FA"],[0.250836120401338,"#F5F3F9"],[0.254180602006689,"#F4F2F9"],[0.25752508361204,"#F3F1F9"],[0.260869565217391,"#F2F0F8"],[0.264214046822743,"#F1F0F8"],[0.267558528428094,"#F1EFF7"],[0.270903010033445,"#F0EEF7"],[0.274247491638796,"#EFEDF6"],[0.277591973244147,"#EEECF6"],[0.280936454849498,"#EDEBF6"],[0.28428093645485,"#EDEAF5"],[0.287625418060201,"#ECE9F5"],[0.290969899665552,"#EBE8F4"],[0.294314381270903,"#EAE7F4"],[0.297658862876254,"#E9E6F3"],[0.301003344481605,"#E9E6F3"],[0.304347826086957,"#E8E5F2"],[0.307692307692308,"#E7E4F2"],[0.311036789297659,"#E6E3F2"],[0.31438127090301,"#E6E2F1"],[0.317725752508361,"#E5E1F1"],[0.321070234113712,"#E4E0F0"],[0.324414715719064,"#E3DFF0"],[0.327759197324415,"#E2DEEF"],[0.331103678929766,"#E2DDEF"],[0.334448160535117,"#E1DDEF"],[0.337792642140468,"#E0DCEE"],[0.341137123745819,"#DFDBEE"],[0.344481605351171,"#DEDAED"],[0.347826086956522,"#DED9ED"],[0.351170568561873,"#DDD8EC"],[0.354515050167224,"#DCD7EC"],[0.357859531772575,"#DBD6EC"],[0.361204013377926,"#DAD5EB"],[0.364548494983278,"#DAD5EB"],[0.367892976588629,"#D9D4EA"],[0.37123745819398,"#D8D3EA"],[0.374581939799331,"#D7D2E9"],[0.377926421404682,"#D6D1E9"],[0.381270903010033,"#D6D0E9"],[0.384615384615385,"#D5CFE8"],[0.387959866220736,"#D4CEE8"],[0.391304347826087,"#D3CDE7"],[0.394648829431438,"#D2CDE7"],[0.397993311036789,"#D2CCE6"],[0.40133779264214,"#D1CBE6"],[0.404682274247492,"#D0CAE6"],[0.408026755852843,"#CFC9E5"],[0.411371237458194,"#CEC8E5"],[0.414715719063545,"#CEC7E4"],[0.418060200668896,"#CDC6E4"],[0.421404682274248,"#CCC6E3"],[0.424749163879599,"#CBC5E3"],[0.42809364548495,"#CBC4E2"],[0.431438127090301,"#CAC3E2"],[0.434782608695652,"#C9C2E2"],[0.438127090301003,"#C8C1E1"],[0.441471571906354,"#C7C0E1"],[0.444816053511706,"#C7BFE0"],[0.448160535117057,"#C6BFE0"],[0.451505016722408,"#C5BEDF"],[0.454849498327759,"#C4BDDF"],[0.45819397993311,"#C3BCDF"],[0.461538461538462,"#C3BBDE"],[0.464882943143813,"#C2BADE"],[0.468227424749164,"#C1B9DD"],[0.471571906354515,"#C0B8DD"],[0.474916387959866,"#BFB8DC"],[0.478260869565217,"#BFB7DC"],[0.481605351170569,"#BEB6DC"],[0.48494983277592,"#BDB5DB"],[0.488294314381271,"#BCB4DB"],[0.491638795986622,"#BBB3DA"],[0.494983277591973,"#BBB2DA"],[0.498327759197324,"#BAB2D9"],[0.501672240802676,"#B9B1D9"],[0.505016722408027,"#B8B0D9"],[0.508361204013378,"#B7AFD8"],[0.511705685618729,"#B7AED8"],[0.51505016722408,"#B6ADD7"],[0.518394648829431,"#B5ACD7"],[0.521739130434783,"#B4ACD6"],[0.525083612040134,"#B4ABD6"],[0.528428093645485,"#B3AAD5"],[0.531772575250836,"#B2A9D5"],[0.535117056856187,"#B1A8D5"],[0.538461538461538,"#B0A7D4"],[0.54180602006689,"#B0A6D4"],[0.545150501672241,"#AFA6D3"],[0.548494983277592,"#AEA5D3"],[0.551839464882943,"#ADA4D2"],[0.555183946488294,"#ACA3D2"],[0.558528428093645,"#ACA2D2"],[0.561872909698997,"#ABA1D1"],[0.565217391304348,"#AAA1D1"],[0.568561872909699,"#A9A0D0"],[0.57190635451505,"#A89FD0"],[0.575250836120401,"#A89ECF"],[0.578595317725753,"#A79DCF"],[0.581939799331104,"#A69CCF"],[0.585284280936455,"#A59BCE"],[0.588628762541806,"#A49BCE"],[0.591973244147157,"#A49ACD"],[0.595317725752508,"#A399CD"],[0.59866220735786,"#A298CC"],[0.602006688963211,"#A197CC"],[0.605351170568562,"#A096CB"],[0.608695652173913,"#A096CB"],[0.612040133779264,"#9F95CB"],[0.615384615384616,"#9E94CA"],[0.618729096989967,"#9D93CA"],[0.622073578595318,"#9C92C9"],[0.625418060200669,"#9C91C9"],[0.62876254180602,"#9B91C8"],[0.632107023411371,"#9A90C8"],[0.635451505016722,"#998FC8"],[0.638795986622074,"#988EC7"],[0.642140468227425,"#988DC7"],[0.645484949832776,"#978CC6"],[0.648829431438127,"#968CC6"],[0.652173913043478,"#958BC5"],[0.655518394648829,"#948AC5"],[0.658862876254181,"#9489C5"],[0.662207357859532,"#9388C4"],[0.665551839464883,"#9287C4"],[0.668896321070234,"#9187C3"],[0.672240802675585,"#9086C3"],[0.675585284280936,"#9085C2"],[0.678929765886288,"#8F84C2"],[0.682274247491639,"#8E83C1"],[0.68561872909699,"#8D83C1"],[0.688963210702341,"#8C82C1"],[0.692307692307692,"#8C81C0"],[0.695652173913044,"#8B80C0"],[0.698996655518395,"#8A7FBF"],[0.702341137123746,"#897FBF"],[0.705685618729097,"#887EBE"],[0.709030100334448,"#877DBE"],[0.712374581939799,"#877CBE"],[0.715719063545151,"#867BBD"],[0.719063545150502,"#857ABD"],[0.722408026755853,"#847ABC"],[0.725752508361204,"#8379BC"],[0.729096989966555,"#8378BB"],[0.732441471571906,"#8277BB"],[0.735785953177258,"#8176BB"],[0.739130434782609,"#8076BA"],[0.74247491638796,"#7F75BA"],[0.745819397993311,"#7F74B9"],[0.749163879598662,"#7E73B9"],[0.752508361204013,"#7D72B8"],[0.755852842809365,"#7C72B8"],[0.759197324414716,"#7B71B7"],[0.762541806020067,"#7A70B7"],[0.765886287625418,"#7A6FB7"],[0.769230769230769,"#796EB6"],[0.77257525083612,"#786EB6"],[0.775919732441471,"#776DB5"],[0.779264214046823,"#766CB5"],[0.782608695652174,"#756BB4"],[0.785953177257525,"#756AB4"],[0.789297658862876,"#746AB4"],[0.792642140468227,"#7369B3"],[0.795986622073579,"#7268B3"],[0.79933110367893,"#7167B2"],[0.802675585284281,"#7067B2"],[0.806020066889632,"#7066B1"],[0.809364548494983,"#6F65B1"],[0.812709030100334,"#6E64B0"],[0.816053511705686,"#6D63B0"],[0.819397993311037,"#6C63B0"],[0.822742474916388,"#6B62AF"],[0.826086956521739,"#6B61AF"],[0.82943143812709,"#6A60AE"],[0.832775919732442,"#6960AE"],[0.836120401337793,"#685FAD"],[0.839464882943144,"#675EAD"],[0.842809364548495,"#665DAD"],[0.846153846153846,"#655CAC"],[0.849498327759197,"#655CAC"],[0.852842809364549,"#645BAB"],[0.8561872909699,"#635AAB"],[0.859531772575251,"#6259AA"],[0.862876254180602,"#6159AA"],[0.866220735785953,"#6058A9"],[0.869565217391304,"#5F57A9"],[0.872909698996656,"#5E56A9"],[0.876254180602007,"#5E55A8"],[0.879598662207358,"#5D55A8"],[0.882943143812709,"#5C54A7"],[0.88628762541806,"#5B53A7"],[0.889632107023411,"#5A52A6"],[0.892976588628763,"#5952A6"],[0.896321070234114,"#5851A6"],[0.899665551839465,"#5750A5"],[0.903010033444816,"#564FA5"],[0.906354515050167,"#554FA4"],[0.909698996655518,"#554EA4"],[0.91304347826087,"#544DA3"],[0.916387959866221,"#534CA3"],[0.919732441471572,"#524CA3"],[0.923076923076923,"#514BA2"],[0.926421404682274,"#504AA2"],[0.929765886287625,"#4F49A1"],[0.933110367892977,"#4E49A1"],[0.936454849498328,"#4D48A0"],[0.939799331103679,"#4C47A0"],[0.94314381270903,"#4B469F"],[0.946488294314381,"#4A469F"],[0.949832775919732,"#49459F"],[0.953177257525084,"#48449E"],[0.956521739130435,"#47439E"],[0.959866220735786,"#46439D"],[0.963210702341137,"#45429D"],[0.966555183946488,"#44419C"],[0.96989966555184,"#43419C"],[0.973244147157191,"#42409C"],[0.976588628762542,"#413F9B"],[0.979933110367893,"#403E9B"],[0.983277591973244,"#3F3E9A"],[0.986622073578595,"#3E3D9A"],[0.989966555183946,"#3D3C99"],[0.993311036789298,"#3C3B99"],[0.996655518394649,"#3B3B98"],[1,"#3A3A98"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.04,"title":"log2 FC","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"tickmode":"array","ticktext":["0","1","2"],"tickvals":[0.207472784805239,0.481856383596596,0.756239982387953],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":27.8721461187215,"r":7.30593607305936,"b":155.799086757991,"l":86.9406392694064},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,11.6],"tickmode":"array","ticktext":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11],"categoryorder":"array","categoryarray":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,29.6],"tickmode":"array","ticktext":["5641;5741;739","5607;5707;705","5606;5706;704","4862;4962","4377;4477","4372;4472","4085;4185","3308;3408","2236;2336","1897;1997","1610;1710","1318;1418","1081;1181","1072;1172","742;842","665;765","593;693","540;5442;5542","493;593","232;332","198;298","197;297","194;294","180;280","173;5075;5175","160;260","128;228","102;2","38"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],"categoryorder":"array","categoryarray":["5641;5741;739","5607;5707;705","5606;5706;704","4862;4962","4377;4477","4372;4472","4085;4185","3308;3408","2236;2336","1897;1997","1610;1710","1318;1418","1081;1181","1072;1172","742;842","665;765","593;693","540;5442;5542","493;593","232;332","198;298","197;297","194;294","180;280","173;5075;5175","160;260","128;228","102;2","38"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"e59212cee838":{"x":{},"y":{},"fill":{},"type":"heatmap"}},"cur_data":"e59212cee838","visdat":{"e59212cee838":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<p>DDRBase - 2021</p>
+</div>
+<!--/radix_placeholder_navigation_after_body-->
+
+
+</body>
+
+</html>

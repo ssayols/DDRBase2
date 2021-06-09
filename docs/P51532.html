@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>DDRBase: SMARCA4</title>
+
+  <meta property="description" itemprop="description" content="Transcription activator BRG1 (EC 3.6.4.-) (ATP-dependent helicase SMARCA4) (BRG1-associated factor 190A) (BAF190A) (Mitotic growth and transcription activator) (Protein BRG-1) (Protein brahma homolog 1) (SNF2-beta) (SWI/SNF-related matrix-associated actin-dependent regulator of chromatin subfamily A member 4)"/>
+
+
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="DDRBase: SMARCA4"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Transcription activator BRG1 (EC 3.6.4.-) (ATP-dependent helicase SMARCA4) (BRG1-associated factor 190A) (BAF190A) (Mitotic growth and transcription activator) (Protein BRG-1) (Protein brahma homolog 1) (SNF2-beta) (SWI/SNF-related matrix-associated actin-dependent regulator of chromatin subfamily A member 4)"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="DDRBase"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="DDRBase: SMARCA4"/>
+  <meta property="twitter:description" content="Transcription activator BRG1 (EC 3.6.4.-) (ATP-dependent helicase SMARCA4) (BRG1-associated factor 190A) (BAF190A) (Mitotic growth and transcription activator) (Protein BRG-1) (Protein brahma homolog 1) (SNF2-beta) (SWI/SNF-related matrix-associated actin-dependent regulator of chromatin subfamily A member 4)"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["SMARCA4"]},{"type":"character","attributes":{},"value":["Transcription activator BRG1 (EC 3.6.4.-) (ATP-dependent helicase SMARCA4) (BRG1-associated factor 190A) (BAF190A) (Mitotic growth and transcription activator) (Protein BRG-1) (Protein brahma homolog 1) (SNF2-beta) (SWI/SNF-related matrix-associated actin-dependent regulator of chromatin subfamily A member 4)\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  <meta name="distill:offset" content=""/>
+
+  <script type="application/javascript">
+
+    window.headroom_prevent_pin = false;
+
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        tolerance: 5,
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <style type="text/css">
+
+  /* Theme (user-documented overrideables for nav appearance) */
+
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #0F2E3D;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: white;
+  }
+
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+
+  .distill-site-header {
+
+  }
+
+  .distill-site-footer {
+
+  }
+
+
+  /* Site Header */
+
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+
+
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+
+  .distill-site-header .title {
+    font-size: 18px;
+    min-width: 150px;
+  }
+
+  .distill-site-header .logo {
+    padding: 0;
+  }
+
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+
+
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-dropdown-active {
+    display: block;
+  }
+
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative; min-height: 500px; }
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* Site Footer */
+
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Headroom */
+
+  d-title {
+    padding-top: 6rem;
+  }
+
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+
+  .headroom--unpinned {
+    top: -100px;
+  }
+
+  .headroom--pinned {
+    top: 0;
+  }
+
+  /* adjust viewport for navbar height */
+  /* helps vertically center bootstrap (non-distill) content */
+  .min-vh-100 {
+    min-height: calc(100vh - 100px) !important;
+  }
+
+  </style>
+
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+  <script type="application/javascript">
+
+  function getMeta(metaName) {
+    var metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+    return '';
+  }
+
+  function offsetURL(url) {
+    var offset = getMeta('distill:offset');
+    return offset ? offset + '/' + url : url;
+  }
+
+  function createFuseIndex() {
+
+    // create fuse index
+    var options = {
+      keys: [
+        { name: 'title', weight: 20 },
+        { name: 'categories', weight: 15 },
+        { name: 'description', weight: 10 },
+        { name: 'contents', weight: 5 },
+      ],
+      ignoreLocation: true,
+      threshold: 0
+    };
+    var fuse = new window.Fuse([], options);
+
+    // fetch the main search.json
+    return fetch(offsetURL('search.json'))
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.json().then(function(json) {
+            // index main articles
+            json.articles.forEach(function(article) {
+              fuse.add(article);
+            });
+            // download collections and index their articles
+            return Promise.all(json.collections.map(function(collection) {
+              return fetch(offsetURL(collection)).then(function(response) {
+                if (response.status === 200) {
+                  return response.json().then(function(articles) {
+                    articles.forEach(function(article) {
+                      fuse.add(article);
+                    });
+                  })
+                } else {
+                  return Promise.reject(
+                    new Error('Unexpected status from search index request: ' +
+                              response.status)
+                  );
+                }
+              });
+            })).then(function() {
+              return fuse;
+            });
+          });
+
+        } else {
+          return Promise.reject(
+            new Error('Unexpected status from search index request: ' +
+                        response.status)
+          );
+        }
+      });
+  }
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // get search element (bail if we don't have one)
+    var searchEl = window.document.getElementById('distill-search');
+    if (!searchEl)
+      return;
+
+    createFuseIndex()
+      .then(function(fuse) {
+
+        // make search box visible
+        searchEl.classList.remove('hidden');
+
+        // initialize autocomplete
+        var options = {
+          autoselect: true,
+          hint: false,
+          minLength: 2,
+        };
+        window.autocomplete(searchEl, options, [{
+          source: function(query, callback) {
+            const searchOptions = {
+              isCaseSensitive: false,
+              shouldSort: true,
+              minMatchCharLength: 2,
+              limit: 10,
+            };
+            var results = fuse.search(query, searchOptions);
+            callback(results
+              .map(function(result) { return result.item; })
+            );
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+                : '';
+              var html = `
+                <div class="search-item">
+                  <h3>${suggestion.title}</h3>
+                  <div class="search-item-description">
+                    ${suggestion.description || ''}
+                  </div>
+                  <div class="search-item-preview">
+                    ${img}
+                  </div>
+                </div>
+              `;
+              return html;
+            }
+          }
+        }]).on('autocomplete:selected', function(event, suggestion) {
+          window.location.href = offsetURL(suggestion.path);
+        });
+        // remove inline display style on autocompleter (we want to
+        // manage responsive display via css)
+        $('.algolia-autocomplete').css("display", "");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+  });
+
+  </script>
+
+  <style type="text/css">
+
+  .nav-search {
+    font-size: x-small;
+  }
+
+  /* Algolioa Autocomplete */
+
+  .algolia-autocomplete {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: sub;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    border-radius: 6px;
+    border: 1px #0F2E3D solid;
+    width: 180px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-nav .algolia-autocomplete {
+      display: none;
+      visibility: hidden;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete {
+      display: inline-block;
+      visibility: visible;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+      margin-left: 0;
+      width: 400px;
+      max-height: 400px;
+    }
+  }
+
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 90%;
+    outline: none;
+    border: none;
+  }
+
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 550px;
+    max-height: 70vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    border-top: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+    overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    font-size: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+    display: inline-block;
+    overflow: hidden;
+    height: 2.8em;
+    width: 80%;
+    margin-right: 4%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+    display: inline-block;
+    width: 15%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+    height: 3em;
+    width: auto;
+    display: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+    display: initial;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  </style>
+
+
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.9.2.1/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"SMARCA4","description":"Transcription activator BRG1 (EC 3.6.4.-) (ATP-dependent helicase SMARCA4) (BRG1-associated factor 190A) (BAF190A) (Mitotic growth and transcription activator) (Protein BRG-1) (Protein brahma homolog 1) (SNF2-beta) (SWI/SNF-related matrix-associated actin-dependent regulator of chromatin subfamily A member 4)","authors":[]}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a class="logo" href="https://www.imb.de/research/beli/research">
+<img src="images/logo.png" alt="Logo"/>
+</a>
+<a href="index.html" class="title">DDRBase</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="index.html">Home</a>
+<a href="datasets.html">Datasets</a>
+<a href="downloads.html">Downloads</a>
+<a href="about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>SMARCA4</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Transcription activator BRG1 (EC 3.6.4.-) (ATP-dependent helicase SMARCA4) (BRG1-associated factor 190A) (BAF190A) (Mitotic growth and transcription activator) (Protein BRG-1) (Protein brahma homolog 1) (SNF2-beta) (SWI/SNF-related matrix-associated actin-dependent regulator of chromatin subfamily A member 4)</p></p>
+</div>
+
+
+<div class="d-article">
+<h1 id="smarca4-p51532">SMARCA4 ❯ P51532</h1>
+<h2 id="gene-names">Gene names</h2>
+<p>SMARCA4 BAF190A BRG1 SNF2B SNF2L4</p>
+<h2 id="function">Function</h2>
+<p>FUNCTION: Involved in transcriptional activation and repression of select genes by chromatin remodeling (alteration of DNA-nucleosome topology). Component of SWI/SNF chromatin remodeling complexes that carry out key enzymatic activities, changing chromatin structure by altering DNA-histone contacts within a nucleosome in an ATP-dependent manner. Component of the CREST-BRG1 complex, a multiprotein complex that regulates promoter activation by orchestrating the calcium-dependent release of a repressor complex and the recruitment of an activator complex. In resting neurons, transcription of the c-FOS promoter is inhibited by SMARCA4-dependent recruitment of a phospho-RB1-HDAC repressor complex. Upon calcium influx, RB1 is dephosphorylated by calcineurin, which leads to release of the repressor complex. At the same time, there is increased recruitment of CREBBP to the promoter by a CREST-dependent mechanism, which leads to transcriptional activation. The CREST-BRG1 complex also binds to the NR2B promoter, and activity-dependent induction of NR2B expression involves the release of HDAC1 and recruitment of CREBBP. Belongs to the neural progenitors-specific chromatin remodeling complex (npBAF complex) and the neuron-specific chromatin remodeling complex (nBAF complex). During neural development, a switch from a stem/progenitor to a postmitotic chromatin remodeling mechanism occurs as neurons exit the cell cycle and become committed to their adult state. The transition from proliferating neural stem/progenitor cells to postmitotic neurons requires a switch in subunit composition of the npBAF and nBAF complexes. As neural progenitors exit mitosis and differentiate into neurons, npBAF complexes which contain ACTL6A/BAF53A and PHF10/BAF45A, are exchanged for homologous alternative ACTL6B/BAF53B and DPF1/BAF45B or DPF3/BAF45C subunits in neuron-specific complexes (nBAF). The npBAF complex is essential for the self-renewal/proliferative capacity of the multipotent neural stem cells. The nBAF complex along with CREST plays a role regulating the activity of genes essential for dendrite growth. SMARCA4/BAF190A may promote neural stem cell self-renewal/proliferation by enhancing Notch-dependent proliferative signals, while concurrently making the neural stem cell insensitive to SHH-dependent differentiating cues (By similarity). Acts as a corepressor of ZEB1 to regulate E-cadherin transcription and is required for induction of epithelial-mesenchymal transition (EMT) by ZEB1. Binds via DLX1 to enhancers located in the intergenic region between DLX5 and DLX6 and this binding is stabilized by the long non-coding RNA (lncRNA) Evf2 (By similarity). Binds to RNA in a promiscuous manner (By similarity). Binding to RNAs including lncRNA Evf2 leads to inhibition of SMARCA4 ATPase and chromatin remodeling activities (By similarity). {ECO:0000250|UniProtKB:Q3TKT4, ECO:0000269|PubMed:19571879, ECO:0000269|PubMed:20418909, ECO:0000269|PubMed:29374058, ECO:0000303|PubMed:22952240, ECO:0000303|PubMed:26601204}.</p>
+<h2 id="keywords">Keywords</h2>
+<p>3D-structure;ATP-binding;Acetylation;Activator;Alternative splicing;Bromodomain;Chromatin regulator;Disease variant;Helicase;Hydrolase;Isopeptide bond;Mental retardation;Neurogenesis;Nucleotide-binding;Nucleus;Phosphoprotein;RNA-binding;Reference proteome;Repressor;Transcription;Transcription regulation;Ubl conjugation</p>
+<p>
+Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+</p>
+<h2 id="phosphorilation">Phosphorilation</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-f6e41799063f2f11525e" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f6e41799063f2f11525e">{"x":{"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11],"y":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],"z":[[0.294888570603206,0.501576575830583,0.289415248825154,0.492653821651342,0.311384172921755,0.300103039347917,0.434731896511231,0.286810640240183,0.45093789718048,0.753782254698096,0.25139764201151],[0.472974864013765,0.441704755068973,0.512842320539388,0.400434877503655,0.424675519902926,0.481184513281579,0.490875608354873,0.346588415838504,0.496869206064188,0.541078752390107,0.455739363773216],[0.542085373650916,0.431585120622307,0.501788580458477,0.517352020049625,0.452412142037133,0.686686365605031,0.49283158773453,0.526408657663761,0.862583297616048,0.56758859756855,0.407610196470438],[0.553790255202127,0.635932369656183,0.625811413688548,0.607988080707502,0.509445938522074,0.480959087060228,0.488391649028378,0.599537635501013,0.605896716012427,0.544928244596499,0.474314688386655],[0.553790255202127,0.635932369656183,0.625811413688548,0.607988080707502,0.509445938522074,0.480959087060228,0.488391649028378,0.599537635501013,0.605896716012427,0.544928244596499,0.474314688386655],[0.553790255202127,0.635932369656183,0.625811413688548,0.607988080707502,0.509445938522074,0.480959087060228,0.488391649028378,0.599537635501013,0.605896716012427,0.544928244596499,0.474314688386655],[0.600882218275719,0.68028203191368,0.634622693545283,0.64839501189441,0.665368006679801,0.559692362090181,0.414958156859476,0.63894656281008,0.641927616754784,0.553722729756911,0.489963812536316],[0.600882218275719,0.68028203191368,0.625811413688548,0.607988080707502,0.665368006679801,0.559692362090181,0.488391649028378,0.599537635501013,0.605896716012427,0.544928244596499,0.474314688386655],[0.594542903677666,0.710280135724904,0.577169199662904,0.55325728658868,0.580596367428607,0.450354434634661,0.616195277195523,0.527632864430485,0.437138593838337,0.534316037564695,0.657615654166206],[0.594542903677666,0.710280135724904,0.577169199662904,0.55325728658868,0.580596367428607,0.450354434634661,0.616195277195523,0.527632864430485,0.437138593838337,0.534316037564695,0.657615654166206],[0.519928494989547,0.494820657853029,0.525012463514509,0.501314335231946,0.496010290829397,0.424191755171546,0.482535585807896,0.466199188006262,0.429144954518832,0.472450532388497,0.50306936836772],[0.508665318579076,0.484100983913871,0.57474999324738,0.500951383754317,0.525213744853869,0.450354434634661,0.616195277195523,0.527632864430485,0.437138593838337,0.468758196110469,0.614203585530626],[0.509221749035461,0.516440299886926,0.515559946606683,0.37750358205478,0.491563075981437,0.702168949931581,0.519995269431187,0.469924989276451,0.581192925638018,0.503888466406148,0.502950536541881],[0.539545874830169,0.530937265073241,0.513664941309964,0.537941422169586,0.514882397105858,0.54033986662909,0.481085913999171,0.507191780317588,0.496552659223384,0.491263375194165,0.502950536541881],[0.433251420443046,0.463128627642744,0.491621437171802,0.447637833742133,0.383969300626256,0.622593742977235,0.369374716172578,0.419027255462115,1,0.485588620454551,0.56572645137072],[0.132685539876777,0.324209242304906,0.446834784303074,0.441083331206892,0.215257802536858,0.60295231840519,0.158719978401984,0.412472752926874,0.976646406021382,0.345525820975634,0.557613147661495],[0.374904036691188,0.388072636675007,0.485117751771167,0.472801213750986,0.386049744901874,0.60295231840519,0.354154170850902,0.497898302189757,0.976646406021382,0.44838912683276,0.557613147661495],[0.201964751565907,0.297291162571032,0.447482875573036,0.178642328419709,0.364724594518354,0.511767546613506,0.601983271303005,0.124000079162878,0.394064250894951,0.57148850080874,0]],"text":[["treatment: Aphidicoline<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC: -0.4184707815","treatment: Camptothecin<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC:  0.0100804025","treatment: Etoposide<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC: -0.4298192800","treatment: Formaldehyd<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC: -0.0084202206","treatment: Gemcitabine<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC: -0.3842684585","treatment: Hydrogen peroxide<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC: -0.4076589942","treatment: Hydroxyurea<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC: -0.1285167379","treatment: Methyl methanesulfonate<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC: -0.4352197293","treatment: Sodium Arsentie (NaAsO2)<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC: -0.0949148810","treatment: UV-C<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC:  0.5330088722","treatment: X-ray<br />position: 1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981<br />log2FC: -0.5086457721"],["treatment: Aphidicoline<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC: -0.0492229782","treatment: Camptothecin<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC: -0.1140590687","treatment: Etoposide<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC:  0.0334390305","treatment: Formaldehyd<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC: -0.1996288863","treatment: Gemcitabine<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC: -0.1493678371","treatment: Hydrogen peroxide<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC: -0.0322009217","treatment: Hydroxyurea<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC: -0.0121072048","treatment: Methyl methanesulfonate<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC: -0.3112752533","treatment: Sodium Arsentie (NaAsO2)<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC:  0.0003200447","treatment: UV-C<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC:  0.0919850322","treatment: X-ray<br />position: 1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979<br />log2FC: -0.0849594208"],["treatment: Aphidicoline<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC:  0.0940721815","treatment: Camptothecin<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC: -0.1350413281","treatment: Etoposide<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC:  0.0105199772","treatment: Formaldehyd<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC:  0.0427895347","treatment: Gemcitabine<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC: -0.0918581512","treatment: Hydrogen peroxide<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC:  0.3938908683","treatment: Hydroxyurea<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC: -0.0080516367","treatment: Methyl methanesulfonate<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC:  0.0615677544","treatment: Sodium Arsentie (NaAsO2)<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC:  0.7585992044","treatment: UV-C<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC:  0.1469510933","treatment: X-ray<br />position: 1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975<br />log2FC: -0.1847514315"],["treatment: Aphidicoline<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC:  0.1183413250","treatment: Camptothecin<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC:  0.2886564836","treatment: Etoposide<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC:  0.2676714842","treatment: Formaldehyd<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC:  0.2307162171","treatment: Gemcitabine<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC:  0.0263969018","treatment: Hydrogen peroxide<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC: -0.0326683251","treatment: Hydroxyurea<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC: -0.0172574974","treatment: Methyl methanesulfonate<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC:  0.2131948892","treatment: Sodium Arsentie (NaAsO2)<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC:  0.2263799383","treatment: UV-C<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC:  0.0999666489","treatment: X-ray<br />position: 1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796<br />log2FC: -0.0464449587"],["treatment: Aphidicoline<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC:  0.1183413250","treatment: Camptothecin<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC:  0.2886564836","treatment: Etoposide<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC:  0.2676714842","treatment: Formaldehyd<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC:  0.2307162171","treatment: Gemcitabine<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC:  0.0263969018","treatment: Hydrogen peroxide<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC: -0.0326683251","treatment: Hydroxyurea<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC: -0.0172574974","treatment: Methyl methanesulfonate<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC:  0.2131948892","treatment: Sodium Arsentie (NaAsO2)<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC:  0.2263799383","treatment: UV-C<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC:  0.0999666489","treatment: X-ray<br />position: 1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794<br />log2FC: -0.0464449587"],["treatment: Aphidicoline<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC:  0.1183413250","treatment: Camptothecin<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC:  0.2886564836","treatment: Etoposide<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC:  0.2676714842","treatment: Formaldehyd<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC:  0.2307162171","treatment: Gemcitabine<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC:  0.0263969018","treatment: Hydrogen peroxide<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC: -0.0326683251","treatment: Hydroxyurea<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC: -0.0172574974","treatment: Methyl methanesulfonate<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC:  0.2131948892","treatment: Sodium Arsentie (NaAsO2)<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC:  0.2263799383","treatment: UV-C<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC:  0.0999666489","treatment: X-ray<br />position: 1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792<br />log2FC: -0.0464449587"],["treatment: Aphidicoline<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC:  0.2159827750","treatment: Camptothecin<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC:  0.3806119904","treatment: Etoposide<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC:  0.2859409741","treatment: Formaldehyd<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC:  0.3144967837","treatment: Gemcitabine<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC:  0.3496889421","treatment: Hydrogen peroxide<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC:  0.1305788754","treatment: Hydroxyurea<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC: -0.1695160185","treatment: Methyl methanesulfonate<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC:  0.2949061740","treatment: Sodium Arsentie (NaAsO2)<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC:  0.3010871529","treatment: UV-C<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC:  0.1182013163","treatment: X-ray<br />position: 1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783<br />log2FC: -0.0139977411"],["treatment: Aphidicoline<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC:  0.2159827750","treatment: Camptothecin<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC:  0.3806119904","treatment: Etoposide<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC:  0.2676714842","treatment: Formaldehyd<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC:  0.2307162171","treatment: Gemcitabine<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC:  0.3496889421","treatment: Hydrogen peroxide<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC:  0.1305788754","treatment: Hydroxyurea<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC: -0.0172574974","treatment: Methyl methanesulfonate<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC:  0.2131948892","treatment: Sodium Arsentie (NaAsO2)<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC:  0.2263799383","treatment: UV-C<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC:  0.0999666489","treatment: X-ray<br />position: 1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779<br />log2FC: -0.0464449587"],["treatment: Aphidicoline<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC:  0.2028387090","treatment: Camptothecin<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC:  0.4428106792","treatment: Etoposide<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC:  0.1668157118","treatment: Formaldehyd<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC:  0.1172362568","treatment: Gemcitabine<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC:  0.1739216723","treatment: Hydrogen peroxide<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC: -0.0961246443","treatment: Hydroxyurea<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC:  0.2477331880","treatment: Methyl methanesulfonate<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC:  0.0641060500","treatment: Sodium Arsentie (NaAsO2)<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC: -0.1235266419","treatment: UV-C<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC:  0.0779630794","treatment: X-ray<br />position: 1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996<br />log2FC:  0.3336150541"],["treatment: Aphidicoline<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC:  0.2028387090","treatment: Camptothecin<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC:  0.4428106792","treatment: Etoposide<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC:  0.1668157118","treatment: Formaldehyd<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC:  0.1172362568","treatment: Gemcitabine<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC:  0.1739216723","treatment: Hydrogen peroxide<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC: -0.0961246443","treatment: Hydroxyurea<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC:  0.2477331880","treatment: Methyl methanesulfonate<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC:  0.0641060500","treatment: Sodium Arsentie (NaAsO2)<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC: -0.1235266419","treatment: UV-C<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC:  0.0779630794","treatment: X-ray<br />position: 1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991<br />log2FC:  0.3336150541"],["treatment: Aphidicoline<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC:  0.0481316511","treatment: Camptothecin<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC: -0.0039274576","treatment: Etoposide<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC:  0.0586728566","treatment: Formaldehyd<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC:  0.0095366674","treatment: Gemcitabine<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC: -0.0014608480","treatment: Hydrogen peroxide<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC: -0.1503708849","treatment: Hydroxyurea<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC: -0.0293995800","treatment: Methyl methanesulfonate<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC: -0.0632718050","treatment: Sodium Arsentie (NaAsO2)<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC: -0.1401008189","treatment: UV-C<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC: -0.0503101383","treatment: X-ray<br />position: 1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998<br />log2FC:  0.0131755894"],["treatment: Aphidicoline<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC:  0.0247783483","treatment: Camptothecin<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC: -0.0261538512","treatment: Etoposide<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC:  0.1617996792","treatment: Formaldehyd<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC:  0.0087841163","treatment: Gemcitabine<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC:  0.0590901975","treatment: Hydrogen peroxide<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC: -0.0961246443","treatment: Hydroxyurea<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC:  0.2477331880","treatment: Methyl methanesulfonate<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC:  0.0641060500","treatment: Sodium Arsentie (NaAsO2)<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC: -0.1235266419","treatment: UV-C<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC: -0.0579659047","treatment: X-ray<br />position: 1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980<br />log2FC:  0.2436035733"],["treatment: Aphidicoline<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC:  0.0259320627","treatment: Camptothecin<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC:  0.0408991553","treatment: Etoposide<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC:  0.0390738126","treatment: Formaldehyd<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC: -0.2471751084","treatment: Gemcitabine<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC: -0.0106817952","treatment: Hydrogen peroxide<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC:  0.4259927788","treatment: Hydroxyurea<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC:  0.0482701026","treatment: Methyl methanesulfonate<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC: -0.0555466516","treatment: Sodium Arsentie (NaAsO2)<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC:  0.1751585885","treatment: UV-C<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC:  0.0148739242","treatment: X-ray<br />position: 128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763<br />log2FC:  0.0129292010"],["treatment: Aphidicoline<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC:  0.0888067321","treatment: Camptothecin<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC:  0.0709574627","treatment: Etoposide<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC:  0.0351446694","treatment: Formaldehyd<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC:  0.0854800268","treatment: Gemcitabine<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC:  0.0376689674","treatment: Hydrogen peroxide<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC:  0.0904530112","treatment: Hydroxyurea<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC: -0.0324053595","treatment: Methyl methanesulfonate<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC:  0.0217230836","treatment: Sodium Arsentie (NaAsO2)<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC: -0.0003362901","treatment: UV-C<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC: -0.0113032010","treatment: X-ray<br />position: 124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759<br />log2FC:  0.0129292010"],["treatment: Aphidicoline<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC: -0.1315863875","treatment: Camptothecin<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC: -0.0696383683","treatment: Etoposide<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC: -0.0105607879","treatment: Formaldehyd<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC: -0.1017573007","treatment: Gemcitabine<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC: -0.2337689538","treatment: Hydrogen peroxide<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC:  0.2609998992","treatment: Hydroxyurea<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC: -0.2640296670","treatment: Methyl methanesulfonate<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC: -0.1610790653","treatment: Sodium Arsentie (NaAsO2)<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC:  1.0435218366","treatment: UV-C<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC: -0.0230693548","treatment: X-ray<br />position: 108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83<br />log2FC:  0.1430900809"],["treatment: Aphidicoline<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC: -0.7547858995","treatment: Camptothecin<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC: -0.3576766945","treatment: Etoposide<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC: -0.1034223600","treatment: Formaldehyd<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC: -0.1153475418","treatment: Gemcitabine<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC: -0.5835788626","treatment: Hydrogen peroxide<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC:  0.2202749634","treatment: Hydroxyurea<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC: -0.7008055563","treatment: Methyl methanesulfonate<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC: -0.1746693064","treatment: Sodium Arsentie (NaAsO2)<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC:  0.9951000119","treatment: UV-C<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC: -0.3134784595","treatment: X-ray<br />position: 105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80<br />log2FC:  0.1262677892"],["treatment: Aphidicoline<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC: -0.2525650595","treatment: Camptothecin<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC: -0.2252610120","treatment: Etoposide<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC: -0.0240456637","treatment: Formaldehyd<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC: -0.0495830283","treatment: Gemcitabine<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC: -0.2294553177","treatment: Hydrogen peroxide<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC:  0.2202749634","treatment: Hydroxyurea<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC: -0.2955882604","treatment: Methyl methanesulfonate<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC:  0.0024537938","treatment: Sodium Arsentie (NaAsO2)<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC:  0.9951000119","treatment: UV-C<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC: -0.1001995541","treatment: X-ray<br />position: 104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79<br />log2FC:  0.1262677892"],["treatment: Aphidicoline<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC: -0.6111409494","treatment: Camptothecin<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC: -0.4134891976","treatment: Etoposide<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC: -0.1020785942","treatment: Formaldehyd<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC: -0.6594981438","treatment: Gemcitabine<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC: -0.2736713254","treatment: Hydrogen peroxide<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC:  0.0312105720","treatment: Hydroxyurea<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC:  0.2182657211","treatment: Methyl methanesulfonate<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC: -0.7727945133","treatment: Sodium Arsentie (NaAsO2)<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC: -0.2128378752","treatment: UV-C<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC:  0.1550372334","treatment: X-ray<br />position: 102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940<br />log2FC: -1.0298988415"]],"colorscale":[[0,"#852726"],[0.124000079162878,"#A85D56"],[0.132685539876777,"#AB615A"],[0.158719978401984,"#B26C64"],[0.178642328419709,"#B7746D"],[0.201964751565907,"#BD7E77"],[0.215257802536858,"#C0837C"],[0.25139764201151,"#C9938C"],[0.286810640240183,"#D2A29C"],[0.289415248825154,"#D2A39D"],[0.294888570603206,"#D4A5A0"],[0.297291162571032,"#D4A6A1"],[0.300103039347917,"#D5A8A2"],[0.311384172921755,"#D8ACA7"],[0.324209242304906,"#DBB2AD"],[0.345525820975634,"#DFBBB7"],[0.346588415838504,"#E0BCB7"],[0.354154170850902,"#E1BFBB"],[0.364724594518354,"#E4C4C0"],[0.369374716172578,"#E5C6C2"],[0.374904036691188,"#E6C8C4"],[0.37750358205478,"#E6C9C6"],[0.383969300626256,"#E8CCC9"],[0.386049744901874,"#E8CDCA"],[0.388072636675007,"#E9CECB"],[0.394064250894951,"#EAD1CD"],[0.400434877503655,"#EBD4D0"],[0.407610196470438,"#EDD7D4"],[0.412472752926874,"#EED9D6"],[0.414958156859476,"#EEDAD7"],[0.419027255462115,"#EFDCD9"],[0.424191755171546,"#F0DEDC"],[0.424675519902926,"#F0DEDC"],[0.429144954518832,"#F1E0DE"],[0.431585120622307,"#F2E2DF"],[0.433251420443046,"#F2E2E0"],[0.434731896511231,"#F3E3E1"],[0.437138593838337,"#F3E4E2"],[0.441083331206892,"#F4E6E4"],[0.441704755068973,"#F4E6E4"],[0.446834784303074,"#F5E8E7"],[0.447482875573036,"#F5E9E7"],[0.447637833742133,"#F5E9E7"],[0.44838912683276,"#F5E9E7"],[0.450354434634661,"#F6EAE8"],[0.45093789718048,"#F6EAE9"],[0.452412142037133,"#F6EBE9"],[0.455739363773216,"#F7ECEB"],[0.463128627642744,"#F8F0EF"],[0.466199188006262,"#F9F1F0"],[0.468758196110469,"#F9F2F1"],[0.469924989276451,"#FAF3F2"],[0.472450532388497,"#FAF4F3"],[0.472801213750986,"#FAF4F3"],[0.472974864013765,"#FAF4F3"],[0.474314688386655,"#FBF5F4"],[0.480959087060228,"#FCF8F7"],[0.481085913999171,"#FCF8F7"],[0.481184513281579,"#FCF8F7"],[0.482535585807896,"#FCF9F8"],[0.484100983913871,"#FDF9F9"],[0.485117751771167,"#FDFAF9"],[0.485588620454551,"#FDFAFA"],[0.488391649028378,"#FDFBFB"],[0.489963812536316,"#FEFCFC"],[0.490875608354873,"#FEFCFC"],[0.491263375194165,"#FEFDFC"],[0.491563075981437,"#FEFDFC"],[0.491621437171802,"#FEFDFC"],[0.492653821651342,"#FEFDFD"],[0.49283158773453,"#FEFDFD"],[0.494820657853029,"#FFFEFE"],[0.496010290829397,"#FFFFFF"],[0.496552659223384,"#FFFFFF"],[0.496869206064188,"#FFFFFF"],[0.497898302189757,"#FFFEFF"],[0.500951383754317,"#FDFDFE"],[0.501314335231946,"#FDFDFE"],[0.501576575830583,"#FDFDFE"],[0.501788580458477,"#FDFDFE"],[0.502950536541881,"#FDFCFE"],[0.50306936836772,"#FDFCFE"],[0.503888466406148,"#FCFCFE"],[0.507191780317588,"#FBFAFD"],[0.508665318579076,"#FBFAFD"],[0.509221749035461,"#FAFAFC"],[0.509445938522074,"#FAFAFC"],[0.511767546613506,"#F9F9FC"],[0.512842320539388,"#F9F8FC"],[0.513664941309964,"#F9F8FC"],[0.514882397105858,"#F8F7FB"],[0.515559946606683,"#F8F7FB"],[0.516440299886926,"#F8F6FB"],[0.517352020049625,"#F7F6FB"],[0.519928494989547,"#F6F5FA"],[0.519995269431187,"#F6F5FA"],[0.525012463514509,"#F4F3F9"],[0.525213744853869,"#F4F3F9"],[0.526408657663761,"#F4F2F9"],[0.527632864430485,"#F3F2F9"],[0.530937265073241,"#F2F0F8"],[0.534316037564695,"#F1EFF7"],[0.537941422169586,"#F0EDF7"],[0.539545874830169,"#EFEDF6"],[0.54033986662909,"#EFECF6"],[0.541078752390107,"#EEECF6"],[0.542085373650916,"#EEECF6"],[0.544928244596499,"#EDEAF5"],[0.55325728658868,"#EAE7F4"],[0.553722729756911,"#EAE7F3"],[0.553790255202127,"#EAE7F3"],[0.557613147661495,"#E8E5F3"],[0.559692362090181,"#E7E4F2"],[0.56572645137072,"#E5E1F1"],[0.56758859756855,"#E4E1F1"],[0.57148850080874,"#E3DFF0"],[0.57474999324738,"#E2DEEF"],[0.577169199662904,"#E1DDEF"],[0.580596367428607,"#E0DBEE"],[0.581192925638018,"#DFDBEE"],[0.594542903677666,"#DAD5EB"],[0.599537635501013,"#D8D3EA"],[0.600882218275719,"#D8D3EA"],[0.601983271303005,"#D8D2EA"],[0.60295231840519,"#D7D2E9"],[0.605896716012427,"#D6D1E9"],[0.607988080707502,"#D5D0E8"],[0.614203585530626,"#D3CDE7"],[0.616195277195523,"#D2CCE7"],[0.622593742977235,"#D0CAE5"],[0.625811413688548,"#CFC8E5"],[0.634622693545283,"#CBC5E3"],[0.635932369656183,"#CBC4E3"],[0.63894656281008,"#CAC3E2"],[0.641927616754784,"#C9C2E1"],[0.64839501189441,"#C6BFE0"],[0.657615654166206,"#C3BBDE"],[0.665368006679801,"#C0B8DD"],[0.68028203191368,"#BAB2DA"],[0.686686365605031,"#B8AFD8"],[0.702168949931581,"#B2A9D5"],[0.710280135724904,"#AFA6D3"],[0.753782254698096,"#9F95CB"],[0.862583297616048,"#756BB4"],[0.976646406021382,"#45429D"],[1,"#3A3A98"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1],"name":"99_3b3c6f8f274cfb98f326f40f96c1e598","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#852726"],[0.00334448160535116,"#862928"],[0.00668896321070231,"#872A29"],[0.0100334448160535,"#882C2A"],[0.0133779264214047,"#892E2B"],[0.0167224080267558,"#8A2F2C"],[0.020066889632107,"#8B312E"],[0.0234113712374582,"#8C322F"],[0.0267558528428093,"#8D3430"],[0.0301003344481606,"#8E3531"],[0.0334448160535117,"#8F3733"],[0.0367892976588629,"#903834"],[0.0401337792642141,"#913A35"],[0.0434782608695652,"#923B36"],[0.0468227424749164,"#933C38"],[0.0501672240802675,"#943E39"],[0.0535117056856187,"#953F3A"],[0.0568561872909699,"#96413C"],[0.0602006688963211,"#97423D"],[0.0635451505016723,"#98443E"],[0.0668896321070234,"#99453F"],[0.0702341137123746,"#9A4641"],[0.0735785953177257,"#9A4842"],[0.0769230769230769,"#9B4943"],[0.0802675585284281,"#9C4B45"],[0.0836120401337793,"#9D4C46"],[0.0869565217391305,"#9E4E47"],[0.0903010033444816,"#9F4F49"],[0.0936454849498328,"#A0504A"],[0.0969899665551839,"#A1524B"],[0.100334448160535,"#A2534D"],[0.103678929765886,"#A3554E"],[0.107023411371237,"#A4564F"],[0.110367892976589,"#A55751"],[0.11371237458194,"#A65952"],[0.117056856187291,"#A75A53"],[0.120401337792642,"#A75C55"],[0.123745819397993,"#A85D56"],[0.127090301003344,"#A95E57"],[0.130434782608696,"#AA6059"],[0.133779264214047,"#AB615A"],[0.137123745819398,"#AC635B"],[0.140468227424749,"#AD645D"],[0.1438127090301,"#AE655E"],[0.147157190635451,"#AF6760"],[0.150501672240803,"#B06861"],[0.153846153846154,"#B06A62"],[0.157190635451505,"#B16B64"],[0.160535117056856,"#B26C65"],[0.163879598662207,"#B36E67"],[0.167224080267559,"#B46F68"],[0.17056856187291,"#B57169"],[0.173913043478261,"#B6726B"],[0.177257525083612,"#B7736C"],[0.180602006688963,"#B7756E"],[0.183946488294314,"#B8766F"],[0.187290969899666,"#B97870"],[0.190635451505017,"#BA7972"],[0.193979933110368,"#BB7A73"],[0.197324414715719,"#BC7C75"],[0.20066889632107,"#BD7D76"],[0.204013377926421,"#BD7F78"],[0.207357859531773,"#BE8079"],[0.210702341137124,"#BF817A"],[0.214046822742475,"#C0837C"],[0.217391304347826,"#C1847D"],[0.220735785953177,"#C2867F"],[0.224080267558528,"#C38780"],[0.22742474916388,"#C38982"],[0.230769230769231,"#C48A83"],[0.234113712374582,"#C58B85"],[0.237458193979933,"#C68D86"],[0.240802675585284,"#C78E88"],[0.244147157190635,"#C89089"],[0.247491638795987,"#C8918A"],[0.250836120401338,"#C9928C"],[0.254180602006689,"#CA948D"],[0.25752508361204,"#CB958F"],[0.260869565217391,"#CC9790"],[0.264214046822742,"#CC9892"],[0.267558528428094,"#CD9A93"],[0.270903010033445,"#CE9B95"],[0.274247491638796,"#CF9C96"],[0.277591973244147,"#D09E98"],[0.280936454849498,"#D09F99"],[0.28428093645485,"#D1A19B"],[0.287625418060201,"#D2A29C"],[0.290969899665552,"#D3A49E"],[0.294314381270903,"#D4A59F"],[0.297658862876254,"#D4A7A1"],[0.301003344481605,"#D5A8A2"],[0.304347826086956,"#D6A9A4"],[0.307692307692308,"#D7ABA5"],[0.311036789297659,"#D7ACA7"],[0.31438127090301,"#D8AEA8"],[0.317725752508361,"#D9AFAA"],[0.321070234113712,"#DAB1AC"],[0.324414715719064,"#DBB2AD"],[0.327759197324415,"#DBB4AF"],[0.331103678929766,"#DCB5B0"],[0.334448160535117,"#DDB7B2"],[0.337792642140468,"#DEB8B3"],[0.341137123745819,"#DEB9B5"],[0.344481605351171,"#DFBBB6"],[0.347826086956522,"#E0BCB8"],[0.351170568561873,"#E1BEB9"],[0.354515050167224,"#E1BFBB"],[0.357859531772575,"#E2C1BC"],[0.361204013377926,"#E3C2BE"],[0.364548494983278,"#E4C4C0"],[0.367892976588629,"#E4C5C1"],[0.37123745819398,"#E5C7C3"],[0.374581939799331,"#E6C8C4"],[0.377926421404682,"#E7CAC6"],[0.381270903010033,"#E7CBC7"],[0.384615384615385,"#E8CDC9"],[0.387959866220736,"#E9CECB"],[0.391304347826087,"#E9D0CC"],[0.394648829431438,"#EAD1CE"],[0.397993311036789,"#EBD3CF"],[0.40133779264214,"#ECD4D1"],[0.404682274247492,"#ECD5D3"],[0.408026755852843,"#EDD7D4"],[0.411371237458194,"#EED8D6"],[0.414715719063545,"#EEDAD7"],[0.418060200668896,"#EFDBD9"],[0.421404682274247,"#F0DDDA"],[0.424749163879599,"#F1DEDC"],[0.42809364548495,"#F1E0DE"],[0.431438127090301,"#F2E1DF"],[0.434782608695652,"#F3E3E1"],[0.438127090301003,"#F3E4E2"],[0.441471571906354,"#F4E6E4"],[0.444816053511706,"#F5E7E6"],[0.448160535117057,"#F5E9E7"],[0.451505016722408,"#F6EAE9"],[0.454849498327759,"#F7ECEB"],[0.45819397993311,"#F7EDEC"],[0.461538461538462,"#F8EFEE"],[0.464882943143813,"#F9F1EF"],[0.468227424749164,"#F9F2F1"],[0.471571906354515,"#FAF4F3"],[0.474916387959866,"#FBF5F4"],[0.478260869565217,"#FBF7F6"],[0.481605351170569,"#FCF8F8"],[0.48494983277592,"#FDFAF9"],[0.488294314381271,"#FDFBFB"],[0.491638795986622,"#FEFDFD"],[0.494983277591973,"#FFFEFE"],[0.498327759197324,"#FEFEFF"],[0.501672240802676,"#FDFDFE"],[0.505016722408027,"#FCFBFD"],[0.508361204013378,"#FBFAFD"],[0.511705685618729,"#F9F9FC"],[0.51505016722408,"#F8F7FB"],[0.518394648829431,"#F7F6FB"],[0.521739130434783,"#F6F4FA"],[0.525083612040134,"#F4F3F9"],[0.528428093645485,"#F3F1F9"],[0.531772575250836,"#F2F0F8"],[0.535117056856187,"#F1EEF7"],[0.538461538461538,"#EFEDF7"],[0.54180602006689,"#EEECF6"],[0.545150501672241,"#EDEAF5"],[0.548494983277592,"#ECE9F4"],[0.551839464882943,"#EAE7F4"],[0.555183946488294,"#E9E6F3"],[0.558528428093645,"#E8E5F2"],[0.561872909698997,"#E7E3F2"],[0.565217391304348,"#E5E2F1"],[0.568561872909699,"#E4E0F0"],[0.57190635451505,"#E3DFF0"],[0.575250836120401,"#E2DDEF"],[0.578595317725753,"#E0DCEE"],[0.581939799331104,"#DFDBEE"],[0.585284280936455,"#DED9ED"],[0.588628762541806,"#DDD8EC"],[0.591973244147157,"#DBD6EC"],[0.595317725752508,"#DAD5EB"],[0.59866220735786,"#D9D4EA"],[0.602006688963211,"#D8D2EA"],[0.605351170568562,"#D6D1E9"],[0.608695652173913,"#D5CFE8"],[0.612040133779264,"#D4CEE8"],[0.615384615384615,"#D3CDE7"],[0.618729096989967,"#D1CBE6"],[0.622073578595318,"#D0CAE5"],[0.625418060200669,"#CFC9E5"],[0.62876254180602,"#CEC7E4"],[0.632107023411371,"#CCC6E3"],[0.635451505016722,"#CBC4E3"],[0.638795986622074,"#CAC3E2"],[0.642140468227425,"#C9C2E1"],[0.645484949832776,"#C7C0E1"],[0.648829431438127,"#C6BFE0"],[0.652173913043478,"#C5BDDF"],[0.655518394648829,"#C4BCDF"],[0.658862876254181,"#C2BBDE"],[0.662207357859532,"#C1B9DD"],[0.665551839464883,"#C0B8DD"],[0.668896321070234,"#BFB7DC"],[0.672240802675585,"#BDB5DB"],[0.675585284280936,"#BCB4DB"],[0.678929765886288,"#BBB3DA"],[0.682274247491639,"#BAB1D9"],[0.68561872909699,"#B8B0D9"],[0.688963210702341,"#B7AFD8"],[0.692307692307692,"#B6ADD7"],[0.695652173913043,"#B5ACD6"],[0.698996655518395,"#B3AAD6"],[0.702341137123746,"#B2A9D5"],[0.705685618729097,"#B1A8D4"],[0.709030100334448,"#B0A6D4"],[0.712374581939799,"#AEA5D3"],[0.715719063545151,"#ADA4D2"],[0.719063545150502,"#ACA2D2"],[0.722408026755853,"#ABA1D1"],[0.725752508361204,"#A9A0D0"],[0.729096989966555,"#A89ED0"],[0.732441471571906,"#A79DCF"],[0.735785953177258,"#A69CCE"],[0.739130434782609,"#A49ACE"],[0.74247491638796,"#A399CD"],[0.745819397993311,"#A298CC"],[0.749163879598662,"#A197CC"],[0.752508361204013,"#9F95CB"],[0.755852842809365,"#9E94CA"],[0.759197324414716,"#9D93C9"],[0.762541806020067,"#9B91C9"],[0.765886287625418,"#9A90C8"],[0.769230769230769,"#998FC7"],[0.77257525083612,"#988DC7"],[0.775919732441472,"#968CC6"],[0.779264214046823,"#958BC5"],[0.782608695652174,"#9489C5"],[0.785953177257525,"#9388C4"],[0.789297658862876,"#9187C3"],[0.792642140468227,"#9086C3"],[0.795986622073579,"#8F84C2"],[0.79933110367893,"#8E83C1"],[0.802675585284281,"#8C82C1"],[0.806020066889632,"#8B80C0"],[0.809364548494983,"#8A7FBF"],[0.812709030100334,"#887EBF"],[0.816053511705686,"#877DBE"],[0.819397993311037,"#867BBD"],[0.822742474916388,"#857ABC"],[0.826086956521739,"#8379BC"],[0.82943143812709,"#8277BB"],[0.832775919732441,"#8176BA"],[0.836120401337793,"#7F75BA"],[0.839464882943144,"#7E74B9"],[0.842809364548495,"#7D72B8"],[0.846153846153846,"#7C71B8"],[0.849498327759197,"#7A70B7"],[0.852842809364548,"#796FB6"],[0.8561872909699,"#786DB6"],[0.859531772575251,"#766CB5"],[0.862876254180602,"#756BB4"],[0.866220735785953,"#746AB4"],[0.869565217391304,"#7268B3"],[0.872909698996656,"#7167B2"],[0.876254180602007,"#7066B1"],[0.879598662207358,"#6E65B1"],[0.882943143812709,"#6D63B0"],[0.88628762541806,"#6C62AF"],[0.889632107023411,"#6A61AF"],[0.892976588628763,"#6960AE"],[0.896321070234114,"#685FAD"],[0.899665551839465,"#665DAD"],[0.903010033444816,"#655CAC"],[0.906354515050167,"#645BAB"],[0.909698996655518,"#625AAB"],[0.91304347826087,"#6159AA"],[0.916387959866221,"#6057A9"],[0.919732441471572,"#5E56A9"],[0.923076923076923,"#5D55A8"],[0.926421404682274,"#5B54A7"],[0.929765886287625,"#5A53A6"],[0.933110367892977,"#5951A6"],[0.936454849498328,"#5750A5"],[0.939799331103679,"#564FA4"],[0.94314381270903,"#544EA4"],[0.946488294314381,"#534DA3"],[0.949832775919732,"#514BA2"],[0.953177257525084,"#504AA2"],[0.956521739130435,"#4F49A1"],[0.959866220735786,"#4D48A0"],[0.963210702341137,"#4C47A0"],[0.966555183946488,"#4A469F"],[0.969899665551839,"#49449E"],[0.973244147157191,"#47439E"],[0.976588628762542,"#45429D"],[0.979933110367893,"#44419C"],[0.983277591973244,"#42409B"],[0.986622073578595,"#413F9B"],[0.989966555183946,"#3F3D9A"],[0.993311036789298,"#3D3C99"],[0.996655518394649,"#3C3B99"],[1,"#3A3A98"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.04,"title":"log2 FC","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"tickmode":"array","ticktext":["-1.0","-0.5","0.0","0.5","1.0"],"tickvals":[0.0144200556308684,0.255567452911933,0.496714850192998,0.737862247474063,0.979009644755128],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":27.8721461187215,"r":7.30593607305936,"b":155.799086757991,"l":648.036529680365},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,11.6],"tickmode":"array","ticktext":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11],"categoryorder":"array","categoryarray":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,18.6],"tickmode":"array","ticktext":["1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981","1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979","1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975","1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796","1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794","1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792","1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783","1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779","1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996","1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991","1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998","1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980","128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763","124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759","108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83","105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80","104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79","102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],"categoryorder":"array","categoryarray":["1231;132;1390;1393;1422;1423;1425;1455;1457;146;273;576;70;841;852;857;871;878;919;921;942;969;975;981","1229;130;1388;1391;1420;1421;1423;144;1453;1455;271;574;68;839;850;855;869;876;917;919;940;967;973;979","1225;126;1384;1387;140;1416;1417;1419;1449;1451;267;570;64;835;846;851;865;872;913;915;936;963;969;975","1038;1062;1065;1078;1091;1142;1162;1189;1195;1452;1610;1611;1613;1614;1643;1644;1646;1676;1678;333;796","1036;1060;1063;1076;1089;1140;1160;1187;1193;1450;1608;1609;1611;1612;1641;1642;1644;1674;1676;331;794","1034;1058;1061;1074;1087;1138;1158;1185;1191;1448;1606;1607;1609;1610;1639;1640;1642;1672;1674;329;792","1025;1049;1052;1065;1078;1129;1149;1176;1182;1439;1597;1598;1600;1601;1630;1631;1633;1663;1665;320;783","1021;1045;1048;1061;1074;1125;1145;1172;1178;1435;1593;1594;1596;1597;1626;1627;1629;1659;1661;316;779","1009;1022;1073;1093;1120;1126;1383;1541;1542;1544;1545;1574;1575;1577;1607;1609;264;284;424;727;969;993;996","1004;1017;1068;1088;1115;1121;1378;1536;1537;1539;1540;1569;1570;1572;1602;1604;259;279;419;722;964;988;991","1004;1010;1260;1419;1422;1451;1452;1454;1484;1486;161;175;18;302;605;870;881;886;900;907;948;950;971;99;998","1004;1007;1020;1033;1084;1104;1131;1137;1394;1552;1553;1555;1556;1585;1586;1588;1618;1620;275;295;435;738;980","128;133;148;150;151;169;194;195;218;248;275;290;32;504;657;699;763","124;129;144;146;147;165;190;191;214;244;271;28;286;500;653;695;759","108;109;132;162;189;204;418;42;47;571;613;62;64;65;677;83","105;106;129;159;186;201;39;415;44;568;59;61;610;62;674;80","104;105;128;158;185;200;38;414;43;567;58;60;609;61;673;79","102;1187;1349;1382;1413;232;29;503;798;800;811;816;834;877;878;901;91;925;931;940"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"e57f391de2d":{"x":{},"y":{},"fill":{},"type":"heatmap"}},"cur_data":"e57f391de2d","visdat":{"e57f391de2d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<p>DDRBase - 2021</p>
+</div>
+<!--/radix_placeholder_navigation_after_body-->
+
+
+</body>
+
+</html>

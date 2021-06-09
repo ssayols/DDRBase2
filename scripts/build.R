@@ -13,7 +13,7 @@
 ##
 ###############
 library(parallel)
-CORES = 8
+CORES = 64
 
 ## 1-prepare build environment
 unlink(c("staging", "docs"), recursive=TRUE)
@@ -25,7 +25,7 @@ file.copy(c("_site.yml", "_footer.html", "about.Rmd", "datasets.Rmd", "downloads
 rmarkdown::render_site("staging")#, quiet=TRUE)
 
 ## 3-for each protein listed in data/uniprot.tab
-proteins <- head(read.delim("data/uniprot.tab"), n=1000)
+proteins <- read.delim("data/uniprot.tab")
 phospho  <- read.delim(gzfile("data/Phospho_database.processed.txt.gz"))
 template <- paste(readLines("templates/protein.Rmd"), collapse="\n")
 
