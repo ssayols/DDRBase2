@@ -56,7 +56,7 @@ system.time({
       html <- paste0(proteins$Entry[i], ".html")
       writeLines(x, rmd)
       rmarkdown::render_site(rmd, quiet=TRUE)
-      file.remove(rmd)
+      file.remove(rmd, tmp)
     })
     
     # merge staging folders from each core
