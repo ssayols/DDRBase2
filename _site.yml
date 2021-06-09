@@ -4,6 +4,7 @@ description: |
   DDRBase
 output_dir: "_site"
 navbar:
+  search: true
   logo:
     image: images/logo.png
     href: https://www.imb.de/research/beli/research
@@ -16,5 +17,4 @@ navbar:
       href: downloads.html
     - text: "About"
       href: about.html
-  search: true
 output: distill::distill_article

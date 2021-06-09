@@ -1,11 +1,13 @@
 ---
 title: "<<GENE.ID>>"
 description: |
-  <<GENE.NAME>> ❯ <<PROTEIN.NAME>>
+  <<PROTEIN.NAME>>
 site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
+library(ggplot2)
+library(plotly)
 knitr::opts_chunk$set(echo = FALSE)
 
 # Learn more about creating websites with Distill at:
@@ -18,14 +20,40 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Gene names
 <<GENE.NAME>>
 
-## Protein names
-<<PROTEIN.NAME>>
-
 ## Function
 <<FUNCTION>>
 
 ## Keywords
 <<KEYWORDS>>
 
-## Test plot
-<<TEST.PLOT>>
+<p>Source: https://www.uniprot.org/</p>
+
+
+## Phosphorilation
+```{r read_data}
+data <- readRDS("<<DATA>>")
+```
+
+```{r phospho_plot}
+# convert back to wide. Some positions have to read-outs: aggregate them (max log2FC)
+try({
+  treatments <- c("Aphidicoline",  "Camptothecin", "Etoposide", "Formaldehyd", "Gemcitabine", "Hydrogen peroxide",  "Hydroxyurea", "Methyl methanesulfonate", "Sodium Arsentie (NaAsO2)", "UV-C", "X-ray")
+  m <- reshape2::dcast(data[, c("Mod..position", "Treatment", "log2FC")],
+                       Mod..position ~ Treatment,
+                       value.var="log2FC",
+                       fun.aggregate=max) %>% reshape2::melt()
+  o    <- rev(order(as.numeric(sapply(unique(m$Mod..position), function(x) strsplit(x, ";")[[1]][1]))))  # coord order
+  m$Mod..position <- factor(m$Mod..position, levels=unique(m$Mod..position)[o])
+  
+  ggplotly(
+    ggplot(m, aes(x=variable, y=Mod..position, fill=value)) +
+      geom_tile() +
+      scale_fill_gradient2(name="log2 FC") +
+      labs(x="", y="") +
+      theme_minimal() +
+      theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))
+  ) %>% config(displaylogo= FALSE, 
+               modeBarButtonsToRemove=c("zoom2d", "pan2d", "select2d", "lasso2d",
+                                        "zoomIn2d", "zoomOut2d", "autoScale2d", "toggleSpikelines"))
+})
+```
