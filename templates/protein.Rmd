@@ -45,7 +45,7 @@ if(nrow(data) > 0) {
   o    <- rev(order(as.numeric(sapply(unique(m$Mod..position), function(x) strsplit(x, ";")[[1]][1]))))  # 1st coord order
   m$position  <- factor(m$Mod..position, levels=unique(m$Mod..position)[o])
   m$treatment <- m$variable
-  m$log2FC    <- m$value
+  m$log2FC    <- round(m$value, digits=2)
   
   ggplotly(
     ggplot(m, aes(x=treatment, y=position, fill=log2FC)) +
