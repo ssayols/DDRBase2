@@ -1,14 +1,15 @@
 ##############
 ##
 ## This script does all the magic. Run with `Rscript scripts/build.R`
-##  2-for each protein listed in data/uniprot.tab
-##   2.1-fills in the template/protein.Rmd as <<uniprot_id>>.Rmd
-##   2.2-builds the resulting Rmd files
-##   2.2-copies the resulting html files to docs/proteins
-##  1-statically build the root of the website
-##    `rmarkdown::render_site()`
-##    `file.rename("_site", "docs")`   # since `docs` is where github.io serves the site
-##  3-`git commit -am'rebuild' && git push`, and go to http://ssayols.github.io/DDRBase2
+## 1-prepare build environment
+## 2-statically build the root of the website
+## 3-for each uniprot protein, fills in the template/protein.Rmd as <<uniprot_id>>.Rmd and renders it to html
+##   3.1-the metadata section
+##   3.2-pass data to template
+##   3.3-save RMD file and compile
+## 4-generate help like in distill:::write_search_json("staging", rmarkdown:::site_config("staging"))
+## 5-rename the build directory _site to docs (where github expects the stuff to be)
+## 6-`git commit -am'rebuild' && git push`, and go to http://ssayols.github.io/DDRBase2
 ##
 ###############
 library(parallel)
@@ -28,8 +29,7 @@ proteins <- head(read.delim("data/uniprot.tab"))
 phospho  <- read.delim(gzfile("data/Phospho_database.processed.txt.gz"))
 template <- paste(readLines("templates/protein.Rmd"), collapse="\n")
 
-## 3.1-fills in the template/protein.Rmd as <<uniprot_id>>.Rmd and renders it to html
-dir.create("staging/_site/proteins")
+## 3-fills in the template/protein.Rmd as <<uniprot_id>>.Rmd and renders it to html
 system.time({
 #  lapply(split(proteins, cut(seq_len(nrow(proteins)), CORES)), function(proteins) {
 #    # copy build environment to a temp location
@@ -56,19 +56,18 @@ system.time({
       html <- paste0(proteins$Entry[i], ".html")
       writeLines(x, rmd)
       rmarkdown::render_site(rmd, quiet=TRUE)
-      file.rename(file.path(cwd, "staging/_site", html), file.path(cwd, "staging/_site/proteins", html))
       file.remove(rmd)
     })
     
     # merge staging folders from each core
-    #file.copy(file.path(cwd, "staging/_site/proteins"), "staging/_site/proteins")
+    #file.copy(file.path(cwd, "staging/_site"), "staging/_site")
 #  }, mc.cores=CORES)
 })
 
 ## 4-generate help like in distill:::write_search_json("staging", rmarkdown:::site_config("staging"))
 h <-  list(
   articles=data.frame(
-    path       =file.path("proteins", paste0(proteins$Entry, ".html")),
+    path       =paste0(proteins$Entry, ".html"),
     title      =proteins$Gene.names...primary..,
     description=paste(proteins$Gene.names, "❯", proteins$Protein.names)),
   collections=data.frame()
