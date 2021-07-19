@@ -45,8 +45,13 @@ system.time({
     file.copy("staging", cwd, recursive=TRUE)
     
     # process protein RMD one by one
-    invisible(
+    invisible({
+      treatments <- length(unique(phospho$Treatment))
       lapply(seq_len(nrow(proteins)), function(i) {
+          # pass data to template
+          j <- grepl(proteins$Entry[i], phospho$Uniprot.IDs)
+          saveRDS(phospho[j, ], tmp)
+
           # the metadata section
           x <- gsub("<<GENE.ID>>", proteins$Gene.names...primary..[i],
                gsub("<<PROTEIN.ID>>", proteins$Entry[i],
@@ -54,11 +59,9 @@ system.time({
                gsub("<<PROTEIN.NAME>>", proteins$Protein.names[i],
                gsub("<<FUNCTION>>", proteins$Function..CC.[i],
                gsub("<<KEYWORDS>>", proteins$Keywords[i],
-               gsub("<<DATA>>", tmp <- tempfile(proteins$Entry[i]), template)))))))
-          
-          # pass data to template
-          saveRDS(phospho[grepl(proteins$Entry[i], phospho$Uniprot.IDs), ], tmp)
-          
+               gsub("<<DATA>>", tmp <- tempfile(proteins$Entry[i]),
+               gsub("<<FIG_HEATMAP_HEIGHT>>", 3 + round(1/3 * sum(j) / treatments), template))))))))
+
           # save RMD file and compile
           rmd  <- file.path(cwd, "staging", paste0(proteins$Entry[i], ".Rmd"))
           html <- paste0(proteins$Entry[i], ".html")
@@ -66,7 +69,7 @@ system.time({
           try(suppressWarnings(rmarkdown::render_site(rmd, envir=new.env(), quiet=TRUE)))
           file.remove(rmd, tmp)
       })
-    )
+    })
     
     # merge staging folders from each core
     invisible({

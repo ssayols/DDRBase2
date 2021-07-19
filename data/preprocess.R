@@ -24,8 +24,8 @@ specifics <- c("APH"="10 µM, 2h",
                "Xray"="2.4 Gy, 2h recovery")
 x$Specifics <- specifics[match(x$Treatment, names(specifics))]
 
-treatments <- c("APH"="Aphidicoline",
-                "ArO2"="Sodium Arsentie (NaAsO2)",
+treatments <- c("APH"="Aphidicolin",
+                "ArO2"="Sodium Arsenite",
                 "CPT"="Camptothecin",
                 "ETO"="Etoposide",
                 "FA"="Formaldehyd",

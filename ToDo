@@ -1,0 +1,14 @@
+(+) 1. Remove the IMB logo / link
+  --> what, instead?
+(+) 2. Correct treatment names: Aphidicolin, Sodium Arsenite
+(+) 3. Exchange the uniprot link for a link directly to the correct protein
+4. Heatmaps:
+  (+)- Change colors: different colors for up / downregulation; use colorblind-friendly colors
+  (+)- Rather than keeping the heatmap the same size, display a bigger heatmap if there are more sites (keep the zooming option)
+  (?)- Only display the site position of the canonical protein isofom
+  (?)- it's nice to get the site information when hovering over the heatmap. Please add the FDR and the sequence window (middle -/+6)
+  - indicate significantly regulated sites with an asterik
+  (+)- what are the functions ("show closest data on hover, ... ") doing?
+    --? Nothing at all for heatmaps. Removed
+  (?)-is it possible to add a link from the phospho sites to the phosphosite plus site?
+(?)5. Before the heatmap it would be great to have a graph showing the domains of the protein (including size information). Measured and regulated sites should be indicated for a quick overview.

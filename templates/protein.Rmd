@@ -26,12 +26,12 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Keywords
 <<KEYWORDS>>
 
-<p>Source: https://www.uniprot.org/</p>
+<p>Source: https://www.uniprot.org/uniprot/<<PROTEIN.ID>></p>
 
 
 ## Phosphorylation
 
-```{r phospho_plot}
+```{r phospho_plot, fig.height=<<FIG_HEATMAP_HEIGHT>>}
 # read data
 data <- readRDS("<<DATA>>")
 
@@ -50,12 +50,13 @@ if(nrow(data) > 0) {
   ggplotly(
     ggplot(m, aes(x=treatment, y=position, fill=log2FC)) +
       geom_tile() +
-      scale_fill_gradient2(name="log2 FC") +
+      scale_fill_gradient2(name="log2 FC", low="#DC3220", mid="white", high="#005AB5", midpoint=0) +
       labs(x="", y="") +
       theme_minimal() +
       theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))
   ) %>% config(displaylogo= FALSE, 
                modeBarButtonsToRemove=c("zoom2d", "pan2d", "select2d", "lasso2d",
+                                        "hoverClosestCartesian", "hoverCompareCartesian",
                                         "zoomIn2d", "zoomOut2d", "autoScale2d", "toggleSpikelines"))
 } else {
   cat("Not detected.", fill=TRUE)
