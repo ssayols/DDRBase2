@@ -5,9 +5,9 @@ description: |
 output_dir: "_site"
 navbar:
   search: true
-#  logo:
-#    image: images/logo.png
-#    href: https://www.imb.de/research/beli/research
+  logo:
+    image: images/logo.png
+    href: https://www.imb.de/research/beli/research
   right:
     - text: "Home"
       href: index.html
