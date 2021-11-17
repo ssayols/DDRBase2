@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: IRF1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2107,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Transcriptional regulator which displays a remarkable functional diversity in the regulation of cellular responses (PubMed:15226432, PubMed:15509808, PubMed:17516545, PubMed:17942705, PubMed:18497060, PubMed:19404407, PubMed:19851330, PubMed:22367195, PubMed:32385160). Regulates transcription of IFN and IFN-inducible genes, host response to viral and bacterial infections, regulation of many genes expressed during hematopoiesis, inflammation, immune responses and cell proliferation and differentiation, regulation of the cell cycle and induction of growth arrest and programmed cell death following DNA damage (PubMed:15226432, PubMed:15509808, PubMed:17516545, PubMed:17942705, PubMed:18497060, PubMed:19404407, PubMed:19851330, PubMed:22367195). Stimulates both innate and acquired immune responses through the activation of specific target genes and can act as a transcriptional activator and repressor regulating target genes by binding to an interferon-stimulated response element (ISRE) in their promoters (PubMed:15226432, PubMed:15509808, PubMed:17516545, PubMed:17942705, PubMed:18497060, PubMed:19404407, PubMed:19851330, PubMed:21389130, PubMed:22367195). Competes with the transcriptional repressor ZBED2 for binding to a common consensus sequence in gene promoters (PubMed:32385160). Its target genes for transcriptional activation activity include: genes involved in anti-viral response, such as IFN-alpha/beta, DDX58/RIG-I, TNFSF10/TRAIL, ZBP1, OAS1/2, PIAS1/GBP, EIF2AK2/PKR and RSAD2/viperin; antibacterial response, such as NOS2/INOS; anti-proliferative response, such as p53/TP53, LOX and CDKN1A; apoptosis, such as BBC3/PUMA, CASP1, CASP7 and CASP8; immune response, such as IL7, IL12A/B and IL15, PTGS2/COX2 and CYBB; DNA damage responses and DNA repair, such as POLQ/POLH; MHC class I expression, such as TAP1, PSMB9/LMP2, PSME1/PA28A, PSME2/PA28B and B2M and MHC class II expression, such as CIITA; metabolic enzymes, such as ACOD1/IRG1 (PubMed:15226432, PubMed:15509808, PubMed:17516545, PubMed:17942705, PubMed:18497060, PubMed:19404407, PubMed:19851330, PubMed:22367195). Represses genes involved in anti-proliferative response, such as BIRC5/survivin, CCNB1, CCNE1, CDK1, CDK2 and CDK4 and in immune response, such as FOXP3, IL4, ANXA2 and TLR4 (PubMed:18641303, PubMed:22200613). Stimulates p53/TP53-dependent transcription through enhanced recruitment of EP300 leading to increased acetylation of p53/TP53 (PubMed:15509808, PubMed:18084608). Plays an important role in immune response directly affecting NK maturation and activity, macrophage production of IL12, Th1 development and maturation of CD8+ T-cells (PubMed:11244049, PubMed:11846971, PubMed:11846974, PubMed:16932750). Also implicated in the differentiation and maturation of dendritic cells and in the suppression of regulatory T (Treg) cells development (PubMed:11244049, PubMed:11846971, PubMed:11846974, PubMed:16932750). Acts as a tumor suppressor and plays a role not only in antagonism of tumor cell growth but also in stimulating an immune response against tumor cells (PubMed:20049431). {ECO:0000269|PubMed:15226432, ECO:0000269|PubMed:15509808, ECO:0000269|PubMed:17516545, ECO:0000269|PubMed:17942705, ECO:0000269|PubMed:18084608, ECO:0000269|PubMed:18497060, ECO:0000269|PubMed:18641303, ECO:0000269|PubMed:19404407, ECO:0000269|PubMed:19851330, ECO:0000269|PubMed:21389130, ECO:0000269|PubMed:22200613, ECO:0000269|PubMed:22367195, ECO:0000269|PubMed:32385160, ECO:0000303|PubMed:11244049, ECO:0000303|PubMed:11846971, ECO:0000303|PubMed:11846974, ECO:0000303|PubMed:16932750, ECO:0000303|PubMed:20049431}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>Acetylation;Activator;Antiviral defense;Cytoplasm;DNA-binding;Disease variant;Immunity;Innate immunity;Isopeptide bond;Nucleus;Phosphoprotein;Reference proteome;Repressor;Transcription;Transcription regulation;Tumor suppressor;Ubl conjugation</p>
+<p>Acetylation; Activator; Antiviral defense; Cytoplasm; DNA-binding; Disease variant; Immunity; Innate immunity; Isopeptide bond; Nucleus; Phosphoprotein; Reference proteome; Repressor; Transcription; Transcription regulation; Tumor suppressor; Ubl conjugation</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P10914" class="uri">https://www.uniprot.org/uniprot/P10914</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-1c5e34a5b7f59ca1b6b0" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1c5e34a5b7f59ca1b6b0">{"x":{"data":[{"x":[1,1,325,325,1],"y":[0,1,1,0,0],"text":"Positions: 1-325 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-15.2,341.2],"tickmode":"array","ticktext":["1","50","100","150","200","250","300","325"],"tickvals":[1,50,100,150,200,250,300,325],"categoryorder":"array","categoryarray":["1","50","100","150","200","250","300","325"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef697aa78052":{"text":{},"xmin":{},"xmax":{},"type":"scatter"}},"cur_data":"ef697aa78052","visdat":{"ef697aa78052":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>No domain info.</p></p>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

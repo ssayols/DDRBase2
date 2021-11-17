@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: SVEP1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,707 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: May play a role in the cell attachment process. {ECO:0000250}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>Alternative splicing;Calcium;Cell adhesion;Cytoplasm;Disulfide bond;EGF-like domain;Glycoprotein;Membrane;Reference proteome;Repeat;Secreted;Signal;Sushi</p>
+<p>Alternative splicing; Calcium; Cell adhesion; Cytoplasm; Disulfide bond; EGF-like domain; Glycoprotein; Membrane; Reference proteome; Repeat; Secreted; Signal; Sushi</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q4LDE5" class="uri">https://www.uniprot.org/uniprot/Q4LDE5</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-7ea1182dd052163d658c" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7ea1182dd052163d658c">{"x":{"data":[{"x":[1,1,3571,3571,1],"y":[0,1,1,0,0],"text":"Positions: 1-3571 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1193,1193,1229,1229,1193],"y":[0,1,1,0,0],"text":"Positions: 1193-1229 - domain EGF-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"EGF-like 1","legendgroup":"EGF-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1231,1231,1267,1267,1231],"y":[0,1,1,0,0],"text":"Positions: 1231-1267 - domain EGF-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(33,12,16,1)","hoveron":"fills","name":"EGF-like 2","legendgroup":"EGF-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1269,1269,1305,1305,1269],"y":[0,1,1,0,0],"text":"Positions: 1269-1305 - domain EGF-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(67,25,32,1)","hoveron":"fills","name":"EGF-like 3","legendgroup":"EGF-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1307,1307,1343,1343,1307],"y":[0,1,1,0,0],"text":"Positions: 1307-1343 - domain EGF-like 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(101,37,48,1)","hoveron":"fills","name":"EGF-like 4","legendgroup":"EGF-like 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1345,1345,1381,1381,1345],"y":[0,1,1,0,0],"text":"Positions: 1345-1381 - domain EGF-like 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(135,50,65,1)","hoveron":"fills","name":"EGF-like 5","legendgroup":"EGF-like 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1383,1383,1419,1419,1383],"y":[0,1,1,0,0],"text":"Positions: 1383-1419 - domain EGF-like 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(169,63,81,1)","hoveron":"fills","name":"EGF-like 6","legendgroup":"EGF-like 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1745,1745,1784,1784,1745],"y":[0,1,1,0,0],"text":"Positions: 1745-1784 - domain EGF-like 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(203,75,97,1)","hoveron":"fills","name":"EGF-like 7","legendgroup":"EGF-like 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3500,3500,3532,3532,3500],"y":[0,1,1,0,0],"text":"Positions: 3500-3532 - domain EGF-like 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(214,91,105,1)","hoveron":"fills","name":"EGF-like 8","legendgroup":"EGF-like 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3533,3533,3564,3564,3533],"y":[0,1,1,0,0],"text":"Positions: 3533-3564 - domain EGF-like 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(195,110,100,1)","hoveron":"fills","name":"EGF-like 9","legendgroup":"EGF-like 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[560,560,642,642,560],"y":[0,1,1,0,0],"text":"Positions: 560-642 - domain HYR 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(176,129,96,1)","hoveron":"fills","name":"HYR 1","legendgroup":"HYR 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[643,643,724,724,643],"y":[0,1,1,0,0],"text":"Positions: 643-724 - domain HYR 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(157,148,92,1)","hoveron":"fills","name":"HYR 2","legendgroup":"HYR 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1424,1424,1628,1628,1424],"y":[0,1,1,0,0],"text":"Positions: 1424-1628 - domain Pentraxin (PTX)","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(138,167,88,1)","hoveron":"fills","name":"Pentraxin (PTX)","legendgroup":"Pentraxin (PTX)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[376,376,435,435,376],"y":[0,1,1,0,0],"text":"Positions: 376-435 - domain Sushi 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(118,186,83,1)","hoveron":"fills","name":"Sushi 1","legendgroup":"Sushi 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1961,1961,2018,2018,1961],"y":[0,1,1,0,0],"text":"Positions: 1961-2018 - domain Sushi 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(99,205,79,1)","hoveron":"fills","name":"Sushi 10","legendgroup":"Sushi 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2019,2019,2080,2080,2019],"y":[0,1,1,0,0],"text":"Positions: 2019-2080 - domain Sushi 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(88,200,98,1)","hoveron":"fills","name":"Sushi 11","legendgroup":"Sushi 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2081,2081,2143,2143,2081],"y":[0,1,1,0,0],"text":"Positions: 2081-2143 - domain Sushi 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(79,191,121,1)","hoveron":"fills","name":"Sushi 12","legendgroup":"Sushi 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2144,2144,2201,2201,2144],"y":[0,1,1,0,0],"text":"Positions: 2144-2201 - domain Sushi 13","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(69,183,144,1)","hoveron":"fills","name":"Sushi 13","legendgroup":"Sushi 13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2202,2202,2261,2261,2202],"y":[0,1,1,0,0],"text":"Positions: 2202-2261 - domain Sushi 14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(60,174,167,1)","hoveron":"fills","name":"Sushi 14","legendgroup":"Sushi 14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2262,2262,2320,2320,2262],"y":[0,1,1,0,0],"text":"Positions: 2262-2320 - domain Sushi 15","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(50,165,190,1)","hoveron":"fills","name":"Sushi 15","legendgroup":"Sushi 15","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2321,2321,2378,2378,2321],"y":[0,1,1,0,0],"text":"Positions: 2321-2378 - domain Sushi 16","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(40,157,213,1)","hoveron":"fills","name":"Sushi 16","legendgroup":"Sushi 16","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2379,2379,2437,2437,2379],"y":[0,1,1,0,0],"text":"Positions: 2379-2437 - domain Sushi 17","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,154,229,1)","hoveron":"fills","name":"Sushi 17","legendgroup":"Sushi 17","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2438,2438,2495,2495,2438],"y":[0,1,1,0,0],"text":"Positions: 2438-2495 - domain Sushi 18","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(35,165,229,1)","hoveron":"fills","name":"Sushi 18","legendgroup":"Sushi 18","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2496,2496,2553,2553,2496],"y":[0,1,1,0,0],"text":"Positions: 2496-2553 - domain Sushi 19","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(36,177,229,1)","hoveron":"fills","name":"Sushi 19","legendgroup":"Sushi 19","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[436,436,495,495,436],"y":[0,1,1,0,0],"text":"Positions: 436-495 - domain Sushi 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"Sushi 2","legendgroup":"Sushi 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2554,2554,2610,2610,2554],"y":[0,1,1,0,0],"text":"Positions: 2554-2610 - domain Sushi 20","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,199,229,1)","hoveron":"fills","name":"Sushi 20","legendgroup":"Sushi 20","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2663,2663,2714,2714,2663],"y":[0,1,1,0,0],"text":"Positions: 2663-2714 - domain Sushi 21","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(38,211,229,1)","hoveron":"fills","name":"Sushi 21","legendgroup":"Sushi 21","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2715,2715,2772,2772,2715],"y":[0,1,1,0,0],"text":"Positions: 2715-2772 - domain Sushi 22","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(39,222,229,1)","hoveron":"fills","name":"Sushi 22","legendgroup":"Sushi 22","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2773,2773,2830,2830,2773],"y":[0,1,1,0,0],"text":"Positions: 2773-2830 - domain Sushi 23","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(57,202,224,1)","hoveron":"fills","name":"Sushi 23","legendgroup":"Sushi 23","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2831,2831,2888,2888,2831],"y":[0,1,1,0,0],"text":"Positions: 2831-2888 - domain Sushi 24","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(83,169,218,1)","hoveron":"fills","name":"Sushi 24","legendgroup":"Sushi 24","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2889,2889,2946,2946,2889],"y":[0,1,1,0,0],"text":"Positions: 2889-2946 - domain Sushi 25","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(108,137,212,1)","hoveron":"fills","name":"Sushi 25","legendgroup":"Sushi 25","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2947,2947,3004,3004,2947],"y":[0,1,1,0,0],"text":"Positions: 2947-3004 - domain Sushi 26","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(133,104,205,1)","hoveron":"fills","name":"Sushi 26","legendgroup":"Sushi 26","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3005,3005,3061,3061,3005],"y":[0,1,1,0,0],"text":"Positions: 3005-3061 - domain Sushi 27","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,71,199,1)","hoveron":"fills","name":"Sushi 27","legendgroup":"Sushi 27","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3062,3062,3119,3119,3062],"y":[0,1,1,0,0],"text":"Positions: 3062-3119 - domain Sushi 28","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(183,39,193,1)","hoveron":"fills","name":"Sushi 28","legendgroup":"Sushi 28","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3120,3120,3178,3178,3120],"y":[0,1,1,0,0],"text":"Positions: 3120-3178 - domain Sushi 29","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(205,15,184,1)","hoveron":"fills","name":"Sushi 29","legendgroup":"Sushi 29","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[496,496,561,561,496],"y":[0,1,1,0,0],"text":"Positions: 496-561 - domain Sushi 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(211,43,158,1)","hoveron":"fills","name":"Sushi 3","legendgroup":"Sushi 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3179,3179,3238,3238,3179],"y":[0,1,1,0,0],"text":"Positions: 3179-3238 - domain Sushi 30","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(218,72,131,1)","hoveron":"fills","name":"Sushi 30","legendgroup":"Sushi 30","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3239,3239,3296,3296,3239],"y":[0,1,1,0,0],"text":"Positions: 3239-3296 - domain Sushi 31","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(224,100,105,1)","hoveron":"fills","name":"Sushi 31","legendgroup":"Sushi 31","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3297,3297,3354,3354,3297],"y":[0,1,1,0,0],"text":"Positions: 3297-3354 - domain Sushi 32","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(230,129,79,1)","hoveron":"fills","name":"Sushi 32","legendgroup":"Sushi 32","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3355,3355,3413,3413,3355],"y":[0,1,1,0,0],"text":"Positions: 3355-3413 - domain Sushi 33","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(236,158,53,1)","hoveron":"fills","name":"Sushi 33","legendgroup":"Sushi 33","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3414,3414,3470,3470,3414],"y":[0,1,1,0,0],"text":"Positions: 3414-3470 - domain Sushi 34","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(242,186,27,1)","hoveron":"fills","name":"Sushi 34","legendgroup":"Sushi 34","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[725,725,789,789,725],"y":[0,1,1,0,0],"text":"Positions: 725-789 - domain Sushi 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(237,195,28,1)","hoveron":"fills","name":"Sushi 4","legendgroup":"Sushi 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1629,1629,1687,1687,1629],"y":[0,1,1,0,0],"text":"Positions: 1629-1687 - domain Sushi 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(224,189,49,1)","hoveron":"fills","name":"Sushi 5","legendgroup":"Sushi 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1688,1688,1745,1745,1688],"y":[0,1,1,0,0],"text":"Positions: 1688-1745 - domain Sushi 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(210,182,71,1)","hoveron":"fills","name":"Sushi 6","legendgroup":"Sushi 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1787,1787,1844,1844,1787],"y":[0,1,1,0,0],"text":"Positions: 1787-1844 - domain Sushi 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(197,176,93,1)","hoveron":"fills","name":"Sushi 7","legendgroup":"Sushi 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1845,1845,1902,1902,1845],"y":[0,1,1,0,0],"text":"Positions: 1845-1902 - domain Sushi 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(184,170,114,1)","hoveron":"fills","name":"Sushi 8","legendgroup":"Sushi 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1903,1903,1960,1960,1903],"y":[0,1,1,0,0],"text":"Positions: 1903-1960 - domain Sushi 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(171,164,136,1)","hoveron":"fills","name":"Sushi 9","legendgroup":"Sushi 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[83,83,264,264,83],"y":[0,1,1,0,0],"text":"Positions: 83-264 - domain VWFA","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"VWFA","legendgroup":"VWFA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-177.5,3749.5],"tickmode":"array","ticktext":["1","1000","2000","3000","3571"],"tickvals":[1,1000,2000,3000,3571],"categoryorder":"array","categoryarray":["1","1000","2000","3000","3571"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef26d5106e7":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef26fd9e87a":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef26d5106e7","visdat":{"ef26d5106e7":["function (y) ","x"],"ef26fd9e87a":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+VWFA
+</td>
+<td style="text-align:right;">
+83
+</td>
+<td style="text-align:right;">
+264
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00219
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 1
+</td>
+<td style="text-align:right;">
+376
+</td>
+<td style="text-align:right;">
+435
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 2
+</td>
+<td style="text-align:right;">
+436
+</td>
+<td style="text-align:right;">
+495
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 3
+</td>
+<td style="text-align:right;">
+496
+</td>
+<td style="text-align:right;">
+561
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HYR 1
+</td>
+<td style="text-align:right;">
+560
+</td>
+<td style="text-align:right;">
+642
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00113
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HYR 2
+</td>
+<td style="text-align:right;">
+643
+</td>
+<td style="text-align:right;">
+724
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00113
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 4
+</td>
+<td style="text-align:right;">
+725
+</td>
+<td style="text-align:right;">
+789
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 1
+</td>
+<td style="text-align:right;">
+1193
+</td>
+<td style="text-align:right;">
+1229
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 2
+</td>
+<td style="text-align:right;">
+1231
+</td>
+<td style="text-align:right;">
+1267
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 3
+</td>
+<td style="text-align:right;">
+1269
+</td>
+<td style="text-align:right;">
+1305
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 4
+</td>
+<td style="text-align:right;">
+1307
+</td>
+<td style="text-align:right;">
+1343
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 5
+</td>
+<td style="text-align:right;">
+1345
+</td>
+<td style="text-align:right;">
+1381
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 6
+</td>
+<td style="text-align:right;">
+1383
+</td>
+<td style="text-align:right;">
+1419
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pentraxin (PTX)
+</td>
+<td style="text-align:right;">
+1424
+</td>
+<td style="text-align:right;">
+1628
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU01172
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 5
+</td>
+<td style="text-align:right;">
+1629
+</td>
+<td style="text-align:right;">
+1687
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 6
+</td>
+<td style="text-align:right;">
+1688
+</td>
+<td style="text-align:right;">
+1745
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 7
+</td>
+<td style="text-align:right;">
+1745
+</td>
+<td style="text-align:right;">
+1784
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 7
+</td>
+<td style="text-align:right;">
+1787
+</td>
+<td style="text-align:right;">
+1844
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 8
+</td>
+<td style="text-align:right;">
+1845
+</td>
+<td style="text-align:right;">
+1902
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 9
+</td>
+<td style="text-align:right;">
+1903
+</td>
+<td style="text-align:right;">
+1960
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 10
+</td>
+<td style="text-align:right;">
+1961
+</td>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 11
+</td>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+2080
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 12
+</td>
+<td style="text-align:right;">
+2081
+</td>
+<td style="text-align:right;">
+2143
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 13
+</td>
+<td style="text-align:right;">
+2144
+</td>
+<td style="text-align:right;">
+2201
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 14
+</td>
+<td style="text-align:right;">
+2202
+</td>
+<td style="text-align:right;">
+2261
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 15
+</td>
+<td style="text-align:right;">
+2262
+</td>
+<td style="text-align:right;">
+2320
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 16
+</td>
+<td style="text-align:right;">
+2321
+</td>
+<td style="text-align:right;">
+2378
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 17
+</td>
+<td style="text-align:right;">
+2379
+</td>
+<td style="text-align:right;">
+2437
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 18
+</td>
+<td style="text-align:right;">
+2438
+</td>
+<td style="text-align:right;">
+2495
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 19
+</td>
+<td style="text-align:right;">
+2496
+</td>
+<td style="text-align:right;">
+2553
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 20
+</td>
+<td style="text-align:right;">
+2554
+</td>
+<td style="text-align:right;">
+2610
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 21
+</td>
+<td style="text-align:right;">
+2663
+</td>
+<td style="text-align:right;">
+2714
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 22
+</td>
+<td style="text-align:right;">
+2715
+</td>
+<td style="text-align:right;">
+2772
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 23
+</td>
+<td style="text-align:right;">
+2773
+</td>
+<td style="text-align:right;">
+2830
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 24
+</td>
+<td style="text-align:right;">
+2831
+</td>
+<td style="text-align:right;">
+2888
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 25
+</td>
+<td style="text-align:right;">
+2889
+</td>
+<td style="text-align:right;">
+2946
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 26
+</td>
+<td style="text-align:right;">
+2947
+</td>
+<td style="text-align:right;">
+3004
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 27
+</td>
+<td style="text-align:right;">
+3005
+</td>
+<td style="text-align:right;">
+3061
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 28
+</td>
+<td style="text-align:right;">
+3062
+</td>
+<td style="text-align:right;">
+3119
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 29
+</td>
+<td style="text-align:right;">
+3120
+</td>
+<td style="text-align:right;">
+3178
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 30
+</td>
+<td style="text-align:right;">
+3179
+</td>
+<td style="text-align:right;">
+3238
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 31
+</td>
+<td style="text-align:right;">
+3239
+</td>
+<td style="text-align:right;">
+3296
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 32
+</td>
+<td style="text-align:right;">
+3297
+</td>
+<td style="text-align:right;">
+3354
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 33
+</td>
+<td style="text-align:right;">
+3355
+</td>
+<td style="text-align:right;">
+3413
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sushi 34
+</td>
+<td style="text-align:right;">
+3414
+</td>
+<td style="text-align:right;">
+3470
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 8
+</td>
+<td style="text-align:right;">
+3500
+</td>
+<td style="text-align:right;">
+3532
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 9
+</td>
+<td style="text-align:right;">
+3533
+</td>
+<td style="text-align:right;">
+3564
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

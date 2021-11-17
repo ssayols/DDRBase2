@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: SORL1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,301 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Sorting receptor that directs several proteins to their correct location within the cell (Probable). Along with AP-1 complex, involved Golgi apparatus - endosome sorting (PubMed:17646382). Sorting receptor for APP, regulating its intracellular trafficking and processing into amyloidogenic-beta peptides. Retains APP in the trans-Golgi network, hence preventing its transit through late endosomes where amyloid beta peptides Abeta40 and Abeta42 are generated (PubMed:16174740, PubMed:16407538, PubMed:17855360, PubMed:24523320). May also sort newly produced amyloid-beta peptides to lysosomes for catabolism (PubMed:24523320). Does not affect APP trafficking from the endoplasmic reticulum to Golgi compartments (PubMed:17855360). Sorting receptor for the BDNF receptor NTRK2/TRKB that facilitates NTRK2 trafficking between synaptic plasma membranes, postsynaptic densities and cell soma, hence positively regulates BDNF signaling by controlling the intracellular location of its receptor (PubMed:23977241). Sorting receptor for GDNF that promotes GDNF regulated, but not constitutive secretion (PubMed:21994944). Sorting receptor for the GDNF-GFRA1 complex, directing it from the cell surface to endosomes. GDNF is then targeted to lysosomes and degraded, while its receptor GFRA1 recycles back to the cell membrane, resulting in a GDNF clearance pathway. The SORL1-GFRA1 complex further targets RET for endocytosis, but not for degradation, affecting GDNF-induced neurotrophic activities (PubMed:23333276). Sorting receptor for ERBB2/HER2. Regulates ERBB2 subcellular distribution by promoting its recycling after internalization from endosomes back to the plasma membrane, hence stimulating phosphoinositide 3-kinase (PI3K)-dependent ERBB2 signaling. In ERBB2-dependent cancer cells, promotes cell proliferation (PubMed:31138794). Sorting receptor for lipoprotein lipase LPL. Promotes LPL localization to endosomes and later to the lysosomes, leading to degradation of newly synthesized LPL (PubMed:21385844). Potential sorting receptor for APOA5, inducing APOA5 internalization to early endosomes, then to late endosomes, wherefrom a portion is sent to lysosomes and degradation, another portion is sorted to the trans-Golgi network (PubMed:18603531). Sorting receptor for the insulin receptor INSR. Promotes recycling of internalized INSR via the Golgi apparatus back to the cell surface, thereby preventing lysosomal INSR catabolism, increasing INSR cell surface expression and strengthening insulin signal reception in adipose tissue. Does not affect INSR internalization (PubMed:27322061). Plays a role in renal ion homeostasis, controlling the phospho-regulation of SLC12A1/NKCC2 by STK39/SPAK kinase and PPP3CB/calcineurin A beta phosphatase, possibly through intracellular sorting of STK39 and PPP3CB (By similarity). Stimulates, via the N-terminal ectodomain, the proliferation and migration of smooth muscle cells, possibly by increasing cell surface expression of the urokinase receptor uPAR/PLAUR. This may promote extracellular matrix proteolysis and hence facilitate cell migration (PubMed:14764453). By acting on the migration of intimal smooth muscle cells, may accelerate intimal thickening following vascular injury (PubMed:14764453). Promotes adhesion of monocytes (PubMed:23486467). Stimulates proliferation and migration of monocytes/macrophages (By similarity). Through its action on intimal smooth muscle cells and macrophages, may accelerate intimal thickening and macrophage foam cell formation in the process of atherosclerosis (By similarity). Regulates hypoxia-enhanced adhesion of hematopoietic stem and progenitor cells to the bone marrow stromal cells via a PLAUR-mediated pathway. This function is mediated by the N-terminal ectodomain (PubMed:23486467). Metabolic regulator, which functions to maintain the adequate balance between lipid storage and oxidation in response to changing environmental conditions, such as temperature and diet. The N-terminal ectodomain negatively regulates adipose tissue energy expenditure, acting through the inhibition the BMP/Smad pathway (By similarity). May regulate signaling by the heterodimeric neurotrophic cytokine CLCF1-CRLF1 bound to the CNTFR receptor by promoting the endocytosis of the tripartite complex CLCF1-CRLF1-CNTFR and lysosomal degradation (PubMed:26858303). May regulate IL6 signaling, decreasing cis signaling, possibly by interfering with IL6-binding to membrane-bound IL6R, while up-regulating trans signaling via soluble IL6R (PubMed:28265003). {ECO:0000250|UniProtKB:O88307, ECO:0000269|PubMed:14764453, ECO:0000269|PubMed:16174740, ECO:0000269|PubMed:16407538, ECO:0000269|PubMed:17646382, ECO:0000269|PubMed:17855360, ECO:0000269|PubMed:18603531, ECO:0000269|PubMed:21385844, ECO:0000269|PubMed:21994944, ECO:0000269|PubMed:23333276, ECO:0000269|PubMed:23486467, ECO:0000269|PubMed:23977241, ECO:0000269|PubMed:24523320, ECO:0000269|PubMed:26858303, ECO:0000269|PubMed:27322061, ECO:0000269|PubMed:28265003, ECO:0000269|PubMed:31138794, ECO:0000305}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Alzheimer disease;Amyloidosis;Cell membrane;Cleavage on pair of basic residues;Cytoplasmic vesicle;Direct protein sequencing;Disease variant;Disulfide bond;EGF-like domain;Endocytosis;Endoplasmic reticulum;Endosome;Glycoprotein;Golgi apparatus;Membrane;Neurodegeneration;Phosphoprotein;Receptor;Reference proteome;Repeat;Secreted;Signal;Transmembrane;Transmembrane helix;Transport</p>
+<p>3D-structure; Alzheimer disease; Amyloidosis; Cell membrane; Cleavage on pair of basic residues; Cytoplasmic vesicle; Direct protein sequencing; Disease variant; Disulfide bond; EGF-like domain; Endocytosis; Endoplasmic reticulum; Endosome; Glycoprotein; Golgi apparatus; Membrane; Neurodegeneration; Phosphoprotein; Receptor; Reference proteome; Repeat; Secreted; Signal; Transmembrane; Transmembrane helix; Transport</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q92673" class="uri">https://www.uniprot.org/uniprot/Q92673</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-7427c22e1617bf52b6fb" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7427c22e1617bf52b6fb">{"x":{"data":[{"x":[1,1,2214,2214,1],"y":[0,1,1,0,0],"text":"Positions: 1-2214 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1026,1026,1072,1072,1026],"y":[0,1,1,0,0],"text":"Positions: 1026-1072 - domain EGF-like","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"EGF-like","legendgroup":"EGF-like","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1557,1557,1649,1649,1557],"y":[0,1,1,0,0],"text":"Positions: 1557-1649 - domain Fibronectin type-III 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(91,34,44,1)","hoveron":"fills","name":"Fibronectin type-III 1","legendgroup":"Fibronectin type-III 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1653,1653,1745,1745,1653],"y":[0,1,1,0,0],"text":"Positions: 1653-1745 - domain Fibronectin type-III 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(183,68,88,1)","hoveron":"fills","name":"Fibronectin type-III 2","legendgroup":"Fibronectin type-III 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1749,1749,1844,1844,1749],"y":[0,1,1,0,0],"text":"Positions: 1749-1844 - domain Fibronectin type-III 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(193,112,100,1)","hoveron":"fills","name":"Fibronectin type-III 3","legendgroup":"Fibronectin type-III 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1843,1843,1927,1927,1843],"y":[0,1,1,0,0],"text":"Positions: 1843-1927 - domain Fibronectin type-III 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(141,163,88,1)","hoveron":"fills","name":"Fibronectin type-III 4","legendgroup":"Fibronectin type-III 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1934,1934,2029,2029,1934],"y":[0,1,1,0,0],"text":"Positions: 1934-2029 - domain Fibronectin type-III 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(93,204,87,1)","hoveron":"fills","name":"Fibronectin type-III 5","legendgroup":"Fibronectin type-III 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2030,2030,2118,2118,2030],"y":[0,1,1,0,0],"text":"Positions: 2030-2118 - domain Fibronectin type-III 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(67,181,150,1)","hoveron":"fills","name":"Fibronectin type-III 6","legendgroup":"Fibronectin type-III 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1076,1076,1114,1114,1076],"y":[0,1,1,0,0],"text":"Positions: 1076-1114 - domain LDL-receptor class A 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(41,157,212,1)","hoveron":"fills","name":"LDL-receptor class A 1","legendgroup":"LDL-receptor class A 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1469,1469,1508,1508,1469],"y":[0,1,1,0,0],"text":"Positions: 1469-1508 - domain LDL-receptor class A 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(35,173,229,1)","hoveron":"fills","name":"LDL-receptor class A 10","legendgroup":"LDL-receptor class A 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1512,1512,1551,1551,1512],"y":[0,1,1,0,0],"text":"Positions: 1512-1551 - domain LDL-receptor class A 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(38,203,229,1)","hoveron":"fills","name":"LDL-receptor class A 11","legendgroup":"LDL-receptor class A 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1115,1115,1155,1155,1115],"y":[0,1,1,0,0],"text":"Positions: 1115-1155 - domain LDL-receptor class A 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(59,200,224,1)","hoveron":"fills","name":"LDL-receptor class A 2","legendgroup":"LDL-receptor class A 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1156,1156,1194,1194,1156],"y":[0,1,1,0,0],"text":"Positions: 1156-1194 - domain LDL-receptor class A 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(127,112,207,1)","hoveron":"fills","name":"LDL-receptor class A 3","legendgroup":"LDL-receptor class A 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1198,1198,1236,1236,1198],"y":[0,1,1,0,0],"text":"Positions: 1198-1236 - domain LDL-receptor class A 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(195,23,190,1)","hoveron":"fills","name":"LDL-receptor class A 4","legendgroup":"LDL-receptor class A 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1238,1238,1272,1272,1238],"y":[0,1,1,0,0],"text":"Positions: 1238-1272 - domain LDL-receptor class A 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(219,77,127,1)","hoveron":"fills","name":"LDL-receptor class A 5","legendgroup":"LDL-receptor class A 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1273,1273,1317,1317,1273],"y":[0,1,1,0,0],"text":"Positions: 1273-1317 - domain LDL-receptor class A 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(235,154,56,1)","hoveron":"fills","name":"LDL-receptor class A 6","legendgroup":"LDL-receptor class A 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1323,1323,1361,1361,1323],"y":[0,1,1,0,0],"text":"Positions: 1323-1361 - domain LDL-receptor class A 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(229,191,41,1)","hoveron":"fills","name":"LDL-receptor class A 7","legendgroup":"LDL-receptor class A 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1366,1366,1405,1405,1366],"y":[0,1,1,0,0],"text":"Positions: 1366-1405 - domain LDL-receptor class A 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(193,174,99,1)","hoveron":"fills","name":"LDL-receptor class A 8","legendgroup":"LDL-receptor class A 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1417,1417,1455,1455,1417],"y":[0,1,1,0,0],"text":"Positions: 1417-1455 - domain LDL-receptor class A 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"LDL-receptor class A 9","legendgroup":"LDL-receptor class A 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-109.65,2324.65],"tickmode":"array","ticktext":["1","500","1000","1500","2000","2214"],"tickvals":[1,500,1000,1500,2000,2214],"categoryorder":"array","categoryarray":["1","500","1000","1500","2000","2214"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef1f6ad803ca":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef1f3b587b23":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef1f6ad803ca","visdat":{"ef1f6ad803ca":["function (y) ","x"],"ef1f3b587b23":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+EGF-like
+</td>
+<td style="text-align:right;">
+1026
+</td>
+<td style="text-align:right;">
+1072
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 1
+</td>
+<td style="text-align:right;">
+1076
+</td>
+<td style="text-align:right;">
+1114
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 2
+</td>
+<td style="text-align:right;">
+1115
+</td>
+<td style="text-align:right;">
+1155
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 3
+</td>
+<td style="text-align:right;">
+1156
+</td>
+<td style="text-align:right;">
+1194
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 4
+</td>
+<td style="text-align:right;">
+1198
+</td>
+<td style="text-align:right;">
+1236
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 5
+</td>
+<td style="text-align:right;">
+1238
+</td>
+<td style="text-align:right;">
+1272
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 6
+</td>
+<td style="text-align:right;">
+1273
+</td>
+<td style="text-align:right;">
+1317
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 7
+</td>
+<td style="text-align:right;">
+1323
+</td>
+<td style="text-align:right;">
+1361
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 8
+</td>
+<td style="text-align:right;">
+1366
+</td>
+<td style="text-align:right;">
+1405
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 9
+</td>
+<td style="text-align:right;">
+1417
+</td>
+<td style="text-align:right;">
+1455
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 10
+</td>
+<td style="text-align:right;">
+1469
+</td>
+<td style="text-align:right;">
+1508
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 11
+</td>
+<td style="text-align:right;">
+1512
+</td>
+<td style="text-align:right;">
+1551
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 1
+</td>
+<td style="text-align:right;">
+1557
+</td>
+<td style="text-align:right;">
+1649
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 2
+</td>
+<td style="text-align:right;">
+1653
+</td>
+<td style="text-align:right;">
+1745
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 3
+</td>
+<td style="text-align:right;">
+1749
+</td>
+<td style="text-align:right;">
+1844
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 4
+</td>
+<td style="text-align:right;">
+1843
+</td>
+<td style="text-align:right;">
+1927
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 5
+</td>
+<td style="text-align:right;">
+1934
+</td>
+<td style="text-align:right;">
+2029
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 6
+</td>
+<td style="text-align:right;">
+2030
+</td>
+<td style="text-align:right;">
+2118
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

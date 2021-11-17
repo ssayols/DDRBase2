@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: HSPG2</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,763 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Integral component of basement membranes. Component of the glomerular basement membrane (GBM), responsible for the fixed negative electrostatic membrane charge, and which provides a barrier which is both size- and charge-selective. It serves as an attachment substrate for cells. Plays essential roles in vascularization. Critical for normal heart development and for regulating the vascular response to injury. Also required for avascular cartilage development.; FUNCTION: Endorepellin in an anti-angiogenic and anti-tumor peptide that inhibits endothelial cell migration, collagen-induced endothelial tube morphogenesis and blood vessel growth in the chorioallantoic membrane. Blocks endothelial cell adhesion to fibronectin and type I collagen. Anti-tumor agent in neovascularization. Interaction with its ligand, integrin alpha2/beta1, is required for the anti-angiogenic properties. Evokes a reduction in phosphorylation of receptor tyrosine kinases via alpha2/beta1 integrin-mediated activation of the tyrosine phosphatase, PTPN6.; FUNCTION: The LG3 peptide has anti-angiogenic properties that require binding of calcium ions for full activity.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Angiogenesis;Basement membrane;Calcium;Direct protein sequencing;Disease variant;Disulfide bond;EGF-like domain;Extracellular matrix;Glycoprotein;Heparan sulfate;Immunoglobulin domain;Laminin EGF-like domain;Metal-binding;Proteoglycan;Reference proteome;Repeat;Secreted;Signal</p>
+<p>3D-structure; Angiogenesis; Basement membrane; Calcium; Direct protein sequencing; Disease variant; Disulfide bond; EGF-like domain; Extracellular matrix; Glycoprotein; Heparan sulfate; Immunoglobulin domain; Laminin EGF-like domain; Metal-binding; Proteoglycan; Reference proteome; Repeat; Secreted; Signal</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P98160" class="uri">https://www.uniprot.org/uniprot/P98160</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-a013c1f836d5eef0b147" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a013c1f836d5eef0b147">{"x":{"data":[{"x":[1,1,4391,4391,1],"y":[0,1,1,0,0],"text":"Positions: 1-4391 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3844,3844,3881,3881,3844],"y":[0,1,1,0,0],"text":"Positions: 3844-3881 - domain EGF-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"EGF-like 1","legendgroup":"EGF-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3884,3884,3922,3922,3884],"y":[0,1,1,0,0],"text":"Positions: 3884-3922 - domain EGF-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(31,11,14,1)","hoveron":"fills","name":"EGF-like 2","legendgroup":"EGF-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4104,4104,4141,4141,4104],"y":[0,1,1,0,0],"text":"Positions: 4104-4141 - domain EGF-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(62,23,29,1)","hoveron":"fills","name":"EGF-like 3","legendgroup":"EGF-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4143,4143,4176,4176,4143],"y":[0,1,1,0,0],"text":"Positions: 4143-4176 - domain EGF-like 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(93,34,44,1)","hoveron":"fills","name":"EGF-like 4","legendgroup":"EGF-like 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[405,405,504,504,405],"y":[0,1,1,0,0],"text":"Positions: 405-504 - domain Ig-like C2-type 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(124,46,59,1)","hoveron":"fills","name":"Ig-like C2-type 1","legendgroup":"Ig-like C2-type 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2437,2437,2533,2533,2437],"y":[0,1,1,0,0],"text":"Positions: 2437-2533 - domain Ig-like C2-type 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(156,58,74,1)","hoveron":"fills","name":"Ig-like C2-type 10","legendgroup":"Ig-like C2-type 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2534,2534,2629,2629,2534],"y":[0,1,1,0,0],"text":"Positions: 2534-2629 - domain Ig-like C2-type 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(187,69,89,1)","hoveron":"fills","name":"Ig-like C2-type 11","legendgroup":"Ig-like C2-type 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2630,2630,2726,2726,2630],"y":[0,1,1,0,0],"text":"Positions: 2630-2726 - domain Ig-like C2-type 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(218,81,104,1)","hoveron":"fills","name":"Ig-like C2-type 12","legendgroup":"Ig-like C2-type 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2727,2727,2826,2826,2727],"y":[0,1,1,0,0],"text":"Positions: 2727-2826 - domain Ig-like C2-type 13","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(207,98,103,1)","hoveron":"fills","name":"Ig-like C2-type 13","legendgroup":"Ig-like C2-type 13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2827,2827,2924,2924,2827],"y":[0,1,1,0,0],"text":"Positions: 2827-2924 - domain Ig-like C2-type 14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(190,115,99,1)","hoveron":"fills","name":"Ig-like C2-type 14","legendgroup":"Ig-like C2-type 14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2925,2925,3021,3021,2925],"y":[0,1,1,0,0],"text":"Positions: 2925-3021 - domain Ig-like C2-type 15","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(172,133,95,1)","hoveron":"fills","name":"Ig-like C2-type 15","legendgroup":"Ig-like C2-type 15","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3022,3022,3112,3112,3022],"y":[0,1,1,0,0],"text":"Positions: 3022-3112 - domain Ig-like C2-type 16","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(154,150,91,1)","hoveron":"fills","name":"Ig-like C2-type 16","legendgroup":"Ig-like C2-type 16","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3113,3113,3211,3211,3113],"y":[0,1,1,0,0],"text":"Positions: 3113-3211 - domain Ig-like C2-type 17","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(137,168,87,1)","hoveron":"fills","name":"Ig-like C2-type 17","legendgroup":"Ig-like C2-type 17","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3212,3212,3298,3298,3212],"y":[0,1,1,0,0],"text":"Positions: 3212-3298 - domain Ig-like C2-type 18","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(119,185,84,1)","hoveron":"fills","name":"Ig-like C2-type 18","legendgroup":"Ig-like C2-type 18","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3299,3299,3399,3399,3299],"y":[0,1,1,0,0],"text":"Positions: 3299-3399 - domain Ig-like C2-type 19","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(102,203,80,1)","hoveron":"fills","name":"Ig-like C2-type 19","legendgroup":"Ig-like C2-type 19","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1677,1677,1771,1771,1677],"y":[0,1,1,0,0],"text":"Positions: 1677-1771 - domain Ig-like C2-type 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(90,202,94,1)","hoveron":"fills","name":"Ig-like C2-type 2","legendgroup":"Ig-like C2-type 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3400,3400,3488,3488,3400],"y":[0,1,1,0,0],"text":"Positions: 3400-3488 - domain Ig-like C2-type 20","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(81,194,115,1)","hoveron":"fills","name":"Ig-like C2-type 20","legendgroup":"Ig-like C2-type 20","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3489,3489,3574,3574,3489],"y":[0,1,1,0,0],"text":"Positions: 3489-3574 - domain Ig-like C2-type 21","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(73,186,136,1)","hoveron":"fills","name":"Ig-like C2-type 21","legendgroup":"Ig-like C2-type 21","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3575,3575,3662,3662,3575],"y":[0,1,1,0,0],"text":"Positions: 3575-3662 - domain Ig-like C2-type 22","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(64,178,157,1)","hoveron":"fills","name":"Ig-like C2-type 22","legendgroup":"Ig-like C2-type 22","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1772,1772,1865,1865,1772],"y":[0,1,1,0,0],"text":"Positions: 1772-1865 - domain Ig-like C2-type 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(55,170,178,1)","hoveron":"fills","name":"Ig-like C2-type 3","legendgroup":"Ig-like C2-type 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1866,1866,1955,1955,1866],"y":[0,1,1,0,0],"text":"Positions: 1866-1955 - domain Ig-like C2-type 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(46,162,199,1)","hoveron":"fills","name":"Ig-like C2-type 4","legendgroup":"Ig-like C2-type 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1956,1956,2051,2051,1956],"y":[0,1,1,0,0],"text":"Positions: 1956-2051 - domain Ig-like C2-type 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,154,220,1)","hoveron":"fills","name":"Ig-like C2-type 5","legendgroup":"Ig-like C2-type 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2052,2052,2151,2151,2052],"y":[0,1,1,0,0],"text":"Positions: 2052-2151 - domain Ig-like C2-type 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,157,229,1)","hoveron":"fills","name":"Ig-like C2-type 6","legendgroup":"Ig-like C2-type 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2152,2152,2244,2244,2152],"y":[0,1,1,0,0],"text":"Positions: 2152-2244 - domain Ig-like C2-type 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(35,167,229,1)","hoveron":"fills","name":"Ig-like C2-type 7","legendgroup":"Ig-like C2-type 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2245,2245,2340,2340,2245],"y":[0,1,1,0,0],"text":"Positions: 2245-2340 - domain Ig-like C2-type 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(36,178,229,1)","hoveron":"fills","name":"Ig-like C2-type 8","legendgroup":"Ig-like C2-type 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2341,2341,2436,2436,2341],"y":[0,1,1,0,0],"text":"Positions: 2341-2436 - domain Ig-like C2-type 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"Ig-like C2-type 9","legendgroup":"Ig-like C2-type 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[521,521,530,530,521],"y":[0,1,1,0,0],"text":"Positions: 521-530 - domain Laminin EGF-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,199,229,1)","hoveron":"fills","name":"Laminin EGF-like 1","legendgroup":"Laminin EGF-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1563,1563,1612,1612,1563],"y":[0,1,1,0,0],"text":"Positions: 1563-1612 - domain Laminin EGF-like 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(38,209,229,1)","hoveron":"fills","name":"Laminin EGF-like 10","legendgroup":"Laminin EGF-like 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1613,1613,1670,1670,1613],"y":[0,1,1,0,0],"text":"Positions: 1613-1670 - domain Laminin EGF-like 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(39,220,229,1)","hoveron":"fills","name":"Laminin EGF-like 11","legendgroup":"Laminin EGF-like 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[731,731,763,763,731],"y":[0,1,1,0,0],"text":"Positions: 731-763 - domain Laminin EGF-like 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(49,213,226,1)","hoveron":"fills","name":"Laminin EGF-like 12","legendgroup":"Laminin EGF-like 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[764,764,813,813,764],"y":[0,1,1,0,0],"text":"Positions: 764-813 - domain Laminin EGF-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(73,182,220,1)","hoveron":"fills","name":"Laminin EGF-like 2","legendgroup":"Laminin EGF-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[814,814,871,871,814],"y":[0,1,1,0,0],"text":"Positions: 814-871 - domain Laminin EGF-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(96,152,215,1)","hoveron":"fills","name":"Laminin EGF-like 3","legendgroup":"Laminin EGF-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[879,879,923,923,879],"y":[0,1,1,0,0],"text":"Positions: 879-923 - domain Laminin EGF-like 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(119,122,209,1)","hoveron":"fills","name":"Laminin EGF-like 4","legendgroup":"Laminin EGF-like 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[924,924,933,933,924],"y":[0,1,1,0,0],"text":"Positions: 924-933 - domain Laminin EGF-like 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(142,92,203,1)","hoveron":"fills","name":"Laminin EGF-like 5","legendgroup":"Laminin EGF-like 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1126,1126,1158,1158,1126],"y":[0,1,1,0,0],"text":"Positions: 1126-1158 - domain Laminin EGF-like 51","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(165,62,197,1)","hoveron":"fills","name":"Laminin EGF-like 51","legendgroup":"Laminin EGF-like 51","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1159,1159,1208,1208,1159],"y":[0,1,1,0,0],"text":"Positions: 1159-1208 - domain Laminin EGF-like 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(188,32,192,1)","hoveron":"fills","name":"Laminin EGF-like 6","legendgroup":"Laminin EGF-like 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1209,1209,1265,1265,1209],"y":[0,1,1,0,0],"text":"Positions: 1209-1265 - domain Laminin EGF-like 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(206,18,181,1)","hoveron":"fills","name":"Laminin EGF-like 7","legendgroup":"Laminin EGF-like 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1275,1275,1324,1324,1275],"y":[0,1,1,0,0],"text":"Positions: 1275-1324 - domain Laminin EGF-like 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(212,44,157,1)","hoveron":"fills","name":"Laminin EGF-like 8","legendgroup":"Laminin EGF-like 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1325,1325,1334,1334,1325],"y":[0,1,1,0,0],"text":"Positions: 1325-1334 - domain Laminin EGF-like 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(217,71,132,1)","hoveron":"fills","name":"Laminin EGF-like 9","legendgroup":"Laminin EGF-like 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1530,1530,1562,1562,1530],"y":[0,1,1,0,0],"text":"Positions: 1530-1562 - domain Laminin EGF-like 91","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(223,97,108,1)","hoveron":"fills","name":"Laminin EGF-like 91","legendgroup":"Laminin EGF-like 91","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3663,3663,3843,3843,3663],"y":[0,1,1,0,0],"text":"Positions: 3663-3843 - domain Laminin G-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(229,123,84,1)","hoveron":"fills","name":"Laminin G-like 1","legendgroup":"Laminin G-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3928,3928,4103,4103,3928],"y":[0,1,1,0,0],"text":"Positions: 3928-4103 - domain Laminin G-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(234,150,60,1)","hoveron":"fills","name":"Laminin G-like 2","legendgroup":"Laminin G-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4201,4201,4389,4389,4201],"y":[0,1,1,0,0],"text":"Positions: 4201-4389 - domain Laminin G-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(240,176,36,1)","hoveron":"fills","name":"Laminin G-like 3","legendgroup":"Laminin G-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[538,538,730,730,538],"y":[0,1,1,0,0],"text":"Positions: 538-730 - domain Laminin IV type A 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(243,198,18,1)","hoveron":"fills","name":"Laminin IV type A 1","legendgroup":"Laminin IV type A 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[941,941,1125,1125,941],"y":[0,1,1,0,0],"text":"Positions: 941-1125 - domain Laminin IV type A 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(231,192,38,1)","hoveron":"fills","name":"Laminin IV type A 2","legendgroup":"Laminin IV type A 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1344,1344,1529,1529,1344],"y":[0,1,1,0,0],"text":"Positions: 1344-1529 - domain Laminin IV type A 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(218,186,58,1)","hoveron":"fills","name":"Laminin IV type A 3","legendgroup":"Laminin IV type A 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[198,198,235,235,198],"y":[0,1,1,0,0],"text":"Positions: 198-235 - domain LDL-receptor class A 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(206,180,78,1)","hoveron":"fills","name":"LDL-receptor class A 1","legendgroup":"LDL-receptor class A 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[284,284,320,320,284],"y":[0,1,1,0,0],"text":"Positions: 284-320 - domain LDL-receptor class A 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(194,175,98,1)","hoveron":"fills","name":"LDL-receptor class A 2","legendgroup":"LDL-receptor class A 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[324,324,360,360,324],"y":[0,1,1,0,0],"text":"Positions: 324-360 - domain LDL-receptor class A 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(182,169,118,1)","hoveron":"fills","name":"LDL-receptor class A 3","legendgroup":"LDL-receptor class A 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[367,367,404,404,367],"y":[0,1,1,0,0],"text":"Positions: 367-404 - domain LDL-receptor class A 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(170,163,138,1)","hoveron":"fills","name":"LDL-receptor class A 4","legendgroup":"LDL-receptor class A 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[80,80,191,191,80],"y":[0,1,1,0,0],"text":"Positions: 80-191 - domain SEA","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"SEA","legendgroup":"SEA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-218.5,4610.5],"tickmode":"array","ticktext":["1","1000","2000","3000","4000","4391"],"tickvals":[1,1000,2000,3000,4000,4391],"categoryorder":"array","categoryarray":["1","1000","2000","3000","4000","4391"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef3a582f9256":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef3a25a1c629":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef3a582f9256","visdat":{"ef3a582f9256":["function (y) ","x"],"ef3a25a1c629":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SEA
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+191
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00188
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 1
+</td>
+<td style="text-align:right;">
+198
+</td>
+<td style="text-align:right;">
+235
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 2
+</td>
+<td style="text-align:right;">
+284
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 3
+</td>
+<td style="text-align:right;">
+324
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A 4
+</td>
+<td style="text-align:right;">
+367
+</td>
+<td style="text-align:right;">
+404
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 1
+</td>
+<td style="text-align:right;">
+405
+</td>
+<td style="text-align:right;">
+504
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 1
+</td>
+<td style="text-align:right;">
+521
+</td>
+<td style="text-align:right;">
+530
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin IV type A 1
+</td>
+<td style="text-align:right;">
+538
+</td>
+<td style="text-align:right;">
+730
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00458
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 12
+</td>
+<td style="text-align:right;">
+731
+</td>
+<td style="text-align:right;">
+763
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 2
+</td>
+<td style="text-align:right;">
+764
+</td>
+<td style="text-align:right;">
+813
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 3
+</td>
+<td style="text-align:right;">
+814
+</td>
+<td style="text-align:right;">
+871
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 4
+</td>
+<td style="text-align:right;">
+879
+</td>
+<td style="text-align:right;">
+923
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 5
+</td>
+<td style="text-align:right;">
+924
+</td>
+<td style="text-align:right;">
+933
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin IV type A 2
+</td>
+<td style="text-align:right;">
+941
+</td>
+<td style="text-align:right;">
+1125
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00458
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 51
+</td>
+<td style="text-align:right;">
+1126
+</td>
+<td style="text-align:right;">
+1158
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 6
+</td>
+<td style="text-align:right;">
+1159
+</td>
+<td style="text-align:right;">
+1208
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 7
+</td>
+<td style="text-align:right;">
+1209
+</td>
+<td style="text-align:right;">
+1265
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 8
+</td>
+<td style="text-align:right;">
+1275
+</td>
+<td style="text-align:right;">
+1324
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 9
+</td>
+<td style="text-align:right;">
+1325
+</td>
+<td style="text-align:right;">
+1334
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin IV type A 3
+</td>
+<td style="text-align:right;">
+1344
+</td>
+<td style="text-align:right;">
+1529
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00458
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 91
+</td>
+<td style="text-align:right;">
+1530
+</td>
+<td style="text-align:right;">
+1562
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 10
+</td>
+<td style="text-align:right;">
+1563
+</td>
+<td style="text-align:right;">
+1612
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 11
+</td>
+<td style="text-align:right;">
+1613
+</td>
+<td style="text-align:right;">
+1670
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 2
+</td>
+<td style="text-align:right;">
+1677
+</td>
+<td style="text-align:right;">
+1771
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 3
+</td>
+<td style="text-align:right;">
+1772
+</td>
+<td style="text-align:right;">
+1865
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 4
+</td>
+<td style="text-align:right;">
+1866
+</td>
+<td style="text-align:right;">
+1955
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 5
+</td>
+<td style="text-align:right;">
+1956
+</td>
+<td style="text-align:right;">
+2051
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 6
+</td>
+<td style="text-align:right;">
+2052
+</td>
+<td style="text-align:right;">
+2151
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 7
+</td>
+<td style="text-align:right;">
+2152
+</td>
+<td style="text-align:right;">
+2244
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 8
+</td>
+<td style="text-align:right;">
+2245
+</td>
+<td style="text-align:right;">
+2340
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 9
+</td>
+<td style="text-align:right;">
+2341
+</td>
+<td style="text-align:right;">
+2436
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 10
+</td>
+<td style="text-align:right;">
+2437
+</td>
+<td style="text-align:right;">
+2533
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 11
+</td>
+<td style="text-align:right;">
+2534
+</td>
+<td style="text-align:right;">
+2629
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 12
+</td>
+<td style="text-align:right;">
+2630
+</td>
+<td style="text-align:right;">
+2726
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 13
+</td>
+<td style="text-align:right;">
+2727
+</td>
+<td style="text-align:right;">
+2826
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 14
+</td>
+<td style="text-align:right;">
+2827
+</td>
+<td style="text-align:right;">
+2924
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 15
+</td>
+<td style="text-align:right;">
+2925
+</td>
+<td style="text-align:right;">
+3021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 16
+</td>
+<td style="text-align:right;">
+3022
+</td>
+<td style="text-align:right;">
+3112
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 17
+</td>
+<td style="text-align:right;">
+3113
+</td>
+<td style="text-align:right;">
+3211
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 18
+</td>
+<td style="text-align:right;">
+3212
+</td>
+<td style="text-align:right;">
+3298
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 19
+</td>
+<td style="text-align:right;">
+3299
+</td>
+<td style="text-align:right;">
+3399
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 20
+</td>
+<td style="text-align:right;">
+3400
+</td>
+<td style="text-align:right;">
+3488
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 21
+</td>
+<td style="text-align:right;">
+3489
+</td>
+<td style="text-align:right;">
+3574
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 22
+</td>
+<td style="text-align:right;">
+3575
+</td>
+<td style="text-align:right;">
+3662
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin G-like 1
+</td>
+<td style="text-align:right;">
+3663
+</td>
+<td style="text-align:right;">
+3843
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00122
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 1
+</td>
+<td style="text-align:right;">
+3844
+</td>
+<td style="text-align:right;">
+3881
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 2
+</td>
+<td style="text-align:right;">
+3884
+</td>
+<td style="text-align:right;">
+3922
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin G-like 2
+</td>
+<td style="text-align:right;">
+3928
+</td>
+<td style="text-align:right;">
+4103
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00122
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 3
+</td>
+<td style="text-align:right;">
+4104
+</td>
+<td style="text-align:right;">
+4141
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 4
+</td>
+<td style="text-align:right;">
+4143
+</td>
+<td style="text-align:right;">
+4176
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin G-like 3
+</td>
+<td style="text-align:right;">
+4201
+</td>
+<td style="text-align:right;">
+4389
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00122
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

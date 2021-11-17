@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: SIRT7</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,63 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: NAD-dependent protein-lysine deacylase that can act both as a deacetylase or deacylase (desuccinylase, depropionylase and deglutarylase), depending on the context (PubMed:22722849, PubMed:26907567, PubMed:30653310, PubMed:31542297). Specifically mediates deacetylation of histone H3 at ‘Lys-18’ (H3K18Ac) (PubMed:22722849, PubMed:30420520). In contrast to other histone deacetylases, displays strong preference for a specific histone mark, H3K18Ac, directly linked to control of gene expression (PubMed:22722849, PubMed:30653310). H3K18Ac is mainly present around the transcription start site of genes and has been linked to activation of nuclear hormone receptors; SIRT7 thereby acts as a transcription repressor (PubMed:22722849). Moreover, H3K18 hypoacetylation has been reported as a marker of malignancy in various cancers and seems to maintain the transformed phenotype of cancer cells (PubMed:22722849). Also able to mediate deacetylation of histone H3 at ‘Lys-36’ (H3K36Ac) in the context of nucleosomes (PubMed:30653310). Also mediates deacetylation of non-histone proteins, such as ATM, CDK9, DDX21, DDB1, FBL, FKBP5/FKBP51, GABPB1, RAN, RRP9/U3-55K and POLR1E/PAF53 (PubMed:24207024, PubMed:26867678, PubMed:28147277, PubMed:28886238, PubMed:28426094, PubMed:30540930, PubMed:31075303, PubMed:30944854, PubMed:28790157). Enriched in nucleolus where it stimulates transcription activity of the RNA polymerase I complex (PubMed:16618798, PubMed:19174463, PubMed:24207024). Acts by mediating the deacetylation of the RNA polymerase I subunit POLR1E/PAF53, thereby promoting the association of RNA polymerase I with the rDNA promoter region and coding region (PubMed:16618798, PubMed:19174463, PubMed:24207024). In response to metabolic stress, SIRT7 is released from nucleoli leading to hyperacetylation of POLR1E/PAF53 and decreased RNA polymerase I transcription (PubMed:24207024). Required to restore the transcription of ribosomal RNA (rRNA) at the exit from mitosis (PubMed:19174463). Promotes pre-ribosomal RNA (pre-rRNA) cleavage at the 5’-terminal processing site by mediating deacetylation of RRP9/U3-55K, a core subunit of the U3 snoRNP complex (PubMed:26867678). Mediates ‘Lys-37’ deacetylation of Ran, thereby regulating the nuclear export of NF-kappa-B subunit RELA/p65 (PubMed:31075303). Acts as a regulator of DNA damage repair by mediating deacetylation of ATM during the late stages of DNA damage response, promoting ATM dephosphorylation and deactivation (PubMed:30944854). Suppresses the activity of the DCX (DDB1-CUL4-X-box) E3 ubiquitin-protein ligase complexes by mediating deacetylation of DDB1, which prevents the interaction between DDB1 and CUL4 (CUL4A or CUL4B) (PubMed:28886238). Activates RNA polymerase II transcription by mediating deacetylation of CDK9, thereby promoting ‘Ser-2’ phosphorylation of the C-terminal domain (CTD) of RNA polymerase II (PubMed:28426094). Deacetylates FBL, promoting histone-glutamine methyltransferase activity of FBL (PubMed:30540930). Acts as a regulator of mitochondrial function by catalyzing deacetylation of GABPB1 (By similarity). Regulates Akt/AKT1 activity by mediating deacetylation of FKBP5/FKBP51 (PubMed:28147277). Required to prevent R-loop-associated DNA damage and transcription-associated genomic instability by mediating deacetylation and subsequent activation of DDX21, thereby overcoming R-loop-mediated stalling of RNA polymerases (PubMed:28790157). In addition to protein deacetylase activity, also acts as protein-lysine deacylase (PubMed:27436229, PubMed:27997115, PubMed:31542297). Acts as a protein depropionylase by mediating depropionylation of Osterix (SP7), thereby regulating bone formation by osteoblasts (By similarity). Acts as a histone deglutarylase by mediating deglutarylation of histone H4 on ‘Lys-91’ (H4K91glu); a mark that destabilizes nucleosomes by promoting dissociation of the H2A-H2B dimers from nucleosomes (PubMed:31542297). Acts as a histone desuccinylase: in response to DNA damage, recruited to DNA double-strand breaks (DSBs) and catalyzes desuccinylation of histone H3 on ‘Lys-122’ (H3K122succ), thereby promoting chromatin condensation and DSB repair (PubMed:27436229). Also promotes DSB repair by promoting H3K18Ac deacetylation, regulating non-homologous end joining (NHEJ) (By similarity). Along with its role in DNA repair, required for chromosome synapsis during prophase I of female meiosis by catalyzing H3K18Ac deacetylation (By similarity). Involved in transcriptional repression of LINE-1 retrotransposon via H3K18Ac deacetylation, and promotes their association with the nuclear lamina (PubMed:31226208). Required to stabilize ribosomal DNA (rDNA) heterochromatin and prevent cellular senescence induced by rDNA instability (PubMed:29728458). Acts as a negative regulator of SIRT1 by preventing autodeacetylation of SIRT1, restricting SIRT1 deacetylase activity (By similarity). {ECO:0000250|UniProtKB:Q8BKJ9, ECO:0000269|PubMed:16618798, ECO:0000269|PubMed:19174463, ECO:0000269|PubMed:22722849, ECO:0000269|PubMed:24207024, ECO:0000269|PubMed:26867678, ECO:0000269|PubMed:26907567, ECO:0000269|PubMed:27436229, ECO:0000269|PubMed:27997115, ECO:0000269|PubMed:28147277, ECO:0000269|PubMed:28426094, ECO:0000269|PubMed:28790157, ECO:0000269|PubMed:28886238, ECO:0000269|PubMed:29728458, ECO:0000269|PubMed:30420520, ECO:0000269|PubMed:30540930, ECO:0000269|PubMed:30653310, ECO:0000269|PubMed:30944854, ECO:0000269|PubMed:31075303, ECO:0000269|PubMed:31226208, ECO:0000269|PubMed:31542297}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Alternative splicing;Chromatin regulator;Chromosome;Cytoplasm;DNA damage;DNA repair;Metal-binding;Methylation;NAD;Nucleus;Phosphoprotein;Reference proteome;Repressor;Transcription;Transcription regulation;Transferase;Ubl conjugation;Zinc</p>
+<p>3D-structure; Alternative splicing; Chromatin regulator; Chromosome; Cytoplasm; DNA damage; DNA repair; Metal-binding; Methylation; NAD; Nucleus; Phosphoprotein; Reference proteome; Repressor; Transcription; Transcription regulation; Transferase; Ubl conjugation; Zinc</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q9NRC8" class="uri">https://www.uniprot.org/uniprot/Q9NRC8</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-bffccc2260f714b2d6c9" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bffccc2260f714b2d6c9">{"x":{"data":[{"x":[1,1,400,400,1],"y":[0,1,1,0,0],"text":"Positions: 1-400 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[90,90,331,331,90],"y":[0,1,1,0,0],"text":"Positions: 90-331 - domain Deacetylase sirtuin-type","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Deacetylase sirtuin-type","legendgroup":"Deacetylase sirtuin-type","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-18.95,419.95],"tickmode":"array","ticktext":["1","100","200","300","400"],"tickvals":[1,100,200,300,400],"categoryorder":"array","categoryarray":["1","100","200","300","400"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef416d9b3eb7":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef4122c8db8f":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef416d9b3eb7","visdat":{"ef416d9b3eb7":["function (y) ","x"],"ef4122c8db8f":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Deacetylase sirtuin-type
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+331
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00236
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

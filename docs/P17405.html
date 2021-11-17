@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: SMPD1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,63 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Converts sphingomyelin to ceramide (PubMed:1840600, PubMed:18815062, PubMed:27659707, PubMed:25920558, PubMed:25339683, PubMed:33163980, PubMed:12563314). Exists as two enzymatic forms that arise from alternative trafficking of a single protein precursor, one that is targeted to the endolysosomal compartment, whereas the other is released extracellularly (PubMed:21098024, PubMed:9660788, PubMed:20807762). However, in response to various forms of stress, lysosomal exocytosis may represent a major source of the secretory form (PubMed:20530211, PubMed:12563314, PubMed:20807762, PubMed:9393854, PubMed:22573858). {ECO:0000269|PubMed:12563314, ECO:0000269|PubMed:1840600, ECO:0000269|PubMed:18815062, ECO:0000269|PubMed:20530211, ECO:0000269|PubMed:20807762, ECO:0000269|PubMed:21098024, ECO:0000269|PubMed:22573858, ECO:0000269|PubMed:25339683, ECO:0000269|PubMed:25920558, ECO:0000269|PubMed:27659707, ECO:0000269|PubMed:33163980, ECO:0000269|PubMed:9393854, ECO:0000269|PubMed:9660788, ECO:0000305}.; FUNCTION: In the lysosomes, converts sphingomyelin to ceramide (PubMed:20807762, PubMed:21098024). Plays an important role in the export of cholesterol from the intraendolysosomal membranes (PubMed:25339683). Also has phospholipase C activities toward 1,2-diacylglycerolphosphocholine and 1,2-diacylglycerolphosphoglycerol (PubMed:25339683). Modulates stress-induced apoptosis through the production of ceramide (PubMed:8706124). {ECO:0000269|PubMed:20807762, ECO:0000269|PubMed:21098024, ECO:0000269|PubMed:25339683, ECO:0000269|PubMed:8706124}.; FUNCTION: When secreted, modulates cell signaling with its ability to reorganize the plasma membrane by converting sphingomyelin to ceramide (PubMed:12563314, PubMed:20807762, PubMed:17303575). Secreted form is increased in response to stress and inflammatory mediators such as IL1B, IFNG or TNF as well as upon infection with bacteria and viruses. Produces the release of ceramide in the outer leaflet of the plasma membrane playing a central role in host defense (PubMed:12563314, PubMed:20807762, PubMed:9393854). Ceramide reorganizes these rafts into larger signaling platforms that are required to internalize P. aeruginosa, induce apoptosis and regulate the cytokine response in infected cells (PubMed:12563314). In wounded cells, the lysosomal form is released extracellularly in the presence of Ca(2+) and promotes endocytosis and plasma membrane repair (PubMed:20530211). {ECO:0000269|PubMed:12563314, ECO:0000269|PubMed:17303575, ECO:0000269|PubMed:20530211, ECO:0000269|PubMed:20807762, ECO:0000269|PubMed:9393854}.; FUNCTION: [Isoform 2]: Lacks residues that bind the cofactor Zn(2+) and has no enzyme activity. {ECO:0000269|PubMed:1840600, ECO:0000305}.; FUNCTION: [Isoform 3]: Lacks residues that bind the cofactor Zn(2+) and has no enzyme activity. {ECO:0000269|PubMed:1840600, ECO:0000305}.; FUNCTION: (Microbial infection) Secretion is activated by bacteria such as P. aeruginos, N. gonorrhoeae and others, this activation results in the release of ceramide in the outer leaflet of the plasma membrane which facilitates the infection. {ECO:0000269|PubMed:12563314, ECO:0000269|PubMed:9393854, ECO:0000305|PubMed:31155842}.; FUNCTION: (Microbial infection) Secretion is activated by human coronaviruses SARS-CoV and SARS-CoV-2 as well as Zaire ebolavirus, this activation results in the release of ceramide in the outer leaflet of the plasma membrane which facilitates the infection. {ECO:0000269|PubMed:22573858, ECO:0000269|PubMed:33163980}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Alternative splicing;Direct protein sequencing;Disease variant;Disulfide bond;Glycoprotein;Glycosidase;Hydrolase;Lipid droplet;Lysosome;Metal-binding;Neurodegeneration;Niemann-Pick disease;Phosphoprotein;Reference proteome;Secreted;Signal;Zinc</p>
+<p>3D-structure; Alternative splicing; Direct protein sequencing; Disease variant; Disulfide bond; Glycoprotein; Glycosidase; Hydrolase; Lipid droplet; Lysosome; Metal-binding; Neurodegeneration; Niemann-Pick disease; Phosphoprotein; Reference proteome; Secreted; Signal; Zinc</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P17405" class="uri">https://www.uniprot.org/uniprot/P17405</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-f23de88808be24b8255b" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f23de88808be24b8255b">{"x":{"data":[{"x":[1,1,631,631,1],"y":[0,1,1,0,0],"text":"Positions: 1-631 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[87,87,171,171,87],"y":[0,1,1,0,0],"text":"Positions: 87-171 - domain Saposin B-type","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Saposin B-type","legendgroup":"Saposin B-type","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-30.5,662.5],"tickmode":"array","ticktext":["1","100","200","300","400","500","600","631"],"tickvals":[1,100,200,300,400,500,600,631],"categoryorder":"array","categoryarray":["1","100","200","300","400","500","600","631"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef4a764aff28":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef4a33912f86":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef4a764aff28","visdat":{"ef4a764aff28":["function (y) ","x"],"ef4a33912f86":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Saposin B-type
+</td>
+<td style="text-align:right;">
+87
+</td>
+<td style="text-align:right;">
+171
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00415
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

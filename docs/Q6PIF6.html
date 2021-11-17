@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: MYO7B</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,231 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Myosins are actin-based motor molecules with ATPase activity. Their highly divergent tails are presumed to bind to membranous compartments, which would be moved relative to actin filaments. As part of the intermicrovillar adhesion complex/IMAC plays a role in epithelial brush border differentiation, controlling microvilli organization and length. May link the complex to the actin core bundle of microvilli (Probable). {ECO:0000305|PubMed:24725409, ECO:0000305|PubMed:26812018}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;ATP-binding;Actin-binding;Alternative splicing;Cell projection;Cytoplasm;Cytoskeleton;Differentiation;Motor protein;Myosin;Nucleotide-binding;Phosphoprotein;Reference proteome;Repeat;SH3 domain</p>
+<p>3D-structure; ATP-binding; Actin-binding; Alternative splicing; Cell projection; Cytoplasm; Cytoskeleton; Differentiation; Motor protein; Myosin; Nucleotide-binding; Phosphoprotein; Reference proteome; Repeat; SH3 domain</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q6PIF6" class="uri">https://www.uniprot.org/uniprot/Q6PIF6</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-4509efc9e59234ccb7b0" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4509efc9e59234ccb7b0">{"x":{"data":[{"x":[1,1,2116,2116,1],"y":[0,1,1,0,0],"text":"Positions: 1-2116 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1197,1197,1506,1506,1197],"y":[0,1,1,0,0],"text":"Positions: 1197-1506 - domain FERM 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"FERM 1","legendgroup":"FERM 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1799,1799,2102,2102,1799],"y":[0,1,1,0,0],"text":"Positions: 1799-2102 - domain FERM 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(130,48,62,1)","hoveron":"fills","name":"FERM 2","legendgroup":"FERM 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[745,745,765,765,745],"y":[0,1,1,0,0],"text":"Positions: 745-765 - domain IQ 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(202,103,102,1)","hoveron":"fills","name":"IQ 1","legendgroup":"IQ 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[763,763,792,792,763],"y":[0,1,1,0,0],"text":"Positions: 763-792 - domain IQ 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(128,176,86,1)","hoveron":"fills","name":"IQ 2","legendgroup":"IQ 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[786,786,815,815,786],"y":[0,1,1,0,0],"text":"Positions: 786-815 - domain IQ 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(76,189,129,1)","hoveron":"fills","name":"IQ 3","legendgroup":"IQ 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[814,814,834,834,814],"y":[0,1,1,0,0],"text":"Positions: 814-834 - domain IQ 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(39,155,217,1)","hoveron":"fills","name":"IQ 4","legendgroup":"IQ 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[832,832,861,861,832],"y":[0,1,1,0,0],"text":"Positions: 832-861 - domain IQ 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"IQ 5","legendgroup":"IQ 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[855,855,884,884,855],"y":[0,1,1,0,0],"text":"Positions: 855-884 - domain IQ 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(53,208,225,1)","hoveron":"fills","name":"IQ 6","legendgroup":"IQ 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[65,65,760,760,65],"y":[0,1,1,0,0],"text":"Positions: 65-760 - domain Myosin motor","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(150,82,201,1)","hoveron":"fills","name":"Myosin motor","legendgroup":"Myosin motor","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[989,989,1192,1192,989],"y":[0,1,1,0,0],"text":"Positions: 989-1192 - domain MyTH4 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(215,58,144,1)","hoveron":"fills","name":"MyTH4 1","legendgroup":"MyTH4 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1644,1644,1793,1793,1644],"y":[0,1,1,0,0],"text":"Positions: 1644-1793 - domain MyTH4 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(238,167,44,1)","hoveron":"fills","name":"MyTH4 2","legendgroup":"MyTH4 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1790,1790,1896,1896,1790],"y":[0,1,1,0,0],"text":"Positions: 1790-1896 - domain MyTH4 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(208,181,75,1)","hoveron":"fills","name":"MyTH4 3","legendgroup":"MyTH4 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1501,1501,1567,1567,1501],"y":[0,1,1,0,0],"text":"Positions: 1501-1567 - domain SH3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"SH3","legendgroup":"SH3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-104.75,2221.75],"tickmode":"array","ticktext":["1","500","1000","1500","2000","2116"],"tickvals":[1,500,1000,1500,2000,2116],"categoryorder":"array","categoryarray":["1","500","1000","1500","2000","2116"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef734be81e1a":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef7311bc26e5":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef734be81e1a","visdat":{"ef734be81e1a":["function (y) ","x"],"ef7311bc26e5":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Myosin motor
+</td>
+<td style="text-align:right;">
+65
+</td>
+<td style="text-align:right;">
+760
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00782
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IQ 1
+</td>
+<td style="text-align:right;">
+745
+</td>
+<td style="text-align:right;">
+765
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00116
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IQ 2
+</td>
+<td style="text-align:right;">
+763
+</td>
+<td style="text-align:right;">
+792
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00116
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IQ 3
+</td>
+<td style="text-align:right;">
+786
+</td>
+<td style="text-align:right;">
+815
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00116
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IQ 4
+</td>
+<td style="text-align:right;">
+814
+</td>
+<td style="text-align:right;">
+834
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00116
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IQ 5
+</td>
+<td style="text-align:right;">
+832
+</td>
+<td style="text-align:right;">
+861
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00116
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IQ 6
+</td>
+<td style="text-align:right;">
+855
+</td>
+<td style="text-align:right;">
+884
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00116
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MyTH4 1
+</td>
+<td style="text-align:right;">
+989
+</td>
+<td style="text-align:right;">
+1192
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00359
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FERM 1
+</td>
+<td style="text-align:right;">
+1197
+</td>
+<td style="text-align:right;">
+1506
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00084
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SH3
+</td>
+<td style="text-align:right;">
+1501
+</td>
+<td style="text-align:right;">
+1567
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00192
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MyTH4 2
+</td>
+<td style="text-align:right;">
+1644
+</td>
+<td style="text-align:right;">
+1793
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00359
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MyTH4 3
+</td>
+<td style="text-align:right;">
+1790
+</td>
+<td style="text-align:right;">
+1896
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00359
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FERM 2
+</td>
+<td style="text-align:right;">
+1799
+</td>
+<td style="text-align:right;">
+2102
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00084
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

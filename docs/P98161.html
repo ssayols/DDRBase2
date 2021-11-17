@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: PKD1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,399 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Component of a heteromeric calcium-permeable ion channel formed by PKD1 and PKD2 that is activated by interaction between PKD1 and a Wnt family member, such as WNT3A and WNT9B (PubMed:27214281). Both PKD1 and PKD2 are required for channel activity (PubMed:27214281). Involved in renal tubulogenesis (PubMed:12482949). Involved in fluid-flow mechanosensation by the primary cilium in renal epithelium (By similarity). Acts as a regulator of cilium length, together with PKD2 (By similarity). The dynamic control of cilium length is essential in the regulation of mechanotransductive signaling (By similarity). The cilium length response creates a negative feedback loop whereby fluid shear-mediated deflection of the primary cilium, which decreases intracellular cAMP, leads to cilium shortening and thus decreases flow-induced signaling (By similarity). May be an ion-channel regulator. Involved in adhesive protein-protein and protein-carbohydrate interactions. {ECO:0000250|UniProtKB:O08852, ECO:0000269|PubMed:12482949, ECO:0000269|PubMed:27214281}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Alternative splicing;Autocatalytic cleavage;Cell membrane;Cell projection;Ciliopathy;Cilium;Coiled coil;Disease variant;Disulfide bond;Endoplasmic reticulum;Glycoprotein;Golgi apparatus;Lectin;Leucine-rich repeat;Membrane;Phosphoprotein;Reference proteome;Repeat;Signal;Transmembrane;Transmembrane helix;Wnt signaling pathway</p>
+<p>3D-structure; Alternative splicing; Autocatalytic cleavage; Cell membrane; Cell projection; Ciliopathy; Cilium; Coiled coil; Disease variant; Disulfide bond; Endoplasmic reticulum; Glycoprotein; Golgi apparatus; Lectin; Leucine-rich repeat; Membrane; Phosphoprotein; Reference proteome; Repeat; Signal; Transmembrane; Transmembrane helix; Wnt signaling pathway</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P98161" class="uri">https://www.uniprot.org/uniprot/P98161</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-5eddc0a4dd0a05b4ae21" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5eddc0a4dd0a05b4ae21">{"x":{"data":[{"x":[1,1,4303,4303,1],"y":[0,1,1,0,0],"text":"Positions: 1-4303 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[415,415,531,531,415],"y":[0,1,1,0,0],"text":"Positions: 415-531 - domain C-type lectin","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"C-type lectin","legendgroup":"C-type lectin","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3012,3012,3061,3061,3012],"y":[0,1,1,0,0],"text":"Positions: 3012-3061 - domain GPS","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(65,24,31,1)","hoveron":"fills","name":"GPS","legendgroup":"GPS","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[638,638,671,671,638],"y":[0,1,1,0,0],"text":"Positions: 638-671 - domain LDL-receptor class A","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(130,48,62,1)","hoveron":"fills","name":"LDL-receptor class A","legendgroup":"LDL-receptor class A","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[125,125,178,178,125],"y":[0,1,1,0,0],"text":"Positions: 125-178 - domain LRRCT","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(195,72,93,1)","hoveron":"fills","name":"LRRCT","legendgroup":"LRRCT","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[24,24,67,67,24],"y":[0,1,1,0,0],"text":"Positions: 24-67 - domain LRRNT","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(202,103,102,1)","hoveron":"fills","name":"LRRNT","legendgroup":"LRRNT","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[272,272,359,359,272],"y":[0,1,1,0,0],"text":"Positions: 272-359 - domain PKD 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(165,140,94,1)","hoveron":"fills","name":"PKD 1","legendgroup":"PKD 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1468,1468,1551,1551,1468],"y":[0,1,1,0,0],"text":"Positions: 1468-1551 - domain PKD 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(128,176,86,1)","hoveron":"fills","name":"PKD 10","legendgroup":"PKD 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1550,1550,1635,1635,1550],"y":[0,1,1,0,0],"text":"Positions: 1550-1635 - domain PKD 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(94,205,85,1)","hoveron":"fills","name":"PKD 11","legendgroup":"PKD 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1634,1634,1721,1721,1634],"y":[0,1,1,0,0],"text":"Positions: 1634-1721 - domain PKD 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(76,189,129,1)","hoveron":"fills","name":"PKD 12","legendgroup":"PKD 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1719,1719,1805,1805,1719],"y":[0,1,1,0,0],"text":"Positions: 1719-1805 - domain PKD 13","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(57,172,173,1)","hoveron":"fills","name":"PKD 13","legendgroup":"PKD 13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1807,1807,1890,1890,1807],"y":[0,1,1,0,0],"text":"Positions: 1807-1890 - domain PKD 14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(39,155,217,1)","hoveron":"fills","name":"PKD 14","legendgroup":"PKD 14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1889,1889,1974,1974,1889],"y":[0,1,1,0,0],"text":"Positions: 1889-1974 - domain PKD 15","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(35,166,229,1)","hoveron":"fills","name":"PKD 15","legendgroup":"PKD 15","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1977,1977,2057,2057,1977],"y":[0,1,1,0,0],"text":"Positions: 1977-2057 - domain PKD 16","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"PKD 16","legendgroup":"PKD 16","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2060,2060,2148,2148,2060],"y":[0,1,1,0,0],"text":"Positions: 2060-2148 - domain PKD 17","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(38,210,229,1)","hoveron":"fills","name":"PKD 17","legendgroup":"PKD 17","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[743,743,817,817,743],"y":[0,1,1,0,0],"text":"Positions: 743-817 - domain PKD 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(53,208,225,1)","hoveron":"fills","name":"PKD 2","legendgroup":"PKD 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[855,855,928,928,855],"y":[0,1,1,0,0],"text":"Positions: 855-928 - domain PKD 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(101,145,213,1)","hoveron":"fills","name":"PKD 3","legendgroup":"PKD 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[935,935,1020,1020,935],"y":[0,1,1,0,0],"text":"Positions: 935-1020 - domain PKD 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(150,82,201,1)","hoveron":"fills","name":"PKD 4","legendgroup":"PKD 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1023,1023,1129,1129,1023],"y":[0,1,1,0,0],"text":"Positions: 1023-1129 - domain PKD 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(198,19,189,1)","hoveron":"fills","name":"PKD 5","legendgroup":"PKD 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1127,1127,1215,1215,1127],"y":[0,1,1,0,0],"text":"Positions: 1127-1215 - domain PKD 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(215,58,144,1)","hoveron":"fills","name":"PKD 6","legendgroup":"PKD 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1213,1213,1298,1298,1213],"y":[0,1,1,0,0],"text":"Positions: 1213-1298 - domain PKD 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(226,112,94,1)","hoveron":"fills","name":"PKD 7","legendgroup":"PKD 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1294,1294,1383,1383,1294],"y":[0,1,1,0,0],"text":"Positions: 1294-1383 - domain PKD 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(238,167,44,1)","hoveron":"fills","name":"PKD 8","legendgroup":"PKD 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1382,1382,1469,1469,1382],"y":[0,1,1,0,0],"text":"Positions: 1382-1469 - domain PKD 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(234,193,33,1)","hoveron":"fills","name":"PKD 9","legendgroup":"PKD 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3118,3118,3233,3233,3118],"y":[0,1,1,0,0],"text":"Positions: 3118-3233 - domain PLAT","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(208,181,75,1)","hoveron":"fills","name":"PLAT","legendgroup":"PLAT","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2146,2146,2833,2833,2146],"y":[0,1,1,0,0],"text":"Positions: 2146-2833 - domain REJ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(183,169,116,1)","hoveron":"fills","name":"REJ","legendgroup":"REJ","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[177,177,271,271,177],"y":[0,1,1,0,0],"text":"Positions: 177-271 - domain WSC","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"WSC","legendgroup":"WSC","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-214.1,4518.1],"tickmode":"array","ticktext":["1","1000","2000","3000","4000","4303"],"tickvals":[1.00000000000003,1000,2000,3000,4000,4303],"categoryorder":"array","categoryarray":["1","1000","2000","3000","4000","4303"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef31566e92cd":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef312747496d":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef31566e92cd","visdat":{"ef31566e92cd":["function (y) ","x"],"ef312747496d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+LRRNT
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LRRCT
+</td>
+<td style="text-align:right;">
+125
+</td>
+<td style="text-align:right;">
+178
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WSC
+</td>
+<td style="text-align:right;">
+177
+</td>
+<td style="text-align:right;">
+271
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00558
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 1
+</td>
+<td style="text-align:right;">
+272
+</td>
+<td style="text-align:right;">
+359
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C-type lectin
+</td>
+<td style="text-align:right;">
+415
+</td>
+<td style="text-align:right;">
+531
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00040
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LDL-receptor class A
+</td>
+<td style="text-align:right;">
+638
+</td>
+<td style="text-align:right;">
+671
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 2
+</td>
+<td style="text-align:right;">
+743
+</td>
+<td style="text-align:right;">
+817
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 3
+</td>
+<td style="text-align:right;">
+855
+</td>
+<td style="text-align:right;">
+928
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 4
+</td>
+<td style="text-align:right;">
+935
+</td>
+<td style="text-align:right;">
+1020
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 5
+</td>
+<td style="text-align:right;">
+1023
+</td>
+<td style="text-align:right;">
+1129
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 6
+</td>
+<td style="text-align:right;">
+1127
+</td>
+<td style="text-align:right;">
+1215
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 7
+</td>
+<td style="text-align:right;">
+1213
+</td>
+<td style="text-align:right;">
+1298
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 8
+</td>
+<td style="text-align:right;">
+1294
+</td>
+<td style="text-align:right;">
+1383
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 9
+</td>
+<td style="text-align:right;">
+1382
+</td>
+<td style="text-align:right;">
+1469
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 10
+</td>
+<td style="text-align:right;">
+1468
+</td>
+<td style="text-align:right;">
+1551
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 11
+</td>
+<td style="text-align:right;">
+1550
+</td>
+<td style="text-align:right;">
+1635
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 12
+</td>
+<td style="text-align:right;">
+1634
+</td>
+<td style="text-align:right;">
+1721
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 13
+</td>
+<td style="text-align:right;">
+1719
+</td>
+<td style="text-align:right;">
+1805
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 14
+</td>
+<td style="text-align:right;">
+1807
+</td>
+<td style="text-align:right;">
+1890
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 15
+</td>
+<td style="text-align:right;">
+1889
+</td>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 16
+</td>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:right;">
+2057
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PKD 17
+</td>
+<td style="text-align:right;">
+2060
+</td>
+<td style="text-align:right;">
+2148
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REJ
+</td>
+<td style="text-align:right;">
+2146
+</td>
+<td style="text-align:right;">
+2833
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00511
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GPS
+</td>
+<td style="text-align:right;">
+3012
+</td>
+<td style="text-align:right;">
+3061
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00098
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PLAT
+</td>
+<td style="text-align:right;">
+3118
+</td>
+<td style="text-align:right;">
+3233
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00152
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

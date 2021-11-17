@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: HLA-B</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,63 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Antigen-presenting major histocompatibility complex class I (MHCI) molecule. In complex with B2M/beta 2 microglobulin displays primarily viral and tumor-derived peptides on antigen-presenting cells for recognition by alpha-beta T cell receptor (TCR) on HLA-B-restricted CD8-positive T cells, guiding antigen-specific T cell immune response to eliminate infected or transformed cells (PubMed:25808313, PubMed:29531227, PubMed:9620674, PubMed:23209413). May also present self-peptides derived from the signal sequence of secreted or membrane proteins, although T cells specific for these peptides are usually inactivated to prevent autoreactivity (PubMed:7743181, PubMed:18991276). Both the peptide and the MHC molecule are recognized by TCR, the peptide is responsible for the fine specificity of antigen recognition and MHC residues account for the MHC restriction of T cells (PubMed:29531227, PubMed:9620674, PubMed:24600035). Typically presents intracellular peptide antigens of 8 to 13 amino acids that arise from cytosolic proteolysis via constitutive proteasome and IFNG-induced immunoproteasome (PubMed:23209413). Can bind different peptides containing allele-specific binding motifs, which are mainly defined by anchor residues at position 2 and 9 (PubMed:25808313, PubMed:29531227). {ECO:0000269|PubMed:18991276, ECO:0000269|PubMed:23209413, ECO:0000269|PubMed:24600035, ECO:0000269|PubMed:25808313, ECO:0000269|PubMed:29531227, ECO:0000269|PubMed:7743181, ECO:0000269|PubMed:9620674}.; FUNCTION: Allele B<em>07:02: Displays peptides sharing a common signature motif, namely a Pro residue at position 2 and mainly a Leu anchor residue at the C-terminus (PubMed:7743181). Presents a long peptide (APRGPHGGAASGL) derived from the cancer-testis antigen CTAG1A/NY-ESO-1, eliciting a polyclonal CD8-positive T cell response against tumor cells (PubMed:29531227). Presents viral epitopes derived from HIV-1 gag-pol (TPQDLNTML) and Nef (RPQVPLRPM) (PubMed:25808313). Presents an immunodominant epitope derived from SARS-CoV-2 N/nucleoprotein (SPRWYFYYL) (PubMed:32887977). Displays self-peptides including a peptide derived from the signal sequence of HLA-DPB1 (APRTVALTA) (PubMed:7743181). {ECO:0000269|PubMed:25808313, ECO:0000269|PubMed:29531227, ECO:0000269|PubMed:32887977, ECO:0000269|PubMed:7743181}.; FUNCTION: Allele B</em>08:01: Presents to CD8-positive T cells viral epitopes derived from EBV/HHV-4 EBNA3 (QAKWRLQTL), eliciting cytotoxic T cell response. {ECO:0000269|PubMed:9620674}.; FUNCTION: Allele B<em>13:02: Presents multiple HIV-1 epitopes derived from gag (RQANFLGKI, GQMREPRGSDI), nef (RQDILDLWI), gag-pol (RQYDQILIE, GQGQWTYQI) and rev (LQLPPLERL), all having in common a Gln residue at position 2 and mainly hydrophobic amino acids Leu, Ile or Val at the C-terminus. Associated with succesful control of HIV-1 infection. {ECO:0000269|PubMed:17251285}.; FUNCTION: Allele B</em>18:01: Preferentially presents octomeric and nonameric peptides sharing a common motif, namely a Glu at position 2 and Phe or Tyr anchor residues at the C-terminus (PubMed:14978097, PubMed:23749632, PubMed:18991276). Presents an EBV/HHV-4 epitope derived from BZLF1 (SELEIKRY) (PubMed:23749632). May present to CD8-positive T cells an antigenic peptide derived from MAGEA3 (MEVDPIGHLY), triggering an anti-tumor immune response (PubMed:12366779). May display a broad repertoire of self-peptides with a preference for peptides derived from RNA-binding proteins (PubMed:14978097). {ECO:0000269|PubMed:12366779, ECO:0000269|PubMed:14978097, ECO:0000269|PubMed:18991276, ECO:0000269|PubMed:23749632}.; FUNCTION: Allele B<em>27:05: Presents to CD8-positive T cells immunodominant viral epitopes derived from HCV POLG (ARMILMTHF), HIV-1 gag (KRWIILGLNK), IAV NP (SRYWAIRTR), SARS-CoV-2 N/nucleoprotein (QRNAPRITF), EBV/HHV-4 EBNA4 (HRCQAIRKK) and EBV/HHV-4 EBNA6 (RRIYDLIEL), confering longterm protection against viral infection (PubMed:19139562, PubMed:18385228, PubMed:15113903, PubMed:9620674, PubMed:32887977). Can present self-peptides derived from cytosolic and nuclear proteins. All peptides carry an Arg at position 2 (PubMed:1922338). The peptide-bound form interacts with NK cell inhibitory receptor KIR3DL1 and inhibits NK cell activation in a peptide-specific way, being particularly sensitive to the nature of the amino acid side chain at position 8 of the antigenic peptide (PubMed:8879234, PubMed:15657948). KIR3DL1 fails to recognize HLA-B</em>27:05 in complex with B2M and EBV/HHV-4 EBNA6 (RRIYDLIEL) peptide, which can lead to increased activation of NK cells during infection (PubMed:15657948). May present an altered repertoire of peptides in the absence of TAP1-TAP2 and TAPBPL (PubMed:9620674). {ECO:0000269|PubMed:15113903, ECO:0000269|PubMed:15657948, ECO:0000269|PubMed:18385228, ECO:0000269|PubMed:19139562, ECO:0000269|PubMed:1922338, ECO:0000269|PubMed:8879234, ECO:0000269|PubMed:9620674}.; FUNCTION: Allele B<em>40:01: Presents immunodominant viral epitopes derived from EBV/HHV-4 LMP2 (IEDPPFNSL) and SARS-CoV-2 N/nucleoprotein (MEVTPSGTWL), triggering memory CD8-positive T cell response (PubMed:18991276, PubMed:32887977). Displays self-peptides sharing a signature motif, namely a Glu at position 2 and a Leu anchor residue at the C-terminus (PubMed:18991276). {ECO:0000269|PubMed:18991276, ECO:0000269|PubMed:32887977}.; FUNCTION: Allele B</em>41:01: Displays self-peptides sharing a signature motif, namely a Glu at position 2 and Ala or Pro anchor residues at the C-terminus. {ECO:0000269|PubMed:18991276}.; FUNCTION: Allele B<em>44:02: Presents immunodominant viral epitopes derived from EBV/HHV-4 EBNA4 (VEITPYKPTW) and EBNA6 (AEGGVGWRHW, EENLLDFVRF), triggering memory CD8-positive T cell response (PubMed:9620674, PubMed:18991276). Displays self-peptides sharing a signature motif, namely a Glu at position 2 and Phe, Tyr or Trp anchor residues at the C-terminus (PubMed:18991276). {ECO:0000269|PubMed:18991276, ECO:0000269|PubMed:9620674}.; FUNCTION: Allele B</em>45:01: Displays self-peptides sharing a signature motif, namely a Glu at position 2 and Ala or Pro anchor residues at the C-terminus. {ECO:0000269|PubMed:18991276}.; FUNCTION: Allele B<em>46:01: Preferentially presents nonameric peptides sharing a signature motif, namely Ala and Leu at position 2 and Tyr, Phe, Leu, or Met anchor residues at the C-terminus. The peptide-bound form interacts with KIR2DL3 and inhibits NK cell cytotoxic response in a peptide-specific way. {ECO:0000269|PubMed:28514659}.; FUNCTION: Allele B</em>47:01: Displays self-peptides sharing a signature motif, namely an Asp at position 2 and Leu or Met anchor residues at the C-terminus. {ECO:0000269|PubMed:18991276}.; FUNCTION: Allele B<em>49:01: Displays self-peptides sharing a signature motif, namely a Glu at position 2 and Ile or Val anchor residues at the C-terminus. {ECO:0000269|PubMed:18991276}.; FUNCTION: Allele B</em>50:01: Displays self-peptides sharing a signature motif, namely a Glu at position 2 and Ala or Pro anchor residues at the C-terminus. {ECO:0000269|PubMed:18991276}.; FUNCTION: Allele B<em>51:01: Presents an octomeric HIV-1 epitope derived from gag-pol (TAFTIPSI) to the public TRAV17/TRBV7-3 TCR clonotype, strongly suppressing HIV-1 replication. {ECO:0000269|PubMed:24600035}.; FUNCTION: Allele B</em>54:01: Displays peptides sharing a common signature motif, namely a Pro residue at position 2 and Ala anchor residue at the C-terminus. {ECO:0000269|PubMed:7743181}.; FUNCTION: Allele B<em>55:01: Displays peptides sharing a common signature motif, namely a Pro residue at position 2 and Ala anchor residue at the C-terminus. {ECO:0000269|PubMed:7743181}.; FUNCTION: Allele B</em>56:01: Displays peptides sharing a common signature motif, namely a Pro residue at position 2 and Ala anchor residue at the C-terminus. {ECO:0000269|PubMed:7743181}.; FUNCTION: Allele B<em>57:01: The peptide-bound form recognizes KIR3DL1 and inhibits NK cell cytotoxic response. {ECO:0000269|PubMed:22020283, ECO:0000269|PubMed:25480565}.; FUNCTION: Allele B</em>67:01: Displays peptides sharing a common signature motif, namely a Pro residue at position 2 and Leu anchor residue at the C-terminus. {ECO:0000269|PubMed:7743181}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Adaptive immunity;Cell membrane;Direct protein sequencing;Disulfide bond;Endoplasmic reticulum;Glycoprotein;Host-virus interaction;Immunity;Innate immunity;MHC I;Membrane;Phosphoprotein;Reference proteome;Signal;Transmembrane;Transmembrane helix</p>
+<p>3D-structure; Adaptive immunity; Cell membrane; Direct protein sequencing; Disulfide bond; Endoplasmic reticulum; Glycoprotein; Host-virus interaction; Immunity; Innate immunity; MHC I; Membrane; Phosphoprotein; Reference proteome; Signal; Transmembrane; Transmembrane helix</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P01889" class="uri">https://www.uniprot.org/uniprot/P01889</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-30c6a83fabb1d4e1ff69" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-30c6a83fabb1d4e1ff69">{"x":{"data":[{"x":[1,1,362,362,1],"y":[0,1,1,0,0],"text":"Positions: 1-362 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[209,209,295,295,209],"y":[0,1,1,0,0],"text":"Positions: 209-295 - domain Ig-like C1-type","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Ig-like C1-type","legendgroup":"Ig-like C1-type","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-17.05,380.05],"tickmode":"array","ticktext":["1","100","200","300","362"],"tickvals":[1,100,200,300,362],"categoryorder":"array","categoryarray":["1","100","200","300","362"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef422c00617e":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef421633a0":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef422c00617e","visdat":{"ef422c00617e":["function (y) ","x"],"ef421633a0":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Ig-like C1-type
+</td>
+<td style="text-align:right;">
+209
+</td>
+<td style="text-align:right;">
+295
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

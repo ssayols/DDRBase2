@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: PKHD1L1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2094,15 +2108,287 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>PKHD1L1</p>
 <h2 id="function">Function</h2>
 <h2 id="keywords">Keywords</h2>
-<p>Glycoprotein;Membrane;Receptor;Reference proteome;Repeat;Signal;Transmembrane;Transmembrane helix</p>
+<p>Glycoprotein; Membrane; Receptor; Reference proteome; Repeat; Signal; Transmembrane; Transmembrane helix</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q86WI1" class="uri">https://www.uniprot.org/uniprot/Q86WI1</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-73e0a6e1380941fbd83a" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-73e0a6e1380941fbd83a">{"x":{"data":[{"x":[1,1,4243,4243,1],"y":[0,1,1,0,0],"text":"Positions: 1-4243 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2184,2184,2304,2304,2184],"y":[0,1,1,0,0],"text":"Positions: 2184-2304 - domain G8 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"G8 1","legendgroup":"G8 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3036,3036,3174,3174,3036],"y":[0,1,1,0,0],"text":"Positions: 3036-3174 - domain G8 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(97,36,46,1)","hoveron":"fills","name":"G8 2","legendgroup":"G8 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[31,31,129,129,31],"y":[0,1,1,0,0],"text":"Positions: 31-129 - domain IPT/TIG 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(195,72,93,1)","hoveron":"fills","name":"IPT/TIG 1","legendgroup":"IPT/TIG 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1749,1749,1828,1828,1749],"y":[0,1,1,0,0],"text":"Positions: 1749-1828 - domain IPT/TIG 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(183,122,98,1)","hoveron":"fills","name":"IPT/TIG 10","legendgroup":"IPT/TIG 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1831,1831,1910,1910,1831],"y":[0,1,1,0,0],"text":"Positions: 1831-1910 - domain IPT/TIG 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(128,176,86,1)","hoveron":"fills","name":"IPT/TIG 11","legendgroup":"IPT/TIG 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1916,1916,1997,1997,1916],"y":[0,1,1,0,0],"text":"Positions: 1916-1997 - domain IPT/TIG 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(85,197,107,1)","hoveron":"fills","name":"IPT/TIG 12","legendgroup":"IPT/TIG 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1999,1999,2085,2085,1999],"y":[0,1,1,0,0],"text":"Positions: 1999-2085 - domain IPT/TIG 13","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(57,172,173,1)","hoveron":"fills","name":"IPT/TIG 13","legendgroup":"IPT/TIG 13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2091,2091,2176,2176,2091],"y":[0,1,1,0,0],"text":"Positions: 2091-2176 - domain IPT/TIG 14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,155,229,1)","hoveron":"fills","name":"IPT/TIG 14","legendgroup":"IPT/TIG 14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[146,146,255,255,146],"y":[0,1,1,0,0],"text":"Positions: 146-255 - domain IPT/TIG 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"IPT/TIG 2","legendgroup":"IPT/TIG 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[270,270,361,361,270],"y":[0,1,1,0,0],"text":"Positions: 270-361 - domain IPT/TIG 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(39,221,229,1)","hoveron":"fills","name":"IPT/TIG 3","legendgroup":"IPT/TIG 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1067,1067,1151,1151,1067],"y":[0,1,1,0,0],"text":"Positions: 1067-1151 - domain IPT/TIG 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(101,145,213,1)","hoveron":"fills","name":"IPT/TIG 4","legendgroup":"IPT/TIG 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1155,1155,1234,1234,1155],"y":[0,1,1,0,0],"text":"Positions: 1155-1234 - domain IPT/TIG 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(174,51,195,1)","hoveron":"fills","name":"IPT/TIG 5","legendgroup":"IPT/TIG 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1240,1240,1322,1322,1240],"y":[0,1,1,0,0],"text":"Positions: 1240-1322 - domain IPT/TIG 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(215,58,144,1)","hoveron":"fills","name":"IPT/TIG 6","legendgroup":"IPT/TIG 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1330,1330,1469,1469,1330],"y":[0,1,1,0,0],"text":"Positions: 1330-1469 - domain IPT/TIG 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(232,140,69,1)","hoveron":"fills","name":"IPT/TIG 7","legendgroup":"IPT/TIG 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1566,1566,1649,1649,1566],"y":[0,1,1,0,0],"text":"Positions: 1566-1649 - domain IPT/TIG 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(234,193,33,1)","hoveron":"fills","name":"IPT/TIG 8","legendgroup":"IPT/TIG 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1659,1659,1743,1743,1659],"y":[0,1,1,0,0],"text":"Positions: 1659-1743 - domain IPT/TIG 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(196,175,95,1)","hoveron":"fills","name":"IPT/TIG 9","legendgroup":"IPT/TIG 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[337,337,492,492,337],"y":[0,1,1,0,0],"text":"Positions: 337-492 - domain PA14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"PA14","legendgroup":"PA14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-211.1,4455.1],"tickmode":"array","ticktext":["1","1000","2000","3000","4000","4243"],"tickvals":[0.999999999999972,1000,2000,3000,4000,4243],"categoryorder":"array","categoryarray":["1","1000","2000","3000","4000","4243"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef2c2cdcb4e1":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef2c698f3343":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef2c2cdcb4e1","visdat":{"ef2c2cdcb4e1":["function (y) ","x"],"ef2c698f3343":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 1
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 2
+</td>
+<td style="text-align:right;">
+146
+</td>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 3
+</td>
+<td style="text-align:right;">
+270
+</td>
+<td style="text-align:right;">
+361
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PA14
+</td>
+<td style="text-align:right;">
+337
+</td>
+<td style="text-align:right;">
+492
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU01164
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 4
+</td>
+<td style="text-align:right;">
+1067
+</td>
+<td style="text-align:right;">
+1151
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 5
+</td>
+<td style="text-align:right;">
+1155
+</td>
+<td style="text-align:right;">
+1234
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 6
+</td>
+<td style="text-align:right;">
+1240
+</td>
+<td style="text-align:right;">
+1322
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 7
+</td>
+<td style="text-align:right;">
+1330
+</td>
+<td style="text-align:right;">
+1469
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 8
+</td>
+<td style="text-align:right;">
+1566
+</td>
+<td style="text-align:right;">
+1649
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 9
+</td>
+<td style="text-align:right;">
+1659
+</td>
+<td style="text-align:right;">
+1743
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 10
+</td>
+<td style="text-align:right;">
+1749
+</td>
+<td style="text-align:right;">
+1828
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 11
+</td>
+<td style="text-align:right;">
+1831
+</td>
+<td style="text-align:right;">
+1910
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 12
+</td>
+<td style="text-align:right;">
+1916
+</td>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 13
+</td>
+<td style="text-align:right;">
+1999
+</td>
+<td style="text-align:right;">
+2085
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IPT/TIG 14
+</td>
+<td style="text-align:right;">
+2091
+</td>
+<td style="text-align:right;">
+2176
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+G8 1
+</td>
+<td style="text-align:right;">
+2184
+</td>
+<td style="text-align:right;">
+2304
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00817
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+G8 2
+</td>
+<td style="text-align:right;">
+3036
+</td>
+<td style="text-align:right;">
+3174
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00817
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: LAMA1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,427 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Binding to cells via a high affinity receptor, laminin is thought to mediate the attachment, migration and organization of cells into tissues during embryonic development by interacting with other extracellular matrix components.</p>
 <h2 id="keywords">Keywords</h2>
-<p>Basement membrane;Cell adhesion;Coiled coil;Disulfide bond;Extracellular matrix;Glycoprotein;Laminin EGF-like domain;Phosphoprotein;Reference proteome;Repeat;Secreted;Signal</p>
+<p>Basement membrane; Cell adhesion; Coiled coil; Disulfide bond; Extracellular matrix; Glycoprotein; Laminin EGF-like domain; Phosphoprotein; Reference proteome; Repeat; Secreted; Signal</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P25391" class="uri">https://www.uniprot.org/uniprot/P25391</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-aeaeb986668fcb1c3cc6" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aeaeb986668fcb1c3cc6">{"x":{"data":[{"x":[1,1,3075,3075,1],"y":[0,1,1,0,0],"text":"Positions: 1-3075 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[270,270,326,326,270],"y":[0,1,1,0,0],"text":"Positions: 270-326 - domain Laminin EGF-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Laminin EGF-like 1","legendgroup":"Laminin EGF-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[951,951,997,997,951],"y":[0,1,1,0,0],"text":"Positions: 951-997 - domain Laminin EGF-like 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(60,22,28,1)","hoveron":"fills","name":"Laminin EGF-like 10","legendgroup":"Laminin EGF-like 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[998,998,1043,1043,998],"y":[0,1,1,0,0],"text":"Positions: 998-1043 - domain Laminin EGF-like 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(120,44,57,1)","hoveron":"fills","name":"Laminin EGF-like 11","legendgroup":"Laminin EGF-like 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1044,1044,1089,1089,1044],"y":[0,1,1,0,0],"text":"Positions: 1044-1089 - domain Laminin EGF-like 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(180,67,86,1)","hoveron":"fills","name":"Laminin EGF-like 12","legendgroup":"Laminin EGF-like 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1090,1090,1149,1149,1090],"y":[0,1,1,0,0],"text":"Positions: 1090-1149 - domain Laminin EGF-like 13","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(213,92,104,1)","hoveron":"fills","name":"Laminin EGF-like 13","legendgroup":"Laminin EGF-like 13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1150,1150,1159,1159,1150],"y":[0,1,1,0,0],"text":"Positions: 1150-1159 - domain Laminin EGF-like 14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(179,126,97,1)","hoveron":"fills","name":"Laminin EGF-like 14","legendgroup":"Laminin EGF-like 14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1362,1362,1402,1402,1362],"y":[0,1,1,0,0],"text":"Positions: 1362-1402 - domain Laminin EGF-like 141","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(145,159,89,1)","hoveron":"fills","name":"Laminin EGF-like 141","legendgroup":"Laminin EGF-like 141","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1403,1403,1451,1451,1403],"y":[0,1,1,0,0],"text":"Positions: 1403-1451 - domain Laminin EGF-like 15","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(111,193,82,1)","hoveron":"fills","name":"Laminin EGF-like 15","legendgroup":"Laminin EGF-like 15","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1452,1452,1508,1508,1452],"y":[0,1,1,0,0],"text":"Positions: 1452-1508 - domain Laminin EGF-like 16","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(87,199,102,1)","hoveron":"fills","name":"Laminin EGF-like 16","legendgroup":"Laminin EGF-like 16","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1509,1509,1555,1555,1509],"y":[0,1,1,0,0],"text":"Positions: 1509-1555 - domain Laminin EGF-like 17","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(70,183,142,1)","hoveron":"fills","name":"Laminin EGF-like 17","legendgroup":"Laminin EGF-like 17","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[327,327,396,396,327],"y":[0,1,1,0,0],"text":"Positions: 327-396 - domain Laminin EGF-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(53,168,183,1)","hoveron":"fills","name":"Laminin EGF-like 2","legendgroup":"Laminin EGF-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[397,397,453,453,397],"y":[0,1,1,0,0],"text":"Positions: 397-453 - domain Laminin EGF-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(36,153,224,1)","hoveron":"fills","name":"Laminin EGF-like 3","legendgroup":"Laminin EGF-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[454,454,502,502,454],"y":[0,1,1,0,0],"text":"Positions: 454-502 - domain Laminin EGF-like 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(35,168,229,1)","hoveron":"fills","name":"Laminin EGF-like 4","legendgroup":"Laminin EGF-like 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[503,503,512,512,503],"y":[0,1,1,0,0],"text":"Positions: 503-512 - domain Laminin EGF-like 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"Laminin EGF-like 5","legendgroup":"Laminin EGF-like 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[709,709,741,741,709],"y":[0,1,1,0,0],"text":"Positions: 709-741 - domain Laminin EGF-like 51","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(38,208,229,1)","hoveron":"fills","name":"Laminin EGF-like 51","legendgroup":"Laminin EGF-like 51","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[742,742,790,790,742],"y":[0,1,1,0,0],"text":"Positions: 742-790 - domain Laminin EGF-like 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(46,217,227,1)","hoveron":"fills","name":"Laminin EGF-like 6","legendgroup":"Laminin EGF-like 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[791,791,848,848,791],"y":[0,1,1,0,0],"text":"Positions: 791-848 - domain Laminin EGF-like 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(90,159,216,1)","hoveron":"fills","name":"Laminin EGF-like 7","legendgroup":"Laminin EGF-like 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[849,849,901,901,849],"y":[0,1,1,0,0],"text":"Positions: 849-901 - domain Laminin EGF-like 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(135,101,205,1)","hoveron":"fills","name":"Laminin EGF-like 8","legendgroup":"Laminin EGF-like 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[902,902,950,950,902],"y":[0,1,1,0,0],"text":"Positions: 902-950 - domain Laminin EGF-like 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(179,44,194,1)","hoveron":"fills","name":"Laminin EGF-like 9","legendgroup":"Laminin EGF-like 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2117,2117,2297,2297,2117],"y":[0,1,1,0,0],"text":"Positions: 2117-2297 - domain Laminin G-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(209,32,168,1)","hoveron":"fills","name":"Laminin G-like 1","legendgroup":"Laminin G-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2305,2305,2481,2481,2305],"y":[0,1,1,0,0],"text":"Positions: 2305-2481 - domain Laminin G-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(220,83,121,1)","hoveron":"fills","name":"Laminin G-like 2","legendgroup":"Laminin G-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2486,2486,2673,2673,2486],"y":[0,1,1,0,0],"text":"Positions: 2486-2673 - domain Laminin G-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(231,133,75,1)","hoveron":"fills","name":"Laminin G-like 3","legendgroup":"Laminin G-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2713,2713,2885,2885,2713],"y":[0,1,1,0,0],"text":"Positions: 2713-2885 - domain Laminin G-like 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(241,184,29,1)","hoveron":"fills","name":"Laminin G-like 4","legendgroup":"Laminin G-like 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2890,2890,3070,3070,2890],"y":[0,1,1,0,0],"text":"Positions: 2890-3070 - domain Laminin G-like 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(228,191,43,1)","hoveron":"fills","name":"Laminin G-like 5","legendgroup":"Laminin G-like 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[516,516,708,708,516],"y":[0,1,1,0,0],"text":"Positions: 516-708 - domain Laminin IV type A 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,180,81,1)","hoveron":"fills","name":"Laminin IV type A 1","legendgroup":"Laminin IV type A 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1170,1170,1361,1361,1170],"y":[0,1,1,0,0],"text":"Positions: 1170-1361 - domain Laminin IV type A 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(181,169,119,1)","hoveron":"fills","name":"Laminin IV type A 2","legendgroup":"Laminin IV type A 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[18,18,269,269,18],"y":[0,1,1,0,0],"text":"Positions: 18-269 - domain Laminin N-terminal","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"Laminin N-terminal","legendgroup":"Laminin N-terminal","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-152.7,3228.7],"tickmode":"array","ticktext":["1","500","1000","1500","2000","2500","3000","3075"],"tickvals":[1,500,1000,1500,2000,2500,3000,3075],"categoryorder":"array","categoryarray":["1","500","1000","1500","2000","2500","3000","3075"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef2f58885fc5":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef2f7edb7cfc":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef2f58885fc5","visdat":{"ef2f58885fc5":["function (y) ","x"],"ef2f7edb7cfc":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Laminin N-terminal
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+269
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00466
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 1
+</td>
+<td style="text-align:right;">
+270
+</td>
+<td style="text-align:right;">
+326
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 2
+</td>
+<td style="text-align:right;">
+327
+</td>
+<td style="text-align:right;">
+396
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 3
+</td>
+<td style="text-align:right;">
+397
+</td>
+<td style="text-align:right;">
+453
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 4
+</td>
+<td style="text-align:right;">
+454
+</td>
+<td style="text-align:right;">
+502
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 5
+</td>
+<td style="text-align:right;">
+503
+</td>
+<td style="text-align:right;">
+512
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin IV type A 1
+</td>
+<td style="text-align:right;">
+516
+</td>
+<td style="text-align:right;">
+708
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00458
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 51
+</td>
+<td style="text-align:right;">
+709
+</td>
+<td style="text-align:right;">
+741
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 6
+</td>
+<td style="text-align:right;">
+742
+</td>
+<td style="text-align:right;">
+790
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 7
+</td>
+<td style="text-align:right;">
+791
+</td>
+<td style="text-align:right;">
+848
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 8
+</td>
+<td style="text-align:right;">
+849
+</td>
+<td style="text-align:right;">
+901
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 9
+</td>
+<td style="text-align:right;">
+902
+</td>
+<td style="text-align:right;">
+950
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 10
+</td>
+<td style="text-align:right;">
+951
+</td>
+<td style="text-align:right;">
+997
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 11
+</td>
+<td style="text-align:right;">
+998
+</td>
+<td style="text-align:right;">
+1043
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 12
+</td>
+<td style="text-align:right;">
+1044
+</td>
+<td style="text-align:right;">
+1089
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 13
+</td>
+<td style="text-align:right;">
+1090
+</td>
+<td style="text-align:right;">
+1149
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 14
+</td>
+<td style="text-align:right;">
+1150
+</td>
+<td style="text-align:right;">
+1159
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin IV type A 2
+</td>
+<td style="text-align:right;">
+1170
+</td>
+<td style="text-align:right;">
+1361
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00458
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 141
+</td>
+<td style="text-align:right;">
+1362
+</td>
+<td style="text-align:right;">
+1402
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 15
+</td>
+<td style="text-align:right;">
+1403
+</td>
+<td style="text-align:right;">
+1451
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 16
+</td>
+<td style="text-align:right;">
+1452
+</td>
+<td style="text-align:right;">
+1508
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 17
+</td>
+<td style="text-align:right;">
+1509
+</td>
+<td style="text-align:right;">
+1555
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin G-like 1
+</td>
+<td style="text-align:right;">
+2117
+</td>
+<td style="text-align:right;">
+2297
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00122
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin G-like 2
+</td>
+<td style="text-align:right;">
+2305
+</td>
+<td style="text-align:right;">
+2481
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00122
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin G-like 3
+</td>
+<td style="text-align:right;">
+2486
+</td>
+<td style="text-align:right;">
+2673
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00122
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin G-like 4
+</td>
+<td style="text-align:right;">
+2713
+</td>
+<td style="text-align:right;">
+2885
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00122
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin G-like 5
+</td>
+<td style="text-align:right;">
+2890
+</td>
+<td style="text-align:right;">
+3070
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00122
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

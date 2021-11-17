@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: PPP5C</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2107,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Serine/threonine-protein phosphatase that dephosphorylates a myriad of proteins involved in different signaling pathways including the kinases CSNK1E, ASK1/MAP3K5, PRKDC and RAF1, the nuclear receptors NR3C1, PPARG, ESR1 and ESR2, SMAD proteins and TAU/MAPT (PubMed:14734805, PubMed:14764652, PubMed:14871926, PubMed:15383005, PubMed:15546861, PubMed:16260606, PubMed:16790549, PubMed:16892053, PubMed:19176521, PubMed:19948726, PubMed:21144835, PubMed:22399290, PubMed:22781750, PubMed:23102700, PubMed:9000529, PubMed:30699359). Implicated in wide ranging cellular processes, including apoptosis, differentiation, DNA damage response, cell survival, regulation of ion channels or circadian rhythms, in response to steroid and thyroid hormones, calcium, fatty acids, TGF-beta as well as oxidative and genotoxic stresses (PubMed:14734805, PubMed:14764652, PubMed:14871926, PubMed:15383005, PubMed:15546861, PubMed:16260606, PubMed:16790549, PubMed:16892053, PubMed:19176521, PubMed:19948726, PubMed:21144835, PubMed:22399290, PubMed:22781750, PubMed:23102700, PubMed:9000529, PubMed:30699359). Participates in the control of DNA damage response mechanisms such as checkpoint activation and DNA damage repair through, for instance, the regulation ATM/ATR-signaling and dephosphorylation of PRKDC and TP53BP1 (PubMed:14871926, PubMed:16260606, PubMed:21144835). Inhibits ASK1/MAP3K5-mediated apoptosis induced by oxidative stress (PubMed:23102700). Plays a positive role in adipogenesis, mainly through the dephosphorylation and activation of PPARG transactivation function (By similarity). Also dephosphorylates and inhibits the anti-adipogenic effect of NR3C1 (By similarity). Regulates the circadian rhythms, through the dephosphorylation and activation of CSNK1E (PubMed:16790549). May modulate TGF-beta signaling pathway by the regulation of SMAD3 phosphorylation and protein expression levels (PubMed:22781750). Dephosphorylates and may play a role in the regulation of TAU/MAPT (PubMed:15546861). Through their dephosphorylation, may play a role in the regulation of ions channels such as KCNH2 (By similarity). Dephosphorylate FNIP1, disrupting interaction with HSP90AA1/Hsp90 (PubMed:30699359). {ECO:0000250|UniProtKB:P53042, ECO:0000250|UniProtKB:Q60676, ECO:0000269|PubMed:14734805, ECO:0000269|PubMed:14764652, ECO:0000269|PubMed:14871926, ECO:0000269|PubMed:15383005, ECO:0000269|PubMed:15546861, ECO:0000269|PubMed:16260606, ECO:0000269|PubMed:16790549, ECO:0000269|PubMed:16892053, ECO:0000269|PubMed:19176521, ECO:0000269|PubMed:19948726, ECO:0000269|PubMed:21144835, ECO:0000269|PubMed:22399290, ECO:0000269|PubMed:22781750, ECO:0000269|PubMed:23102700, ECO:0000269|PubMed:30699359, ECO:0000269|PubMed:9000529}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Acetylation;Alzheimer disease;Amyloid;Amyloidosis;Cell membrane;Cytoplasm;DNA damage;DNA repair;Hydrolase;Lipid-binding;Magnesium;Manganese;Membrane;Metal-binding;Neurodegeneration;Nucleus;Protein phosphatase;Reference proteome;Repeat;TPR repeat</p>
+<p>3D-structure; Acetylation; Alzheimer disease; Amyloid; Amyloidosis; Cell membrane; Cytoplasm; DNA damage; DNA repair; Hydrolase; Lipid-binding; Magnesium; Manganese; Membrane; Metal-binding; Neurodegeneration; Nucleus; Protein phosphatase; Reference proteome; Repeat; TPR repeat</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P53041" class="uri">https://www.uniprot.org/uniprot/P53041</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-463cfa92bda38c448852" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-463cfa92bda38c448852">{"x":{"data":[{"x":[1,1,499,499,1],"y":[0,1,1,0,0],"text":"Positions: 1-499 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-23.9,523.9],"tickmode":"array","ticktext":["1","100","200","300","400","499"],"tickvals":[1,100,200,300,400,499],"categoryorder":"array","categoryarray":["1","100","200","300","400","499"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef3f13393f6d":{"text":{},"xmin":{},"xmax":{},"type":"scatter"}},"cur_data":"ef3f13393f6d","visdat":{"ef3f13393f6d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>No domain info.</p></p>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

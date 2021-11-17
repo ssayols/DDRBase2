@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: PLA2G10</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2107,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Secretory calcium-dependent phospholipase A2 that primarily targets extracellular phospholipids (PubMed:9188469, PubMed:12021277). Hydrolyzes the ester bond of the fatty acyl group attached at sn-2 position of phospholipids with preference for phosphatidylcholines and phosphatidylglycerols over phosphatidylethanolamines. Preferentially releases sn-2 omega-6 and omega-3 polyunsaturated fatty acyl (PUFA) chains over saturated fatty acyls (PubMed:12359733, PubMed:12021277). Contributes to phospholipid remodeling of very low-density lipoprotein (VLDL), low-density lipoprotein (LDL) and high-density lipoprotein (HDL) particles (PubMed:12021277). Hydrolyzes LDL phospholipids releasing unsaturated fatty acids that regulate macrophage differentiation toward foam cells (PubMed:12021277). Efficiently hydrolyzes and inactivates platelet activating factor (PAF), a potent lipid mediator present in oxidized LDL (PubMed:16962371). May act in an autocrine and paracrine manner. Secreted by lung epithelium, targets membrane phospholipids of infiltrating eosinophils, releasing arachidonate and boosting eicosanoid and cysteinyl leukotriene synthesis involved in airway inflammatory response (By similarity). Secreted by gut epithelium, hydrolyzes dietary and biliary phosphatidylcholines in the gastrointestinal lumen (By similarity). Plays a stem cell regulator role in colon epithelium. Within intracellular compartment, mediates Paneth-like cell differentiation and its stem cell supporting functions by inhibiting the Wnt signaling pathway in intestinal stem cell (ISC). Secreted in the intestinal lumen upon inflammation, acts in an autocrine way and promotes prostaglandin E2 synthesis that stimulates Wnt signaling pathway in ISCs and tissue regeneration (By similarity). May participate in hair follicle morphogenesis by regulating phosphatidylethanolamines metabolism at the outermost epithelial layer and facilitating melanin synthesis (By similarity). By releasing lysophosphatidylcholines (LPCs) at sperm acrosome, controls sperm cell capacitation, acrosome reaction and overall fertility (By similarity). May promote neurite outgrowth in neuron fibers involved in nociception (By similarity). Contributes to lipid remodeling of cellular membranes and generation of lipid mediators involved in pathogen clearance. Cleaves sn-2 fatty acyl chains of phosphatidylglycerols and phosphatidylethanolamines, which are major components of membrane phospholipids in bacteria (PubMed:12359733). Displays bactericidal activity against Gram-positive bacteria by directly hydrolyzing phospholipids of the bacterial membrane (PubMed:11694541). In pulmonary epithelium, may contribute to host defense response against adenoviral infection. Prevents adenovirus entry into host cells by hydrolyzing host cell plasma membrane, releasing C16:0 LPCs that inhibit virus-mediated membrane fusion and viral infection. Likely prevents adenoviral entry into the endosomes of host cells (PubMed:16146426). May play a role in maturation and activation of innate immune cells including macrophages, group 2 innate lymphoid cells and mast cells (By similarity). {ECO:0000250|UniProtKB:Q9QXX3, ECO:0000269|PubMed:11694541, ECO:0000269|PubMed:12021277, ECO:0000269|PubMed:12359733, ECO:0000269|PubMed:16146426, ECO:0000269|PubMed:16962371, ECO:0000269|PubMed:9188469}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Calcium;Cleavage on pair of basic residues;Cytoplasmic vesicle;Disulfide bond;Glycoprotein;Hydrolase;Lipid metabolism;Lysosome;Metal-binding;Phospholipid metabolism;Reference proteome;Secreted;Signal</p>
+<p>3D-structure; Calcium; Cleavage on pair of basic residues; Cytoplasmic vesicle; Disulfide bond; Glycoprotein; Hydrolase; Lipid metabolism; Lysosome; Metal-binding; Phospholipid metabolism; Reference proteome; Secreted; Signal</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/O15496" class="uri">https://www.uniprot.org/uniprot/O15496</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-5e733899780d54ae4dd7" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5e733899780d54ae4dd7">{"x":{"data":[{"x":[1,1,165,165,1],"y":[0,1,1,0,0],"text":"Positions: 1-165 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-7.2,173.2],"tickmode":"array","ticktext":["1","50","100","150","165"],"tickvals":[1,50,100,150,165],"categoryorder":"array","categoryarray":["1","50","100","150","165"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef3f49befd34":{"text":{},"xmin":{},"xmax":{},"type":"scatter"}},"cur_data":"ef3f49befd34","visdat":{"ef3f49befd34":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>No domain info.</p></p>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

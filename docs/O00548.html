@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: DLL1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,175 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Transmembrane ligand protein of NOTCH1, NOTCH2 and NOTCH3 receptors that binds the extracellular domain (ECD) of Notch receptor in a cis and trans fashion manner (PubMed:11006133). Following transinteraction, ligand cells produce mechanical force that depends of a clathrin-mediated endocytosis, requiring ligand ubiquitination, EPN1 interaction, and actin polymerisation; these events promote Notch receptor extracellular domain (NECD) transendocytosis and triggers Notch signaling through induction of cleavage, hyperphosphorylation, and nuclear accumulation of the intracellular domain of Notch receptors (NICD) (By similarity). Is required for embryonic development and maintenance of adult stem cells in many different tissues and immune systeme; the DLL1-induced Notch signaling is mediated through an intercellular communication that regulates cell lineage, cell specification, cell patterning and morphogenesis through effects on differentiation and proliferation (PubMed:11581320). Plays a role in brain development at different level, namely by regulating neuronal differentiation of neural precursor cells via cell-cell interaction, most likely through the lateral inhibitory system in an endogenous level dependent-manner. During neocortex development, Dll1-Notch signaling transmission is mediated by dynamic interactions between intermediate neurogenic progenitors and radial glia; the cell-cell interactions are mediated via dynamic and transient elongation processes, likely to reactivate/maintain Notch activity in neighboring progenitors, and coordinate progenitor cell division and differentiation across radial and zonal boundaries. During cerebellar development, regulates Bergmann glial monolayer formation and its morphological maturation through a Notch signaling pathway. At the retina and spinal cord level, regulates neurogenesis by preventing the premature differentiation of neural progenitors and also by maintaining progenitors in spinal cord through Notch signaling pathway. Also controls neurogenesis of the neural tube in a progenitor domain-specific fashion along the dorsoventral axis. Maintains quiescence of neural stem cells and plays a role as a fate determinant that segregates asymmetrically to one daughter cell during neural stem cells mitosis, resulting in neuronal differentiation in Dll1-inheriting cell. Plays a role in immune systeme development, namely the development of all T-cells and marginal zone (MZ) B-cells (By similarity). Blocks the differentiation of progenitor cells into the B-cell lineage while promoting the emergence of a population of cells with the characteristics of a T-cell/NK-cell precursor (PubMed:11581320). Also plays a role during muscle development. During early development, inhibits myoblasts differentiation from the medial dermomyotomal lip and later regulates progenitor cell differentiation. Directly modulates cell adhesion and basal lamina formation in satellite cells through Notch signaling. Maintains myogenic progenitors pool by suppressing differentiation through down-regulation of MYOD1 and is required for satellite cell homing and PAX7 expression. During craniofacial and trunk myogenesis suppresses differentiation of cranial mesoderm-derived and somite-derived muscle via MYOD1 regulation but in cranial mesoderm-derived progenitors, is neither required for satellite cell homing nor for PAX7 expression. Also plays a role during pancreatic cell development. During type B pancreatic cell development, may be involved in the initiation of proximodistal patterning in the early pancreatic epithelium. Stimulates multipotent pancreatic progenitor cells proliferation and pancreatic growth by maintaining HES1 expression and PTF1A protein levels. During fetal stages of development, is required to maintain arterial identity and the responsiveness of arterial endothelial cells for VEGFA through regulation of KDR activation and NRP1 expression. Controls sprouting angiogenesis and subsequent vertical branch formation througth regulation on tip cell differentiation. Negatively regulates goblet cell differentiation in intestine and controls secretory fat commitment through lateral inhibition in small intestine. Plays a role during inner ear development; negatively regulates auditory hair cell differentiation. Plays a role during nephron development through Notch signaling pathway. Regulates growth, blood pressure and energy homeostasis (By similarity). {ECO:0000250|UniProtKB:P97677, ECO:0000250|UniProtKB:Q61483, ECO:0000269|PubMed:11006133, ECO:0000269|PubMed:11581320}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Alternative splicing;Autism spectrum disorder;Cell junction;Cell membrane;Developmental protein;Differentiation;Disulfide bond;EGF-like domain;Epilepsy;Glycoprotein;Isopeptide bond;Membrane;Mental retardation;Notch signaling pathway;Phosphoprotein;Reference proteome;Repeat;Signal;Transmembrane;Transmembrane helix;Ubl conjugation</p>
+<p>3D-structure; Alternative splicing; Autism spectrum disorder; Cell junction; Cell membrane; Developmental protein; Differentiation; Disulfide bond; EGF-like domain; Epilepsy; Glycoprotein; Isopeptide bond; Membrane; Mental retardation; Notch signaling pathway; Phosphoprotein; Reference proteome; Repeat; Signal; Transmembrane; Transmembrane helix; Ubl conjugation</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/O00548" class="uri">https://www.uniprot.org/uniprot/O00548</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-7fa3ce94a4dc548dfbc3" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7fa3ce94a4dc548dfbc3">{"x":{"data":[{"x":[1,1,723,723,1],"y":[0,1,1,0,0],"text":"Positions: 1-723 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[177,177,221,221,177],"y":[0,1,1,0,0],"text":"Positions: 177-221 - domain DSL","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"DSL","legendgroup":"DSL","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[226,226,254,254,226],"y":[0,1,1,0,0],"text":"Positions: 226-254 - domain EGF-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(195,72,93,1)","hoveron":"fills","name":"EGF-like 1","legendgroup":"EGF-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[257,257,285,285,257],"y":[0,1,1,0,0],"text":"Positions: 257-285 - domain EGF-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(128,176,86,1)","hoveron":"fills","name":"EGF-like 2","legendgroup":"EGF-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[292,292,325,325,292],"y":[0,1,1,0,0],"text":"Positions: 292-325 - domain EGF-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(57,172,173,1)","hoveron":"fills","name":"EGF-like 3","legendgroup":"EGF-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[332,332,363,363,332],"y":[0,1,1,0,0],"text":"Positions: 332-363 - domain EGF-like 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"EGF-like 4","legendgroup":"EGF-like 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[370,370,402,402,370],"y":[0,1,1,0,0],"text":"Positions: 370-402 - domain EGF-like 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(101,145,213,1)","hoveron":"fills","name":"EGF-like 5","legendgroup":"EGF-like 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[409,409,440,440,409],"y":[0,1,1,0,0],"text":"Positions: 409-440 - domain EGF-like 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(215,58,144,1)","hoveron":"fills","name":"EGF-like 6","legendgroup":"EGF-like 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[447,447,478,478,447],"y":[0,1,1,0,0],"text":"Positions: 447-478 - domain EGF-like 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(234,193,33,1)","hoveron":"fills","name":"EGF-like 7","legendgroup":"EGF-like 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[485,485,516,516,485],"y":[0,1,1,0,0],"text":"Positions: 485-516 - domain EGF-like 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"EGF-like 8","legendgroup":"EGF-like 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-35.1,759.1],"tickmode":"array","ticktext":["1","200","400","600","723"],"tickvals":[1,200,400,600,723],"categoryorder":"array","categoryarray":["1","200","400","600","723"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef5e79525095":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef5e61552fb8":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef5e79525095","visdat":{"ef5e79525095":["function (y) ","x"],"ef5e61552fb8":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+DSL
+</td>
+<td style="text-align:right;">
+177
+</td>
+<td style="text-align:right;">
+221
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00377
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 1
+</td>
+<td style="text-align:right;">
+226
+</td>
+<td style="text-align:right;">
+254
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 2
+</td>
+<td style="text-align:right;">
+257
+</td>
+<td style="text-align:right;">
+285
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 3
+</td>
+<td style="text-align:right;">
+292
+</td>
+<td style="text-align:right;">
+325
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 4
+</td>
+<td style="text-align:right;">
+332
+</td>
+<td style="text-align:right;">
+363
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 5
+</td>
+<td style="text-align:right;">
+370
+</td>
+<td style="text-align:right;">
+402
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 6
+</td>
+<td style="text-align:right;">
+409
+</td>
+<td style="text-align:right;">
+440
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 7
+</td>
+<td style="text-align:right;">
+447
+</td>
+<td style="text-align:right;">
+478
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 8
+</td>
+<td style="text-align:right;">
+485
+</td>
+<td style="text-align:right;">
+516
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: NPPA</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2107,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: [Atrial natriuretic peptide]: Hormone that plays a key role in mediating cardio-renal homeostasis, and is involved in vascular remodeling and regulating energy metabolism (PubMed:8653797, PubMed:7595132, PubMed:2825692, PubMed:7720651, PubMed:8087923, PubMed:2532366, PubMed:22307324, PubMed:18835931, PubMed:21672517, PubMed:15741263, PubMed:16875975). Acts by specifically binding and stimulating NPR1 to produce cGMP, which in turn activates effector proteins, such as PRKG1, that drive various biological responses (PubMed:25401746, PubMed:9893117, PubMed:1672777, PubMed:1660465, PubMed:2162527, PubMed:2825692, PubMed:7720651, PubMed:22307324, PubMed:8384600, PubMed:21098034). Regulates vasodilation, natriuresis, diuresis and aldosterone synthesis and is therefore essential for regulating blood pressure, controlling the extracellular fluid volume and maintaining the fluid-electrolyte balance (PubMed:8653797, PubMed:7595132, PubMed:2825692, PubMed:7720651, PubMed:2532366, PubMed:8087923). Also involved in inhibiting cardiac remodeling and cardiac hypertrophy by inducing cardiomyocyte apoptosis and attenuating the growth of cardiomyocytes and fibroblasts (PubMed:16875975). Plays a role in female pregnancy by promoting trophoblast invasion and spiral artery remodeling in uterus, and thus prevents pregnancy-induced hypertension (By similarity). In adipose tissue, acts in various cGMP- and PKG-dependent pathways to regulate lipid metabolism and energy homeostasis (PubMed:22307324, PubMed:18835931, PubMed:21672517, PubMed:15741263). This includes upregulating lipid metabolism and mitochondrial oxygen utilization by activating the AMP-activated protein kinase (AMPK), and increasing energy expenditure by acting via MAPK11 to promote the UCP1-dependent thermogenesis of brown adipose tissue (PubMed:22307324, PubMed:18835931, PubMed:21672517, PubMed:15741263). Binds the clearance receptor NPR3 which removes the hormone from circulation (PubMed:1672777). {ECO:0000250|UniProtKB:P05125, ECO:0000269|PubMed:15741263, ECO:0000269|PubMed:1660465, ECO:0000269|PubMed:1672777, ECO:0000269|PubMed:16875975, ECO:0000269|PubMed:18835931, ECO:0000269|PubMed:21098034, ECO:0000269|PubMed:2162527, ECO:0000269|PubMed:21672517, ECO:0000269|PubMed:22307324, ECO:0000269|PubMed:2532366, ECO:0000269|PubMed:25401746, ECO:0000269|PubMed:2825692, ECO:0000269|PubMed:7595132, ECO:0000269|PubMed:7720651, ECO:0000269|PubMed:8087923, ECO:0000269|PubMed:8384600, ECO:0000269|PubMed:8653797, ECO:0000269|PubMed:9893117}.; FUNCTION: [Long-acting natriuretic peptide]: May have a role in cardio-renal homeostasis through regulation of natriuresis, diuresis, vasodilation, and inhibiting aldosterone synthesis (PubMed:8653797, PubMed:7955907, PubMed:8087923, PubMed:2825692, PubMed:7595132, PubMed:2532366). In vitro, promotes the production of cGMP and induces vasodilation (PubMed:2825692). May promote natriuresis, at least in part, by enhancing prostaglandin E2 synthesis resulting in the inhibition of renal Na+-K+-ATPase (PubMed:7720651). However reports on the involvement of this peptide in mammal blood volume and blood pressure homeostasis are conflicting; according to a report, in vivo it is not sufficient to activate cGMP and does not inhibit collecting duct transport nor effect diuresis and natriuresis (By similarity). Appears to bind to specific receptors that are distinct from the receptors bound by atrial natriuretic peptide and vessel dilator (PubMed:2162527, PubMed:2825692). Possibly enhances protein excretion in urine by decreasing proximal tubular protein reabsorption (PubMed:11145122). {ECO:0000250|UniProtKB:P01161, ECO:0000269|PubMed:11145122, ECO:0000269|PubMed:2162527, ECO:0000269|PubMed:2532366, ECO:0000269|PubMed:2825692, ECO:0000269|PubMed:7595132, ECO:0000269|PubMed:7720651, ECO:0000269|PubMed:7955907, ECO:0000269|PubMed:8087923, ECO:0000269|PubMed:8653797}.; FUNCTION: [Vessel dilator]: May have a role in cardio-renal homeostasis through regulation of natriuresis, diuresis, and vasodilation (PubMed:8653797, PubMed:7955907, PubMed:8087923, PubMed:2532366, PubMed:7595132). In vitro, promotes the production of cGMP and induces vasodilation (PubMed:2825692). May promote natriuresis, at least in part, by enhancing prostaglandin E2 synthesis resulting in the inhibition of renal Na+-K+-ATPase (PubMed:7720651, PubMed:7595132). However reports on the involvement of this peptide in mammal blood volume and blood pressure homeostasis are conflicting; according to a report it is not sufficient to activate cGMP and does not inhibit collecting duct transport nor effect diuresis and natriuresis (PubMed:7831500). Appears to bind to specific receptors that are distinct from the receptors bound by the atrial natriuretic and long-acting natriuretic peptides (PubMed:2162527, PubMed:2825692). Possibly functions in protein excretion in urine by maintaining the integrity of the proximal tubules and enhancing protein excretion by decreasing proximal tubular protein reabsorption (PubMed:11145122). {ECO:0000269|PubMed:11145122, ECO:0000269|PubMed:2162527, ECO:0000269|PubMed:2532366, ECO:0000269|PubMed:2825692, ECO:0000269|PubMed:7595132, ECO:0000269|PubMed:7720651, ECO:0000269|PubMed:7831500, ECO:0000269|PubMed:7955907, ECO:0000269|PubMed:8087923, ECO:0000269|PubMed:8653797}.; FUNCTION: [Kaliuretic peptide]: May have a role in cardio-renal homeostasis through regulation of diuresis and inhibiting aldosterone synthesis (PubMed:8087923, PubMed:2825692, PubMed:7595132). In vitro, promotes the production of cGMP and induces vasodilation (PubMed:2825692). May promote natriuresis, at least in part, by enhancing prostaglandin E2 synthesis resulting in the inhibition of renal Na+-K+-ATPase (PubMed:7720651, PubMed:7595132). May have a role in potassium excretion but not sodium excretion (natriuresis) (PubMed:8087923). Possibly enhances protein excretion in urine by decreasing proximal tubular protein reabsorption (PubMed:11145122). {ECO:0000269|PubMed:11145122, ECO:0000269|PubMed:2825692, ECO:0000269|PubMed:7595132, ECO:0000269|PubMed:7720651, ECO:0000269|PubMed:8087923}.; FUNCTION: [Urodilatin]: Hormone produced in the kidneys that appears to be important for maintaining cardio-renal homeostasis (PubMed:8351194, PubMed:8853410, PubMed:8779891). Mediates vasodilation, natriuresis and diuresis primarily in the renal system, in order to maintain the extracellular fluid volume and control the fluid-electrolyte balance (PubMed:2528951, PubMed:8351194, PubMed:8853410, PubMed:8779891). Specifically binds and stimulates cGMP production by renal transmembrane receptors, likely NPR1 (PubMed:8384600, PubMed:9893117). Urodilatin not ANP, may be the natriuretic peptide responsible for the regulation of sodium and water homeostasis in the kidney (PubMed:8779891, PubMed:8384600). {ECO:0000269|PubMed:2528951, ECO:0000269|PubMed:8351194, ECO:0000269|PubMed:8384600, ECO:0000269|PubMed:8779891, ECO:0000269|PubMed:8853410, ECO:0000269|PubMed:9893117}.; FUNCTION: [Auriculin-D]: May have a role in cardio-renal homeostasis through regulation of natriuresis and vasodilation. In vivo promotes natriuresis and in vitro, vasodilates renal artery strips. {ECO:0000250|UniProtKB:P01161}.; FUNCTION: [Auriculin-B]: May have a role in cardio-renal homeostasis through regulation of natriuresis and vasodilation. In vivo promotes natriuresis and in vitro, vasodilates renal artery strips. {ECO:0000250|UniProtKB:P01161}.; FUNCTION: [Auriculin-A]: May have a role in cardio-renal homeostasis through regulation of regulation of natriuresis and vasodilation. In vivo promotes natriuresis. In vitro, vasodilates intestinal smooth muscle but not smooth muscle strips. {ECO:0000250|UniProtKB:P01161}.; FUNCTION: [Atriopeptin-2]: May have a role in cardio-renal homeostasis through regulation of natriuresis and vasodilation. In vivo promotes natriuresis. In vitro, selectively vasodilates intestinal and vascular smooth muscle strips. {ECO:0000250|UniProtKB:P01161}.; FUNCTION: [Atriopeptin-1]: May have a role in cardio-renal homeostasis through regulation of natriuresis and vasodilation. In vivo promotes natriuresis. In vitro, selectively vasodilates intestinal smooth muscle but not vascular smooth muscle strips. {ECO:0000250|UniProtKB:P01161}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Atrial fibrillation;Cardiomyopathy;Cell projection;Direct protein sequencing;Disease variant;Disulfide bond;Hormone;Phosphoprotein;Reference proteome;Secreted;Signal;Vasoactive;Vasodilator</p>
+<p>3D-structure; Atrial fibrillation; Cardiomyopathy; Cell projection; Direct protein sequencing; Disease variant; Disulfide bond; Hormone; Phosphoprotein; Reference proteome; Secreted; Signal; Vasoactive; Vasodilator</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P01160" class="uri">https://www.uniprot.org/uniprot/P01160</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-39324f867658afa15ac4" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-39324f867658afa15ac4">{"x":{"data":[{"x":[1,1,151,151,1],"y":[0,1,1,0,0],"text":"Positions: 1-151 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-6.5,158.5],"tickmode":"array","ticktext":["1","50","100","150","151"],"tickvals":[1,50,100,150,151],"categoryorder":"array","categoryarray":["1","50","100","150","151"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef6246c0cfb2":{"text":{},"xmin":{},"xmax":{},"type":"scatter"}},"cur_data":"ef6246c0cfb2","visdat":{"ef6246c0cfb2":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>No domain info.</p></p>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

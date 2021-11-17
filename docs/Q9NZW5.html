@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -85,30 +85,31 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
-  <!--radix_placeholder_meta_tags-->
-  <title>DDRBase: MPP6</title>
 
-  <meta property="description" itemprop="description" content="MAGUK p55 subfamily member 6 (Veli-associated MAGUK 1) (VAM-1)"/>
+  <!--radix_placeholder_meta_tags-->
+  <title>DDRBase: PALS2</title>
+
+  <meta property="description" itemprop="description" content="Protein PALS2 (MAGUK p55 subfamily member 6) (Membrane protein, palmitoylated 6) (Veli-associated MAGUK 1) (VAM-1)"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="DDRBase: MPP6"/>
+  <meta property="og:title" content="DDRBase: PALS2"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="MAGUK p55 subfamily member 6 (Veli-associated MAGUK 1) (VAM-1)"/>
+  <meta property="og:description" content="Protein PALS2 (MAGUK p55 subfamily member 6) (Membrane protein, palmitoylated 6) (Veli-associated MAGUK 1) (VAM-1)"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="DDRBase"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="DDRBase: MPP6"/>
-  <meta property="twitter:description" content="MAGUK p55 subfamily member 6 (Veli-associated MAGUK 1) (VAM-1)"/>
+  <meta property="twitter:title" content="DDRBase: PALS2"/>
+  <meta property="twitter:description" content="Protein PALS2 (MAGUK p55 subfamily member 6) (Membrane protein, palmitoylated 6) (Veli-associated MAGUK 1) (VAM-1)"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["MPP6"]},{"type":"character","attributes":{},"value":["MAGUK p55 subfamily member 6 (Veli-associated MAGUK 1) (VAM-1)\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["PALS2"]},{"type":"character","attributes":{},"value":["Protein PALS2 (MAGUK p55 subfamily member 6) (Membrane protein, palmitoylated 6) (Veli-associated MAGUK 1) (VAM-1)\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2053,7 +2067,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"MPP6","description":"MAGUK p55 subfamily member 6 (Veli-associated MAGUK 1) (VAM-1)","authors":[]}
+{"title":"PALS2","description":"Protein PALS2 (MAGUK p55 subfamily member 6) (Membrane protein, palmitoylated 6) (Veli-associated MAGUK 1) (VAM-1)","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2081,28 +2095,132 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>MPP6</h1>
+<h1>PALS2</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>MAGUK p55 subfamily member 6 (Veli-associated MAGUK 1) (VAM-1)</p></p>
+<p><p>Protein PALS2 (MAGUK p55 subfamily member 6) (Membrane protein, palmitoylated 6) (Veli-associated MAGUK 1) (VAM-1)</p></p>
 </div>
 
 
 <div class="d-article">
-<h1 id="mpp6-q9nzw5">MPP6 ❯ Q9NZW5</h1>
+<h1 id="pals2-q9nzw5">PALS2 ❯ Q9NZW5</h1>
 <h2 id="gene-names">Gene names</h2>
-<p>MPP6 VAM1</p>
+<p>PALS2 MPP6 VAM1</p>
 <h2 id="function">Function</h2>
 <h2 id="keywords">Keywords</h2>
-<p>Membrane;Phosphoprotein;Reference proteome;Repeat;SH3 domain</p>
+<p>Membrane; Phosphoprotein; Reference proteome; Repeat; SH3 domain</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q9NZW5" class="uri">https://www.uniprot.org/uniprot/Q9NZW5</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-91e855b0e36e79e1b564" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-91e855b0e36e79e1b564">{"x":{"data":[{"x":[1,1,540,540,1],"y":[0,1,1,0,0],"text":"Positions: 1-540 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[338,338,525,525,338],"y":[0,1,1,0,0],"text":"Positions: 338-525 - domain Guanylate kinase-like","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Guanylate kinase-like","legendgroup":"Guanylate kinase-like","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1,1,48,48,1],"y":[0,1,1,0,0],"text":"Positions: 1-48 - domain L27 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(223,83,107,1)","hoveron":"fills","name":"L27 1","legendgroup":"L27 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[49,49,107,107,49],"y":[0,1,1,0,0],"text":"Positions: 49-107 - domain L27 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(97,208,79,1)","hoveron":"fills","name":"L27 2","legendgroup":"L27 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[130,130,209,209,130],"y":[0,1,1,0,0],"text":"Positions: 130-209 - domain PDZ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,151,230,1)","hoveron":"fills","name":"PDZ","legendgroup":"PDZ","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[215,215,284,284,215],"y":[0,1,1,0,0],"text":"Positions: 215-284 - domain SH3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(40,226,229,1)","hoveron":"fills","name":"SH3","legendgroup":"SH3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-25.95,566.95],"tickmode":"array","ticktext":["1","100","200","300","400","500","540"],"tickvals":[1,100,200,300,400,500,540],"categoryorder":"array","categoryarray":["1","100","200","300","400","500","540"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef2431fa747a":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef244a4df4f1":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef2431fa747a","visdat":{"ef2431fa747a":["function (y) ","x"],"ef244a4df4f1":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+L27 1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00365
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+L27 2
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00365
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PDZ
+</td>
+<td style="text-align:right;">
+130
+</td>
+<td style="text-align:right;">
+209
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00143
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SH3
+</td>
+<td style="text-align:right;">
+215
+</td>
+<td style="text-align:right;">
+284
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00192
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guanylate kinase-like
+</td>
+<td style="text-align:right;">
+338
+</td>
+<td style="text-align:right;">
+525
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00100
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: TNXB</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,749 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Appears to mediate interactions between cells and the extracellular matrix. Substrate-adhesion molecule that appears to inhibit cell migration. Accelerates collagen fibril formation. May play a role in supporting the growth of epithelial tumors. {ECO:0000269|PubMed:17033827}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Alternative splicing;Cell adhesion;Coiled coil;Direct protein sequencing;Disease variant;Disulfide bond;EGF-like domain;Ehlers-Danlos syndrome;Extracellular matrix;Glycoprotein;Reference proteome;Repeat;Secreted;Signal</p>
+<p>3D-structure; Alternative splicing; Cell adhesion; Coiled coil; Direct protein sequencing; Disease variant; Disulfide bond; EGF-like domain; Ehlers-Danlos syndrome; Extracellular matrix; Glycoprotein; Reference proteome; Repeat; Secreted; Signal</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P22105" class="uri">https://www.uniprot.org/uniprot/P22105</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-0884932f25ff4c49bd00" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0884932f25ff4c49bd00">{"x":{"data":[{"x":[1,1,4244,4244,1],"y":[0,1,1,0,0],"text":"Positions: 1-4244 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[156,156,168,168,156],"y":[0,1,1,0,0],"text":"Positions: 156-168 - domain EGF-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"EGF-like 1","legendgroup":"EGF-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[431,431,461,461,431],"y":[0,1,1,0,0],"text":"Positions: 431-461 - domain EGF-like 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(31,11,15,1)","hoveron":"fills","name":"EGF-like 10","legendgroup":"EGF-like 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[462,462,492,492,462],"y":[0,1,1,0,0],"text":"Positions: 462-492 - domain EGF-like 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(63,23,30,1)","hoveron":"fills","name":"EGF-like 11","legendgroup":"EGF-like 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[493,493,523,523,493],"y":[0,1,1,0,0],"text":"Positions: 493-523 - domain EGF-like 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(95,35,45,1)","hoveron":"fills","name":"EGF-like 12","legendgroup":"EGF-like 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[524,524,554,554,524],"y":[0,1,1,0,0],"text":"Positions: 524-554 - domain EGF-like 13","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(127,47,61,1)","hoveron":"fills","name":"EGF-like 13","legendgroup":"EGF-like 13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[555,555,585,585,555],"y":[0,1,1,0,0],"text":"Positions: 555-585 - domain EGF-like 14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(159,59,76,1)","hoveron":"fills","name":"EGF-like 14","legendgroup":"EGF-like 14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[586,586,616,616,586],"y":[0,1,1,0,0],"text":"Positions: 586-616 - domain EGF-like 15","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(191,71,91,1)","hoveron":"fills","name":"EGF-like 15","legendgroup":"EGF-like 15","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[617,617,647,647,617],"y":[0,1,1,0,0],"text":"Positions: 617-647 - domain EGF-like 16","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(223,83,107,1)","hoveron":"fills","name":"EGF-like 16","legendgroup":"EGF-like 16","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[648,648,679,679,648],"y":[0,1,1,0,0],"text":"Positions: 648-679 - domain EGF-like 17","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(205,100,103,1)","hoveron":"fills","name":"EGF-like 17","legendgroup":"EGF-like 17","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[684,684,714,714,684],"y":[0,1,1,0,0],"text":"Positions: 684-714 - domain EGF-like 18","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(187,118,99,1)","hoveron":"fills","name":"EGF-like 18","legendgroup":"EGF-like 18","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[715,715,746,746,715],"y":[0,1,1,0,0],"text":"Positions: 715-746 - domain EGF-like 19","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(169,136,95,1)","hoveron":"fills","name":"EGF-like 19","legendgroup":"EGF-like 19","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[183,183,213,213,183],"y":[0,1,1,0,0],"text":"Positions: 183-213 - domain EGF-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(151,154,91,1)","hoveron":"fills","name":"EGF-like 2","legendgroup":"EGF-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[214,214,244,244,214],"y":[0,1,1,0,0],"text":"Positions: 214-244 - domain EGF-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(132,172,87,1)","hoveron":"fills","name":"EGF-like 3","legendgroup":"EGF-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[245,245,275,275,245],"y":[0,1,1,0,0],"text":"Positions: 245-275 - domain EGF-like 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(115,190,83,1)","hoveron":"fills","name":"EGF-like 4","legendgroup":"EGF-like 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[276,276,306,306,276],"y":[0,1,1,0,0],"text":"Positions: 276-306 - domain EGF-like 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(97,208,79,1)","hoveron":"fills","name":"EGF-like 5","legendgroup":"EGF-like 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[307,307,337,337,307],"y":[0,1,1,0,0],"text":"Positions: 307-337 - domain EGF-like 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(88,199,100,1)","hoveron":"fills","name":"EGF-like 6","legendgroup":"EGF-like 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[338,338,368,368,338],"y":[0,1,1,0,0],"text":"Positions: 338-368 - domain EGF-like 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(79,191,122,1)","hoveron":"fills","name":"EGF-like 7","legendgroup":"EGF-like 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[369,369,399,399,369],"y":[0,1,1,0,0],"text":"Positions: 369-399 - domain EGF-like 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(69,183,143,1)","hoveron":"fills","name":"EGF-like 8","legendgroup":"EGF-like 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[400,400,430,430,400],"y":[0,1,1,0,0],"text":"Positions: 400-430 - domain EGF-like 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(61,175,165,1)","hoveron":"fills","name":"EGF-like 9","legendgroup":"EGF-like 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4021,4021,4236,4236,4021],"y":[0,1,1,0,0],"text":"Positions: 4021-4236 - domain Fibrinogen C-terminal","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(52,167,186,1)","hoveron":"fills","name":"Fibrinogen C-terminal","legendgroup":"Fibrinogen C-terminal","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[959,959,1051,1051,959],"y":[0,1,1,0,0],"text":"Positions: 959-1051 - domain Fibronectin type-III 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(43,159,208,1)","hoveron":"fills","name":"Fibronectin type-III 1","legendgroup":"Fibronectin type-III 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1883,1883,1971,1971,1883],"y":[0,1,1,0,0],"text":"Positions: 1883-1971 - domain Fibronectin type-III 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,151,230,1)","hoveron":"fills","name":"Fibronectin type-III 10","legendgroup":"Fibronectin type-III 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1989,1989,2089,2089,1989],"y":[0,1,1,0,0],"text":"Positions: 1989-2089 - domain Fibronectin type-III 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,161,229,1)","hoveron":"fills","name":"Fibronectin type-III 11","legendgroup":"Fibronectin type-III 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2097,2097,2185,2185,2097],"y":[0,1,1,0,0],"text":"Positions: 2097-2185 - domain Fibronectin type-III 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(35,172,229,1)","hoveron":"fills","name":"Fibronectin type-III 12","legendgroup":"Fibronectin type-III 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2196,2196,2296,2296,2196],"y":[0,1,1,0,0],"text":"Positions: 2196-2296 - domain Fibronectin type-III 13","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(36,183,229,1)","hoveron":"fills","name":"Fibronectin type-III 13","legendgroup":"Fibronectin type-III 13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2305,2305,2398,2398,2305],"y":[0,1,1,0,0],"text":"Positions: 2305-2398 - domain Fibronectin type-III 14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,193,229,1)","hoveron":"fills","name":"Fibronectin type-III 14","legendgroup":"Fibronectin type-III 14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2408,2408,2502,2502,2408],"y":[0,1,1,0,0],"text":"Positions: 2408-2502 - domain Fibronectin type-III 15","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(38,204,229,1)","hoveron":"fills","name":"Fibronectin type-III 15","legendgroup":"Fibronectin type-III 15","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2519,2519,2617,2617,2519],"y":[0,1,1,0,0],"text":"Positions: 2519-2617 - domain Fibronectin type-III 16","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(39,215,229,1)","hoveron":"fills","name":"Fibronectin type-III 16","legendgroup":"Fibronectin type-III 16","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2625,2625,2723,2723,2625],"y":[0,1,1,0,0],"text":"Positions: 2625-2723 - domain Fibronectin type-III 17","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(40,226,229,1)","hoveron":"fills","name":"Fibronectin type-III 17","legendgroup":"Fibronectin type-III 17","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2733,2733,2840,2840,2733],"y":[0,1,1,0,0],"text":"Positions: 2733-2840 - domain Fibronectin type-III 18","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(63,195,223,1)","hoveron":"fills","name":"Fibronectin type-III 18","legendgroup":"Fibronectin type-III 18","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2841,2841,2939,2939,2841],"y":[0,1,1,0,0],"text":"Positions: 2841-2939 - domain Fibronectin type-III 19","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(87,164,217,1)","hoveron":"fills","name":"Fibronectin type-III 19","legendgroup":"Fibronectin type-III 19","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1064,1064,1153,1153,1064],"y":[0,1,1,0,0],"text":"Positions: 1064-1153 - domain Fibronectin type-III 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(110,133,211,1)","hoveron":"fills","name":"Fibronectin type-III 2","legendgroup":"Fibronectin type-III 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2949,2949,3042,3042,2949],"y":[0,1,1,0,0],"text":"Positions: 2949-3042 - domain Fibronectin type-III 20","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(134,103,205,1)","hoveron":"fills","name":"Fibronectin type-III 20","legendgroup":"Fibronectin type-III 20","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3062,3062,3153,3153,3062],"y":[0,1,1,0,0],"text":"Positions: 3062-3153 - domain Fibronectin type-III 21","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(157,72,199,1)","hoveron":"fills","name":"Fibronectin type-III 21","legendgroup":"Fibronectin type-III 21","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3168,3168,3260,3260,3168],"y":[0,1,1,0,0],"text":"Positions: 3168-3260 - domain Fibronectin type-III 22","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(181,41,193,1)","hoveron":"fills","name":"Fibronectin type-III 22","legendgroup":"Fibronectin type-III 22","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3264,3264,3355,3355,3264],"y":[0,1,1,0,0],"text":"Positions: 3264-3355 - domain Fibronectin type-III 23","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(205,11,188,1)","hoveron":"fills","name":"Fibronectin type-III 23","legendgroup":"Fibronectin type-III 23","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3357,3357,3446,3446,3357],"y":[0,1,1,0,0],"text":"Positions: 3357-3446 - domain Fibronectin type-III 24","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(210,37,163,1)","hoveron":"fills","name":"Fibronectin type-III 24","legendgroup":"Fibronectin type-III 24","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3451,3451,3544,3544,3451],"y":[0,1,1,0,0],"text":"Positions: 3451-3544 - domain Fibronectin type-III 25","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(216,64,138,1)","hoveron":"fills","name":"Fibronectin type-III 25","legendgroup":"Fibronectin type-III 25","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3553,3553,3647,3647,3553],"y":[0,1,1,0,0],"text":"Positions: 3553-3647 - domain Fibronectin type-III 26","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(222,91,114,1)","hoveron":"fills","name":"Fibronectin type-III 26","legendgroup":"Fibronectin type-III 26","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3657,3657,3754,3754,3657],"y":[0,1,1,0,0],"text":"Positions: 3657-3754 - domain Fibronectin type-III 27","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(227,118,89,1)","hoveron":"fills","name":"Fibronectin type-III 27","legendgroup":"Fibronectin type-III 27","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3758,3758,3847,3847,3758],"y":[0,1,1,0,0],"text":"Positions: 3758-3847 - domain Fibronectin type-III 28","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(233,145,65,1)","hoveron":"fills","name":"Fibronectin type-III 28","legendgroup":"Fibronectin type-III 28","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3848,3848,3934,3934,3848],"y":[0,1,1,0,0],"text":"Positions: 3848-3934 - domain Fibronectin type-III 29","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(239,172,40,1)","hoveron":"fills","name":"Fibronectin type-III 29","legendgroup":"Fibronectin type-III 29","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1161,1161,1249,1249,1161],"y":[0,1,1,0,0],"text":"Positions: 1161-1249 - domain Fibronectin type-III 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(245,199,16,1)","hoveron":"fills","name":"Fibronectin type-III 3","legendgroup":"Fibronectin type-III 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3935,3935,4025,4025,3935],"y":[0,1,1,0,0],"text":"Positions: 3935-4025 - domain Fibronectin type-III 30","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(232,193,36,1)","hoveron":"fills","name":"Fibronectin type-III 30","legendgroup":"Fibronectin type-III 30","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1263,1263,1352,1352,1263],"y":[0,1,1,0,0],"text":"Positions: 1263-1352 - domain Fibronectin type-III 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(220,187,56,1)","hoveron":"fills","name":"Fibronectin type-III 4","legendgroup":"Fibronectin type-III 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1374,1374,1468,1468,1374],"y":[0,1,1,0,0],"text":"Positions: 1374-1468 - domain Fibronectin type-III 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(207,181,76,1)","hoveron":"fills","name":"Fibronectin type-III 5","legendgroup":"Fibronectin type-III 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1476,1476,1572,1572,1476],"y":[0,1,1,0,0],"text":"Positions: 1476-1572 - domain Fibronectin type-III 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(195,175,97,1)","hoveron":"fills","name":"Fibronectin type-III 6","legendgroup":"Fibronectin type-III 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1574,1574,1669,1669,1574],"y":[0,1,1,0,0],"text":"Positions: 1574-1669 - domain Fibronectin type-III 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(182,169,117,1)","hoveron":"fills","name":"Fibronectin type-III 7","legendgroup":"Fibronectin type-III 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1674,1674,1764,1764,1674],"y":[0,1,1,0,0],"text":"Positions: 1674-1764 - domain Fibronectin type-III 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(170,163,137,1)","hoveron":"fills","name":"Fibronectin type-III 8","legendgroup":"Fibronectin type-III 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1778,1778,1868,1868,1778],"y":[0,1,1,0,0],"text":"Positions: 1778-1868 - domain Fibronectin type-III 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"Fibronectin type-III 9","legendgroup":"Fibronectin type-III 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-211.15,4456.15],"tickmode":"array","ticktext":["1","1000","2000","3000","4000","4244"],"tickvals":[1,1000,2000,3000,4000,4244],"categoryorder":"array","categoryarray":["1","1000","2000","3000","4000","4244"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef3b1c2ba1cf":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef3b4305465d":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef3b1c2ba1cf","visdat":{"ef3b1c2ba1cf":["function (y) ","x"],"ef3b4305465d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+EGF-like 1
+</td>
+<td style="text-align:right;">
+156
+</td>
+<td style="text-align:right;">
+168
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 2
+</td>
+<td style="text-align:right;">
+183
+</td>
+<td style="text-align:right;">
+213
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 3
+</td>
+<td style="text-align:right;">
+214
+</td>
+<td style="text-align:right;">
+244
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 4
+</td>
+<td style="text-align:right;">
+245
+</td>
+<td style="text-align:right;">
+275
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 5
+</td>
+<td style="text-align:right;">
+276
+</td>
+<td style="text-align:right;">
+306
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 6
+</td>
+<td style="text-align:right;">
+307
+</td>
+<td style="text-align:right;">
+337
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 7
+</td>
+<td style="text-align:right;">
+338
+</td>
+<td style="text-align:right;">
+368
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 8
+</td>
+<td style="text-align:right;">
+369
+</td>
+<td style="text-align:right;">
+399
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 9
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:right;">
+430
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 10
+</td>
+<td style="text-align:right;">
+431
+</td>
+<td style="text-align:right;">
+461
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 11
+</td>
+<td style="text-align:right;">
+462
+</td>
+<td style="text-align:right;">
+492
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 12
+</td>
+<td style="text-align:right;">
+493
+</td>
+<td style="text-align:right;">
+523
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 13
+</td>
+<td style="text-align:right;">
+524
+</td>
+<td style="text-align:right;">
+554
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 14
+</td>
+<td style="text-align:right;">
+555
+</td>
+<td style="text-align:right;">
+585
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 15
+</td>
+<td style="text-align:right;">
+586
+</td>
+<td style="text-align:right;">
+616
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 16
+</td>
+<td style="text-align:right;">
+617
+</td>
+<td style="text-align:right;">
+647
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 17
+</td>
+<td style="text-align:right;">
+648
+</td>
+<td style="text-align:right;">
+679
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 18
+</td>
+<td style="text-align:right;">
+684
+</td>
+<td style="text-align:right;">
+714
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 19
+</td>
+<td style="text-align:right;">
+715
+</td>
+<td style="text-align:right;">
+746
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 1
+</td>
+<td style="text-align:right;">
+959
+</td>
+<td style="text-align:right;">
+1051
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 2
+</td>
+<td style="text-align:right;">
+1064
+</td>
+<td style="text-align:right;">
+1153
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 3
+</td>
+<td style="text-align:right;">
+1161
+</td>
+<td style="text-align:right;">
+1249
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 4
+</td>
+<td style="text-align:right;">
+1263
+</td>
+<td style="text-align:right;">
+1352
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 5
+</td>
+<td style="text-align:right;">
+1374
+</td>
+<td style="text-align:right;">
+1468
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 6
+</td>
+<td style="text-align:right;">
+1476
+</td>
+<td style="text-align:right;">
+1572
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 7
+</td>
+<td style="text-align:right;">
+1574
+</td>
+<td style="text-align:right;">
+1669
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 8
+</td>
+<td style="text-align:right;">
+1674
+</td>
+<td style="text-align:right;">
+1764
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 9
+</td>
+<td style="text-align:right;">
+1778
+</td>
+<td style="text-align:right;">
+1868
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 10
+</td>
+<td style="text-align:right;">
+1883
+</td>
+<td style="text-align:right;">
+1971
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 11
+</td>
+<td style="text-align:right;">
+1989
+</td>
+<td style="text-align:right;">
+2089
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 12
+</td>
+<td style="text-align:right;">
+2097
+</td>
+<td style="text-align:right;">
+2185
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 13
+</td>
+<td style="text-align:right;">
+2196
+</td>
+<td style="text-align:right;">
+2296
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 14
+</td>
+<td style="text-align:right;">
+2305
+</td>
+<td style="text-align:right;">
+2398
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 15
+</td>
+<td style="text-align:right;">
+2408
+</td>
+<td style="text-align:right;">
+2502
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 16
+</td>
+<td style="text-align:right;">
+2519
+</td>
+<td style="text-align:right;">
+2617
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 17
+</td>
+<td style="text-align:right;">
+2625
+</td>
+<td style="text-align:right;">
+2723
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 18
+</td>
+<td style="text-align:right;">
+2733
+</td>
+<td style="text-align:right;">
+2840
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 19
+</td>
+<td style="text-align:right;">
+2841
+</td>
+<td style="text-align:right;">
+2939
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 20
+</td>
+<td style="text-align:right;">
+2949
+</td>
+<td style="text-align:right;">
+3042
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 21
+</td>
+<td style="text-align:right;">
+3062
+</td>
+<td style="text-align:right;">
+3153
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 22
+</td>
+<td style="text-align:right;">
+3168
+</td>
+<td style="text-align:right;">
+3260
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 23
+</td>
+<td style="text-align:right;">
+3264
+</td>
+<td style="text-align:right;">
+3355
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 24
+</td>
+<td style="text-align:right;">
+3357
+</td>
+<td style="text-align:right;">
+3446
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 25
+</td>
+<td style="text-align:right;">
+3451
+</td>
+<td style="text-align:right;">
+3544
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 26
+</td>
+<td style="text-align:right;">
+3553
+</td>
+<td style="text-align:right;">
+3647
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 27
+</td>
+<td style="text-align:right;">
+3657
+</td>
+<td style="text-align:right;">
+3754
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 28
+</td>
+<td style="text-align:right;">
+3758
+</td>
+<td style="text-align:right;">
+3847
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 29
+</td>
+<td style="text-align:right;">
+3848
+</td>
+<td style="text-align:right;">
+3934
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 30
+</td>
+<td style="text-align:right;">
+3935
+</td>
+<td style="text-align:right;">
+4025
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibrinogen C-terminal
+</td>
+<td style="text-align:right;">
+4021
+</td>
+<td style="text-align:right;">
+4236
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00739
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

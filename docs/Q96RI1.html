@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: NR1H4</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,63 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Ligand-activated transcription factor. Receptor for bile acids (BAs) such as chenodeoxycholic acid (CDCA), lithocholic acid, deoxycholic acid (DCA) and allocholic acid (ACA). Plays a essential role in BA homeostasis through the regulation of genes involved in BA synthesis, conjugation and enterohepatic circulation. Also regulates lipid and glucose homeostasis and is involved innate immune response (PubMed:10334992, PubMed:10334993, PubMed:21383957, PubMed:22820415). The FXR-RXR heterodimer binds predominantly to farnesoid X receptor response elements (FXREs) containing two inverted repeats of the consensus sequence 5’-AGGTCA-3’ in which the monomers are spaced by 1 nucleotide (IR-1) but also to tandem repeat DR1 sites with lower affinity, and can be activated by either FXR or RXR-specific ligands. It is proposed that monomeric nuclear receptors such as NR5A2/LRH-1 bound to coregulatory nuclear responsive element (NRE) halfsites located in close proximity to FXREs modulate transcriptional activity (By similarity). In the liver activates transcription of the corepressor NR0B2 thereby indirectly inhibiting CYP7A1 and CYP8B1 (involved in BA synthesis) implicating at least in part histone demethylase KDM1A resulting in epigenomic repression, and SLC10A1/NTCP (involved in hepatic uptake of conjugated BAs). Activates transcription of the repressor MAFG (involved in regulation of BA synthesis) (By similarity). Activates transcription of SLC27A5/BACS and BAAT (involved in BA conjugation), ABCB11/BSEP (involved in bile salt export) by directly recruiting histone methyltransferase CARM1, and ABCC2/MRP2 (involved in secretion of conjugated BAs) and ABCB4 (involved in secretion of phosphatidylcholine in the small intestine) (PubMed:12754200, PubMed:15471871, PubMed:17895379). Activates transcription of SLC27A5/BACS and BAAT (involved in BA conjugation), ABCB11/BSEP (involved in bile salt export) by directly recruiting histone methyltransferase CARM1, and ABCC2/MRP2 (involved in secretion of conjugated BAs) and ABCB4 (involved in secretion of phosphatidylcholine in the small intestine) (PubMed:10514450, PubMed:15239098, PubMed:16269519). In the intestine activates FGF19 expression and secretion leading to hepatic CYP7A1 repression (PubMed:12815072, PubMed:19085950). The function also involves the coordinated induction of hepatic KLB/beta-klotho expression (By similarity). Regulates transcription of liver UGT2B4 and SULT2A1 involved in BA detoxification; binding to the UGT2B4 promoter seems to imply a monomeric transactivation independent of RXRA (PubMed:12806625, PubMed:16946559). Modulates lipid homeostasis by activating liver NR0B2/SHP-mediated repression of SREBF1 (involved in de novo lipogenesis), expression of PLTP (involved in HDL formation), SCARB1 (involved in HDL hepatic uptake), APOE, APOC1, APOC4, PPARA (involved in beta-oxidation of fatty acids), VLDLR and SDC1 (involved in the hepatic uptake of LDL and IDL remnants), and inhibiting expression of MTTP (involved in VLDL assembly (PubMed:12660231, PubMed:12554753, PubMed:15337761). Increases expression of APOC2 (promoting lipoprotein lipase activity implicated in triglyceride clearance) (PubMed:11579204). Transrepresses APOA1 involving a monomeric competition with NR2A1 for binding to a DR1 element (PubMed:11927623, PubMed:21804189). Also reduces triglyceride clearance by inhibiting expression of ANGPTL3 and APOC3 (both involved in inhibition of lipoprotein lipase) (PubMed:12891557). Involved in glucose homeostasis by modulating hepatic gluconeogenesis through activation of NR0B2/SHP-mediated repression of respective genes. Modulates glycogen synthesis (inducing phosphorylation of glycogen synthase kinase-3) (By similarity). Modulates glucose-stimulated insulin secretion and is involved in insulin resistance (PubMed:20447400). Involved in intestinal innate immunity. Plays a role in protecting the distal small intestine against bacterial overgrowth and preservation of the epithelial barrier (By similarity). Down-regulates inflammatory cytokine expression in several types of immune cells including macrophages and mononuclear cells (PubMed:21242261). Mediates trans-repression of TLR4-induced cytokine expression; the function seems to require its sumoylation and prevents N-CoR nuclear receptor corepressor clearance from target genes such as IL1B and NOS2 (PubMed:19864602). Involved in the TLR9-mediated protective mechanism in intestinal inflammation. Plays an anti-inflammatory role in liver inflammation; proposed to inhibit proinflammatory (but not antiapoptotic) NF-kappa-B signaling) (By similarity). {ECO:0000250|UniProtKB:Q60641, ECO:0000250|UniProtKB:Q62735, ECO:0000269|PubMed:10334992, ECO:0000269|PubMed:10334993, ECO:0000269|PubMed:10514450, ECO:0000269|PubMed:11579204, ECO:0000269|PubMed:11927623, ECO:0000269|PubMed:12554753, ECO:0000269|PubMed:12660231, ECO:0000269|PubMed:12718892, ECO:0000269|PubMed:12754200, ECO:0000269|PubMed:12806625, ECO:0000269|PubMed:12815072, ECO:0000269|PubMed:12891557, ECO:0000269|PubMed:14684751, ECO:0000269|PubMed:15239098, ECO:0000269|PubMed:15337761, ECO:0000269|PubMed:15471871, ECO:0000269|PubMed:16269519, ECO:0000269|PubMed:16946559, ECO:0000269|PubMed:17895379, ECO:0000269|PubMed:18621523, ECO:0000269|PubMed:19085950, ECO:0000269|PubMed:19410460, ECO:0000269|PubMed:19586769, ECO:0000269|PubMed:19864602, ECO:0000269|PubMed:20447400, ECO:0000269|PubMed:21242261, ECO:0000269|PubMed:21804189, ECO:0000269|PubMed:23928191, ECO:0000305|PubMed:21383957, ECO:0000305|PubMed:22820415}.; FUNCTION: [Isoform 1]: Promotes transcriptional activation of target genes NR0B2/SHP (inducible by unconjugated CDCA), SLC51B/OSTB (inducible by unconjugated CDCA and DCA) and FABP6/IBAP; low activity for ABCB11/BSEP (inducible by unconjugated CDCA, DCA and ACA); not inducible by taurine- and glycine-amidated CDCA. {ECO:0000269|PubMed:23928191}.; FUNCTION: [Isoform 2]: Promotes transcriptional activation of target genes ABCB11/BSEP (inducible by unconjugated CDCA, DCA and ACA), NR0B2/SHP (inducible by unconjugated CDCA DCA and ACA), SLC51B/OSTB (inducible by unconjugated CDCA and DCA) and FABP6/IBAP; not inducible by taurine- and glycine-amidated CDCA. {ECO:0000269|PubMed:23928191}.; FUNCTION: [Isoform 3]: Promotes transcriptional activation of target genes NR0B2/SHP (inducible by unconjugated CDCA), SLC51B/OSTB (inducible by unconjugated CDCA and DCA) and IBAP; low activity for ABCB11/BSEP (inducible by unconjugated CDCA, DCA and ACA); not inducible by taurine- and glycine-amidated CDCA. {ECO:0000269|PubMed:23928191}.; FUNCTION: [Isoform 4]: Promotes transcriptional activation of target genes ABCB11/BSEP (inducible by unconjugated CDCA, ACA and DCA), NR0B2/SHP (inducible by unconjugated CDCA, ACA and DCA), SLC51B/OSTB (inducible by unconjugated CDCA and DCA) and FABP6/IBAP; most efficient isoform compared to isoforms 1 to 3; not inducible by taurine- and glycine-amidated CDCA. {ECO:0000269|PubMed:23928191, ECO:0000269|PubMed:26888176}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Acetylation;Activator;Alternative promoter usage;Alternative splicing;DNA-binding;Disease variant;Immunity;Inflammatory response;Innate immunity;Intrahepatic cholestasis;Isopeptide bond;Metal-binding;Methylation;Nucleus;Phosphoprotein;Receptor;Reference proteome;Repressor;Transcription;Transcription regulation;Ubl conjugation;Zinc;Zinc-finger</p>
+<p>3D-structure; Acetylation; Activator; Alternative promoter usage; Alternative splicing; DNA-binding; Disease variant; Immunity; Inflammatory response; Innate immunity; Intrahepatic cholestasis; Isopeptide bond; Metal-binding; Methylation; Nucleus; Phosphoprotein; Receptor; Reference proteome; Repressor; Transcription; Transcription regulation; Ubl conjugation; Zinc; Zinc-finger</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q96RI1" class="uri">https://www.uniprot.org/uniprot/Q96RI1</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-2ba95486478c0191de49" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2ba95486478c0191de49">{"x":{"data":[{"x":[1,1,486,486,1],"y":[0,1,1,0,0],"text":"Positions: 1-486 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[262,262,486,486,262],"y":[0,1,1,0,0],"text":"Positions: 262-486 - domain NR LBD","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"NR LBD","legendgroup":"NR LBD","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-23.25,510.25],"tickmode":"array","ticktext":["1","100","200","300","400","486"],"tickvals":[1,100,200,300,400,486],"categoryorder":"array","categoryarray":["1","100","200","300","400","486"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef2d10f8e62d":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef2d6ac6773f":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef2d10f8e62d","visdat":{"ef2d10f8e62d":["function (y) ","x"],"ef2d6ac6773f":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+NR LBD
+</td>
+<td style="text-align:right;">
+262
+</td>
+<td style="text-align:right;">
+486
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU01189
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

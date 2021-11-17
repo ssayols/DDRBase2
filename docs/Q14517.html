@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: FAT1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,15 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-  <script src="site_libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
-  <script src="site_libs/plotly-binding-4.9.2.1/plotly.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
   <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-  <link href="site_libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-  <script src="site_libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2103,14 +2109,623 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: [Protocadherin Fat 1]: Plays an essential role for cellular polarization, directed cell migration and modulating cell-cell contact. {ECO:0000250}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>Calcium;Cell adhesion;Cell membrane;Disulfide bond;EGF-like domain;Glycoprotein;Membrane;Nucleus;Reference proteome;Repeat;Signal;Transmembrane;Transmembrane helix</p>
+<p>Calcium; Cell adhesion; Cell membrane; Disulfide bond; EGF-like domain; Glycoprotein; Membrane; Nucleus; Reference proteome; Repeat; Signal; Transmembrane; Transmembrane helix</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q14517" class="uri">https://www.uniprot.org/uniprot/Q14517</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-37e06ff7c742537d966f" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-37e06ff7c742537d966f">{"x":{"data":[{"x":[1,1,4588,4588,1],"y":[0,1,1,0,0],"text":"Positions: 1-4588 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[35,35,149,149,35],"y":[0,1,1,0,0],"text":"Positions: 35-149 - domain Cadherin 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Cadherin 1","legendgroup":"Cadherin 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1140,1140,1245,1245,1140],"y":[0,1,1,0,0],"text":"Positions: 1140-1245 - domain Cadherin 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(41,15,19,1)","hoveron":"fills","name":"Cadherin 10","legendgroup":"Cadherin 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1246,1246,1357,1357,1246],"y":[0,1,1,0,0],"text":"Positions: 1246-1357 - domain Cadherin 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(82,30,39,1)","hoveron":"fills","name":"Cadherin 11","legendgroup":"Cadherin 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1359,1359,1456,1456,1359],"y":[0,1,1,0,0],"text":"Positions: 1359-1456 - domain Cadherin 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(123,45,59,1)","hoveron":"fills","name":"Cadherin 12","legendgroup":"Cadherin 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1457,1457,1562,1562,1457],"y":[0,1,1,0,0],"text":"Positions: 1457-1562 - domain Cadherin 13","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(164,61,78,1)","hoveron":"fills","name":"Cadherin 13","legendgroup":"Cadherin 13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1563,1563,1667,1667,1563],"y":[0,1,1,0,0],"text":"Positions: 1563-1667 - domain Cadherin 14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(205,76,98,1)","hoveron":"fills","name":"Cadherin 14","legendgroup":"Cadherin 14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1668,1668,1765,1765,1668],"y":[0,1,1,0,0],"text":"Positions: 1668-1765 - domain Cadherin 15","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(209,96,104,1)","hoveron":"fills","name":"Cadherin 15","legendgroup":"Cadherin 15","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1766,1766,1879,1879,1766],"y":[0,1,1,0,0],"text":"Positions: 1766-1879 - domain Cadherin 16","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(186,119,98,1)","hoveron":"fills","name":"Cadherin 16","legendgroup":"Cadherin 16","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1880,1880,1979,1979,1880],"y":[0,1,1,0,0],"text":"Positions: 1880-1979 - domain Cadherin 17","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(163,142,93,1)","hoveron":"fills","name":"Cadherin 17","legendgroup":"Cadherin 17","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1980,1980,2081,2081,1980],"y":[0,1,1,0,0],"text":"Positions: 1980-2081 - domain Cadherin 18","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(140,165,88,1)","hoveron":"fills","name":"Cadherin 18","legendgroup":"Cadherin 18","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2082,2082,2182,2182,2082],"y":[0,1,1,0,0],"text":"Positions: 2082-2182 - domain Cadherin 19","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(116,188,83,1)","hoveron":"fills","name":"Cadherin 19","legendgroup":"Cadherin 19","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[150,150,257,257,150],"y":[0,1,1,0,0],"text":"Positions: 150-257 - domain Cadherin 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(95,206,82,1)","hoveron":"fills","name":"Cadherin 2","legendgroup":"Cadherin 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2183,2183,2283,2283,2183],"y":[0,1,1,0,0],"text":"Positions: 2183-2283 - domain Cadherin 20","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(83,196,110,1)","hoveron":"fills","name":"Cadherin 20","legendgroup":"Cadherin 20","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2284,2284,2390,2390,2284],"y":[0,1,1,0,0],"text":"Positions: 2284-2390 - domain Cadherin 21","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(72,185,138,1)","hoveron":"fills","name":"Cadherin 21","legendgroup":"Cadherin 21","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2391,2391,2492,2492,2391],"y":[0,1,1,0,0],"text":"Positions: 2391-2492 - domain Cadherin 22","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(60,175,166,1)","hoveron":"fills","name":"Cadherin 22","legendgroup":"Cadherin 22","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2493,2493,2596,2596,2493],"y":[0,1,1,0,0],"text":"Positions: 2493-2596 - domain Cadherin 23","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(48,164,194,1)","hoveron":"fills","name":"Cadherin 23","legendgroup":"Cadherin 23","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2597,2597,2703,2703,2597],"y":[0,1,1,0,0],"text":"Positions: 2597-2703 - domain Cadherin 24","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,154,222,1)","hoveron":"fills","name":"Cadherin 24","legendgroup":"Cadherin 24","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2704,2704,2809,2809,2704],"y":[0,1,1,0,0],"text":"Positions: 2704-2809 - domain Cadherin 25","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,160,229,1)","hoveron":"fills","name":"Cadherin 25","legendgroup":"Cadherin 25","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2810,2810,2918,2918,2810],"y":[0,1,1,0,0],"text":"Positions: 2810-2918 - domain Cadherin 26","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(35,174,229,1)","hoveron":"fills","name":"Cadherin 26","legendgroup":"Cadherin 26","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2919,2919,3023,3023,2919],"y":[0,1,1,0,0],"text":"Positions: 2919-3023 - domain Cadherin 27","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"Cadherin 27","legendgroup":"Cadherin 27","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3024,3024,3125,3125,3024],"y":[0,1,1,0,0],"text":"Positions: 3024-3125 - domain Cadherin 28","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(38,202,229,1)","hoveron":"fills","name":"Cadherin 28","legendgroup":"Cadherin 28","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3126,3126,3230,3230,3126],"y":[0,1,1,0,0],"text":"Positions: 3126-3230 - domain Cadherin 29","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(39,216,229,1)","hoveron":"fills","name":"Cadherin 29","legendgroup":"Cadherin 29","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[368,368,463,463,368],"y":[0,1,1,0,0],"text":"Positions: 368-463 - domain Cadherin 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(48,214,226,1)","hoveron":"fills","name":"Cadherin 3","legendgroup":"Cadherin 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3231,3231,3335,3335,3231],"y":[0,1,1,0,0],"text":"Positions: 3231-3335 - domain Cadherin 30","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(79,175,219,1)","hoveron":"fills","name":"Cadherin 30","legendgroup":"Cadherin 30","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3336,3336,3440,3440,3336],"y":[0,1,1,0,0],"text":"Positions: 3336-3440 - domain Cadherin 31","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(109,135,211,1)","hoveron":"fills","name":"Cadherin 31","legendgroup":"Cadherin 31","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3441,3441,3545,3545,3441],"y":[0,1,1,0,0],"text":"Positions: 3441-3545 - domain Cadherin 32","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(139,95,204,1)","hoveron":"fills","name":"Cadherin 32","legendgroup":"Cadherin 32","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3546,3546,3647,3647,3546],"y":[0,1,1,0,0],"text":"Positions: 3546-3647 - domain Cadherin 33","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(170,56,196,1)","hoveron":"fills","name":"Cadherin 33","legendgroup":"Cadherin 33","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[464,464,569,569,464],"y":[0,1,1,0,0],"text":"Positions: 464-569 - domain Cadherin 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(200,16,189,1)","hoveron":"fills","name":"Cadherin 4","legendgroup":"Cadherin 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[570,570,673,673,570],"y":[0,1,1,0,0],"text":"Positions: 570-673 - domain Cadherin 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(211,40,160,1)","hoveron":"fills","name":"Cadherin 5","legendgroup":"Cadherin 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[718,718,822,822,718],"y":[0,1,1,0,0],"text":"Positions: 718-822 - domain Cadherin 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(218,75,129,1)","hoveron":"fills","name":"Cadherin 6","legendgroup":"Cadherin 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[823,823,927,927,823],"y":[0,1,1,0,0],"text":"Positions: 823-927 - domain Cadherin 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(226,109,97,1)","hoveron":"fills","name":"Cadherin 7","legendgroup":"Cadherin 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[928,928,1034,1034,928],"y":[0,1,1,0,0],"text":"Positions: 928-1034 - domain Cadherin 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(233,144,65,1)","hoveron":"fills","name":"Cadherin 8","legendgroup":"Cadherin 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1035,1035,1139,1139,1035],"y":[0,1,1,0,0],"text":"Positions: 1035-1139 - domain Cadherin 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(240,179,34,1)","hoveron":"fills","name":"Cadherin 9","legendgroup":"Cadherin 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3790,3790,3827,3827,3790],"y":[0,1,1,0,0],"text":"Positions: 3790-3827 - domain EGF-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(238,195,27,1)","hoveron":"fills","name":"EGF-like 1","legendgroup":"EGF-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4013,4013,4050,4050,4013],"y":[0,1,1,0,0],"text":"Positions: 4013-4050 - domain EGF-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(222,188,53,1)","hoveron":"fills","name":"EGF-like 2","legendgroup":"EGF-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4052,4052,4088,4088,4052],"y":[0,1,1,0,0],"text":"Positions: 4052-4088 - domain EGF-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(206,180,79,1)","hoveron":"fills","name":"EGF-like 3","legendgroup":"EGF-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4089,4089,4125,4125,4089],"y":[0,1,1,0,0],"text":"Positions: 4089-4125 - domain EGF-like 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(190,173,105,1)","hoveron":"fills","name":"EGF-like 4","legendgroup":"EGF-like 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4127,4127,4163,4163,4127],"y":[0,1,1,0,0],"text":"Positions: 4127-4163 - domain EGF-like 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(174,165,131,1)","hoveron":"fills","name":"EGF-like 5","legendgroup":"EGF-like 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3829,3829,4009,4009,3829],"y":[0,1,1,0,0],"text":"Positions: 3829-4009 - domain Laminin G-like","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"Laminin G-like","legendgroup":"Laminin G-like","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[152,152,152,152,152],"y":[-0.1,1.1,1.1,-0.1,-0.1],"text":"Positions: 152-152 - phospho ","type":"scatter","mode":"lines","line":{"width":3.77952755905512,"color":"rgba(255,0,0,0.6667)","dash":"solid"},"fill":"toself","fillcolor":"transparent","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4272,4272,4272,4272,4272],"y":[-0.1,1.1,1.1,-0.1,-0.1],"text":"Positions: 4272-4272 - phospho ","type":"scatter","mode":"lines","line":{"width":3.77952755905512,"color":"rgba(255,0,0,0.6667)","dash":"solid"},"fill":"toself","fillcolor":"transparent","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-228.35,4817.35],"tickmode":"array","ticktext":["1","1000","2000","3000","4000","4588"],"tickvals":[1.00000000000003,1000,2000,3000,4000,4588],"categoryorder":"array","categoryarray":["1","1000","2000","3000","4000","4588"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef4eca0d3f9":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef4e52c0bbfb":{"text":{},"xmin":{},"xmax":{},"fill":{}},"ef4e7914e8ff":{"text":{},"xmin":{},"xmax":{}}},"cur_data":"ef4eca0d3f9","visdat":{"ef4eca0d3f9":["function (y) ","x"],"ef4e52c0bbfb":["function (y) ","x"],"ef4e7914e8ff":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Cadherin 1
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+149
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 2
+</td>
+<td style="text-align:right;">
+150
+</td>
+<td style="text-align:right;">
+257
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 3
+</td>
+<td style="text-align:right;">
+368
+</td>
+<td style="text-align:right;">
+463
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 4
+</td>
+<td style="text-align:right;">
+464
+</td>
+<td style="text-align:right;">
+569
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 5
+</td>
+<td style="text-align:right;">
+570
+</td>
+<td style="text-align:right;">
+673
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 6
+</td>
+<td style="text-align:right;">
+718
+</td>
+<td style="text-align:right;">
+822
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 7
+</td>
+<td style="text-align:right;">
+823
+</td>
+<td style="text-align:right;">
+927
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 8
+</td>
+<td style="text-align:right;">
+928
+</td>
+<td style="text-align:right;">
+1034
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 9
+</td>
+<td style="text-align:right;">
+1035
+</td>
+<td style="text-align:right;">
+1139
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 10
+</td>
+<td style="text-align:right;">
+1140
+</td>
+<td style="text-align:right;">
+1245
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 11
+</td>
+<td style="text-align:right;">
+1246
+</td>
+<td style="text-align:right;">
+1357
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 12
+</td>
+<td style="text-align:right;">
+1359
+</td>
+<td style="text-align:right;">
+1456
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 13
+</td>
+<td style="text-align:right;">
+1457
+</td>
+<td style="text-align:right;">
+1562
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 14
+</td>
+<td style="text-align:right;">
+1563
+</td>
+<td style="text-align:right;">
+1667
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 15
+</td>
+<td style="text-align:right;">
+1668
+</td>
+<td style="text-align:right;">
+1765
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 16
+</td>
+<td style="text-align:right;">
+1766
+</td>
+<td style="text-align:right;">
+1879
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 17
+</td>
+<td style="text-align:right;">
+1880
+</td>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 18
+</td>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:right;">
+2081
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 19
+</td>
+<td style="text-align:right;">
+2082
+</td>
+<td style="text-align:right;">
+2182
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 20
+</td>
+<td style="text-align:right;">
+2183
+</td>
+<td style="text-align:right;">
+2283
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 21
+</td>
+<td style="text-align:right;">
+2284
+</td>
+<td style="text-align:right;">
+2390
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 22
+</td>
+<td style="text-align:right;">
+2391
+</td>
+<td style="text-align:right;">
+2492
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 23
+</td>
+<td style="text-align:right;">
+2493
+</td>
+<td style="text-align:right;">
+2596
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 24
+</td>
+<td style="text-align:right;">
+2597
+</td>
+<td style="text-align:right;">
+2703
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 25
+</td>
+<td style="text-align:right;">
+2704
+</td>
+<td style="text-align:right;">
+2809
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 26
+</td>
+<td style="text-align:right;">
+2810
+</td>
+<td style="text-align:right;">
+2918
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 27
+</td>
+<td style="text-align:right;">
+2919
+</td>
+<td style="text-align:right;">
+3023
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 28
+</td>
+<td style="text-align:right;">
+3024
+</td>
+<td style="text-align:right;">
+3125
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 29
+</td>
+<td style="text-align:right;">
+3126
+</td>
+<td style="text-align:right;">
+3230
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 30
+</td>
+<td style="text-align:right;">
+3231
+</td>
+<td style="text-align:right;">
+3335
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 31
+</td>
+<td style="text-align:right;">
+3336
+</td>
+<td style="text-align:right;">
+3440
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 32
+</td>
+<td style="text-align:right;">
+3441
+</td>
+<td style="text-align:right;">
+3545
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cadherin 33
+</td>
+<td style="text-align:right;">
+3546
+</td>
+<td style="text-align:right;">
+3647
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 1
+</td>
+<td style="text-align:right;">
+3790
+</td>
+<td style="text-align:right;">
+3827
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin G-like
+</td>
+<td style="text-align:right;">
+3829
+</td>
+<td style="text-align:right;">
+4009
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00122
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 2
+</td>
+<td style="text-align:right;">
+4013
+</td>
+<td style="text-align:right;">
+4050
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 3
+</td>
+<td style="text-align:right;">
+4052
+</td>
+<td style="text-align:right;">
+4088
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 4
+</td>
+<td style="text-align:right;">
+4089
+</td>
+<td style="text-align:right;">
+4125
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 5
+</td>
+<td style="text-align:right;">
+4127
+</td>
+<td style="text-align:right;">
+4163
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:right;">
+position
+</th>
+<th style="text-align:left;">
+sequence window
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+152
+</td>
+<td style="text-align:left;">
+VQVLDTNDLRPLFSPTSYSVSLPENTAIRTS
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4272
+</td>
+<td style="text-align:left;">
+TPSIPSDSRNNLDRNSFEGSAIPEHPEFSTF
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-88cb4749a427bd8502e8" style="width:624px;height:384px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-88cb4749a427bd8502e8">{"x":{"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11],"y":[1,2],"z":[[0.690909090909091,0.690909090909091,0.309090909090909,0.490909090909091,0.345454545454545,0.0727272727272727,0.345454545454545,0.454545454545455,0.272727272727273,0.381818181818182,0],[0.763636363636364,0.8,1,0.636363636363636,0.6,0.4,0.818181818181818,0.690909090909091,0.909090909090909,0.636363636363636,0.927272727272727]],"text":[["treatment: Aphidicoline<br />position: 152<br />log2FC:  0.06","treatment: Camptothecin<br />position: 152<br />log2FC:  0.06","treatment: Etoposide<br />position: 152<br />log2FC: -0.15","treatment: Formaldehyd<br />position: 152<br />log2FC: -0.05","treatment: Gemcitabine<br />position: 152<br />log2FC: -0.13","treatment: Hydrogen peroxide<br />position: 152<br />log2FC: -0.28","treatment: Hydroxyurea<br />position: 152<br />log2FC: -0.13","treatment: Methyl methanesulfonate<br />position: 152<br />log2FC: -0.07","treatment: Sodium Arsentie (NaAsO2)<br />position: 152<br />log2FC: -0.17","treatment: UV-C<br />position: 152<br />log2FC: -0.11","treatment: X-ray<br />position: 152<br />log2FC: -0.32"],["treatment: Aphidicoline<br />position: 40;4272;4274<br />log2FC:  0.10","treatment: Camptothecin<br />position: 40;4272;4274<br />log2FC:  0.12","treatment: Etoposide<br />position: 40;4272;4274<br />log2FC:  0.23","treatment: Formaldehyd<br />position: 40;4272;4274<br />log2FC:  0.03","treatment: Gemcitabine<br />position: 40;4272;4274<br />log2FC:  0.01","treatment: Hydrogen peroxide<br />position: 40;4272;4274<br />log2FC: -0.10","treatment: Hydroxyurea<br />position: 40;4272;4274<br />log2FC:  0.13","treatment: Methyl methanesulfonate<br />position: 40;4272;4274<br />log2FC:  0.06","treatment: Sodium Arsentie (NaAsO2)<br />position: 40;4272;4274<br />log2FC:  0.18","treatment: UV-C<br />position: 40;4272;4274<br />log2FC:  0.03","treatment: X-ray<br />position: 40;4272;4274<br />log2FC:  0.19"]],"colorscale":[[0,"#832424"],[0.0727272727272727,"#96413B"],[0.272727272727273,"#C48983"],[0.309090909090909,"#CC9790"],[0.345454545454545,"#D3A49E"],[0.381818181818182,"#DAB2AD"],[0.4,"#DEB9B4"],[0.454545454545455,"#E8CDCA"],[0.490909090909091,"#EFDBD9"],[0.6,"#F9F8FC"],[0.636363636363636,"#EDEBF5"],[0.690909090909091,"#DCD7EC"],[0.763636363636364,"#C4BDDF"],[0.8,"#B8B0D9"],[0.818181818181818,"#B2AAD5"],[0.909090909090909,"#958BC5"],[0.927272727272727,"#8F84C2"],[1,"#776DB5"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1],"name":"99_d647684634507e656d5930ad7458f9af","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#832424"],[0.00334448160535113,"#842525"],[0.00668896321070236,"#852726"],[0.0100334448160535,"#862827"],[0.0133779264214047,"#862A28"],[0.0167224080267558,"#872B29"],[0.0200668896321071,"#882C2A"],[0.0234113712374582,"#892E2B"],[0.0267558528428093,"#8A2F2C"],[0.0301003344481606,"#8B302D"],[0.0334448160535117,"#8C322F"],[0.0367892976588629,"#8D3330"],[0.040133779264214,"#8D3431"],[0.0434782608695653,"#8E3632"],[0.0468227424749164,"#8F3733"],[0.0501672240802675,"#903834"],[0.0535117056856187,"#913935"],[0.0568561872909699,"#923B36"],[0.0602006688963211,"#923C37"],[0.0635451505016722,"#933D38"],[0.0668896321070235,"#943E39"],[0.0702341137123746,"#95403B"],[0.0735785953177257,"#96413C"],[0.0769230769230769,"#97423D"],[0.0802675585284281,"#97433E"],[0.0836120401337793,"#98453F"],[0.0869565217391304,"#994640"],[0.0903010033444817,"#9A4741"],[0.0936454849498328,"#9B4842"],[0.0969899665551839,"#9C4944"],[0.100334448160535,"#9C4B45"],[0.103678929765886,"#9D4C46"],[0.107023411371237,"#9E4D47"],[0.110367892976589,"#9F4E48"],[0.11371237458194,"#A05049"],[0.117056856187291,"#A0514A"],[0.120401337792642,"#A1524C"],[0.123745819397993,"#A2534D"],[0.127090301003344,"#A3544E"],[0.130434782608696,"#A4564F"],[0.133779264214047,"#A45750"],[0.137123745819398,"#A55851"],[0.140468227424749,"#A65952"],[0.1438127090301,"#A75A54"],[0.147157190635452,"#A85C55"],[0.150501672240803,"#A85D56"],[0.153846153846154,"#A95E57"],[0.157190635451505,"#AA5F58"],[0.160535117056856,"#AB615A"],[0.163879598662207,"#AB625B"],[0.167224080267559,"#AC635C"],[0.17056856187291,"#AD645D"],[0.173913043478261,"#AE655E"],[0.177257525083612,"#AF675F"],[0.180602006688963,"#AF6861"],[0.183946488294314,"#B06962"],[0.187290969899666,"#B16A63"],[0.190635451505017,"#B26B64"],[0.193979933110368,"#B26D65"],[0.197324414715719,"#B36E67"],[0.20066889632107,"#B46F68"],[0.204013377926421,"#B57069"],[0.207357859531773,"#B5716A"],[0.210702341137124,"#B6736C"],[0.214046822742475,"#B7746D"],[0.217391304347826,"#B8756E"],[0.220735785953177,"#B8766F"],[0.224080267558528,"#B97870"],[0.22742474916388,"#BA7972"],[0.230769230769231,"#BB7A73"],[0.234113712374582,"#BB7B74"],[0.237458193979933,"#BC7C75"],[0.240802675585284,"#BD7E77"],[0.244147157190635,"#BE7F78"],[0.247491638795987,"#BE8079"],[0.250836120401338,"#BF817A"],[0.254180602006689,"#C0837C"],[0.25752508361204,"#C1847D"],[0.260869565217391,"#C1857E"],[0.264214046822742,"#C2867F"],[0.267558528428094,"#C38781"],[0.270903010033445,"#C38982"],[0.274247491638796,"#C48A83"],[0.277591973244147,"#C58B84"],[0.280936454849498,"#C68C86"],[0.284280936454849,"#C68E87"],[0.287625418060201,"#C78F88"],[0.290969899665552,"#C89089"],[0.294314381270903,"#C8918B"],[0.297658862876254,"#C9938C"],[0.301003344481605,"#CA948D"],[0.304347826086956,"#CB958F"],[0.307692307692308,"#CB9690"],[0.311036789297659,"#CC9791"],[0.31438127090301,"#CD9992"],[0.317725752508361,"#CD9A94"],[0.321070234113712,"#CE9B95"],[0.324414715719064,"#CF9C96"],[0.327759197324415,"#CF9E98"],[0.331103678929766,"#D09F99"],[0.334448160535117,"#D1A09A"],[0.337792642140468,"#D2A19B"],[0.341137123745819,"#D2A39D"],[0.344481605351171,"#D3A49E"],[0.347826086956522,"#D4A59F"],[0.351170568561873,"#D4A6A1"],[0.354515050167224,"#D5A8A2"],[0.357859531772575,"#D6A9A3"],[0.361204013377926,"#D6AAA5"],[0.364548494983278,"#D7ABA6"],[0.367892976588629,"#D8ADA7"],[0.37123745819398,"#D8AEA9"],[0.374581939799331,"#D9AFAA"],[0.377926421404682,"#DAB0AB"],[0.381270903010033,"#DAB2AD"],[0.384615384615385,"#DBB3AE"],[0.387959866220736,"#DCB4AF"],[0.391304347826087,"#DCB5B0"],[0.394648829431438,"#DDB7B2"],[0.397993311036789,"#DEB8B3"],[0.40133779264214,"#DEB9B4"],[0.404682274247492,"#DFBAB6"],[0.408026755852843,"#E0BCB7"],[0.411371237458194,"#E0BDB9"],[0.414715719063545,"#E1BEBA"],[0.418060200668896,"#E1C0BB"],[0.421404682274247,"#E2C1BD"],[0.424749163879599,"#E3C2BE"],[0.42809364548495,"#E3C3BF"],[0.431438127090301,"#E4C5C1"],[0.434782608695652,"#E5C6C2"],[0.438127090301003,"#E5C7C3"],[0.441471571906354,"#E6C8C5"],[0.444816053511706,"#E7CAC6"],[0.448160535117057,"#E7CBC7"],[0.451505016722408,"#E8CCC9"],[0.454849498327759,"#E8CECA"],[0.45819397993311,"#E9CFCB"],[0.461538461538462,"#EAD0CD"],[0.464882943143813,"#EAD1CE"],[0.468227424749164,"#EBD3D0"],[0.471571906354515,"#ECD4D1"],[0.474916387959866,"#ECD5D2"],[0.478260869565217,"#EDD7D4"],[0.481605351170569,"#EDD8D5"],[0.48494983277592,"#EED9D6"],[0.488294314381271,"#EFDAD8"],[0.491638795986622,"#EFDCD9"],[0.494983277591973,"#F0DDDB"],[0.498327759197324,"#F0DEDC"],[0.501672240802676,"#F1E0DD"],[0.505016722408027,"#F2E1DF"],[0.508361204013378,"#F2E2E0"],[0.511705685618729,"#F3E4E1"],[0.51505016722408,"#F3E5E3"],[0.518394648829431,"#F4E6E4"],[0.521739130434783,"#F5E7E6"],[0.525083612040134,"#F5E9E7"],[0.528428093645485,"#F6EAE8"],[0.531772575250836,"#F6EBEA"],[0.535117056856187,"#F7EDEB"],[0.538461538461539,"#F8EEED"],[0.54180602006689,"#F8EFEE"],[0.545150501672241,"#F9F1EF"],[0.548494983277592,"#F9F2F1"],[0.551839464882943,"#FAF3F2"],[0.555183946488294,"#FAF5F4"],[0.558528428093645,"#FBF6F5"],[0.561872909698997,"#FCF7F7"],[0.565217391304348,"#FCF8F8"],[0.568561872909699,"#FDFAF9"],[0.57190635451505,"#FDFBFB"],[0.575250836120401,"#FEFCFC"],[0.578595317725753,"#FEFEFE"],[0.581939799331104,"#FFFFFF"],[0.585284280936455,"#FEFEFE"],[0.588628762541806,"#FDFCFE"],[0.591973244147157,"#FCFBFD"],[0.595317725752508,"#FBFAFD"],[0.59866220735786,"#FAF9FC"],[0.602006688963211,"#F8F7FB"],[0.605351170568562,"#F7F6FB"],[0.608695652173913,"#F6F5FA"],[0.612040133779264,"#F5F4FA"],[0.615384615384615,"#F4F3F9"],[0.618729096989967,"#F3F1F9"],[0.622073578595318,"#F2F0F8"],[0.625418060200669,"#F1EFF7"],[0.62876254180602,"#F0EEF7"],[0.632107023411371,"#EFECF6"],[0.635451505016722,"#EEEBF6"],[0.638795986622074,"#ECEAF5"],[0.642140468227425,"#EBE9F4"],[0.645484949832776,"#EAE7F4"],[0.648829431438127,"#E9E6F3"],[0.652173913043478,"#E8E5F3"],[0.655518394648829,"#E7E4F2"],[0.658862876254181,"#E6E2F1"],[0.662207357859532,"#E5E1F1"],[0.665551839464883,"#E4E0F0"],[0.668896321070234,"#E3DFF0"],[0.672240802675585,"#E2DEEF"],[0.675585284280936,"#E1DCEF"],[0.678929765886288,"#DFDBEE"],[0.682274247491639,"#DEDAED"],[0.68561872909699,"#DDD9ED"],[0.688963210702341,"#DCD8EC"],[0.692307692307692,"#DBD6EC"],[0.695652173913044,"#DAD5EB"],[0.698996655518395,"#D9D4EA"],[0.702341137123746,"#D8D3EA"],[0.705685618729097,"#D7D1E9"],[0.709030100334448,"#D6D0E9"],[0.712374581939799,"#D5CFE8"],[0.71571906354515,"#D4CEE7"],[0.719063545150502,"#D3CDE7"],[0.722408026755853,"#D1CBE6"],[0.725752508361204,"#D0CAE6"],[0.729096989966555,"#CFC9E5"],[0.732441471571906,"#CEC8E4"],[0.735785953177258,"#CDC7E4"],[0.739130434782609,"#CCC5E3"],[0.74247491638796,"#CBC4E3"],[0.745819397993311,"#CAC3E2"],[0.749163879598662,"#C9C2E2"],[0.752508361204013,"#C8C1E1"],[0.755852842809365,"#C7C0E0"],[0.759197324414716,"#C6BEE0"],[0.762541806020067,"#C4BDDF"],[0.765886287625418,"#C3BCDF"],[0.769230769230769,"#C2BBDE"],[0.77257525083612,"#C1BADD"],[0.775919732441472,"#C0B8DD"],[0.779264214046823,"#BFB7DC"],[0.782608695652174,"#BEB6DC"],[0.785953177257525,"#BDB5DB"],[0.789297658862876,"#BCB4DA"],[0.792642140468227,"#BBB3DA"],[0.795986622073579,"#BAB1D9"],[0.79933110367893,"#B9B0D9"],[0.802675585284281,"#B8AFD8"],[0.806020066889632,"#B6AED7"],[0.809364548494983,"#B5ADD7"],[0.812709030100334,"#B4ACD6"],[0.816053511705686,"#B3AAD6"],[0.819397993311037,"#B2A9D5"],[0.822742474916388,"#B1A8D5"],[0.826086956521739,"#B0A7D4"],[0.82943143812709,"#AFA6D3"],[0.832775919732441,"#AEA5D3"],[0.836120401337793,"#ADA3D2"],[0.839464882943144,"#ACA2D2"],[0.842809364548495,"#ABA1D1"],[0.846153846153846,"#A9A0D0"],[0.849498327759197,"#A89FD0"],[0.852842809364549,"#A79ECF"],[0.8561872909699,"#A69CCF"],[0.859531772575251,"#A59BCE"],[0.862876254180602,"#A49ACD"],[0.866220735785953,"#A399CD"],[0.869565217391304,"#A298CC"],[0.872909698996655,"#A197CC"],[0.876254180602007,"#A096CB"],[0.879598662207358,"#9F94CA"],[0.882943143812709,"#9D93CA"],[0.88628762541806,"#9C92C9"],[0.889632107023411,"#9B91C9"],[0.892976588628763,"#9A90C8"],[0.896321070234114,"#998FC8"],[0.899665551839465,"#988EC7"],[0.903010033444816,"#978DC6"],[0.906354515050167,"#968BC6"],[0.909698996655518,"#958AC5"],[0.91304347826087,"#9489C5"],[0.916387959866221,"#9388C4"],[0.919732441471572,"#9187C3"],[0.923076923076923,"#9086C3"],[0.926421404682274,"#8F85C2"],[0.929765886287625,"#8E84C2"],[0.933110367892977,"#8D82C1"],[0.936454849498328,"#8C81C0"],[0.939799331103679,"#8B80C0"],[0.94314381270903,"#8A7FBF"],[0.946488294314381,"#897EBF"],[0.949832775919732,"#887DBE"],[0.953177257525084,"#867CBD"],[0.956521739130435,"#857BBD"],[0.959866220735786,"#847ABC"],[0.963210702341137,"#8379BC"],[0.966555183946488,"#8277BB"],[0.96989966555184,"#8176BA"],[0.973244147157191,"#8075BA"],[0.976588628762542,"#7F74B9"],[0.979933110367893,"#7E73B9"],[0.983277591973244,"#7C72B8"],[0.986622073578595,"#7B71B8"],[0.989966555183946,"#7A70B7"],[0.993311036789298,"#796FB6"],[0.996655518394649,"#786EB6"],[1,"#776DB5"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.04,"title":"log2 FC","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"tickmode":"array","ticktext":["-0.3","-0.2","-0.1","0.0","0.1","0.2"],"tickvals":[0.0363636363636363,0.218181818181818,0.4,0.581818181818182,0.763636363636364,0.945454545454545],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":27.8721461187215,"r":7.30593607305936,"b":155.799086757991,"l":81.0958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,11.6],"tickmode":"array","ticktext":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11],"categoryorder":"array","categoryarray":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,2.6],"tickmode":"array","ticktext":["152","40;4272;4274"],"tickvals":[1,2],"categoryorder":"array","categoryarray":["152","40;4272;4274"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"554340356a21":{"x":{},"y":{},"fill":{},"type":"heatmap"}},"cur_data":"554340356a21","visdat":{"554340356a21":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-232052c62ee90ce20b56" style="width:624px;height:432px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-232052c62ee90ce20b56">{"x":{"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11],"y":[1,2],"z":[[0.763636363636364,0.8,1,0.636363636363636,0.6,0.4,0.818181818181818,0.690909090909091,0.909090909090909,0.636363636363636,0.927272727272727],[0.690909090909091,0.690909090909091,0.309090909090909,0.490909090909091,0.345454545454545,0.0727272727272727,0.345454545454545,0.454545454545455,0.272727272727273,0.381818181818182,0]],"text":[["Treatment: Aphidicolin <br />Position: 4272 <br />log2FC: 0.1 <br />FDR: 0.4584638 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Camptothecin <br />Position: 4272 <br />log2FC: 0.12 <br />FDR: 0.2405752 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Etoposide <br />Position: 4272 <br />log2FC: 0.23 <br />FDR: 0.0071765 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Formaldehyd <br />Position: 4272 <br />log2FC: 0.03 <br />FDR: 0.7957414 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Gemcitabine <br />Position: 4272 <br />log2FC: 0.01 <br />FDR: 0.9603357 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Hydrogen peroxide <br />Position: 4272 <br />log2FC: -0.1 <br />FDR: 0.2244372 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Hydroxyurea <br />Position: 4272 <br />log2FC: 0.13 <br />FDR: 0.2132999 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Methyl methanesulfonate <br />Position: 4272 <br />log2FC: 0.06 <br />FDR: 0.5260804 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Sodium Arsenite <br />Position: 4272 <br />log2FC: 0.18 <br />FDR: 0.0167140 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: UV-C <br />Position: 4272 <br />log2FC: 0.03 <br />FDR: 0.9183519 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: X-ray <br />Position: 4272 <br />log2FC: 0.19 <br />FDR: 0.0294129 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR"],["Treatment: Aphidicolin <br />Position: 152 <br />log2FC: 0.06 <br />FDR: 0.8592441 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Camptothecin <br />Position: 152 <br />log2FC: 0.06 <br />FDR: 0.7922372 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Etoposide <br />Position: 152 <br />log2FC: -0.15 <br />FDR: 0.3054431 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Formaldehyd <br />Position: 152 <br />log2FC: -0.05 <br />FDR: 0.8008636 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Gemcitabine <br />Position: 152 <br />log2FC: -0.13 <br />FDR: 0.5173652 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Hydrogen peroxide <br />Position: 152 <br />log2FC: -0.28 <br />FDR: 0.0398103 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Hydroxyurea <br />Position: 152 <br />log2FC: -0.13 <br />FDR: 0.4556322 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Methyl methanesulfonate <br />Position: 152 <br />log2FC: -0.07 <br />FDR: 0.6681347 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Sodium Arsenite <br />Position: 152 <br />log2FC: -0.17 <br />FDR: 0.1166867 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: UV-C <br />Position: 152 <br />log2FC: -0.11 <br />FDR: 0.7141826 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: X-ray <br />Position: 152 <br />log2FC: -0.32 <br />FDR: 0.0284051 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR"]],"colorscale":[[0,"#DC3220"],[0.0727272727272727,"#E6533A"],[0.272727272727273,"#FA9A84"],[0.309090909090909,"#FDA691"],[0.345454545454545,"#FFB29F"],[0.381818181818182,"#FFBEAE"],[0.4,"#FFC4B5"],[0.454545454545455,"#FFD5CB"],[0.490909090909091,"#FFE1D9"],[0.6,"#F9F9FD"],[0.636363636363636,"#ECEEF8"],[0.690909090909091,"#DADDF2"],[0.763636363636364,"#C1C8E8"],[0.8,"#B4BDE4"],[0.818181818181818,"#AEB8E2"],[0.909090909090909,"#8E9ED6"],[0.927272727272727,"#8798D4"],[1,"#6B84CA"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11],"y":[2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1],"text":["","","","","","**","","","","","*","","","","","","","*","","","*","*"],"hovertext":["Treatment: Aphidicolin <br />Position: 152 <br />log2FC: 0.06 <br />FDR: 0.8592441 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Aphidicolin <br />Position: 4272 <br />log2FC: 0.1 <br />FDR: 0.4584638 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Camptothecin <br />Position: 152 <br />log2FC: 0.06 <br />FDR: 0.7922372 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Camptothecin <br />Position: 4272 <br />log2FC: 0.12 <br />FDR: 0.2405752 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Etoposide <br />Position: 152 <br />log2FC: -0.15 <br />FDR: 0.3054431 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Etoposide <br />Position: 4272 <br />log2FC: 0.23 <br />FDR: 0.0071765 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Formaldehyd <br />Position: 152 <br />log2FC: -0.05 <br />FDR: 0.8008636 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Formaldehyd <br />Position: 4272 <br />log2FC: 0.03 <br />FDR: 0.7957414 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Gemcitabine <br />Position: 152 <br />log2FC: -0.13 <br />FDR: 0.5173652 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Gemcitabine <br />Position: 4272 <br />log2FC: 0.01 <br />FDR: 0.9603357 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Hydrogen peroxide <br />Position: 152 <br />log2FC: -0.28 <br />FDR: 0.0398103 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Hydrogen peroxide <br />Position: 4272 <br />log2FC: -0.1 <br />FDR: 0.2244372 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Hydroxyurea <br />Position: 152 <br />log2FC: -0.13 <br />FDR: 0.4556322 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Hydroxyurea <br />Position: 4272 <br />log2FC: 0.13 <br />FDR: 0.2132999 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Methyl methanesulfonate <br />Position: 152 <br />log2FC: -0.07 <br />FDR: 0.6681347 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Methyl methanesulfonate <br />Position: 4272 <br />log2FC: 0.06 <br />FDR: 0.5260804 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: Sodium Arsenite <br />Position: 152 <br />log2FC: -0.17 <br />FDR: 0.1166867 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: Sodium Arsenite <br />Position: 4272 <br />log2FC: 0.18 <br />FDR: 0.0167140 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: UV-C <br />Position: 152 <br />log2FC: -0.11 <br />FDR: 0.7141826 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: UV-C <br />Position: 4272 <br />log2FC: 0.03 <br />FDR: 0.9183519 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR","Treatment: X-ray <br />Position: 152 <br />log2FC: -0.32 <br />FDR: 0.0284051 <br />Sequence window: VQVLDTNDLRPLFS(0.004)PT(0.995)S(0.001)YSVSLPENTAIR","Treatment: X-ray <br />Position: 4272 <br />log2FC: 0.19 <br />FDR: 0.0294129 <br />Sequence window: NNLDRNS(1)FEGSAIPEHPEFSTFNPESVHGHR"],"textfont":{"size":17.1421753925017,"color":"rgba(0,0,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1],"name":"99_a48e65e1bc38cf714a0e826979842931","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#DC3220"],[0.00334448160535113,"#DC3421"],[0.00668896321070236,"#DD3622"],[0.0100334448160535,"#DD3724"],[0.0133779264214047,"#DE3925"],[0.0167224080267558,"#DE3B26"],[0.0200668896321071,"#DF3C27"],[0.0234113712374582,"#DF3E29"],[0.0267558528428093,"#E03F2A"],[0.0301003344481606,"#E0412B"],[0.0334448160535117,"#E1422C"],[0.0367892976588629,"#E1442D"],[0.040133779264214,"#E2452F"],[0.0434782608695653,"#E24730"],[0.0468227424749164,"#E34831"],[0.0501672240802675,"#E34A32"],[0.0535117056856187,"#E34B33"],[0.0568561872909699,"#E44C35"],[0.0602006688963211,"#E44E36"],[0.0635451505016722,"#E54F37"],[0.0668896321070235,"#E55138"],[0.0702341137123746,"#E65239"],[0.0735785953177257,"#E6533B"],[0.0769230769230769,"#E7553C"],[0.0802675585284281,"#E7563D"],[0.0836120401337793,"#E7573E"],[0.0869565217391304,"#E8593F"],[0.0903010033444817,"#E85A41"],[0.0936454849498328,"#E95B42"],[0.0969899665551839,"#E95C43"],[0.100334448160535,"#E95E44"],[0.103678929765886,"#EA5F45"],[0.107023411371237,"#EA6047"],[0.110367892976589,"#EB6148"],[0.11371237458194,"#EB6349"],[0.117056856187291,"#EB644A"],[0.120401337792642,"#EC654B"],[0.123745819397993,"#EC664D"],[0.127090301003344,"#ED684E"],[0.130434782608696,"#ED694F"],[0.133779264214047,"#ED6A50"],[0.137123745819398,"#EE6B51"],[0.140468227424749,"#EE6C53"],[0.1438127090301,"#EE6E54"],[0.147157190635452,"#EF6F55"],[0.150501672240803,"#EF7056"],[0.153846153846154,"#F07157"],[0.157190635451505,"#F07259"],[0.160535117056856,"#F0735A"],[0.163879598662207,"#F1755B"],[0.167224080267559,"#F1765C"],[0.17056856187291,"#F1775E"],[0.173913043478261,"#F2785F"],[0.177257525083612,"#F27960"],[0.180602006688963,"#F27A61"],[0.183946488294314,"#F37C62"],[0.187290969899666,"#F37D64"],[0.190635451505017,"#F37E65"],[0.193979933110368,"#F47F66"],[0.197324414715719,"#F48067"],[0.20066889632107,"#F48169"],[0.204013377926421,"#F5836A"],[0.207357859531773,"#F5846B"],[0.210702341137124,"#F5856C"],[0.214046822742475,"#F6866E"],[0.217391304347826,"#F6876F"],[0.220735785953177,"#F68870"],[0.224080267558528,"#F68971"],[0.22742474916388,"#F78A72"],[0.230769230769231,"#F78C74"],[0.234113712374582,"#F78D75"],[0.237458193979933,"#F88E76"],[0.240802675585284,"#F88F77"],[0.244147157190635,"#F89079"],[0.247491638795987,"#F8917A"],[0.250836120401338,"#F9927B"],[0.254180602006689,"#F9937D"],[0.25752508361204,"#F9957E"],[0.260869565217391,"#F9967F"],[0.264214046822742,"#FA9780"],[0.267558528428094,"#FA9882"],[0.270903010033445,"#FA9983"],[0.274247491638796,"#FA9A84"],[0.277591973244147,"#FB9B85"],[0.280936454849498,"#FB9C87"],[0.284280936454849,"#FB9D88"],[0.287625418060201,"#FB9F89"],[0.290969899665552,"#FCA08A"],[0.294314381270903,"#FCA18C"],[0.297658862876254,"#FCA28D"],[0.301003344481605,"#FCA38E"],[0.304347826086956,"#FCA490"],[0.307692307692308,"#FDA591"],[0.311036789297659,"#FDA692"],[0.31438127090301,"#FDA793"],[0.317725752508361,"#FDA995"],[0.321070234113712,"#FDAA96"],[0.324414715719064,"#FEAB97"],[0.327759197324415,"#FEAC99"],[0.331103678929766,"#FEAD9A"],[0.334448160535117,"#FEAE9B"],[0.337792642140468,"#FEAF9C"],[0.341137123745819,"#FEB09E"],[0.344481605351171,"#FFB19F"],[0.347826086956522,"#FFB2A0"],[0.351170568561873,"#FFB4A2"],[0.354515050167224,"#FFB5A3"],[0.357859531772575,"#FFB6A4"],[0.361204013377926,"#FFB7A6"],[0.364548494983278,"#FFB8A7"],[0.367892976588629,"#FFB9A8"],[0.37123745819398,"#FFBAA9"],[0.374581939799331,"#FFBBAB"],[0.377926421404682,"#FFBCAC"],[0.381270903010033,"#FFBDAD"],[0.384615384615385,"#FFBEAF"],[0.387959866220736,"#FFC0B0"],[0.391304347826087,"#FFC1B1"],[0.394648829431438,"#FFC2B3"],[0.397993311036789,"#FFC3B4"],[0.40133779264214,"#FFC4B5"],[0.404682274247492,"#FFC5B7"],[0.408026755852843,"#FFC6B8"],[0.411371237458194,"#FFC7B9"],[0.414715719063545,"#FFC8BB"],[0.418060200668896,"#FFC9BC"],[0.421404682274247,"#FFCBBD"],[0.424749163879599,"#FFCCBF"],[0.42809364548495,"#FFCDC0"],[0.431438127090301,"#FFCEC1"],[0.434782608695652,"#FFCFC3"],[0.438127090301003,"#FFD0C4"],[0.441471571906354,"#FFD1C5"],[0.444816053511706,"#FFD2C7"],[0.448160535117057,"#FFD3C8"],[0.451505016722408,"#FFD4C9"],[0.454849498327759,"#FFD5CB"],[0.45819397993311,"#FFD7CC"],[0.461538461538462,"#FFD8CD"],[0.464882943143813,"#FFD9CF"],[0.468227424749164,"#FFDAD0"],[0.471571906354515,"#FFDBD2"],[0.474916387959866,"#FFDCD3"],[0.478260869565217,"#FFDDD4"],[0.481605351170569,"#FFDED6"],[0.48494983277592,"#FFDFD7"],[0.488294314381271,"#FFE0D8"],[0.491638795986622,"#FFE1DA"],[0.494983277591973,"#FFE3DB"],[0.498327759197324,"#FFE4DC"],[0.501672240802676,"#FFE5DE"],[0.505016722408027,"#FFE6DF"],[0.508361204013378,"#FFE7E1"],[0.511705685618729,"#FFE8E2"],[0.51505016722408,"#FFE9E3"],[0.518394648829431,"#FFEAE5"],[0.521739130434783,"#FFEBE6"],[0.525083612040134,"#FFECE7"],[0.528428093645485,"#FFEDE9"],[0.531772575250836,"#FFEFEA"],[0.535117056856187,"#FFF0EC"],[0.538461538461539,"#FFF1ED"],[0.54180602006689,"#FFF2EE"],[0.545150501672241,"#FFF3F0"],[0.548494983277592,"#FFF4F1"],[0.551839464882943,"#FFF5F2"],[0.555183946488294,"#FFF6F4"],[0.558528428093645,"#FFF7F5"],[0.561872909698997,"#FFF8F7"],[0.565217391304348,"#FFFAF8"],[0.568561872909699,"#FFFBF9"],[0.57190635451505,"#FFFCFB"],[0.575250836120401,"#FFFDFC"],[0.578595317725753,"#FFFEFE"],[0.581939799331104,"#FFFFFF"],[0.585284280936455,"#FEFEFF"],[0.588628762541806,"#FDFDFE"],[0.591973244147157,"#FCFCFE"],[0.595317725752508,"#FAFBFD"],[0.59866220735786,"#F9FAFD"],[0.602006688963211,"#F8F9FD"],[0.605351170568562,"#F7F8FC"],[0.608695652173913,"#F6F7FC"],[0.612040133779264,"#F5F6FB"],[0.615384615384615,"#F4F5FB"],[0.618729096989967,"#F2F4FA"],[0.622073578595318,"#F1F3FA"],[0.625418060200669,"#F0F1FA"],[0.62876254180602,"#EFF0F9"],[0.632107023411371,"#EEEFF9"],[0.635451505016722,"#EDEEF8"],[0.638795986622074,"#ECEDF8"],[0.642140468227425,"#EAECF8"],[0.645484949832776,"#E9EBF7"],[0.648829431438127,"#E8EAF7"],[0.652173913043478,"#E7E9F6"],[0.655518394648829,"#E6E8F6"],[0.658862876254181,"#E5E7F6"],[0.662207357859532,"#E4E6F5"],[0.665551839464883,"#E3E5F5"],[0.668896321070234,"#E1E4F4"],[0.672240802675585,"#E0E3F4"],[0.675585284280936,"#DFE2F3"],[0.678929765886288,"#DEE1F3"],[0.682274247491639,"#DDE0F3"],[0.68561872909699,"#DCDFF2"],[0.688963210702341,"#DBDEF2"],[0.692307692307692,"#D9DDF1"],[0.695652173913044,"#D8DCF1"],[0.698996655518395,"#D7DBF1"],[0.702341137123746,"#D6DAF0"],[0.705685618729097,"#D5D9F0"],[0.709030100334448,"#D4D8EF"],[0.712374581939799,"#D3D7EF"],[0.71571906354515,"#D1D6EE"],[0.719063545150502,"#D0D5EE"],[0.722408026755853,"#CFD4EE"],[0.725752508361204,"#CED3ED"],[0.729096989966555,"#CDD2ED"],[0.732441471571906,"#CCD1EC"],[0.735785953177258,"#CBD0EC"],[0.739130434782609,"#C9CFEC"],[0.74247491638796,"#C8CEEB"],[0.745819397993311,"#C7CDEB"],[0.749163879598662,"#C6CCEA"],[0.752508361204013,"#C5CBEA"],[0.755852842809365,"#C4CAE9"],[0.759197324414716,"#C2C9E9"],[0.762541806020067,"#C1C8E9"],[0.765886287625418,"#C0C7E8"],[0.769230769230769,"#BFC6E8"],[0.77257525083612,"#BEC5E7"],[0.775919732441472,"#BDC4E7"],[0.779264214046823,"#BCC3E7"],[0.782608695652174,"#BAC2E6"],[0.785953177257525,"#B9C1E6"],[0.789297658862876,"#B8C0E5"],[0.792642140468227,"#B7BFE5"],[0.795986622073579,"#B6BEE4"],[0.79933110367893,"#B5BDE4"],[0.802675585284281,"#B3BCE4"],[0.806020066889632,"#B2BBE3"],[0.809364548494983,"#B1BAE3"],[0.812709030100334,"#B0B9E2"],[0.816053511705686,"#AFB8E2"],[0.819397993311037,"#AEB7E1"],[0.822742474916388,"#ACB6E1"],[0.826086956521739,"#ABB5E1"],[0.82943143812709,"#AAB4E0"],[0.832775919732441,"#A9B3E0"],[0.836120401337793,"#A8B2DF"],[0.839464882943144,"#A7B1DF"],[0.842809364548495,"#A5B1DE"],[0.846153846153846,"#A4B0DE"],[0.849498327759197,"#A3AFDE"],[0.852842809364549,"#A2AEDD"],[0.8561872909699,"#A1ADDD"],[0.859531772575251,"#A0ACDC"],[0.862876254180602,"#9EABDC"],[0.866220735785953,"#9DAADC"],[0.869565217391304,"#9CA9DB"],[0.872909698996655,"#9BA8DB"],[0.876254180602007,"#9AA7DA"],[0.879598662207358,"#98A6DA"],[0.882943143812709,"#97A5D9"],[0.88628762541806,"#96A4D9"],[0.889632107023411,"#95A3D9"],[0.892976588628763,"#94A2D8"],[0.896321070234114,"#92A1D8"],[0.899665551839465,"#91A0D7"],[0.903010033444816,"#909FD7"],[0.906354515050167,"#8F9ED6"],[0.909698996655518,"#8E9DD6"],[0.91304347826087,"#8C9CD6"],[0.916387959866221,"#8B9CD5"],[0.919732441471572,"#8A9BD5"],[0.923076923076923,"#899AD4"],[0.926421404682274,"#8799D4"],[0.929765886287625,"#8698D3"],[0.933110367892977,"#8597D3"],[0.936454849498328,"#8496D3"],[0.939799331103679,"#8395D2"],[0.94314381270903,"#8194D2"],[0.946488294314381,"#8093D1"],[0.949832775919732,"#7F92D1"],[0.953177257525084,"#7E91D0"],[0.956521739130435,"#7C90D0"],[0.959866220735786,"#7B8FD0"],[0.963210702341137,"#7A8FCF"],[0.966555183946488,"#788ECF"],[0.96989966555184,"#778DCE"],[0.973244147157191,"#768CCE"],[0.976588628762542,"#758BCD"],[0.979933110367893,"#738ACD"],[0.983277591973244,"#7289CD"],[0.986622073578595,"#7188CC"],[0.989966555183946,"#6F87CC"],[0.993311036789298,"#6E86CB"],[0.996655518394649,"#6D85CB"],[1,"#6B84CA"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.04,"title":"log2 FC","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"tickmode":"array","ticktext":["-0.3","-0.2","-0.1","0.0","0.1","0.2"],"tickvals":[0.0363636363636363,0.218181818181818,0.4,0.581818181818182,0.763636363636364,0.945454545454545],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":26.5530187721969,"r":7.30593607305936,"b":148.635210553019,"l":34.337899543379},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,11.6],"tickmode":"array","ticktext":["Aphidicolin","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsenite","UV-C","X-ray"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11],"categoryorder":"array","categoryarray":["Aphidicolin","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsenite","UV-C","X-ray"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,2.6],"tickmode":"array","ticktext":["4272","152"],"tickvals":[1,2],"categoryorder":"array","categoryarray":["4272","152"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"size","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef4ef77f5e3":{"x":{},"y":{},"fill":{},"text":{},"type":"heatmap"},"ef4e46c0cfb2":{"x":{},"y":{},"fill":{},"text":{},"label":{},"size":{}}},"cur_data":"ef4ef77f5e3","visdat":{"ef4ef77f5e3":["function (y) ","x"],"ef4e46c0cfb2":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

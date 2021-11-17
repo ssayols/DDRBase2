@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: ERBB4</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,63 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Tyrosine-protein kinase that plays an essential role as cell surface receptor for neuregulins and EGF family members and regulates development of the heart, the central nervous system and the mammary gland, gene transcription, cell proliferation, differentiation, migration and apoptosis. Required for normal cardiac muscle differentiation during embryonic development, and for postnatal cardiomyocyte proliferation. Required for normal development of the embryonic central nervous system, especially for normal neural crest cell migration and normal axon guidance. Required for mammary gland differentiation, induction of milk proteins and lactation. Acts as cell-surface receptor for the neuregulins NRG1, NRG2, NRG3 and NRG4 and the EGF family members BTC, EREG and HBEGF. Ligand binding triggers receptor dimerization and autophosphorylation at specific tyrosine residues that then serve as binding sites for scaffold proteins and effectors. Ligand specificity and signaling is modulated by alternative splicing, proteolytic processing, and by the formation of heterodimers with other ERBB family members, thereby creating multiple combinations of intracellular phosphotyrosines that trigger ligand- and context-specific cellular responses. Mediates phosphorylation of SHC1 and activation of the MAP kinases MAPK1/ERK2 and MAPK3/ERK1. Isoform JM-A CYT-1 and isoform JM-B CYT-1 phosphorylate PIK3R1, leading to the activation of phosphatidylinositol 3-kinase and AKT1 and protect cells against apoptosis. Isoform JM-A CYT-1 and isoform JM-B CYT-1 mediate reorganization of the actin cytoskeleton and promote cell migration in response to NRG1. Isoform JM-A CYT-2 and isoform JM-B CYT-2 lack the phosphotyrosine that mediates interaction with PIK3R1, and hence do not phosphorylate PIK3R1, do not protect cells against apoptosis, and do not promote reorganization of the actin cytoskeleton and cell migration. Proteolytic processing of isoform JM-A CYT-1 and isoform JM-A CYT-2 gives rise to the corresponding soluble intracellular domains (4ICD) that translocate to the nucleus, promote nuclear import of STAT5A, activation of STAT5A, mammary epithelium differentiation, cell proliferation and activation of gene expression. The ERBB4 soluble intracellular domains (4ICD) colocalize with STAT5A at the CSN2 promoter to regulate transcription of milk proteins during lactation. The ERBB4 soluble intracellular domains can also translocate to mitochondria and promote apoptosis. {ECO:0000269|PubMed:10348342, ECO:0000269|PubMed:10353604, ECO:0000269|PubMed:10358079, ECO:0000269|PubMed:10722704, ECO:0000269|PubMed:10867024, ECO:0000269|PubMed:11178955, ECO:0000269|PubMed:11390655, ECO:0000269|PubMed:12807903, ECO:0000269|PubMed:15534001, ECO:0000269|PubMed:15746097, ECO:0000269|PubMed:16251361, ECO:0000269|PubMed:16778220, ECO:0000269|PubMed:16837552, ECO:0000269|PubMed:17486069, ECO:0000269|PubMed:17638867, ECO:0000269|PubMed:19098003, ECO:0000269|PubMed:20858735, ECO:0000269|PubMed:8383326, ECO:0000269|PubMed:8617750, ECO:0000269|PubMed:9135143, ECO:0000269|PubMed:9168115, ECO:0000269|PubMed:9334263}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;ATP-binding;Activator;Alternative splicing;Amyotrophic lateral sclerosis;Apoptosis;Cell membrane;Developmental protein;Disease variant;Disulfide bond;Glycoprotein;Kinase;Lactation;Membrane;Mitochondrion;Neurodegeneration;Nucleotide-binding;Nucleus;Phosphoprotein;Receptor;Reference proteome;Repeat;Signal;Transcription;Transcription regulation;Transferase;Transmembrane;Transmembrane helix;Tyrosine-protein kinase;Ubl conjugation</p>
+<p>3D-structure; ATP-binding; Activator; Alternative splicing; Amyotrophic lateral sclerosis; Apoptosis; Cell membrane; Developmental protein; Disease variant; Disulfide bond; Glycoprotein; Kinase; Lactation; Membrane; Mitochondrion; Neurodegeneration; Nucleotide-binding; Nucleus; Phosphoprotein; Receptor; Reference proteome; Repeat; Signal; Transcription; Transcription regulation; Transferase; Transmembrane; Transmembrane helix; Tyrosine-protein kinase; Ubl conjugation</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q15303" class="uri">https://www.uniprot.org/uniprot/Q15303</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-596ab4f3c738ee4ef350" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-596ab4f3c738ee4ef350">{"x":{"data":[{"x":[1,1,1308,1308,1],"y":[0,1,1,0,0],"text":"Positions: 1-1308 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[718,718,985,985,718],"y":[0,1,1,0,0],"text":"Positions: 718-985 - domain Protein kinase","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Protein kinase","legendgroup":"Protein kinase","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-64.35,1373.35],"tickmode":"array","ticktext":["1","200","400","600","800","1000","1200","1308"],"tickvals":[1,200,400,600,800,1000,1200,1308],"categoryorder":"array","categoryarray":["1","200","400","600","800","1000","1200","1308"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef5726ddc81b":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef579fa35e":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef5726ddc81b","visdat":{"ef5726ddc81b":["function (y) ","x"],"ef579fa35e":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Protein kinase
+</td>
+<td style="text-align:right;">
+718
+</td>
+<td style="text-align:right;">
+985
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00159
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

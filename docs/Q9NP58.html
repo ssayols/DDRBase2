@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -85,30 +85,31 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
+
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: ABCB6</title>
 
-  <meta property="description" itemprop="description" content="ATP-binding cassette sub-family B member 6, mitochondrial (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)"/>
+  <meta property="description" itemprop="description" content="ATP-binding cassette sub-family B member 6 (ABC-type heme transporter ABCB6) (EC 7.6.2.5) (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="DDRBase: ABCB6"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="ATP-binding cassette sub-family B member 6, mitochondrial (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)"/>
+  <meta property="og:description" content="ATP-binding cassette sub-family B member 6 (ABC-type heme transporter ABCB6) (EC 7.6.2.5) (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="DDRBase"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="DDRBase: ABCB6"/>
-  <meta property="twitter:description" content="ATP-binding cassette sub-family B member 6, mitochondrial (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)"/>
+  <meta property="twitter:description" content="ATP-binding cassette sub-family B member 6 (ABC-type heme transporter ABCB6) (EC 7.6.2.5) (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["ABCB6"]},{"type":"character","attributes":{},"value":["ATP-binding cassette sub-family B member 6, mitochondrial (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["ABCB6"]},{"type":"character","attributes":{},"value":["ATP-binding cassette sub-family B member 6 (ABC-type heme transporter ABCB6) (EC 7.6.2.5) (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2053,7 +2067,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"ABCB6","description":"ATP-binding cassette sub-family B member 6, mitochondrial (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)","authors":[]}
+{"title":"ABCB6","description":"ATP-binding cassette sub-family B member 6 (ABC-type heme transporter ABCB6) (EC 7.6.2.5) (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2084,7 +2098,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>ABCB6</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>ATP-binding cassette sub-family B member 6, mitochondrial (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)</p></p>
+<p><p>ATP-binding cassette sub-family B member 6 (ABC-type heme transporter ABCB6) (EC 7.6.2.5) (Mitochondrial ABC transporter 3) (Mt-ABC transporter 3) (P-glycoprotein-related protein) (Ubiquitously-expressed mammalian ABC half transporter)</p></p>
 </div>
 
 
@@ -2093,17 +2107,79 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="gene-names">Gene names</h2>
 <p>ABCB6 MTABC3 PRP UMAT</p>
 <h2 id="function">Function</h2>
-<p>FUNCTION: Binds heme and porphyrins and functions in their ATP-dependent uptake into the mitochondria. Plays a crucial role in heme synthesis. {ECO:0000269|PubMed:10837493, ECO:0000269|PubMed:17006453}.</p>
+<p>FUNCTION: ATP-dependent transporter that catalyzes the transport of a broad-spectrum of porphyrins from the cytoplasm to the extracellular space through the plasma membrane or into the vesicle lumen (PubMed:33007128, PubMed:27507172, PubMed:17661442, PubMed:23792964). May also function as an ATP-dependent importer of porphyrins from the cytoplasm into the mitochondria, in turns may participate in the de novo heme biosynthesis regulation and in the coordination of heme and iron homeostasis during phenylhydrazine stress (PubMed:17006453, PubMed:10837493, PubMed:23792964, PubMed:33007128). May also play a key role in the early steps of melanogenesis producing PMEL amyloid fibrils (PubMed:29940187). In vitro, it confers to cells a resistance to toxic metal such as arsenic and cadmium and against chemotherapeutics agent such as 5-fluorouracil, SN-38 and vincristin (PubMed:25202056, PubMed:21266531, PubMed:31053883). In addition may play a role in the transition metal homeostasis (By similarity). {ECO:0000250|UniProtKB:O70595, ECO:0000269|PubMed:10837493, ECO:0000269|PubMed:17006453, ECO:0000269|PubMed:17661442, ECO:0000269|PubMed:21266531, ECO:0000269|PubMed:23792964, ECO:0000269|PubMed:25202056, ECO:0000269|PubMed:27507172, ECO:0000269|PubMed:29940187, ECO:0000269|PubMed:31053883, ECO:0000269|PubMed:33007128}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;ATP-binding;Alternative splicing;Cell membrane;Disease variant;Dyskeratosis congenita;Endoplasmic reticulum;Endosome;Golgi apparatus;Membrane;Microphthalmia;Mitochondrion;Mitochondrion outer membrane;Nucleotide-binding;Reference proteome;Transmembrane;Transmembrane helix;Transport</p>
+<p>3D-structure; ATP-binding; Alternative splicing; Cell membrane; Disease variant; Disulfide bond; Dyskeratosis congenita; Endoplasmic reticulum; Endosome; Glycoprotein; Golgi apparatus; Lysosome; Membrane; Microphthalmia; Mitochondrion; Mitochondrion outer membrane; Nucleotide-binding; Reference proteome; Secreted; Translocase; Transmembrane; Transmembrane helix; Transport</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q9NP58" class="uri">https://www.uniprot.org/uniprot/Q9NP58</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-a52abfacf36b8971bea9" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a52abfacf36b8971bea9">{"x":{"data":[{"x":[1,1,842,842,1],"y":[0,1,1,0,0],"text":"Positions: 1-842 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[265,265,556,556,265],"y":[0,1,1,0,0],"text":"Positions: 265-556 - domain ABC transmembrane type-1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"ABC transmembrane type-1","legendgroup":"ABC transmembrane type-1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[590,590,824,824,590],"y":[0,1,1,0,0],"text":"Positions: 590-824 - domain ABC transporter","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(223,83,107,1)","hoveron":"fills","name":"ABC transporter","legendgroup":"ABC transporter","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-41.05,884.05],"tickmode":"array","ticktext":["1","200","400","600","800","842"],"tickvals":[1,200,400,600,800,842],"categoryorder":"array","categoryarray":["1","200","400","600","800","842"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef4c2d12a500":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef4c743c41d":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef4c2d12a500","visdat":{"ef4c2d12a500":["function (y) ","x"],"ef4c743c41d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ABC transmembrane type-1
+</td>
+<td style="text-align:right;">
+265
+</td>
+<td style="text-align:right;">
+556
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00441
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ABC transporter
+</td>
+<td style="text-align:right;">
+590
+</td>
+<td style="text-align:right;">
+824
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00434
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

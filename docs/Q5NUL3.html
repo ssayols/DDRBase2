@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: FFAR4</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2107,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: [Isoform 2]: G-protein-coupled receptor for long-chain fatty acids (LCFAs) with a major role in adipogenesis, energy metabolism and inflammation. Signals via G-protein and beta-arrestin pathways (PubMed:22282525, PubMed:24742677, PubMed:27852822, PubMed:24817122, PubMed:22343897). LCFAs sensing initiates activation of phosphoinositidase C-linked G proteins GNAQ and GNA11 (G(q)/G(11)), inducing a variety of cellular responses via second messenger pathways such as intracellular calcium mobilization, modulation of cyclic adenosine monophosphate (cAMP) production, and mitogen-activated protein kinases (MAPKs) (PubMed:27852822, PubMed:22343897, PubMed:22282525, PubMed:24742677). After LCFAs binding, associates with beta-arrestin ARRB2 that acts as an adapter protein coupling the receptor to specific downstream signaling pathways, as well as mediating receptor endocytosis (PubMed:22282525, PubMed:24817122). In response to dietary fats, plays an important role in the regulation of adipocyte proliferation and differentiation (By similarity). Acts as a receptor for omega-3 polyunsaturated fatty acids (PUFAs) at primary cilium of perivascular preadipocytes, initiating an adipogenic program via cAMP and CTCF-dependent chromatin remodeling that ultimately results in transcriptional activation of adipogenic genes and cell cycle entry (By similarity). Induces differentiation of brown adipocytes probably via autocrine and endocrine functions of FGF21 hormone (By similarity). Activates brown adipocytes by initiating intracellular calcium signaling that leads to mitochondrial depolarization and fission, and overall increased mitochondrial respiration (By similarity). Consequently stimulates fatty acid uptake and oxidation in mitochondria together with UCP1-mediated thermogenic respiration, eventually reducing fat mass (By similarity). Regulates bi-potential differentiation of bone marrow mesenchymal stem cells toward osteoblasts or adipocytes likely by up-regulating distinct integrins (By similarity). In response to dietary fats regulates hormone secretion and appetite (By similarity). Stimulates GIP and GLP1 secretion from enteroendocrine cells as well as GCG secretion in pancreatic alpha cells, thereby playing a role in the regulation of blood glucose levels (By similarity). Negatively regulates glucose-induced SST secretion in pancreatic delta cells (By similarity). Mediates LCFAs inhibition of GHRL secretion, an appetite-controlling hormone (By similarity). In taste buds, contributes to sensing of dietary fatty acids by the gustatory system (By similarity). During the inflammatory response, promotes anti-inflammatory M2 macrophage differentiation in adipose tissue (By similarity). Mediates the anti-inflammatory effects of omega-3 PUFAs via inhibition of NLRP3 inflammasome activation (PubMed:23809162). In this pathway, interacts with adapter protein ARRB2 and inhibits the priming step triggered by Toll-like receptors (TLRs) at the level of TAK1 and TAB1 (By similarity). Further inhibits the activation step when ARRB2 directly associates with NLRP3, leading to inhibition of proinflammatory cytokine release (PubMed:23809162). Mediates LCFAs anti-apoptotic effects (By similarity). {ECO:0000250|UniProtKB:Q7TMA4, ECO:0000269|PubMed:22282525, ECO:0000269|PubMed:22343897, ECO:0000269|PubMed:23809162, ECO:0000269|PubMed:24742677, ECO:0000269|PubMed:24817122, ECO:0000269|PubMed:27852822}.; FUNCTION: [Isoform 1]: Receptor for LCFAs decoupled from G-protein signaling. May signal through beta-arrestin pathway. After LCFAs binding, associates with beta-arrestin ARRB2 that may act as an adapter protein coupling the receptor to specific downstream signaling pathways, as well as mediating receptor endocytosis. {ECO:0000269|PubMed:22282525}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>Alternative splicing;Cell membrane;Cell projection;Differentiation;Disulfide bond;Endosome;G-protein coupled receptor;Glycoprotein;Inflammatory response;Lipid-binding;Lysosome;Membrane;Phosphoprotein;Receptor;Reference proteome;Transducer;Transmembrane;Transmembrane helix</p>
+<p>Alternative splicing; Cell membrane; Cell projection; Differentiation; Disulfide bond; Endosome; G-protein coupled receptor; Glycoprotein; Inflammatory response; Lipid-binding; Lysosome; Membrane; Phosphoprotein; Receptor; Reference proteome; Transducer; Transmembrane; Transmembrane helix</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q5NUL3" class="uri">https://www.uniprot.org/uniprot/Q5NUL3</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-aef7357f3d7a32d88226" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aef7357f3d7a32d88226">{"x":{"data":[{"x":[1,1,361,361,1],"y":[0,1,1,0,0],"text":"Positions: 1-361 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-17,379],"tickmode":"array","ticktext":["1","100","200","300","361"],"tickvals":[1,100,200,300,361],"categoryorder":"array","categoryarray":["1","100","200","300","361"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef6318849177":{"text":{},"xmin":{},"xmax":{},"type":"scatter"}},"cur_data":"ef6318849177","visdat":{"ef6318849177":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>No domain info.</p></p>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

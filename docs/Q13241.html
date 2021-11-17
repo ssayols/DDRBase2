@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: KLRD1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,63 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Immune receptor involved in self-nonself discrimination. In complex with KLRC1 or KLRC2 on cytotoxic and regulatory lymphocyte subsets, recognizes non-classical major histocompatibility (MHC) class Ib molecule HLA-E loaded with self-peptides derived from the signal sequence of classical MHC class Ia and non-classical MHC class Ib molecules (PubMed:9486650, PubMed:10023772, PubMed:18083576, PubMed:18064301, PubMed:9754572). Enables cytotoxic cells to monitor the expression of MHC class I molecules in healthy cells and to tolerate self (PubMed:9430220, PubMed:12387742, PubMed:18064301). Primarily functions as a ligand binding subunit as it lacks the capacity to signal. {ECO:0000269|PubMed:10023772, ECO:0000269|PubMed:12387742, ECO:0000269|PubMed:18064301, ECO:0000269|PubMed:18083576, ECO:0000269|PubMed:9430220, ECO:0000269|PubMed:9486650, ECO:0000269|PubMed:9754572}.; FUNCTION: KLRD1-KLRC1 acts as an immune inhibitory receptor. Key inhibitory receptor on natural killer (NK) cells that regulates their activation and effector functions (PubMed:9486650, PubMed:9430220, PubMed:9485206, PubMed:30860984). Dominantly counteracts T cell receptor signaling on a subset of memory/effector CD8-positive T cells as part of an antigen-driven response to avoid autoimmunity (PubMed:12387742). On intraepithelial CD8-positive gamma-delta regulatory T cells triggers TGFB1 secretion, which in turn limits the cytotoxic programming of intraepithelial CD8-positive alpha-beta T cells, distinguishing harmless from pathogenic antigens (PubMed:18064301). In HLA-E-rich tumor microenvironment, acts as an immune inhibitory checkpoint and may contribute to progressive loss of effector functions of NK cells and tumor-specific T cells, a state known as cell exhaustion (PubMed:30503213, PubMed:30860984). Upon HLA-E-peptide binding, transmits intracellular signals through KLRC1 immunoreceptor tyrosine-based inhibition motifs (ITIMs) by recruiting INPP5D/SHIP-1 and INPPL1/SHIP-2 tyrosine phosphatases to ITIMs, and ultimately opposing signals transmitted by activating receptors through dephosphorylation of proximal signaling molecules (PubMed:9485206, PubMed:12165520). {ECO:0000269|PubMed:12165520, ECO:0000269|PubMed:12387742, ECO:0000269|PubMed:18064301, ECO:0000269|PubMed:30503213, ECO:0000269|PubMed:30860984, ECO:0000269|PubMed:9430220, ECO:0000269|PubMed:9485206, ECO:0000269|PubMed:9486650}.; FUNCTION: KLRD1-KLRC2 acts as an immune activating receptor (PubMed:9655483, PubMed:15940674). On cytotoxic lymphocyte subsets recognizes HLA-E loaded with signal sequence-derived peptides from non-classical MHC class Ib HLA-G molecules, likely playing a role in the generation and effector functions of adaptive NK cells and in maternal-fetal tolerance during pregnancy (PubMed:9754572, PubMed:30134159). Regulates the effector functions of terminally differentiated cytotoxic lymphocyte subsets, and in particular may play a role in adaptive NK cell response to viral infection (PubMed:21825173, PubMed:20952657). Upon HLA-E-peptide binding, transmits intracellular signals via the adapter protein TYROBP/DAP12, triggering the phosphorylation of proximal signaling molecules and cell activation (PubMed:9655483, PubMed:15940674). {ECO:0000269|PubMed:15940674, ECO:0000269|PubMed:20952657, ECO:0000269|PubMed:21825173, ECO:0000269|PubMed:30134159, ECO:0000269|PubMed:9655483, ECO:0000269|PubMed:9754572}.; FUNCTION: (Microbial infection) Viruses like human cytomegalovirus have evolved an escape mechanism whereby virus-induced down-regulation of host MHC class I molecules is coupled to the binding of viral peptides to HLA-E, restoring HLA-E expression and inducing HLA-E-dependent NK cell immune tolerance to infected cells. Recognizes HLA-E in complex with human cytomegalovirus UL40-derived peptide (VMAPRTLIL) and inhibits NK cell cytotoxicity. {ECO:0000269|PubMed:10669413, ECO:0000269|PubMed:23335510}.; FUNCTION: (Microbial infection) May recognize HLA-E in complex with HIV-1 gag/Capsid protein p24-derived peptide (AISPRTLNA) on infected cells and may inhibit NK cell cytotoxicity, a mechanism that allows HIV-1 to escape immune recognition. {ECO:0000269|PubMed:15751767}.; FUNCTION: (Microbial infection) Upon SARS-CoV-2 infection, may contribute to functional exhaustion of cytotoxic NK cells and CD8-positive T cells (PubMed:32859121). On NK cells, may recognize HLA-E in complex with SARS-CoV-2 S/Spike protein S1-derived peptide (LQPRTFLL) expressed on the surface of lung epithelial cells, inducing NK cell exhaustion and dampening antiviral immune surveillance (PubMed:32859121). {ECO:0000269|PubMed:32859121}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Adaptive immunity;Alternative splicing;Cell membrane;Disulfide bond;Glycoprotein;Immunity;Innate immunity;Lectin;Membrane;Receptor;Reference proteome;Signal-anchor;Transmembrane;Transmembrane helix</p>
+<p>3D-structure; Adaptive immunity; Alternative splicing; Cell membrane; Disulfide bond; Glycoprotein; Immunity; Innate immunity; Lectin; Membrane; Receptor; Reference proteome; Signal-anchor; Transmembrane; Transmembrane helix</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q13241" class="uri">https://www.uniprot.org/uniprot/Q13241</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-7284189bb2a404d2ffd0" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7284189bb2a404d2ffd0">{"x":{"data":[{"x":[1,1,179,179,1],"y":[0,1,1,0,0],"text":"Positions: 1-179 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[68,68,175,175,68],"y":[0,1,1,0,0],"text":"Positions: 68-175 - domain C-type lectin","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"C-type lectin","legendgroup":"C-type lectin","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-7.9,187.9],"tickmode":"array","ticktext":["1","50","100","150","179"],"tickvals":[1,50,100,150,179],"categoryorder":"array","categoryarray":["1","50","100","150","179"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef664a5e4b22":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef6648a484d3":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef664a5e4b22","visdat":{"ef664a5e4b22":["function (y) ","x"],"ef6648a484d3":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+C-type lectin
+</td>
+<td style="text-align:right;">
+68
+</td>
+<td style="text-align:right;">
+175
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00040
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

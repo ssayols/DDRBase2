@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: RYR1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,175 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Calcium channel that mediates the release of Ca(2+) from the sarcoplasmic reticulum into the cytoplasm and thereby plays a key role in triggering muscle contraction following depolarization of T-tubules (PubMed:11741831, PubMed:16163667). Repeated very high-level exercise increases the open probability of the channel and leads to Ca(2+) leaking into the cytoplasm (PubMed:18268335). Can also mediate the release of Ca(2+) from intracellular stores in neurons, and may thereby promote prolonged Ca(2+) signaling in the brain. Required for normal embryonic development of muscle fibers and skeletal muscle. Required for normal heart morphogenesis, skin development and ossification during embryogenesis (By similarity). {ECO:0000250|UniProtKB:E9PZQ0, ECO:0000269|PubMed:18268335, ECO:0000305|PubMed:11741831, ECO:0000305|PubMed:16163667}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;ATP-binding;Alternative splicing;Calcium;Calcium channel;Calcium transport;Calmodulin-binding;Developmental protein;Direct protein sequencing;Disease variant;Ion channel;Ion transport;Ligand-gated ion channel;Membrane;Metal-binding;Nucleotide-binding;Phosphoprotein;Receptor;Reference proteome;Repeat;S-nitrosylation;Sarcoplasmic reticulum;Transmembrane;Transmembrane helix;Transport</p>
+<p>3D-structure; ATP-binding; Alternative splicing; Calcium; Calcium channel; Calcium transport; Calmodulin-binding; Developmental protein; Direct protein sequencing; Disease variant; Ion channel; Ion transport; Ligand-gated ion channel; Membrane; Metal-binding; Nucleotide-binding; Phosphoprotein; Receptor; Reference proteome; Repeat; S-nitrosylation; Sarcoplasmic reticulum; Transmembrane; Transmembrane helix; Transport</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P21817" class="uri">https://www.uniprot.org/uniprot/P21817</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-4d5c698639d0ac15d605" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4d5c698639d0ac15d605">{"x":{"data":[{"x":[1,1,5038,5038,1],"y":[0,1,1,0,0],"text":"Positions: 1-5038 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[581,581,797,797,581],"y":[0,1,1,0,0],"text":"Positions: 581-797 - domain B30.2/SPRY 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"B30.2/SPRY 1","legendgroup":"B30.2/SPRY 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1013,1013,1208,1208,1013],"y":[0,1,1,0,0],"text":"Positions: 1013-1208 - domain B30.2/SPRY 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(195,72,93,1)","hoveron":"fills","name":"B30.2/SPRY 2","legendgroup":"B30.2/SPRY 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1356,1356,1570,1570,1356],"y":[0,1,1,0,0],"text":"Positions: 1356-1570 - domain B30.2/SPRY 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(128,176,86,1)","hoveron":"fills","name":"B30.2/SPRY 3","legendgroup":"B30.2/SPRY 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4074,4074,4102,4102,4074],"y":[0,1,1,0,0],"text":"Positions: 4074-4102 - domain EF-hand","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(57,172,173,1)","hoveron":"fills","name":"EF-hand","legendgroup":"EF-hand","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[97,97,152,152,97],"y":[0,1,1,0,0],"text":"Positions: 97-152 - domain MIR 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"MIR 1","legendgroup":"MIR 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[159,159,204,204,159],"y":[0,1,1,0,0],"text":"Positions: 159-204 - domain MIR 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(101,145,213,1)","hoveron":"fills","name":"MIR 2","legendgroup":"MIR 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[210,210,264,264,210],"y":[0,1,1,0,0],"text":"Positions: 210-264 - domain MIR 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(215,58,144,1)","hoveron":"fills","name":"MIR 3","legendgroup":"MIR 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[270,270,327,327,270],"y":[0,1,1,0,0],"text":"Positions: 270-327 - domain MIR 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(234,193,33,1)","hoveron":"fills","name":"MIR 4","legendgroup":"MIR 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[335,335,392,392,335],"y":[0,1,1,0,0],"text":"Positions: 335-392 - domain MIR 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"MIR 5","legendgroup":"MIR 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-250.85,5289.85],"tickmode":"array","ticktext":["1","1000","2000","3000","4000","5000","5038"],"tickvals":[1.00000000000003,1000,2000,3000,4000,5000,5038],"categoryorder":"array","categoryarray":["1","1000","2000","3000","4000","5000","5038"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef417eb9b862":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef4167034aec":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef417eb9b862","visdat":{"ef417eb9b862":["function (y) ","x"],"ef4167034aec":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+MIR 1
+</td>
+<td style="text-align:right;">
+97
+</td>
+<td style="text-align:right;">
+152
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00131
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MIR 2
+</td>
+<td style="text-align:right;">
+159
+</td>
+<td style="text-align:right;">
+204
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00131
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MIR 3
+</td>
+<td style="text-align:right;">
+210
+</td>
+<td style="text-align:right;">
+264
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00131
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MIR 4
+</td>
+<td style="text-align:right;">
+270
+</td>
+<td style="text-align:right;">
+327
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00131
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MIR 5
+</td>
+<td style="text-align:right;">
+335
+</td>
+<td style="text-align:right;">
+392
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00131
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B30.2/SPRY 1
+</td>
+<td style="text-align:right;">
+581
+</td>
+<td style="text-align:right;">
+797
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00548
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B30.2/SPRY 2
+</td>
+<td style="text-align:right;">
+1013
+</td>
+<td style="text-align:right;">
+1208
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00548
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B30.2/SPRY 3
+</td>
+<td style="text-align:right;">
+1356
+</td>
+<td style="text-align:right;">
+1570
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00548
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EF-hand
+</td>
+<td style="text-align:right;">
+4074
+</td>
+<td style="text-align:right;">
+4102
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00448
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: NBPF12</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2094,15 +2108,203 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>NBPF12 COAS1 KIAA1245</p>
 <h2 id="function">Function</h2>
 <h2 id="keywords">Keywords</h2>
-<p>Coiled coil;Cytoplasm;Reference proteome;Repeat</p>
+<p>Coiled coil; Cytoplasm; Reference proteome; Repeat</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q5TAG4" class="uri">https://www.uniprot.org/uniprot/Q5TAG4</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-52f1d174f79748285972" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-52f1d174f79748285972">{"x":{"data":[{"x":[1,1,1457,1457,1],"y":[0,1,1,0,0],"text":"Positions: 1-1457 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[165,165,259,259,165],"y":[0,1,1,0,0],"text":"Positions: 165-259 - domain Olduvai 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Olduvai 1","legendgroup":"Olduvai 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1266,1266,1358,1358,1266],"y":[0,1,1,0,0],"text":"Positions: 1266-1358 - domain Olduvai 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(156,58,74,1)","hoveron":"fills","name":"Olduvai 10","legendgroup":"Olduvai 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1359,1359,1457,1457,1359],"y":[0,1,1,0,0],"text":"Positions: 1359-1457 - domain Olduvai 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(172,133,95,1)","hoveron":"fills","name":"Olduvai 11","legendgroup":"Olduvai 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[436,436,530,530,436],"y":[0,1,1,0,0],"text":"Positions: 436-530 - domain Olduvai 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(90,202,94,1)","hoveron":"fills","name":"Olduvai 2","legendgroup":"Olduvai 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[707,707,799,799,707],"y":[0,1,1,0,0],"text":"Positions: 707-799 - domain Olduvai 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(46,162,199,1)","hoveron":"fills","name":"Olduvai 3","legendgroup":"Olduvai 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[800,800,871,871,800],"y":[0,1,1,0,0],"text":"Positions: 800-871 - domain Olduvai 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"Olduvai 4","legendgroup":"Olduvai 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[872,872,963,963,872],"y":[0,1,1,0,0],"text":"Positions: 872-963 - domain Olduvai 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(73,182,220,1)","hoveron":"fills","name":"Olduvai 5","legendgroup":"Olduvai 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[966,966,1021,1021,966],"y":[0,1,1,0,0],"text":"Positions: 966-1021 - domain Olduvai 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(188,32,192,1)","hoveron":"fills","name":"Olduvai 6","legendgroup":"Olduvai 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1022,1022,1114,1114,1022],"y":[0,1,1,0,0],"text":"Positions: 1022-1114 - domain Olduvai 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(229,123,84,1)","hoveron":"fills","name":"Olduvai 7","legendgroup":"Olduvai 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1115,1115,1207,1207,1115],"y":[0,1,1,0,0],"text":"Positions: 1115-1207 - domain Olduvai 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(218,186,58,1)","hoveron":"fills","name":"Olduvai 8","legendgroup":"Olduvai 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1210,1210,1265,1265,1210],"y":[0,1,1,0,0],"text":"Positions: 1210-1265 - domain Olduvai 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"Olduvai 9","legendgroup":"Olduvai 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-71.8,1529.8],"tickmode":"array","ticktext":["1","500","1000","1457"],"tickvals":[1,500,1000,1457],"categoryorder":"array","categoryarray":["1","500","1000","1457"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef70117cdbf3":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef7056db6a6c":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef70117cdbf3","visdat":{"ef70117cdbf3":["function (y) ","x"],"ef7056db6a6c":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Olduvai 1
+</td>
+<td style="text-align:right;">
+165
+</td>
+<td style="text-align:right;">
+259
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Olduvai 2
+</td>
+<td style="text-align:right;">
+436
+</td>
+<td style="text-align:right;">
+530
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Olduvai 3
+</td>
+<td style="text-align:right;">
+707
+</td>
+<td style="text-align:right;">
+799
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Olduvai 4
+</td>
+<td style="text-align:right;">
+800
+</td>
+<td style="text-align:right;">
+871
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Olduvai 5
+</td>
+<td style="text-align:right;">
+872
+</td>
+<td style="text-align:right;">
+963
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Olduvai 6
+</td>
+<td style="text-align:right;">
+966
+</td>
+<td style="text-align:right;">
+1021
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Olduvai 7
+</td>
+<td style="text-align:right;">
+1022
+</td>
+<td style="text-align:right;">
+1114
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Olduvai 8
+</td>
+<td style="text-align:right;">
+1115
+</td>
+<td style="text-align:right;">
+1207
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Olduvai 9
+</td>
+<td style="text-align:right;">
+1210
+</td>
+<td style="text-align:right;">
+1265
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Olduvai 10
+</td>
+<td style="text-align:right;">
+1266
+</td>
+<td style="text-align:right;">
+1358
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Olduvai 11
+</td>
+<td style="text-align:right;">
+1359
+</td>
+<td style="text-align:right;">
+1457
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00647
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

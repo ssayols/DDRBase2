@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: TEK</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,175 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Tyrosine-protein kinase that acts as cell-surface receptor for ANGPT1, ANGPT2 and ANGPT4 and regulates angiogenesis, endothelial cell survival, proliferation, migration, adhesion and cell spreading, reorganization of the actin cytoskeleton, but also maintenance of vascular quiescence. Has anti-inflammatory effects by preventing the leakage of proinflammatory plasma proteins and leukocytes from blood vessels. Required for normal angiogenesis and heart development during embryogenesis. Required for post-natal hematopoiesis. After birth, activates or inhibits angiogenesis, depending on the context. Inhibits angiogenesis and promotes vascular stability in quiescent vessels, where endothelial cells have tight contacts. In quiescent vessels, ANGPT1 oligomers recruit TEK to cell-cell contacts, forming complexes with TEK molecules from adjoining cells, and this leads to preferential activation of phosphatidylinositol 3-kinase and the AKT1 signaling cascades. In migrating endothelial cells that lack cell-cell adhesions, ANGT1 recruits TEK to contacts with the extracellular matrix, leading to the formation of focal adhesion complexes, activation of PTK2/FAK and of the downstream kinases MAPK1/ERK2 and MAPK3/ERK1, and ultimately to the stimulation of sprouting angiogenesis. ANGPT1 signaling triggers receptor dimerization and autophosphorylation at specific tyrosine residues that then serve as binding sites for scaffold proteins and effectors. Signaling is modulated by ANGPT2 that has lower affinity for TEK, can promote TEK autophosphorylation in the absence of ANGPT1, but inhibits ANGPT1-mediated signaling by competing for the same binding site. Signaling is also modulated by formation of heterodimers with TIE1, and by proteolytic processing that gives rise to a soluble TEK extracellular domain. The soluble extracellular domain modulates signaling by functioning as decoy receptor for angiopoietins. TEK phosphorylates DOK2, GRB7, GRB14, PIK3R1; SHC1 and TIE1. {ECO:0000269|PubMed:12816861, ECO:0000269|PubMed:14665640, ECO:0000269|PubMed:15284220, ECO:0000269|PubMed:15851516, ECO:0000269|PubMed:18366015, ECO:0000269|PubMed:18425119, ECO:0000269|PubMed:18425120, ECO:0000269|PubMed:19223473, ECO:0000269|PubMed:20651738, ECO:0000269|PubMed:9204896}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;ATP-binding;Alternative splicing;Angiogenesis;Cell junction;Cell membrane;Cytoplasm;Cytoskeleton;Direct protein sequencing;Disease variant;Disulfide bond;EGF-like domain;Glaucoma;Glycoprotein;Immunoglobulin domain;Kinase;Membrane;Nucleotide-binding;Phosphoprotein;Receptor;Reference proteome;Repeat;Secreted;Signal;Transferase;Transmembrane;Transmembrane helix;Tyrosine-protein kinase;Ubl conjugation</p>
+<p>3D-structure; ATP-binding; Alternative splicing; Angiogenesis; Cell junction; Cell membrane; Cytoplasm; Cytoskeleton; Direct protein sequencing; Disease variant; Disulfide bond; EGF-like domain; Glaucoma; Glycoprotein; Immunoglobulin domain; Kinase; Membrane; Nucleotide-binding; Phosphoprotein; Receptor; Reference proteome; Repeat; Secreted; Signal; Transferase; Transmembrane; Transmembrane helix; Tyrosine-protein kinase; Ubl conjugation</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q02763" class="uri">https://www.uniprot.org/uniprot/Q02763</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-ea4b2c2a14c2a6d2ee5f" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ea4b2c2a14c2a6d2ee5f">{"x":{"data":[{"x":[1,1,1124,1124,1],"y":[0,1,1,0,0],"text":"Positions: 1-1124 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[210,210,252,252,210],"y":[0,1,1,0,0],"text":"Positions: 210-252 - domain EGF-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"EGF-like 1","legendgroup":"EGF-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[254,254,299,299,254],"y":[0,1,1,0,0],"text":"Positions: 254-299 - domain EGF-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(195,72,93,1)","hoveron":"fills","name":"EGF-like 2","legendgroup":"EGF-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[301,301,341,341,301],"y":[0,1,1,0,0],"text":"Positions: 301-341 - domain EGF-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(128,176,86,1)","hoveron":"fills","name":"EGF-like 3","legendgroup":"EGF-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[447,447,541,541,447],"y":[0,1,1,0,0],"text":"Positions: 447-541 - domain Fibronectin type-III 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(57,172,173,1)","hoveron":"fills","name":"Fibronectin type-III 1","legendgroup":"Fibronectin type-III 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[545,545,636,636,545],"y":[0,1,1,0,0],"text":"Positions: 545-636 - domain Fibronectin type-III 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"Fibronectin type-III 2","legendgroup":"Fibronectin type-III 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[641,641,735,735,641],"y":[0,1,1,0,0],"text":"Positions: 641-735 - domain Fibronectin type-III 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(101,145,213,1)","hoveron":"fills","name":"Fibronectin type-III 3","legendgroup":"Fibronectin type-III 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[44,44,123,123,44],"y":[0,1,1,0,0],"text":"Positions: 44-123 - domain Ig-like C2-type 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(215,58,144,1)","hoveron":"fills","name":"Ig-like C2-type 1","legendgroup":"Ig-like C2-type 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[350,350,440,440,350],"y":[0,1,1,0,0],"text":"Positions: 350-440 - domain Ig-like C2-type 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(234,193,33,1)","hoveron":"fills","name":"Ig-like C2-type 2","legendgroup":"Ig-like C2-type 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[824,824,1096,1096,824],"y":[0,1,1,0,0],"text":"Positions: 824-1096 - domain Protein kinase","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"Protein kinase","legendgroup":"Protein kinase","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-55.15,1180.15],"tickmode":"array","ticktext":["1","200","400","600","800","1000","1124"],"tickvals":[1.00000000000001,200,400,600,800,1000,1124],"categoryorder":"array","categoryarray":["1","200","400","600","800","1000","1124"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef3a6d48ad37":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef3a2dab1a83":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef3a6d48ad37","visdat":{"ef3a6d48ad37":["function (y) ","x"],"ef3a2dab1a83":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 1
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+123
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 1
+</td>
+<td style="text-align:right;">
+210
+</td>
+<td style="text-align:right;">
+252
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 2
+</td>
+<td style="text-align:right;">
+254
+</td>
+<td style="text-align:right;">
+299
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 3
+</td>
+<td style="text-align:right;">
+301
+</td>
+<td style="text-align:right;">
+341
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ig-like C2-type 2
+</td>
+<td style="text-align:right;">
+350
+</td>
+<td style="text-align:right;">
+440
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 1
+</td>
+<td style="text-align:right;">
+447
+</td>
+<td style="text-align:right;">
+541
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 2
+</td>
+<td style="text-align:right;">
+545
+</td>
+<td style="text-align:right;">
+636
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fibronectin type-III 3
+</td>
+<td style="text-align:right;">
+641
+</td>
+<td style="text-align:right;">
+735
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00316
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Protein kinase
+</td>
+<td style="text-align:right;">
+824
+</td>
+<td style="text-align:right;">
+1096
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00159
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

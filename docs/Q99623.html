@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: PHB2</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2107,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Protein with pleiotropic attributes mediated in a cell-compartment- and tissue-specific manner, which include the plasma membrane-associated cell signaling functions, mitochondrial chaperone, and transcriptional co-regulator of transcription factors and sex steroid hormones in the nucleus. {ECO:0000269|PubMed:10359819, ECO:0000269|PubMed:11302691, ECO:0000269|PubMed:20959514, ECO:0000269|PubMed:24003225, ECO:0000269|PubMed:28017329, ECO:0000269|PubMed:31522117}.; FUNCTION: In the mitochondria, together with PHB, forms large ring complexes (prohibitin complexes) in the inner mitochondrial membrane (IMM) and functions as chaperone protein that stabilizes mitochondrial respiratory enzymes and maintains mitochondrial integrity in the IMM, which is required for mitochondrial morphogenesis, neuronal survival, and normal lifespan (Probable). The prohibitin complex, with DNAJC19, regulates cardiolipin remodeling and the protein turnover of OMA1 in a cardiolipin-binding manner (By similarity). Also regulates cytochrome-c oxidase assembly (COX) and mitochondrial respiration (PubMed:20959514, PubMed:11302691). Binding to sphingoid 1-phosphate (SPP) modulates its regulator activity (PubMed:20959514, PubMed:11302691). Has a key role of mitophagy receptor involved in targeting mitochondria for autophagic degradation (PubMed:28017329). Involved in mitochondrial-mediated antiviral innate immunity, activates DDX58/RIG-I-mediated signal transduction and production of IFNB1 and proinflammatory cytokine IL6 (PubMed:31522117). {ECO:0000250|UniProtKB:O35129, ECO:0000269|PubMed:11302691, ECO:0000269|PubMed:20959514, ECO:0000269|PubMed:28017329, ECO:0000269|PubMed:31522117, ECO:0000305|PubMed:25904163}.; FUNCTION: In the nucleus, serves as transcriptional co-regulator (Probable). Acts as a mediator of transcriptional repression by nuclear hormone receptors via recruitment of histone deacetylases. Functions as an estrogen receptor (ER)-selective coregulator that potentiates the inhibitory activities of antiestrogens and represses the activity of estrogens. Competes with NCOA1 for modulation of ER transcriptional activity (By similarity). {ECO:0000250|UniProtKB:O35129, ECO:0000305|PubMed:25904163}.; FUNCTION: In the plasma membrane, is involved in IGFBP6-induced cell migration (PubMed:24003225). Cooperates with CD86 to mediate CD86-signaling in B lymphocytes that regulates the level of IgG1 produced through the activation of distal signaling intermediates. Upon CD40 engagement, required to activate NF-kappa-B signaling pathway via phospholipase C and protein kinase C activation (By similarity). {ECO:0000250|UniProtKB:O35129, ECO:0000269|PubMed:24003225}.; FUNCTION: (Microbial infection) Involved in human enterovirus 71/EV-71 infection by enhancing the autophagy mechanism during the infection. {ECO:0000269|PubMed:32276428}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Acetylation;Alternative splicing;Cell membrane;Coiled coil;Cytoplasm;Direct protein sequencing;Membrane;Mitochondrion;Mitochondrion inner membrane;Nucleus;Phosphoprotein;Receptor;Reference proteome;Repressor;Transcription;Transcription regulation</p>
+<p>3D-structure; Acetylation; Alternative splicing; Cell membrane; Coiled coil; Cytoplasm; Direct protein sequencing; Host-virus interaction; Membrane; Mitochondrion; Mitochondrion inner membrane; Nucleus; Phosphoprotein; Receptor; Reference proteome; Repressor; Transcription; Transcription regulation</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q99623" class="uri">https://www.uniprot.org/uniprot/Q99623</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-1a1e28175e405c98cceb" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1a1e28175e405c98cceb">{"x":{"data":[{"x":[1,1,299,299,1],"y":[0,1,1,0,0],"text":"Positions: 1-299 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-13.9,313.9],"tickmode":"array","ticktext":["1","50","100","150","200","250","299"],"tickvals":[1,50,100,150,200,250,299],"categoryorder":"array","categoryarray":["1","50","100","150","200","250","299"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef3746655928":{"text":{},"xmin":{},"xmax":{},"type":"scatter"}},"cur_data":"ef3746655928","visdat":{"ef3746655928":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>No domain info.</p></p>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

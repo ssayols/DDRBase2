@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: STAB1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,413 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Acts as a scavenger receptor for acetylated low density lipoprotein. Binds to both Gram-positive and Gram-negative bacteria and may play a role in defense against bacterial infection. When inhibited in endothelial tube formation assays, there is a marked decrease in cell-cell interactions, suggesting a role in angiogenesis. Involved in the delivery of newly synthesized CHID1/SI-CLP from the biosynthetic compartment to the endosomal/lysosomal system. {ECO:0000269|PubMed:12077138, ECO:0000269|PubMed:16357325}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>Alternative splicing;Disulfide bond;EGF-like domain;Glycoprotein;Inflammatory response;Laminin EGF-like domain;Membrane;Receptor;Reference proteome;Repeat;Signal;Transmembrane;Transmembrane helix</p>
+<p>Alternative splicing; Disulfide bond; EGF-like domain; Glycoprotein; Inflammatory response; Laminin EGF-like domain; Membrane; Receptor; Reference proteome; Repeat; Signal; Transmembrane; Transmembrane helix</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q9NY15" class="uri">https://www.uniprot.org/uniprot/Q9NY15</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-5e8d1e3a9b036c36ec8b" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5e8d1e3a9b036c36ec8b">{"x":{"data":[{"x":[1,1,2570,2570,1],"y":[0,1,1,0,0],"text":"Positions: 1-2570 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[110,110,148,148,110],"y":[0,1,1,0,0],"text":"Positions: 110-148 - domain EGF-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"EGF-like 1","legendgroup":"EGF-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1416,1416,1454,1454,1416],"y":[0,1,1,0,0],"text":"Positions: 1416-1454 - domain EGF-like 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(62,23,29,1)","hoveron":"fills","name":"EGF-like 10","legendgroup":"EGF-like 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1455,1455,1496,1496,1455],"y":[0,1,1,0,0],"text":"Positions: 1455-1496 - domain EGF-like 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(124,46,59,1)","hoveron":"fills","name":"EGF-like 11","legendgroup":"EGF-like 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1497,1497,1539,1539,1497],"y":[0,1,1,0,0],"text":"Positions: 1497-1539 - domain EGF-like 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(187,69,89,1)","hoveron":"fills","name":"EGF-like 12","legendgroup":"EGF-like 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1540,1540,1582,1582,1540],"y":[0,1,1,0,0],"text":"Positions: 1540-1582 - domain EGF-like 13","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(207,98,103,1)","hoveron":"fills","name":"EGF-like 13","legendgroup":"EGF-like 13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2056,2056,2090,2090,2056],"y":[0,1,1,0,0],"text":"Positions: 2056-2090 - domain EGF-like 14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(172,133,95,1)","hoveron":"fills","name":"EGF-like 14","legendgroup":"EGF-like 14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2091,2091,2131,2131,2091],"y":[0,1,1,0,0],"text":"Positions: 2091-2131 - domain EGF-like 15","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(137,168,87,1)","hoveron":"fills","name":"EGF-like 15","legendgroup":"EGF-like 15","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2132,2132,2174,2174,2132],"y":[0,1,1,0,0],"text":"Positions: 2132-2174 - domain EGF-like 16","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(102,203,80,1)","hoveron":"fills","name":"EGF-like 16","legendgroup":"EGF-like 16","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[156,156,193,193,156],"y":[0,1,1,0,0],"text":"Positions: 156-193 - domain EGF-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(81,194,115,1)","hoveron":"fills","name":"EGF-like 2","legendgroup":"EGF-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[195,195,229,229,195],"y":[0,1,1,0,0],"text":"Positions: 195-229 - domain EGF-like 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(64,178,157,1)","hoveron":"fills","name":"EGF-like 3","legendgroup":"EGF-like 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[232,232,271,271,232],"y":[0,1,1,0,0],"text":"Positions: 232-271 - domain EGF-like 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(46,162,199,1)","hoveron":"fills","name":"EGF-like 4","legendgroup":"EGF-like 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[728,728,768,768,728],"y":[0,1,1,0,0],"text":"Positions: 728-768 - domain EGF-like 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,157,229,1)","hoveron":"fills","name":"EGF-like 5","legendgroup":"EGF-like 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[818,818,858,858,818],"y":[0,1,1,0,0],"text":"Positions: 818-858 - domain EGF-like 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(36,178,229,1)","hoveron":"fills","name":"EGF-like 6","legendgroup":"EGF-like 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[861,861,903,903,861],"y":[0,1,1,0,0],"text":"Positions: 861-903 - domain EGF-like 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,199,229,1)","hoveron":"fills","name":"EGF-like 7","legendgroup":"EGF-like 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[904,904,946,946,904],"y":[0,1,1,0,0],"text":"Positions: 904-946 - domain EGF-like 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(39,220,229,1)","hoveron":"fills","name":"EGF-like 8","legendgroup":"EGF-like 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[947,947,986,986,947],"y":[0,1,1,0,0],"text":"Positions: 947-986 - domain EGF-like 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(73,182,220,1)","hoveron":"fills","name":"EGF-like 9","legendgroup":"EGF-like 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[356,356,494,494,356],"y":[0,1,1,0,0],"text":"Positions: 356-494 - domain FAS1 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(119,122,209,1)","hoveron":"fills","name":"FAS1 1","legendgroup":"FAS1 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[506,506,641,641,506],"y":[0,1,1,0,0],"text":"Positions: 506-641 - domain FAS1 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(165,62,197,1)","hoveron":"fills","name":"FAS1 2","legendgroup":"FAS1 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[988,988,1118,1118,988],"y":[0,1,1,0,0],"text":"Positions: 988-1118 - domain FAS1 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(206,18,181,1)","hoveron":"fills","name":"FAS1 3","legendgroup":"FAS1 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1128,1128,1253,1253,1128],"y":[0,1,1,0,0],"text":"Positions: 1128-1253 - domain FAS1 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(217,71,132,1)","hoveron":"fills","name":"FAS1 4","legendgroup":"FAS1 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1582,1582,1708,1708,1582],"y":[0,1,1,0,0],"text":"Positions: 1582-1708 - domain FAS1 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(229,123,84,1)","hoveron":"fills","name":"FAS1 5","legendgroup":"FAS1 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1724,1724,1864,1864,1724],"y":[0,1,1,0,0],"text":"Positions: 1724-1864 - domain FAS1 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(240,176,36,1)","hoveron":"fills","name":"FAS1 6","legendgroup":"FAS1 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2322,2322,2459,2459,2322],"y":[0,1,1,0,0],"text":"Positions: 2322-2459 - domain FAS1 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(231,192,38,1)","hoveron":"fills","name":"FAS1 7","legendgroup":"FAS1 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1327,1327,1392,1392,1327],"y":[0,1,1,0,0],"text":"Positions: 1327-1392 - domain Laminin EGF-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(206,180,78,1)","hoveron":"fills","name":"Laminin EGF-like 1","legendgroup":"Laminin EGF-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1966,1966,2031,2031,1966],"y":[0,1,1,0,0],"text":"Positions: 1966-2031 - domain Laminin EGF-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(182,169,118,1)","hoveron":"fills","name":"Laminin EGF-like 2","legendgroup":"Laminin EGF-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2206,2206,2301,2301,2206],"y":[0,1,1,0,0],"text":"Positions: 2206-2301 - domain Link","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"Link","legendgroup":"Link","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-127.45,2698.45],"tickmode":"array","ticktext":["1","500","1000","1500","2000","2500","2570"],"tickvals":[1,500,1000,1500,2000,2500,2570],"categoryorder":"array","categoryarray":["1","500","1000","1500","2000","2500","2570"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef1f26c88589":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef1f45d0a23e":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef1f26c88589","visdat":{"ef1f26c88589":["function (y) ","x"],"ef1f45d0a23e":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+EGF-like 1
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+148
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 2
+</td>
+<td style="text-align:right;">
+156
+</td>
+<td style="text-align:right;">
+193
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 3
+</td>
+<td style="text-align:right;">
+195
+</td>
+<td style="text-align:right;">
+229
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 4
+</td>
+<td style="text-align:right;">
+232
+</td>
+<td style="text-align:right;">
+271
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FAS1 1
+</td>
+<td style="text-align:right;">
+356
+</td>
+<td style="text-align:right;">
+494
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00082, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FAS1 2
+</td>
+<td style="text-align:right;">
+506
+</td>
+<td style="text-align:right;">
+641
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00082, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 5
+</td>
+<td style="text-align:right;">
+728
+</td>
+<td style="text-align:right;">
+768
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 6
+</td>
+<td style="text-align:right;">
+818
+</td>
+<td style="text-align:right;">
+858
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 7
+</td>
+<td style="text-align:right;">
+861
+</td>
+<td style="text-align:right;">
+903
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 8
+</td>
+<td style="text-align:right;">
+904
+</td>
+<td style="text-align:right;">
+946
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 9
+</td>
+<td style="text-align:right;">
+947
+</td>
+<td style="text-align:right;">
+986
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FAS1 3
+</td>
+<td style="text-align:right;">
+988
+</td>
+<td style="text-align:right;">
+1118
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00082, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FAS1 4
+</td>
+<td style="text-align:right;">
+1128
+</td>
+<td style="text-align:right;">
+1253
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00082, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 1
+</td>
+<td style="text-align:right;">
+1327
+</td>
+<td style="text-align:right;">
+1392
+</td>
+<td style="text-align:left;">
+ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 10
+</td>
+<td style="text-align:right;">
+1416
+</td>
+<td style="text-align:right;">
+1454
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 11
+</td>
+<td style="text-align:right;">
+1455
+</td>
+<td style="text-align:right;">
+1496
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 12
+</td>
+<td style="text-align:right;">
+1497
+</td>
+<td style="text-align:right;">
+1539
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 13
+</td>
+<td style="text-align:right;">
+1540
+</td>
+<td style="text-align:right;">
+1582
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FAS1 5
+</td>
+<td style="text-align:right;">
+1582
+</td>
+<td style="text-align:right;">
+1708
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00082, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FAS1 6
+</td>
+<td style="text-align:right;">
+1724
+</td>
+<td style="text-align:right;">
+1864
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00082, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Laminin EGF-like 2
+</td>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:right;">
+2031
+</td>
+<td style="text-align:left;">
+ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 14
+</td>
+<td style="text-align:right;">
+2056
+</td>
+<td style="text-align:right;">
+2090
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 15
+</td>
+<td style="text-align:right;">
+2091
+</td>
+<td style="text-align:right;">
+2131
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EGF-like 16
+</td>
+<td style="text-align:right;">
+2132
+</td>
+<td style="text-align:right;">
+2174
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00076, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Link
+</td>
+<td style="text-align:right;">
+2206
+</td>
+<td style="text-align:right;">
+2301
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00323, ECO:0000305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FAS1 7
+</td>
+<td style="text-align:right;">
+2322
+</td>
+<td style="text-align:right;">
+2459
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00082, ECO:0000305
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

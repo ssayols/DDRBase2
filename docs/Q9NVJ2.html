@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -85,30 +85,31 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
+
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: ARL8B</title>
 
-  <meta property="description" itemprop="description" content="ADP-ribosylation factor-like protein 8B (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)"/>
+  <meta property="description" itemprop="description" content="ADP-ribosylation factor-like protein 8B (EC 3.6.5.2) (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="DDRBase: ARL8B"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="ADP-ribosylation factor-like protein 8B (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)"/>
+  <meta property="og:description" content="ADP-ribosylation factor-like protein 8B (EC 3.6.5.2) (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="DDRBase"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="DDRBase: ARL8B"/>
-  <meta property="twitter:description" content="ADP-ribosylation factor-like protein 8B (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)"/>
+  <meta property="twitter:description" content="ADP-ribosylation factor-like protein 8B (EC 3.6.5.2) (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["ARL8B"]},{"type":"character","attributes":{},"value":["ADP-ribosylation factor-like protein 8B (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["ARL8B"]},{"type":"character","attributes":{},"value":["ADP-ribosylation factor-like protein 8B (EC 3.6.5.2) (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2053,7 +2065,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"ARL8B","description":"ADP-ribosylation factor-like protein 8B (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)","authors":[]}
+{"title":"ARL8B","description":"ADP-ribosylation factor-like protein 8B (EC 3.6.5.2) (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2084,7 +2096,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>ARL8B</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>ADP-ribosylation factor-like protein 8B (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)</p></p>
+<p><p>ADP-ribosylation factor-like protein 8B (EC 3.6.5.2) (ADP-ribosylation factor-like protein 10C) (Novel small G protein indispensable for equal chromosome segregation 1)</p></p>
 </div>
 
 
@@ -2093,17 +2105,33 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="gene-names">Gene names</h2>
 <p>ARL8B ARL10C GIE1</p>
 <h2 id="function">Function</h2>
-<p>FUNCTION: Plays a role in lysosome motility (PubMed:16537643, PubMed:25898167). In neurons, mediates the anterograde axonal long-range transport of presynaptic lysosome-related vesicles required for presynaptic biogenesis and synaptic function (By similarity). May play a role in chromosome segregation (PubMed:15331635). {ECO:0000250|UniProtKB:Q9CQW2, ECO:0000269|PubMed:15331635, ECO:0000269|PubMed:16537643, ECO:0000269|PubMed:25898167}.</p>
+<p>FUNCTION: Small GTPase which cycles between active GTP-bound and inactive GDP-bound states (PubMed:15331635, PubMed:16537643). In its active state, binds to a variety of effector proteins playing a key role in the regulation of lysosomal positioning which is important for nutrient sensing, natural killer cell-mediated cytotoxicity and antigen presentation. Along with its effectors, orchestrates lysosomal transport and fusion (PubMed:16650381, PubMed:16537643, PubMed:28325809, PubMed:25898167). Localizes specifically to lysosomal membranes and mediates anterograde lysosomal motility by recruiting PLEKHM2, which in turn recruits the motor protein kinesin-1 on lysosomes. Required for lysosomal and cytolytic granule exocytosis (PubMed:22172677, PubMed:29592961, PubMed:24088571). Critical factor involved in NK cell-mediated cytotoxicity. Drives the polarization of cytolytic granules and microtubule-organizing centers (MTOCs) toward the immune synapse between effector NK lymphocytes and target cells (PubMed:24088571). In neurons, mediates the anterograde axonal long-range transport of presynaptic lysosome-related vesicles required for presynaptic biogenesis and synaptic function (By similarity). Also acts as a regulator of endosome to lysosome trafficking pathways of special significance for host defense (PubMed:21802320). Regulates cargo trafficking to lysosomes by binding to PLEKHM1 and recruiting the HOPS subunit VPS41, resulting in functional assembly of the HOPS complex on lysosomal membranes (PubMed:16537643, PubMed:25908847). Plays an important role in cargo delivery to lysosomes for antigen presentation and microbial killing. Directs the intersection of CD1d with lipid antigens in lysosomes, and plays a role in intersecting phagosomes with lysosomes to generate phagolysosomes that kill microbes (PubMed:25908847, PubMed:21802320). Involved in the process of MHC II presentation. Regulates the delivery of antigens to lysosomes and the formation of MHC II-peptide complexes through the recruitment of the HOPS complex to lysosomes allowing the fusion of late endosomes to lysosomes (By similarity). May play a role in chromosome segregation (PubMed:15331635). {ECO:0000250|UniProtKB:Q9CQW2, ECO:0000269|PubMed:15331635, ECO:0000269|PubMed:16537643, ECO:0000269|PubMed:16650381, ECO:0000269|PubMed:21802320, ECO:0000269|PubMed:22172677, ECO:0000269|PubMed:24088571, ECO:0000269|PubMed:25898167, ECO:0000269|PubMed:25908847, ECO:0000269|PubMed:28325809, ECO:0000269|PubMed:29592961}.; FUNCTION: (Microbial infection) During Mycobacterium tuberculosis (Mtb) infection, is required for plasma membrane repair by controlling the exocytosis of lysosomes in macrophages. ARL8B secretion pathway is crucial to control the type of cell death of the M. tuberculosis-infected macrophages, distinguishing avirulent from virulent Mtb induced necrotic cell death. {ECO:0000269|PubMed:29592961}.; FUNCTION: (Microbial infection) During infection, coronaviruses such as SARS-CoV-2 and the chaperone HSPA5/GRP78 are probably co-released through ARL8B-dependent lysosomal exocytic pathway for unconventional egress. {ECO:0000269|PubMed:33157038}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Acetylation;Alternative splicing;Cell cycle;Cell division;Cell junction;Cell projection;Cytoplasm;Cytoskeleton;Direct protein sequencing;Endosome;GTP-binding;Lysosome;Membrane;Nucleotide-binding;Protein transport;Reference proteome;Synapse;Transport</p>
+<p>3D-structure; Acetylation; Alternative splicing; Cell cycle; Cell division; Cell junction; Cell projection; Cytoplasm; Cytoskeleton; Direct protein sequencing; Endosome; GTP-binding; Hydrolase; Lysosome; Membrane; Nucleotide-binding; Protein transport; Reference proteome; Synapse; Transport</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q9NVJ2" class="uri">https://www.uniprot.org/uniprot/Q9NVJ2</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-241597c85747848ce2ff" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-241597c85747848ce2ff">{"x":{"data":[{"x":[1,1,186,186,1],"y":[0,1,1,0,0],"text":"Positions: 1-186 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-8.25,195.25],"tickmode":"array","ticktext":["1","50","100","150","186"],"tickvals":[1,50,100,150,186],"categoryorder":"array","categoryarray":["1","50","100","150","186"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef4c65d1e15e":{"text":{},"xmin":{},"xmax":{},"type":"scatter"}},"cur_data":"ef4c65d1e15e","visdat":{"ef4c65d1e15e":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>No domain info.</p></p>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: XBP1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,63 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Functions as a transcription factor during endoplasmic reticulum (ER) stress by regulating the unfolded protein response (UPR). Required for cardiac myogenesis and hepatogenesis during embryonic development, and the development of secretory tissues such as exocrine pancreas and salivary gland (By similarity). Involved in terminal differentiation of B lymphocytes to plasma cells and production of immunoglobulins (PubMed:11460154). Modulates the cellular response to ER stress in a PIK3R-dependent manner (PubMed:20348923). Binds to the cis-acting X box present in the promoter regions of major histocompatibility complex class II genes (PubMed:8349596). Involved in VEGF-induced endothelial cell (EC) proliferation and retinal blood vessel formation during embryonic development but also for angiogenesis in adult tissues under ischemic conditions. Functions also as a major regulator of the UPR in obesity-induced insulin resistance and type 2 diabetes for the management of obesity and diabetes prevention (By similarity). {ECO:0000250|UniProtKB:O35426, ECO:0000269|PubMed:11460154, ECO:0000269|PubMed:20348923, ECO:0000269|PubMed:8349596}.; FUNCTION: [Isoform 1]: Plays a role in the unconventional cytoplasmic splicing processing of its own mRNA triggered by the endoplasmic reticulum (ER) transmembrane endoribonuclease ENR1: upon ER stress, the emerging XBP1 polypeptide chain, as part of a mRNA-ribosome-nascent chain (R-RNC) complex, cotranslationally recruits its own unprocessed mRNA through transient docking to the ER membrane and translational pausing, therefore facilitating efficient IRE1-mediated XBP1 mRNA isoform 2 production (PubMed:19394296, PubMed:21233347). In endothelial cells (EC), associated with KDR, promotes IRE1-mediated XBP1 mRNA isoform 2 productions in a vascular endothelial growth factor (VEGF)-dependent manner, leading to EC proliferation and angiogenesis (PubMed:23529610). Functions as a negative feed-back regulator of the potent transcription factor XBP1 isoform 2 protein levels through proteasome-mediated degradation, thus preventing the constitutive activation of the ER stress response signaling pathway (PubMed:16461360, PubMed:25239945). Inhibits the transactivation activity of XBP1 isoform 2 in myeloma cells (By similarity). Acts as a weak transcriptional factor (PubMed:8657566). Together with HDAC3, contributes to the activation of NFE2L2-mediated HMOX1 transcription factor gene expression in a PI(3)K/mTORC2/Akt-dependent signaling pathway leading to EC survival under disturbed flow/oxidative stress (PubMed:25190803). Binds to the ER stress response element (ERSE) upon ER stress (PubMed:11779464). Binds to the consensus 5’-GATGACGTG[TG]N(3)[AT]T-3’ sequence related to cAMP responsive element (CRE)-like sequences (PubMed:8657566). Binds the Tax-responsive element (TRE) present in the long terminal repeat (LTR) of T-cell leukemia virus type 1 (HTLV-I) and to the TPA response elements (TRE) (PubMed:2321018, PubMed:2196176, PubMed:1903538, PubMed:8657566). Associates preferentially to the HDAC3 gene promoter region in a static flow-dependent manner (PubMed:25190803). Binds to the CDH5/VE-cadherin gene promoter region (PubMed:19416856). {ECO:0000250|UniProtKB:O35426, ECO:0000269|PubMed:11779464, ECO:0000269|PubMed:16461360, ECO:0000269|PubMed:1903538, ECO:0000269|PubMed:19394296, ECO:0000269|PubMed:19416856, ECO:0000269|PubMed:21233347, ECO:0000269|PubMed:2196176, ECO:0000269|PubMed:2321018, ECO:0000269|PubMed:23529610, ECO:0000269|PubMed:25190803, ECO:0000269|PubMed:25239945, ECO:0000269|PubMed:8657566}.; FUNCTION: [Isoform 2]: Functions as a stress-inducible potent transcriptional activator during endoplasmic reticulum (ER) stress by inducing unfolded protein response (UPR) target genes via binding to the UPR element (UPRE). Up-regulates target genes encoding ER chaperones and ER-associated degradation (ERAD) components to enhance the capacity of productive folding and degradation mechanism, respectively, in order to maintain the homeostasis of the ER under ER stress (PubMed:11779464, PubMed:25239945). Plays a role in the production of immunoglobulins and interleukin-6 in the presence of stimuli required for plasma cell differentiation (By similarity). Induces phospholipid biosynthesis and ER expansion (PubMed:15466483). Contributes to the VEGF-induced endothelial cell (EC) growth and proliferation in a Akt/GSK-dependent and/or -independent signaling pathway, respectively, leading to beta-catenin nuclear translocation and E2F2 gene expression (PubMed:23529610). Promotes umbilical vein EC apoptosis and atherosclerotisis development in a caspase-dependent signaling pathway, and contributes to VEGF-induced EC proliferation and angiogenesis in adult tissues under ischemic conditions (PubMed:19416856, PubMed:23529610). Involved in the regulation of endostatin-induced autophagy in EC through BECN1 transcriptional activation (PubMed:23184933). Plays a role as an oncogene by promoting tumor progression: stimulates zinc finger protein SNAI1 transcription to induce epithelial-to-mesenchymal (EMT) transition, cell migration and invasion of breast cancer cells (PubMed:25280941). Involved in adipocyte differentiation by regulating lipogenic gene expression during lactation. Plays a role in the survival of both dopaminergic neurons of the substantia nigra pars compacta (SNpc), by maintaining protein homeostasis and of myeloma cells. Increases insulin sensitivity in the liver as a response to a high carbohydrate diet, resulting in improved glucose tolerance. Improves also glucose homeostasis in an ER stress- and/or insulin-independent manner through both binding and proteasome-induced degradation of the transcription factor FOXO1, hence resulting in suppression of gluconeogenic genes expression and in a reduction of blood glucose levels. Controls the induction of de novo fatty acid synthesis in hepatocytes by regulating the expression of a subset of lipogenic genes in an ER stress- and UPR-independent manner (By similarity). Associates preferentially to the HDAC3 gene promoter region in a disturbed flow-dependent manner (PubMed:25190803). Binds to the BECN1 gene promoter region (PubMed:23184933). Binds to the CDH5/VE-cadherin gene promoter region (PubMed:19416856). Binds to the ER stress response element (ERSE) upon ER stress (PubMed:11779464). Binds to the 5’-CCACG-3’ motif in the PPARG promoter (By similarity). {ECO:0000250|UniProtKB:O35426, ECO:0000269|PubMed:11779464, ECO:0000269|PubMed:15466483, ECO:0000269|PubMed:19416856, ECO:0000269|PubMed:23184933, ECO:0000269|PubMed:23529610, ECO:0000269|PubMed:25190803, ECO:0000269|PubMed:25239945, ECO:0000269|PubMed:25280941}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Acetylation;Activator;Alternative splicing;Angiogenesis;Apoptosis;Autophagy;Cleavage on pair of basic residues;Cytoplasm;DNA-binding;Developmental protein;Differentiation;Endoplasmic reticulum;Lipid biosynthesis;Lipid metabolism;Membrane;Myogenesis;Nucleus;Oncogene;Phosphoprotein;Protein transport;Reference proteome;Signal-anchor;Stress response;Transcription;Transcription regulation;Transmembrane;Transmembrane helix;Transport;Ubl conjugation;Unfolded protein response</p>
+<p>3D-structure; Acetylation; Activator; Alternative splicing; Angiogenesis; Apoptosis; Autophagy; Cleavage on pair of basic residues; Cytoplasm; DNA-binding; Developmental protein; Differentiation; Endoplasmic reticulum; Lipid biosynthesis; Lipid metabolism; Membrane; Myogenesis; Nucleus; Oncogene; Phosphoprotein; Protein transport; Reference proteome; Signal-anchor; Stress response; Transcription; Transcription regulation; Transmembrane; Transmembrane helix; Transport; Ubl conjugation; Unfolded protein response</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P17861" class="uri">https://www.uniprot.org/uniprot/P17861</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-183c5bae921dbe926899" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-183c5bae921dbe926899">{"x":{"data":[{"x":[1,1,261,261,1],"y":[0,1,1,0,0],"text":"Positions: 1-261 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[70,70,133,133,70],"y":[0,1,1,0,0],"text":"Positions: 70-133 - domain bZIP","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"bZIP","legendgroup":"bZIP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-12,274],"tickmode":"array","ticktext":["1","50","100","150","200","250","261"],"tickvals":[1,50,100,150,200,250,261],"categoryorder":"array","categoryarray":["1","50","100","150","200","250","261"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef7c3f22cbfc":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef7c7f22b09b":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef7c3f22cbfc","visdat":{"ef7c3f22cbfc":["function (y) ","x"],"ef7c7f22b09b":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+bZIP
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+133
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00978
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

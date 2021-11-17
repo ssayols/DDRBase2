@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: RBM19</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,15 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-  <script src="site_libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
-  <script src="site_libs/plotly-binding-4.9.2.1/plotly.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
   <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-  <link href="site_libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-  <script src="site_libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2103,14 +2109,153 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Plays a role in embryo pre-implantation development. {ECO:0000250}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Chromosome;Cytoplasm;Developmental protein;Isopeptide bond;Nucleus;Phosphoprotein;RNA-binding;Reference proteome;Repeat;Ubl conjugation</p>
+<p>3D-structure; Chromosome; Cytoplasm; Developmental protein; Isopeptide bond; Nucleus; Phosphoprotein; RNA-binding; Reference proteome; Repeat; Ubl conjugation</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q9Y4C8" class="uri">https://www.uniprot.org/uniprot/Q9Y4C8</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-f5364b07ecb94202d4b8" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f5364b07ecb94202d4b8">{"x":{"data":[{"x":[1,1,960,960,1],"y":[0,1,1,0,0],"text":"Positions: 1-960 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2,2,79,79,2],"y":[0,1,1,0,0],"text":"Positions: 2-79 - domain RRM 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"RRM 1","legendgroup":"RRM 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[294,294,369,369,294],"y":[0,1,1,0,0],"text":"Positions: 294-369 - domain RRM 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(223,83,107,1)","hoveron":"fills","name":"RRM 2","legendgroup":"RRM 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[402,402,480,480,402],"y":[0,1,1,0,0],"text":"Positions: 402-480 - domain RRM 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(97,208,79,1)","hoveron":"fills","name":"RRM 3","legendgroup":"RRM 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[587,587,659,659,587],"y":[0,1,1,0,0],"text":"Positions: 587-659 - domain RRM 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,151,230,1)","hoveron":"fills","name":"RRM 4","legendgroup":"RRM 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[730,730,811,811,730],"y":[0,1,1,0,0],"text":"Positions: 730-811 - domain RRM 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(40,226,229,1)","hoveron":"fills","name":"RRM 5","legendgroup":"RRM 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[832,832,912,912,832],"y":[0,1,1,0,0],"text":"Positions: 832-912 - domain RRM 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(205,11,188,1)","hoveron":"fills","name":"RRM 6","legendgroup":"RRM 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[695,695,695,695,695],"y":[-0.1,1.1,1.1,-0.1,-0.1],"text":"Positions: 695-695 - phospho ","type":"scatter","mode":"lines","line":{"width":3.77952755905512,"color":"rgba(255,0,0,0.6667)","dash":"solid"},"fill":"toself","fillcolor":"transparent","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-46.95,1007.95],"tickmode":"array","ticktext":["1","200","400","600","800","960"],"tickvals":[1,200,400,600,800,960],"categoryorder":"array","categoryarray":["1","200","400","600","800","960"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef317151b57a":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef31571db13c":{"text":{},"xmin":{},"xmax":{},"fill":{}},"ef316f27f79b":{"text":{},"xmin":{},"xmax":{}}},"cur_data":"ef317151b57a","visdat":{"ef317151b57a":["function (y) ","x"],"ef31571db13c":["function (y) ","x"],"ef316f27f79b":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+RRM 1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+79
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00176
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RRM 2
+</td>
+<td style="text-align:right;">
+294
+</td>
+<td style="text-align:right;">
+369
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00176
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RRM 3
+</td>
+<td style="text-align:right;">
+402
+</td>
+<td style="text-align:right;">
+480
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00176
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RRM 4
+</td>
+<td style="text-align:right;">
+587
+</td>
+<td style="text-align:right;">
+659
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00176
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RRM 5
+</td>
+<td style="text-align:right;">
+730
+</td>
+<td style="text-align:right;">
+811
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00176
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RRM 6
+</td>
+<td style="text-align:right;">
+832
+</td>
+<td style="text-align:right;">
+912
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00176
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:right;">
+position
+</th>
+<th style="text-align:left;">
+sequence window
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+695
+</td>
+<td style="text-align:left;">
+MEKDPAEPETVPDGETPEDENPTEEGADNSS
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-4e85959f202074bdde71" style="width:624px;height:384px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4e85959f202074bdde71">{"x":{"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11],"y":[1],"z":[[0.104166666666667,0.958333333333333,0.854166666666667,0.583333333333333,0.125,0.916666666666667,0.0625,0.229166666666667,1,0,0.3125]],"text":[["treatment: Aphidicoline<br />position: 695<br />log2FC: 0.26","treatment: Camptothecin<br />position: 695<br />log2FC: 0.67","treatment: Etoposide<br />position: 695<br />log2FC: 0.62","treatment: Formaldehyd<br />position: 695<br />log2FC: 0.49","treatment: Gemcitabine<br />position: 695<br />log2FC: 0.27","treatment: Hydrogen peroxide<br />position: 695<br />log2FC: 0.65","treatment: Hydroxyurea<br />position: 695<br />log2FC: 0.24","treatment: Methyl methanesulfonate<br />position: 695<br />log2FC: 0.32","treatment: Sodium Arsentie (NaAsO2)<br />position: 695<br />log2FC: 0.69","treatment: UV-C<br />position: 695<br />log2FC: 0.21","treatment: X-ray<br />position: 695<br />log2FC: 0.36"]],"colorscale":[[0,"#C6BEE0"],[0.0625,"#BDB5DB"],[0.104166666666667,"#B8B0D8"],[0.125,"#B5ADD7"],[0.229166666666667,"#A89ECF"],[0.3125,"#9D93C9"],[0.583333333333333,"#786EB6"],[0.854166666666667,"#524CA3"],[0.916666666666667,"#48449E"],[0.958333333333333,"#413F9B"],[1,"#3A3A98"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1],"name":"99_439fd8d43fa3e9568d75dc76b266d9d7","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#C6BEE0"],[0.00334448160535118,"#C5BEE0"],[0.00668896321070235,"#C5BDDF"],[0.0100334448160535,"#C4BDDF"],[0.0133779264214047,"#C4BDDF"],[0.0167224080267559,"#C3BCDF"],[0.020066889632107,"#C3BCDE"],[0.0234113712374582,"#C3BBDE"],[0.0267558528428093,"#C2BBDE"],[0.0301003344481605,"#C2BADE"],[0.0334448160535117,"#C1BADD"],[0.0367892976588629,"#C1B9DD"],[0.040133779264214,"#C0B9DD"],[0.0434782608695652,"#C0B8DD"],[0.0468227424749164,"#C0B8DC"],[0.0501672240802676,"#BFB7DC"],[0.0535117056856187,"#BFB7DC"],[0.0568561872909699,"#BEB6DC"],[0.0602006688963211,"#BEB6DC"],[0.0635451505016722,"#BDB5DB"],[0.0668896321070234,"#BDB5DB"],[0.0702341137123746,"#BCB4DB"],[0.0735785953177257,"#BCB4DB"],[0.0769230769230769,"#BCB3DA"],[0.0802675585284281,"#BBB3DA"],[0.0836120401337793,"#BBB2DA"],[0.0869565217391304,"#BAB2DA"],[0.0903010033444816,"#BAB2D9"],[0.0936454849498327,"#B9B1D9"],[0.096989966555184,"#B9B1D9"],[0.100334448160535,"#B9B0D9"],[0.103678929765886,"#B8B0D8"],[0.107023411371237,"#B8AFD8"],[0.110367892976589,"#B7AFD8"],[0.11371237458194,"#B7AED8"],[0.117056856187291,"#B6AED7"],[0.120401337792642,"#B6ADD7"],[0.123745819397993,"#B5ADD7"],[0.127090301003344,"#B5ACD7"],[0.130434782608696,"#B5ACD6"],[0.133779264214047,"#B4ABD6"],[0.137123745819398,"#B4ABD6"],[0.140468227424749,"#B3AAD6"],[0.1438127090301,"#B3AAD6"],[0.147157190635451,"#B2AAD5"],[0.150501672240803,"#B2A9D5"],[0.153846153846154,"#B2A9D5"],[0.157190635451505,"#B1A8D5"],[0.160535117056856,"#B1A8D4"],[0.163879598662207,"#B0A7D4"],[0.167224080267558,"#B0A7D4"],[0.17056856187291,"#AFA6D4"],[0.173913043478261,"#AFA6D3"],[0.177257525083612,"#AEA5D3"],[0.180602006688963,"#AEA5D3"],[0.183946488294314,"#AEA4D3"],[0.187290969899666,"#ADA4D2"],[0.190635451505017,"#ADA3D2"],[0.193979933110368,"#ACA3D2"],[0.197324414715719,"#ACA2D2"],[0.20066889632107,"#ABA2D1"],[0.204013377926421,"#ABA2D1"],[0.207357859531773,"#ABA1D1"],[0.210702341137124,"#AAA1D1"],[0.214046822742475,"#AAA0D1"],[0.217391304347826,"#A9A0D0"],[0.220735785953177,"#A99FD0"],[0.224080267558528,"#A89FD0"],[0.22742474916388,"#A89ED0"],[0.230769230769231,"#A79ECF"],[0.234113712374582,"#A79DCF"],[0.237458193979933,"#A79DCF"],[0.240802675585284,"#A69CCF"],[0.244147157190635,"#A69CCE"],[0.247491638795987,"#A59BCE"],[0.250836120401338,"#A59BCE"],[0.254180602006689,"#A49BCE"],[0.25752508361204,"#A49ACD"],[0.260869565217391,"#A39ACD"],[0.264214046822743,"#A399CD"],[0.267558528428094,"#A399CD"],[0.270903010033445,"#A298CC"],[0.274247491638796,"#A298CC"],[0.277591973244147,"#A197CC"],[0.280936454849498,"#A197CC"],[0.284280936454849,"#A096CB"],[0.287625418060201,"#A096CB"],[0.290969899665552,"#A095CB"],[0.294314381270903,"#9F95CB"],[0.297658862876254,"#9F95CB"],[0.301003344481605,"#9E94CA"],[0.304347826086956,"#9E94CA"],[0.307692307692308,"#9D93CA"],[0.311036789297659,"#9D93CA"],[0.31438127090301,"#9C92C9"],[0.317725752508361,"#9C92C9"],[0.321070234113712,"#9C91C9"],[0.324414715719064,"#9B91C9"],[0.327759197324415,"#9B90C8"],[0.331103678929766,"#9A90C8"],[0.334448160535117,"#9A90C8"],[0.337792642140468,"#998FC8"],[0.341137123745819,"#998FC7"],[0.344481605351171,"#988EC7"],[0.347826086956522,"#988EC7"],[0.351170568561873,"#988DC7"],[0.354515050167224,"#978DC6"],[0.357859531772575,"#978CC6"],[0.361204013377926,"#968CC6"],[0.364548494983278,"#968BC6"],[0.367892976588629,"#958BC5"],[0.37123745819398,"#958BC5"],[0.374581939799331,"#948AC5"],[0.377926421404682,"#948AC5"],[0.381270903010033,"#9489C5"],[0.384615384615385,"#9389C4"],[0.387959866220736,"#9388C4"],[0.391304347826087,"#9288C4"],[0.394648829431438,"#9287C4"],[0.397993311036789,"#9187C3"],[0.401337792642141,"#9186C3"],[0.404682274247492,"#9086C3"],[0.408026755852843,"#9086C3"],[0.411371237458194,"#9085C2"],[0.414715719063545,"#8F85C2"],[0.418060200668896,"#8F84C2"],[0.421404682274247,"#8E84C2"],[0.424749163879599,"#8E83C1"],[0.42809364548495,"#8D83C1"],[0.431438127090301,"#8D82C1"],[0.434782608695652,"#8C82C1"],[0.438127090301003,"#8C81C0"],[0.441471571906354,"#8C81C0"],[0.444816053511706,"#8B81C0"],[0.448160535117057,"#8B80C0"],[0.451505016722408,"#8A80BF"],[0.454849498327759,"#8A7FBF"],[0.45819397993311,"#897FBF"],[0.461538461538462,"#897EBF"],[0.464882943143813,"#887EBF"],[0.468227424749164,"#887DBE"],[0.471571906354515,"#887DBE"],[0.474916387959866,"#877DBE"],[0.478260869565217,"#877CBE"],[0.481605351170569,"#867CBD"],[0.48494983277592,"#867BBD"],[0.488294314381271,"#857BBD"],[0.491638795986622,"#857ABD"],[0.494983277591973,"#847ABC"],[0.498327759197324,"#8479BC"],[0.501672240802676,"#8479BC"],[0.505016722408027,"#8379BC"],[0.508361204013378,"#8378BB"],[0.511705685618729,"#8278BB"],[0.51505016722408,"#8277BB"],[0.518394648829431,"#8177BB"],[0.521739130434783,"#8176BA"],[0.525083612040134,"#8076BA"],[0.528428093645485,"#8075BA"],[0.531772575250836,"#7F75BA"],[0.535117056856187,"#7F75B9"],[0.538461538461539,"#7F74B9"],[0.54180602006689,"#7E74B9"],[0.545150501672241,"#7E73B9"],[0.548494983277592,"#7D73B9"],[0.551839464882943,"#7D72B8"],[0.555183946488294,"#7C72B8"],[0.558528428093646,"#7C71B8"],[0.561872909698997,"#7B71B8"],[0.565217391304348,"#7B71B7"],[0.568561872909699,"#7A70B7"],[0.57190635451505,"#7A70B7"],[0.575250836120402,"#7A6FB7"],[0.578595317725752,"#796FB6"],[0.581939799331104,"#796EB6"],[0.585284280936455,"#786EB6"],[0.588628762541806,"#786DB6"],[0.591973244147157,"#776DB5"],[0.595317725752508,"#776DB5"],[0.59866220735786,"#766CB5"],[0.602006688963211,"#766CB5"],[0.605351170568562,"#756BB4"],[0.608695652173913,"#756BB4"],[0.612040133779264,"#756AB4"],[0.615384615384615,"#746AB4"],[0.618729096989967,"#746AB3"],[0.622073578595318,"#7369B3"],[0.625418060200669,"#7369B3"],[0.62876254180602,"#7268B3"],[0.632107023411371,"#7268B3"],[0.635451505016723,"#7167B2"],[0.638795986622073,"#7167B2"],[0.642140468227425,"#7067B2"],[0.645484949832776,"#7066B2"],[0.648829431438127,"#6F66B1"],[0.652173913043478,"#6F65B1"],[0.655518394648829,"#6F65B1"],[0.658862876254181,"#6E64B1"],[0.662207357859532,"#6E64B0"],[0.665551839464883,"#6D64B0"],[0.668896321070234,"#6D63B0"],[0.672240802675585,"#6C63B0"],[0.675585284280936,"#6C62AF"],[0.678929765886288,"#6B62AF"],[0.682274247491639,"#6B61AF"],[0.68561872909699,"#6A61AF"],[0.688963210702341,"#6A60AE"],[0.692307692307692,"#6960AE"],[0.695652173913044,"#6960AE"],[0.698996655518395,"#685FAE"],[0.702341137123746,"#685FAD"],[0.705685618729097,"#685EAD"],[0.709030100334448,"#675EAD"],[0.712374581939799,"#675EAD"],[0.71571906354515,"#665DAC"],[0.719063545150502,"#665DAC"],[0.722408026755853,"#655CAC"],[0.725752508361204,"#655CAC"],[0.729096989966555,"#645BAC"],[0.732441471571906,"#645BAB"],[0.735785953177258,"#635BAB"],[0.739130434782609,"#635AAB"],[0.74247491638796,"#625AAB"],[0.745819397993311,"#6259AA"],[0.749163879598662,"#6159AA"],[0.752508361204013,"#6158AA"],[0.755852842809365,"#6058AA"],[0.759197324414716,"#6058A9"],[0.762541806020067,"#5F57A9"],[0.765886287625418,"#5F57A9"],[0.769230769230769,"#5E56A9"],[0.772575250836121,"#5E56A8"],[0.775919732441471,"#5D55A8"],[0.779264214046823,"#5D55A8"],[0.782608695652174,"#5D55A8"],[0.785953177257525,"#5C54A7"],[0.789297658862876,"#5C54A7"],[0.792642140468227,"#5B53A7"],[0.795986622073579,"#5B53A7"],[0.79933110367893,"#5A53A6"],[0.802675585284281,"#5A52A6"],[0.806020066889632,"#5952A6"],[0.809364548494983,"#5951A6"],[0.812709030100334,"#5851A6"],[0.816053511705686,"#5850A5"],[0.819397993311037,"#5750A5"],[0.822742474916388,"#5750A5"],[0.826086956521739,"#564FA5"],[0.82943143812709,"#564FA4"],[0.832775919732442,"#554EA4"],[0.836120401337793,"#554EA4"],[0.839464882943144,"#544EA4"],[0.842809364548495,"#544DA3"],[0.846153846153846,"#534DA3"],[0.849498327759197,"#534CA3"],[0.852842809364548,"#524CA3"],[0.8561872909699,"#524BA2"],[0.859531772575251,"#514BA2"],[0.862876254180602,"#514BA2"],[0.866220735785953,"#504AA2"],[0.869565217391304,"#4F4AA1"],[0.872909698996655,"#4F49A1"],[0.876254180602007,"#4E49A1"],[0.879598662207358,"#4E49A1"],[0.882943143812709,"#4D48A0"],[0.88628762541806,"#4D48A0"],[0.889632107023411,"#4C47A0"],[0.892976588628763,"#4C47A0"],[0.896321070234114,"#4B479F"],[0.899665551839465,"#4B469F"],[0.903010033444816,"#4A469F"],[0.906354515050167,"#4A459F"],[0.909698996655518,"#49459F"],[0.91304347826087,"#49449E"],[0.916387959866221,"#48449E"],[0.919732441471572,"#48449E"],[0.923076923076923,"#47439E"],[0.926421404682274,"#47439D"],[0.929765886287625,"#46429D"],[0.933110367892977,"#45429D"],[0.936454849498328,"#45429D"],[0.939799331103679,"#44419C"],[0.94314381270903,"#44419C"],[0.946488294314381,"#43409C"],[0.949832775919732,"#43409C"],[0.953177257525084,"#42409B"],[0.956521739130435,"#423F9B"],[0.959866220735786,"#413F9B"],[0.963210702341137,"#403E9B"],[0.966555183946488,"#403E9A"],[0.96989966555184,"#3F3E9A"],[0.973244147157191,"#3F3D9A"],[0.976588628762542,"#3E3D9A"],[0.979933110367893,"#3E3C99"],[0.983277591973244,"#3D3C99"],[0.986622073578595,"#3C3C99"],[0.989966555183946,"#3C3B99"],[0.993311036789298,"#3B3B98"],[0.996655518394649,"#3B3A98"],[1,"#3A3A98"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.04,"title":"log2 FC","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"tickmode":"array","ticktext":["0.3","0.4","0.5","0.6"],"tickvals":[0.1875,0.395833333333333,0.604166666666667,0.8125],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":27.8721461187215,"r":7.30593607305936,"b":155.799086757991,"l":28.4931506849315},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,11.6],"tickmode":"array","ticktext":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11],"categoryorder":"array","categoryarray":["Aphidicoline","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsentie (NaAsO2)","UV-C","X-ray"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,1.6],"tickmode":"array","ticktext":["695"],"tickvals":[1],"categoryorder":"array","categoryarray":["695"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"55276da4d2e6":{"x":{},"y":{},"fill":{},"type":"heatmap"}},"cur_data":"55276da4d2e6","visdat":{"55276da4d2e6":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d58e924ecd63a2ffc8e9" style="width:624px;height:408px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d58e924ecd63a2ffc8e9">{"x":{"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11],"y":[1],"z":[[0.104166666666667,0.958333333333333,0.854166666666667,0.583333333333333,0.125,0.916666666666667,0.0625,0.229166666666667,1,0,0.3125]],"text":[["Treatment: Aphidicolin <br />Position: 695 <br />log2FC: 0.26 <br />FDR: 0.32164860 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Camptothecin <br />Position: 695 <br />log2FC: 0.67 <br />FDR: 0.00124460 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Etoposide <br />Position: 695 <br />log2FC: 0.62 <br />FDR: 0.00154455 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Formaldehyd <br />Position: 695 <br />log2FC: 0.49 <br />FDR: 0.00393133 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Gemcitabine <br />Position: 695 <br />log2FC: 0.27 <br />FDR: 0.31468358 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Hydrogen peroxide <br />Position: 695 <br />log2FC: 0.65 <br />FDR: 0.00066196 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Hydroxyurea <br />Position: 695 <br />log2FC: 0.24 <br />FDR: 0.30638559 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Methyl methanesulfonate <br />Position: 695 <br />log2FC: 0.32 <br />FDR: 0.04917796 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Sodium Arsenite <br />Position: 695 <br />log2FC: 0.69 <br />FDR: 0.00021391 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: UV-C <br />Position: 695 <br />log2FC: 0.21 <br />FDR: 0.52281097 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: X-ray <br />Position: 695 <br />log2FC: 0.36 <br />FDR: 0.06232227 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK"]],"colorscale":[[0,"#C3C9E9"],[0.0625,"#BAC2E6"],[0.104166666666667,"#B4BDE4"],[0.125,"#B1BAE3"],[0.229166666666667,"#A2AEDD"],[0.3125,"#96A4D9"],[0.583333333333333,"#6D86CB"],[0.854166666666667,"#3B69BD"],[0.916666666666667,"#2B62B9"],[0.958333333333333,"#1C5EB7"],[1,"#005AB5"]],"type":"heatmap","showscale":false,"autocolorscale":false,"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7,8,9,10,11],"y":[1,1,1,1,1,1,1,1,1,1,1],"text":["","**","**","**","","***","","*","***","",""],"hovertext":["Treatment: Aphidicolin <br />Position: 695 <br />log2FC: 0.26 <br />FDR: 0.32164860 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Camptothecin <br />Position: 695 <br />log2FC: 0.67 <br />FDR: 0.00124460 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Etoposide <br />Position: 695 <br />log2FC: 0.62 <br />FDR: 0.00154455 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Formaldehyd <br />Position: 695 <br />log2FC: 0.49 <br />FDR: 0.00393133 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Gemcitabine <br />Position: 695 <br />log2FC: 0.27 <br />FDR: 0.31468358 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Hydrogen peroxide <br />Position: 695 <br />log2FC: 0.65 <br />FDR: 0.00066196 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Hydroxyurea <br />Position: 695 <br />log2FC: 0.24 <br />FDR: 0.30638559 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Methyl methanesulfonate <br />Position: 695 <br />log2FC: 0.32 <br />FDR: 0.04917796 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: Sodium Arsenite <br />Position: 695 <br />log2FC: 0.69 <br />FDR: 0.00021391 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: UV-C <br />Position: 695 <br />log2FC: 0.21 <br />FDR: 0.52281097 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK","Treatment: X-ray <br />Position: 695 <br />log2FC: 0.36 <br />FDR: 0.06232227 <br />Sequence window: DPAEPET(0.006)VPDGET(0.99)PEDENPT(0.004)EEGADNSSAK"],"textfont":{"size":17.1421753925017,"color":"rgba(0,0,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1],"name":"99_9ba8a73e7f4d29fabbc572f5c938331b","type":"scatter","mode":"markers","opacity":0,"hoverinfo":"skip","showlegend":false,"marker":{"color":[0,1],"colorscale":[[0,"#C3C9E9"],[0.00334448160535118,"#C2C9E9"],[0.00668896321070235,"#C2C8E9"],[0.0100334448160535,"#C1C8E9"],[0.0133779264214047,"#C1C7E8"],[0.0167224080267559,"#C0C7E8"],[0.020066889632107,"#C0C7E8"],[0.0234113712374582,"#BFC6E8"],[0.0267558528428093,"#BFC6E8"],[0.0301003344481605,"#BEC5E8"],[0.0334448160535117,"#BEC5E7"],[0.0367892976588629,"#BDC5E7"],[0.040133779264214,"#BDC4E7"],[0.0434782608695652,"#BDC4E7"],[0.0468227424749164,"#BCC3E7"],[0.0501672240802676,"#BCC3E7"],[0.0535117056856187,"#BBC3E6"],[0.0568561872909699,"#BBC2E6"],[0.0602006688963211,"#BAC2E6"],[0.0635451505016722,"#BAC1E6"],[0.0668896321070234,"#B9C1E6"],[0.0702341137123746,"#B9C1E5"],[0.0735785953177257,"#B8C0E5"],[0.0769230769230769,"#B8C0E5"],[0.0802675585284281,"#B7BFE5"],[0.0836120401337793,"#B7BFE5"],[0.0869565217391304,"#B6BFE5"],[0.0903010033444816,"#B6BEE4"],[0.0936454849498327,"#B6BEE4"],[0.096989966555184,"#B5BEE4"],[0.100334448160535,"#B5BDE4"],[0.103678929765886,"#B4BDE4"],[0.107023411371237,"#B4BCE4"],[0.110367892976589,"#B3BCE3"],[0.11371237458194,"#B3BCE3"],[0.117056856187291,"#B2BBE3"],[0.120401337792642,"#B2BBE3"],[0.123745819397993,"#B1BAE3"],[0.127090301003344,"#B1BAE3"],[0.130434782608696,"#B0BAE2"],[0.133779264214047,"#B0B9E2"],[0.137123745819398,"#AFB9E2"],[0.140468227424749,"#AFB8E2"],[0.1438127090301,"#AEB8E2"],[0.147157190635451,"#AEB8E2"],[0.150501672240803,"#AEB7E1"],[0.153846153846154,"#ADB7E1"],[0.157190635451505,"#ADB6E1"],[0.160535117056856,"#ACB6E1"],[0.163879598662207,"#ACB6E1"],[0.167224080267558,"#ABB5E1"],[0.17056856187291,"#ABB5E0"],[0.173913043478261,"#AAB4E0"],[0.177257525083612,"#AAB4E0"],[0.180602006688963,"#A9B4E0"],[0.183946488294314,"#A9B3E0"],[0.187290969899666,"#A8B3E0"],[0.190635451505017,"#A8B2DF"],[0.193979933110368,"#A7B2DF"],[0.197324414715719,"#A7B2DF"],[0.20066889632107,"#A6B1DF"],[0.204013377926421,"#A6B1DF"],[0.207357859531773,"#A5B1DE"],[0.210702341137124,"#A5B0DE"],[0.214046822742475,"#A5B0DE"],[0.217391304347826,"#A4AFDE"],[0.220735785953177,"#A4AFDE"],[0.224080267558528,"#A3AFDE"],[0.22742474916388,"#A3AEDD"],[0.230769230769231,"#A2AEDD"],[0.234113712374582,"#A2ADDD"],[0.237458193979933,"#A1ADDD"],[0.240802675585284,"#A1ADDD"],[0.244147157190635,"#A0ACDD"],[0.247491638795987,"#A0ACDC"],[0.250836120401338,"#9FABDC"],[0.254180602006689,"#9FABDC"],[0.25752508361204,"#9EABDC"],[0.260869565217391,"#9EAADC"],[0.264214046822743,"#9DAADC"],[0.267558528428094,"#9DAADB"],[0.270903010033445,"#9CA9DB"],[0.274247491638796,"#9CA9DB"],[0.277591973244147,"#9BA8DB"],[0.280936454849498,"#9BA8DB"],[0.284280936454849,"#9AA8DB"],[0.287625418060201,"#9AA7DA"],[0.290969899665552,"#99A7DA"],[0.294314381270903,"#99A6DA"],[0.297658862876254,"#99A6DA"],[0.301003344481605,"#98A6DA"],[0.304347826086956,"#98A5D9"],[0.307692307692308,"#97A5D9"],[0.311036789297659,"#97A4D9"],[0.31438127090301,"#96A4D9"],[0.317725752508361,"#96A4D9"],[0.321070234113712,"#95A3D9"],[0.324414715719064,"#95A3D8"],[0.327759197324415,"#94A3D8"],[0.331103678929766,"#94A2D8"],[0.334448160535117,"#93A2D8"],[0.337792642140468,"#93A1D8"],[0.341137123745819,"#92A1D8"],[0.344481605351171,"#92A1D7"],[0.347826086956522,"#91A0D7"],[0.351170568561873,"#91A0D7"],[0.354515050167224,"#909FD7"],[0.357859531772575,"#909FD7"],[0.361204013377926,"#8F9FD7"],[0.364548494983278,"#8F9ED6"],[0.367892976588629,"#8E9ED6"],[0.37123745819398,"#8E9ED6"],[0.374581939799331,"#8D9DD6"],[0.377926421404682,"#8D9DD6"],[0.381270903010033,"#8C9CD6"],[0.384615384615385,"#8C9CD5"],[0.387959866220736,"#8B9CD5"],[0.391304347826087,"#8B9BD5"],[0.394648829431438,"#8A9BD5"],[0.397993311036789,"#8A9BD5"],[0.401337792642141,"#899AD4"],[0.404682274247492,"#899AD4"],[0.408026755852843,"#8899D4"],[0.411371237458194,"#8899D4"],[0.414715719063545,"#8799D4"],[0.418060200668896,"#8798D4"],[0.421404682274247,"#8698D3"],[0.424749163879599,"#8697D3"],[0.42809364548495,"#8597D3"],[0.431438127090301,"#8597D3"],[0.434782608695652,"#8496D3"],[0.438127090301003,"#8496D3"],[0.441471571906354,"#8396D2"],[0.444816053511706,"#8395D2"],[0.448160535117057,"#8295D2"],[0.451505016722408,"#8294D2"],[0.454849498327759,"#8194D2"],[0.45819397993311,"#8194D2"],[0.461538461538462,"#8093D1"],[0.464882943143813,"#8093D1"],[0.468227424749164,"#7F93D1"],[0.471571906354515,"#7F92D1"],[0.474916387959866,"#7E92D1"],[0.478260869565217,"#7E91D0"],[0.481605351170569,"#7D91D0"],[0.48494983277592,"#7D91D0"],[0.488294314381271,"#7C90D0"],[0.491638795986622,"#7C90D0"],[0.494983277591973,"#7B90D0"],[0.498327759197324,"#7B8FCF"],[0.501672240802676,"#7A8FCF"],[0.505016722408027,"#7A8ECF"],[0.508361204013378,"#798ECF"],[0.511705685618729,"#798ECF"],[0.51505016722408,"#788DCF"],[0.518394648829431,"#788DCE"],[0.521739130434783,"#778DCE"],[0.525083612040134,"#778CCE"],[0.528428093645485,"#768CCE"],[0.531772575250836,"#768CCE"],[0.535117056856187,"#758BCE"],[0.538461538461539,"#748BCD"],[0.54180602006689,"#748ACD"],[0.545150501672241,"#738ACD"],[0.548494983277592,"#738ACD"],[0.551839464882943,"#7289CD"],[0.555183946488294,"#7289CC"],[0.558528428093646,"#7189CC"],[0.561872909698997,"#7188CC"],[0.565217391304348,"#7088CC"],[0.568561872909699,"#7087CC"],[0.57190635451505,"#6F87CC"],[0.575250836120402,"#6F87CB"],[0.578595317725752,"#6E86CB"],[0.581939799331104,"#6E86CB"],[0.585284280936455,"#6D86CB"],[0.588628762541806,"#6D85CB"],[0.591973244147157,"#6C85CB"],[0.595317725752508,"#6B84CA"],[0.59866220735786,"#6B84CA"],[0.602006688963211,"#6A84CA"],[0.605351170568562,"#6A83CA"],[0.608695652173913,"#6983CA"],[0.612040133779264,"#6983CA"],[0.615384615384615,"#6882C9"],[0.618729096989967,"#6882C9"],[0.622073578595318,"#6782C9"],[0.625418060200669,"#6781C9"],[0.62876254180602,"#6681C9"],[0.632107023411371,"#6580C8"],[0.635451505016723,"#6580C8"],[0.638795986622073,"#6480C8"],[0.642140468227425,"#647FC8"],[0.645484949832776,"#637FC8"],[0.648829431438127,"#637FC8"],[0.652173913043478,"#627EC7"],[0.655518394648829,"#617EC7"],[0.658862876254181,"#617EC7"],[0.662207357859532,"#607DC7"],[0.665551839464883,"#607DC7"],[0.668896321070234,"#5F7CC7"],[0.672240802675585,"#5F7CC6"],[0.675585284280936,"#5E7CC6"],[0.678929765886288,"#5D7BC6"],[0.682274247491639,"#5D7BC6"],[0.68561872909699,"#5C7BC6"],[0.688963210702341,"#5C7AC5"],[0.692307692307692,"#5B7AC5"],[0.695652173913044,"#5B7AC5"],[0.698996655518395,"#5A79C5"],[0.702341137123746,"#5979C5"],[0.705685618729097,"#5979C5"],[0.709030100334448,"#5878C4"],[0.712374581939799,"#5878C4"],[0.71571906354515,"#5777C4"],[0.719063545150502,"#5677C4"],[0.722408026755853,"#5677C4"],[0.725752508361204,"#5576C4"],[0.729096989966555,"#5576C3"],[0.732441471571906,"#5476C3"],[0.735785953177258,"#5375C3"],[0.739130434782609,"#5375C3"],[0.74247491638796,"#5275C3"],[0.745819397993311,"#5174C2"],[0.749163879598662,"#5174C2"],[0.752508361204013,"#5074C2"],[0.755852842809365,"#5073C2"],[0.759197324414716,"#4F73C2"],[0.762541806020067,"#4E72C2"],[0.765886287625418,"#4E72C1"],[0.769230769230769,"#4D72C1"],[0.772575250836121,"#4C71C1"],[0.775919732441471,"#4C71C1"],[0.779264214046823,"#4B71C1"],[0.782608695652174,"#4A70C1"],[0.785953177257525,"#4A70C0"],[0.789297658862876,"#4970C0"],[0.792642140468227,"#486FC0"],[0.795986622073579,"#486FC0"],[0.79933110367893,"#476FC0"],[0.802675585284281,"#466EBF"],[0.806020066889632,"#466EBF"],[0.809364548494983,"#456EBF"],[0.812709030100334,"#446DBF"],[0.816053511705686,"#446DBF"],[0.819397993311037,"#436CBF"],[0.822742474916388,"#426CBE"],[0.826086956521739,"#416CBE"],[0.82943143812709,"#416BBE"],[0.832775919732442,"#406BBE"],[0.836120401337793,"#3F6BBE"],[0.839464882943144,"#3E6ABE"],[0.842809364548495,"#3E6ABD"],[0.846153846153846,"#3D6ABD"],[0.849498327759197,"#3C69BD"],[0.852842809364548,"#3B69BD"],[0.8561872909699,"#3B69BD"],[0.859531772575251,"#3A68BC"],[0.862876254180602,"#3968BC"],[0.866220735785953,"#3868BC"],[0.869565217391304,"#3767BC"],[0.872909698996655,"#3767BC"],[0.876254180602007,"#3667BC"],[0.879598662207358,"#3566BB"],[0.882943143812709,"#3466BB"],[0.88628762541806,"#3366BB"],[0.889632107023411,"#3265BB"],[0.892976588628763,"#3165BB"],[0.896321070234114,"#3164BB"],[0.899665551839465,"#3064BA"],[0.903010033444816,"#2F64BA"],[0.906354515050167,"#2E63BA"],[0.909698996655518,"#2D63BA"],[0.91304347826087,"#2C63BA"],[0.916387959866221,"#2B62B9"],[0.919732441471572,"#2A62B9"],[0.923076923076923,"#2962B9"],[0.926421404682274,"#2861B9"],[0.929765886287625,"#2761B9"],[0.933110367892977,"#2561B9"],[0.936454849498328,"#2460B8"],[0.939799331103679,"#2360B8"],[0.94314381270903,"#2260B8"],[0.946488294314381,"#215FB8"],[0.949832775919732,"#1F5FB8"],[0.953177257525084,"#1E5FB7"],[0.956521739130435,"#1D5EB7"],[0.959866220735786,"#1B5EB7"],[0.963210702341137,"#1A5EB7"],[0.966555183946488,"#185DB7"],[0.96989966555184,"#165DB7"],[0.973244147157191,"#155DB6"],[0.976588628762542,"#135CB6"],[0.979933110367893,"#115CB6"],[0.983277591973244,"#0E5CB6"],[0.986622073578595,"#0C5BB6"],[0.989966555183946,"#095BB6"],[0.993311036789298,"#065BB5"],[0.996655518394649,"#035AB5"],[1,"#005AB5"]],"colorbar":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"thickness":23.04,"title":"log2 FC","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"tickmode":"array","ticktext":["0.3","0.4","0.5","0.6"],"tickvals":[0.1875,0.395833333333333,0.604166666666667,0.8125],"tickfont":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"ticklen":2,"len":0.5}},"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":27.1737845823261,"r":7.30593607305936,"b":149.255976363148,"l":28.4931506849315},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,11.6],"tickmode":"array","ticktext":["Aphidicolin","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsenite","UV-C","X-ray"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11],"categoryorder":"array","categoryarray":["Aphidicolin","Camptothecin","Etoposide","Formaldehyd","Gemcitabine","Hydrogen peroxide","Hydroxyurea","Methyl methanesulfonate","Sodium Arsenite","UV-C","X-ray"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,1.6],"tickmode":"array","ticktext":["695"],"tickvals":[1],"categoryorder":"array","categoryarray":["695"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"size","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef3166f5f46e":{"x":{},"y":{},"fill":{},"text":{},"type":"heatmap"},"ef3136fcdcc":{"x":{},"y":{},"fill":{},"text":{},"label":{},"size":{}}},"cur_data":"ef3166f5f46e","visdat":{"ef3166f5f46e":["function (y) ","x"],"ef3136fcdcc":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

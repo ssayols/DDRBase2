@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: CX3CR1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2093,17 +2105,33 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="gene-names">Gene names</h2>
 <p>CX3CR1 CMKBRL1 GPR13</p>
 <h2 id="function">Function</h2>
-<p>FUNCTION: Receptor for the CX3C chemokine fractalkine (CX3CL1); binds to CX3CL1 and mediates both its adhesive and migratory functions (PubMed:9390561, PubMed:23125415). Acts as coreceptor with CD4 for HIV-1 virus envelope protein (in vitro) (PubMed:9726990). Isoform 2 and isoform 3 seem to be more potent HIV-1 coreceptors than isoform 1 (PubMed:14607932). {ECO:0000269|PubMed:14607932, ECO:0000269|PubMed:23125415, ECO:0000269|PubMed:9390561, ECO:0000269|PubMed:9726990}.</p>
+<p>FUNCTION: Receptor for the C-X3-C chemokine fractalkine (CX3CL1) present on many early leukocyte cells; CX3CR1-CX3CL1 signaling exerts distinct functions in different tissue compartments, such as immune response, inflammation, cell adhesion and chemotaxis (PubMed:9390561, PubMed:9782118, PubMed:12055230, PubMed:23125415). CX3CR1-CX3CL1 signaling mediates cell migratory functions (By similarity). Responsible for the recruitment of natural killer (NK) cells to inflamed tissues (By similarity). Acts as a regulator of inflammation process leading to atherogenesis by mediating macrophage and monocyte recruitment to inflamed atherosclerotic plaques, promoting cell survival (By similarity). Involved in airway inflammation by promoting interleukin 2-producing T helper (Th2) cell survival in inflamed lung (By similarity). Involved in the migration of circulating monocytes to non-inflamed tissues, where they differentiate into macrophages and dendritic cells (By similarity). Acts as a negative regulator of angiogenesis, probably by promoting macrophage chemotaxis (PubMed:14581400, PubMed:18971423). Plays a key role in brain microglia by regulating inflammatory response in the central nervous system (CNS) and regulating synapse maturation (By similarity). Required to restrain the microglial inflammatory response in the CNS and the resulting parenchymal damage in response to pathological stimuli (By similarity). Involved in brain development by participating to synaptic pruning, a natural process during which brain microglia eliminates extra synapses during postnatal development (By similarity). Synaptic pruning by microglia is required to promote the maturation of circuit connectivity during brain development (By similarity). Acts as an important regulator of the gut microbiota by controlling immunity to intestinal bacteria and fungi (By similarity). Expressed in lamina propria dendritic cells in the small intestine, which form transepithelial dendrites capable of taking up bacteria in order to provide defense against pathogenic bacteria (By similarity). Required to initiate innate and adaptive immune responses against dissemination of commensal fungi (mycobiota) component of the gut: expressed in mononuclear phagocytes (MNPs) and acts by promoting induction of antifungal IgG antibodies response to confer protection against disseminated C.albicans or C.auris infection (PubMed:29326275). Also acts as a receptor for C-C motif chemokine CCL26, inducing cell chemotaxis (PubMed:20974991). {ECO:0000250|UniProtKB:Q9Z0D9, ECO:0000269|PubMed:12055230, ECO:0000269|PubMed:14581400, ECO:0000269|PubMed:18971423, ECO:0000269|PubMed:20974991, ECO:0000269|PubMed:23125415, ECO:0000269|PubMed:29326275, ECO:0000269|PubMed:9390561, ECO:0000269|PubMed:9782118}.; FUNCTION: [Isoform 1]: (Microbial infection) Acts as coreceptor with CD4 for HIV-1 virus envelope protein. {ECO:0000269|PubMed:14607932, ECO:0000269|PubMed:9726990}.; FUNCTION: [Isoform 2]: (Microbial infection) Acts as coreceptor with CD4 for HIV-1 virus envelope protein (PubMed:14607932). May have more potent HIV-1 coreceptothr activity than isoform 1 (PubMed:14607932). {ECO:0000269|PubMed:14607932}.; FUNCTION: [Isoform 3]: (Microbial infection) Acts as coreceptor with CD4 for HIV-1 virus envelope protein (PubMed:14607932). May have more potent HIV-1 coreceptor activity than isoform 1 (PubMed:14607932). {ECO:0000269|PubMed:14607932}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>Age-related macular degeneration;Alternative splicing;Cell membrane;Disulfide bond;G-protein coupled receptor;Host-virus interaction;Membrane;Phosphoprotein;Receptor;Reference proteome;Transducer;Transmembrane;Transmembrane helix</p>
+<p>Adaptive immunity; Age-related macular degeneration; Alternative splicing; Cell membrane; Disulfide bond; G-protein coupled receptor; Host-virus interaction; Immunity; Inflammatory response; Innate immunity; Membrane; Phosphoprotein; Receptor; Reference proteome; Transducer; Transmembrane; Transmembrane helix</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P49238" class="uri">https://www.uniprot.org/uniprot/P49238</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-617b76e83e5f6a6cc673" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-617b76e83e5f6a6cc673">{"x":{"data":[{"x":[1,1,355,355,1],"y":[0,1,1,0,0],"text":"Positions: 1-355 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-16.7,372.7],"tickmode":"array","ticktext":["1","100","200","300","355"],"tickvals":[1,100,200,300,355],"categoryorder":"array","categoryarray":["1","100","200","300","355"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef576cc3dc55":{"text":{},"xmin":{},"xmax":{},"type":"scatter"}},"cur_data":"ef576cc3dc55","visdat":{"ef576cc3dc55":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>No domain info.</p></p>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

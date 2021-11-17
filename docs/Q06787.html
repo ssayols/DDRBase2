@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: FMR1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2093,17 +2107,107 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="gene-names">Gene names</h2>
 <p>FMR1</p>
 <h2 id="function">Function</h2>
-<p>FUNCTION: Multifunctional polyribosome-associated RNA-binding protein that plays a central role in neuronal development and synaptic plasticity through the regulation of alternative mRNA splicing, mRNA stability, mRNA dendritic transport and postsynaptic local protein synthesis of a subset of mRNAs (PubMed:16631377, PubMed:18653529, PubMed:19166269, PubMed:23235829, PubMed:25464849). Plays a role in the alternative splicing of its own mRNA (PubMed:18653529). Plays a role in mRNA nuclear export (By similarity). Together with export factor NXF2, is involved in the regulation of the NXF1 mRNA stability in neurons (By similarity). Stabilizes the scaffolding postsynaptic density protein DLG4/PSD-95 and the myelin basic protein (MBP) mRNAs in hippocampal neurons and glial cells, respectively; this stabilization is further increased in response to metabotropic glutamate receptor (mGluR) stimulation (By similarity). Plays a role in selective delivery of a subset of dendritic mRNAs to synaptic sites in response to mGluR activation in a kinesin-dependent manner (By similarity). Plays a role as a repressor of mRNA translation during the transport of dendritic mRNAs to postsynaptic dendritic spines (PubMed:11532944, PubMed:11157796, PubMed:12594214, PubMed:23235829). Component of the CYFIP1-EIF4E-FMR1 complex which blocks cap-dependent mRNA translation initiation (By similarity). Represses mRNA translation by stalling ribosomal translocation during elongation (By similarity). Reports are contradictory with regards to its ability to mediate translation inhibition of MBP mRNA in oligodendrocytes (PubMed:23891804). Also involved in the recruitment of the RNA helicase MOV10 to a subset of mRNAs and hence regulates microRNA (miRNA)-mediated translational repression by AGO2 (PubMed:14703574, PubMed:17057366, PubMed:25464849). Facilitates the assembly of miRNAs on specific target mRNAs (PubMed:17057366). Plays also a role as an activator of mRNA translation of a subset of dendritic mRNAs at synapses (PubMed:19097999, PubMed:19166269). In response to mGluR stimulation, FMR1-target mRNAs are rapidly derepressed, allowing for local translation at synapses (By similarity). Binds to a large subset of dendritic mRNAs that encode a myriad of proteins involved in pre- and postsynaptic functions (PubMed:7692601, PubMed:11719189, PubMed:11157796, PubMed:12594214, PubMed:17417632, PubMed:23235829, PubMed:24448548). Binds to 5’-ACU[GU]-3’ and/or 5’-[AU]GGA-3’ RNA consensus sequences within mRNA targets, mainly at coding sequence (CDS) and 3’-untranslated region (UTR) and less frequently at 5’-UTR (PubMed:23235829). Binds to intramolecular G-quadruplex structures in the 5’- or 3’-UTRs of mRNA targets (PubMed:11719189, PubMed:18579868, PubMed:25464849, PubMed:25692235). Binds to G-quadruplex structures in the 3’-UTR of its own mRNA (PubMed:7692601, PubMed:11532944, PubMed:12594214, PubMed:15282548, PubMed:18653529). Binds also to RNA ligands harboring a kissing complex (kc) structure; this binding may mediate the association of FMR1 with polyribosomes (PubMed:15805463). Binds mRNAs containing U-rich target sequences (PubMed:12927206). Binds to a triple stem-loop RNA structure, called Sod1 stem loop interacting with FMRP (SoSLIP), in the 5’-UTR region of superoxide dismutase SOD1 mRNA (PubMed:19166269). Binds to the dendritic, small non-coding brain cytoplasmic RNA 1 (BC1); which may increase the association of the CYFIP1-EIF4E-FMR1 complex to FMR1 target mRNAs at synapses (By similarity). Associates with export factor NXF1 mRNA-containing ribonucleoprotein particles (mRNPs) in a NXF2-dependent manner (By similarity). Binds to a subset of miRNAs in the brain (PubMed:14703574, PubMed:17057366). May associate with nascent transcripts in a nuclear protein NXF1-dependent manner (PubMed:18936162). In vitro, binds to RNA homopolymer; preferentially on poly(G) and to a lesser extent on poly(U), but not on poly(A) or poly(C) (PubMed:7688265, PubMed:7781595, PubMed:12950170, PubMed:15381419, PubMed:8156595). Moreover, plays a role in the modulation of the sodium-activated potassium channel KCNT1 gating activity (PubMed:20512134). Negatively regulates the voltage-dependent calcium channel current density in soma and presynaptic terminals of dorsal root ganglion (DRG) neurons, and hence regulates synaptic vesicle exocytosis (By similarity). Modulates the voltage-dependent calcium channel CACNA1B expression at the plasma membrane by targeting the channels for proteosomal degradation (By similarity). Plays a role in regulation of MAP1B-dependent microtubule dynamics during neuronal development (By similarity). Recently, has been shown to play a translation-independent role in the modulation of presynaptic action potential (AP) duration and neurotransmitter release via large-conductance calcium-activated potassium (BK) channels in hippocampal and cortical excitatory neurons (PubMed:25561520). Finally, FMR1 may be involved in the control of DNA damage response (DDR) mechanisms through the regulation of ATR-dependent signaling pathways such as histone H2AX/H2A.x and BRCA1 phosphorylations (PubMed:24813610). {ECO:0000250|UniProtKB:P35922, ECO:0000250|UniProtKB:Q80WE1, ECO:0000269|PubMed:11157796, ECO:0000269|PubMed:11532944, ECO:0000269|PubMed:11719189, ECO:0000269|PubMed:12594214, ECO:0000269|PubMed:12927206, ECO:0000269|PubMed:12950170, ECO:0000269|PubMed:14703574, ECO:0000269|PubMed:15282548, ECO:0000269|PubMed:15381419, ECO:0000269|PubMed:15805463, ECO:0000269|PubMed:16631377, ECO:0000269|PubMed:17057366, ECO:0000269|PubMed:17417632, ECO:0000269|PubMed:18579868, ECO:0000269|PubMed:18653529, ECO:0000269|PubMed:18936162, ECO:0000269|PubMed:19097999, ECO:0000269|PubMed:19166269, ECO:0000269|PubMed:20512134, ECO:0000269|PubMed:23235829, ECO:0000269|PubMed:23891804, ECO:0000269|PubMed:24448548, ECO:0000269|PubMed:24813610, ECO:0000269|PubMed:25464849, ECO:0000269|PubMed:25561520, ECO:0000269|PubMed:25692235, ECO:0000269|PubMed:7688265, ECO:0000269|PubMed:7692601, ECO:0000269|PubMed:7781595, ECO:0000269|PubMed:8156595}.; FUNCTION: [Isoform 10]: binds to RNA homopolymer; preferentially on poly(G) and to a lesser extent on poly(U), but not on poly(A) or poly(C) (PubMed:24204304). May bind to RNA in Cajal bodies (PubMed:24204304). {ECO:0000269|PubMed:24204304}.; FUNCTION: [Isoform 6]: binds to RNA homopolymer; preferentially on poly(G) and to a lesser extent on poly(U), but not on poly(A) or poly(C) (PubMed:24204304). May bind to RNA in Cajal bodies (PubMed:24204304). {ECO:0000269|PubMed:24204304}.; FUNCTION: (Microbial infection) Acts as a positive regulator of influenza A virus (IAV) replication. Required for the assembly and nuclear export of the viral ribonucleoprotein (vRNP) components. {ECO:0000269|PubMed:24514761}.</p>
+<p>FUNCTION: Multifunctional polyribosome-associated RNA-binding protein that plays a central role in neuronal development and synaptic plasticity through the regulation of alternative mRNA splicing, mRNA stability, mRNA dendritic transport and postsynaptic local protein synthesis of a subset of mRNAs (PubMed:16631377, PubMed:18653529, PubMed:19166269, PubMed:23235829, PubMed:25464849). Plays a role in the alternative splicing of its own mRNA (PubMed:18653529). Plays a role in mRNA nuclear export (By similarity). Together with export factor NXF2, is involved in the regulation of the NXF1 mRNA stability in neurons (By similarity). Stabilizes the scaffolding postsynaptic density protein DLG4/PSD-95 and the myelin basic protein (MBP) mRNAs in hippocampal neurons and glial cells, respectively; this stabilization is further increased in response to metabotropic glutamate receptor (mGluR) stimulation (By similarity). Plays a role in selective delivery of a subset of dendritic mRNAs to synaptic sites in response to mGluR activation in a kinesin-dependent manner (By similarity). Plays a role as a repressor of mRNA translation during the transport of dendritic mRNAs to postsynaptic dendritic spines (PubMed:11532944, PubMed:11157796, PubMed:12594214, PubMed:23235829). Component of the CYFIP1-EIF4E-FMR1 complex which blocks cap-dependent mRNA translation initiation (By similarity). Represses mRNA translation by stalling ribosomal translocation during elongation (By similarity). Reports are contradictory with regards to its ability to mediate translation inhibition of MBP mRNA in oligodendrocytes (PubMed:23891804). Also involved in the recruitment of the RNA helicase MOV10 to a subset of mRNAs and hence regulates microRNA (miRNA)-mediated translational repression by AGO2 (PubMed:14703574, PubMed:17057366, PubMed:25464849). Facilitates the assembly of miRNAs on specific target mRNAs (PubMed:17057366). Plays also a role as an activator of mRNA translation of a subset of dendritic mRNAs at synapses (PubMed:19097999, PubMed:19166269). In response to mGluR stimulation, FMR1-target mRNAs are rapidly derepressed, allowing for local translation at synapses (By similarity). Binds to a large subset of dendritic mRNAs that encode a myriad of proteins involved in pre- and postsynaptic functions (PubMed:7692601, PubMed:11719189, PubMed:11157796, PubMed:12594214, PubMed:17417632, PubMed:23235829, PubMed:24448548). Binds to 5’-ACU[GU]-3’ and/or 5’-[AU]GGA-3’ RNA consensus sequences within mRNA targets, mainly at coding sequence (CDS) and 3’-untranslated region (UTR) and less frequently at 5’-UTR (PubMed:23235829). Binds to intramolecular G-quadruplex structures in the 5’- or 3’-UTRs of mRNA targets (PubMed:11719189, PubMed:18579868, PubMed:25464849, PubMed:25692235). Binds to G-quadruplex structures in the 3’-UTR of its own mRNA (PubMed:7692601, PubMed:11532944, PubMed:12594214, PubMed:15282548, PubMed:18653529). Binds also to RNA ligands harboring a kissing complex (kc) structure; this binding may mediate the association of FMR1 with polyribosomes (PubMed:15805463). Binds mRNAs containing U-rich target sequences (PubMed:12927206). Binds to a triple stem-loop RNA structure, called Sod1 stem loop interacting with FMRP (SoSLIP), in the 5’-UTR region of superoxide dismutase SOD1 mRNA (PubMed:19166269). Binds to the dendritic, small non-coding brain cytoplasmic RNA 1 (BC1); which may increase the association of the CYFIP1-EIF4E-FMR1 complex to FMR1 target mRNAs at synapses (By similarity). Associates with export factor NXF1 mRNA-containing ribonucleoprotein particles (mRNPs) in a NXF2-dependent manner (By similarity). Binds to a subset of miRNAs in the brain (PubMed:14703574, PubMed:17057366). May associate with nascent transcripts in a nuclear protein NXF1-dependent manner (PubMed:18936162). In vitro, binds to RNA homomer; preferentially on poly(G) and to a lesser extent on poly(U), but not on poly(A) or poly(C) (PubMed:7688265, PubMed:7781595, PubMed:12950170, PubMed:15381419, PubMed:8156595). Moreover, plays a role in the modulation of the sodium-activated potassium channel KCNT1 gating activity (PubMed:20512134). Negatively regulates the voltage-dependent calcium channel current density in soma and presynaptic terminals of dorsal root ganglion (DRG) neurons, and hence regulates synaptic vesicle exocytosis (By similarity). Modulates the voltage-dependent calcium channel CACNA1B expression at the plasma membrane by targeting the channels for proteosomal degradation (By similarity). Plays a role in regulation of MAP1B-dependent microtubule dynamics during neuronal development (By similarity). Recently, has been shown to play a translation-independent role in the modulation of presynaptic action potential (AP) duration and neurotransmitter release via large-conductance calcium-activated potassium (BK) channels in hippocampal and cortical excitatory neurons (PubMed:25561520). Finally, FMR1 may be involved in the control of DNA damage response (DDR) mechanisms through the regulation of ATR-dependent signaling pathways such as histone H2AX/H2A.x and BRCA1 phosphorylations (PubMed:24813610). {ECO:0000250|UniProtKB:P35922, ECO:0000250|UniProtKB:Q80WE1, ECO:0000269|PubMed:11157796, ECO:0000269|PubMed:11532944, ECO:0000269|PubMed:11719189, ECO:0000269|PubMed:12594214, ECO:0000269|PubMed:12927206, ECO:0000269|PubMed:12950170, ECO:0000269|PubMed:14703574, ECO:0000269|PubMed:15282548, ECO:0000269|PubMed:15381419, ECO:0000269|PubMed:15805463, ECO:0000269|PubMed:16631377, ECO:0000269|PubMed:17057366, ECO:0000269|PubMed:17417632, ECO:0000269|PubMed:18579868, ECO:0000269|PubMed:18653529, ECO:0000269|PubMed:18936162, ECO:0000269|PubMed:19097999, ECO:0000269|PubMed:19166269, ECO:0000269|PubMed:20512134, ECO:0000269|PubMed:23235829, ECO:0000269|PubMed:23891804, ECO:0000269|PubMed:24448548, ECO:0000269|PubMed:24813610, ECO:0000269|PubMed:25464849, ECO:0000269|PubMed:25561520, ECO:0000269|PubMed:25692235, ECO:0000269|PubMed:7688265, ECO:0000269|PubMed:7692601, ECO:0000269|PubMed:7781595, ECO:0000269|PubMed:8156595}.; FUNCTION: [Isoform 10]: binds to RNA homomer; preferentially on poly(G) and to a lesser extent on poly(U), but not on poly(A) or poly(C) (PubMed:24204304). May bind to RNA in Cajal bodies (PubMed:24204304). {ECO:0000269|PubMed:24204304}.; FUNCTION: [Isoform 6]: binds to RNA homomer; preferentially on poly(G) and to a lesser extent on poly(U), but not on poly(A) or poly(C) (PubMed:24204304). May bind to RNA in Cajal bodies (PubMed:24204304). {ECO:0000269|PubMed:24204304}.; FUNCTION: (Microbial infection) Acts as a positive regulator of influenza A virus (IAV) replication. Required for the assembly and nuclear export of the viral ribonucleoprotein (vRNP) components. {ECO:0000269|PubMed:24514761}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Acetylation;Activator;Alternative splicing;Cell junction;Cell membrane;Cell projection;Centromere;Chromosome;Cytoplasm;DNA damage;Disease variant;Host-virus interaction;Membrane;Mental retardation;Methylation;Neurogenesis;Nucleus;Phosphoprotein;Postsynaptic cell membrane;Premature ovarian failure;RNA-binding;RNA-mediated gene silencing;Reference proteome;Repeat;Repressor;Ribonucleoprotein;Synapse;Synaptosome;Translation regulation;Transport;Ubl conjugation;mRNA processing;mRNA splicing;mRNA transport</p>
+<p>3D-structure; Acetylation; Activator; Alternative splicing; Cell junction; Cell membrane; Cell projection; Centromere; Chromosome; Cytoplasm; DNA damage; Disease variant; Host-virus interaction; Membrane; Mental retardation; Methylation; Neurogenesis; Nucleus; Phosphoprotein; Postsynaptic cell membrane; Premature ovarian failure; RNA-binding; RNA-mediated gene silencing; Reference proteome; Repeat; Repressor; Ribonucleoprotein; Synapse; Synaptosome; Translation regulation; Transport; Ubl conjugation; mRNA processing; mRNA splicing; mRNA transport</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q06787" class="uri">https://www.uniprot.org/uniprot/Q06787</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-60bcd1fc9a6d4a8669d8" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-60bcd1fc9a6d4a8669d8">{"x":{"data":[{"x":[1,1,632,632,1],"y":[0,1,1,0,0],"text":"Positions: 1-632 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4,4,50,50,4],"y":[0,1,1,0,0],"text":"Positions: 4-50 - domain Agenet-like 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Agenet-like 1","legendgroup":"Agenet-like 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[63,63,115,115,63],"y":[0,1,1,0,0],"text":"Positions: 63-115 - domain Agenet-like 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(223,83,107,1)","hoveron":"fills","name":"Agenet-like 2","legendgroup":"Agenet-like 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[222,222,251,251,222],"y":[0,1,1,0,0],"text":"Positions: 222-251 - domain KH 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(97,208,79,1)","hoveron":"fills","name":"KH 1","legendgroup":"KH 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[285,285,314,314,285],"y":[0,1,1,0,0],"text":"Positions: 285-314 - domain KH 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,151,230,1)","hoveron":"fills","name":"KH 2","legendgroup":"KH 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-30.55,663.55],"tickmode":"array","ticktext":["1","100","200","300","400","500","600","632"],"tickvals":[1,100,200,300,400,500,600,632],"categoryorder":"array","categoryarray":["1","100","200","300","400","500","600","632"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef68391fcef7":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef68439a53bf":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef68391fcef7","visdat":{"ef68391fcef7":["function (y) ","x"],"ef68439a53bf":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Agenet-like 1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Agenet-like 2
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+115
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KH 1
+</td>
+<td style="text-align:right;">
+222
+</td>
+<td style="text-align:right;">
+251
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00117
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KH 2
+</td>
+<td style="text-align:right;">
+285
+</td>
+<td style="text-align:right;">
+314
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00117
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

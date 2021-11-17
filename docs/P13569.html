@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: CFTR</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,105 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Epithelial ion channel that plays an important role in the regulation of epithelial ion and water transport and fluid homeostasis (PubMed:26823428). Mediates the transport of chloride ions across the cell membrane (PubMed:10792060, PubMed:11524016, PubMed:11707463, PubMed:12519745, PubMed:15010471, PubMed:12588899, PubMed:17036051, PubMed:19398555, PubMed:19621064, PubMed:22178883, PubMed:25330774, PubMed:1712898, PubMed:8910473, PubMed:9804160, PubMed:12529365, PubMed:17182731, PubMed:26846474, PubMed:28087700). Channel activity is coupled to ATP hydrolysis (PubMed:8910473). The ion channel is also permeable to HCO(3-); selectivity depends on the extracellular chloride concentration (PubMed:15010471, PubMed:19019741). Exerts its function also by modulating the activity of other ion channels and transporters (PubMed:12403779, PubMed:22178883, PubMed:22121115, PubMed:27941075). Plays an important role in airway fluid homeostasis (PubMed:16645176, PubMed:19621064, PubMed:26823428). Contributes to the regulation of the pH and the ion content of the airway surface fluid layer and thereby plays an important role in defense against pathogens (PubMed:14668433, PubMed:16645176, PubMed:26823428). Modulates the activity of the epithelial sodium channel (ENaC) complex, in part by regulating the cell surface expression of the ENaC complex (PubMed:17434346, PubMed:27941075, PubMed:17182731). Inhibits the activity of the ENaC channel containing subunits SCNN1A, SCNN1B and SCNN1G (PubMed:17182731). Inhibits the activity of the ENaC channel containing subunits SCNN1D, SCNN1B and SCNN1G, but not of the ENaC channel containing subunits SCNN1A, SCNN1B and SCNN1G (PubMed:27941075). May regulate bicarbonate secretion and salvage in epithelial cells by regulating the transporter SLC4A7 (PubMed:12403779). Can inhibit the chloride channel activity of ANO1 (PubMed:22178883). Plays a role in the chloride and bicarbonate homeostasis during sperm epididymal maturation and capacitation (PubMed:19923167, PubMed:27714810). {ECO:0000269|PubMed:10792060, ECO:0000269|PubMed:11524016, ECO:0000269|PubMed:11707463, ECO:0000269|PubMed:12403779, ECO:0000269|PubMed:12519745, ECO:0000269|PubMed:12529365, ECO:0000269|PubMed:12588899, ECO:0000269|PubMed:14668433, ECO:0000269|PubMed:15010471, ECO:0000269|PubMed:16645176, ECO:0000269|PubMed:17036051, ECO:0000269|PubMed:1712898, ECO:0000269|PubMed:17182731, ECO:0000269|PubMed:19019741, ECO:0000269|PubMed:19398555, ECO:0000269|PubMed:19621064, ECO:0000269|PubMed:22178883, ECO:0000269|PubMed:25330774, ECO:0000269|PubMed:26627831, ECO:0000269|PubMed:26823428, ECO:0000269|PubMed:26846474, ECO:0000269|PubMed:27714810, ECO:0000269|PubMed:27941075, ECO:0000269|PubMed:28087700, ECO:0000269|PubMed:8910473, ECO:0000269|PubMed:9804160, ECO:0000305|PubMed:19923167}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;ATP-binding;Alternative splicing;Cell membrane;Chloride;Chloride channel;Disease variant;Endoplasmic reticulum;Endosome;Glycoprotein;Ion channel;Ion transport;Isomerase;Isopeptide bond;Lipoprotein;Membrane;Nucleotide-binding;Nucleus;Palmitate;Phosphoprotein;Reference proteome;Repeat;Transmembrane;Transmembrane helix;Transport;Ubl conjugation</p>
+<p>3D-structure; ATP-binding; Alternative splicing; Cell membrane; Chloride; Chloride channel; Disease variant; Endoplasmic reticulum; Endosome; Glycoprotein; Ion channel; Ion transport; Isomerase; Isopeptide bond; Lipoprotein; Membrane; Nucleotide-binding; Nucleus; Palmitate; Phosphoprotein; Reference proteome; Repeat; Transmembrane; Transmembrane helix; Transport; Ubl conjugation</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P13569" class="uri">https://www.uniprot.org/uniprot/P13569</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-8f68daf8f1d1390c9cfd" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8f68daf8f1d1390c9cfd">{"x":{"data":[{"x":[1,1,1480,1480,1],"y":[0,1,1,0,0],"text":"Positions: 1-1480 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[81,81,365,365,81],"y":[0,1,1,0,0],"text":"Positions: 81-365 - domain ABC transmembrane type-1 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"ABC transmembrane type-1 1","legendgroup":"ABC transmembrane type-1 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[859,859,1155,1155,859],"y":[0,1,1,0,0],"text":"Positions: 859-1155 - domain ABC transmembrane type-1 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(223,83,107,1)","hoveron":"fills","name":"ABC transmembrane type-1 2","legendgroup":"ABC transmembrane type-1 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[423,423,646,646,423],"y":[0,1,1,0,0],"text":"Positions: 423-646 - domain ABC transporter 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(97,208,79,1)","hoveron":"fills","name":"ABC transporter 1","legendgroup":"ABC transporter 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1210,1210,1443,1443,1210],"y":[0,1,1,0,0],"text":"Positions: 1210-1443 - domain ABC transporter 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,151,230,1)","hoveron":"fills","name":"ABC transporter 2","legendgroup":"ABC transporter 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-72.95,1553.95],"tickmode":"array","ticktext":["1","500","1000","1480"],"tickvals":[1,500,1000,1480],"categoryorder":"array","categoryarray":["1","500","1000","1480"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef524755866c":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef52729db529":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef524755866c","visdat":{"ef524755866c":["function (y) ","x"],"ef52729db529":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ABC transmembrane type-1 1
+</td>
+<td style="text-align:right;">
+81
+</td>
+<td style="text-align:right;">
+365
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00441
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ABC transporter 1
+</td>
+<td style="text-align:right;">
+423
+</td>
+<td style="text-align:right;">
+646
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00434
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ABC transmembrane type-1 2
+</td>
+<td style="text-align:right;">
+859
+</td>
+<td style="text-align:right;">
+1155
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00441
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ABC transporter 2
+</td>
+<td style="text-align:right;">
+1210
+</td>
+<td style="text-align:right;">
+1443
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00434
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

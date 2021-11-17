@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: PARK7</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2107,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Multifunctional protein with controversial molecular function which plays an important role in cell protection against oxidative stress and cell death acting as oxidative stress sensor and redox-sensitive chaperone and protease (PubMed:17015834, PubMed:20304780, PubMed:18711745, PubMed:12796482, PubMed:19229105, PubMed:25416785, PubMed:26995087, PubMed:28993701). It is involved in neuroprotective mechanisms like the stabilization of NFE2L2 and PINK1 proteins, male fertility as a positive regulator of androgen signaling pathway as well as cell growth and transformation through, for instance, the modulation of NF-kappa-B signaling pathway (PubMed:12612053, PubMed:15502874, PubMed:14749723, PubMed:17015834, PubMed:21097510, PubMed:18711745). Has been described as a protein and nucleotide deglycase that catalyzes the deglycation of the Maillard adducts formed between amino groups of proteins or nucleotides and reactive carbonyl groups of glyoxals (PubMed:25416785, PubMed:28596309). But this function is rebuted by other works (PubMed:27903648, PubMed:31653696). As a protein deglycase, repairs methylglyoxal- and glyoxal-glycated proteins, and releases repaired proteins and lactate or glycolate, respectively. Deglycates cysteine, arginine and lysine residues in proteins, and thus reactivates these proteins by reversing glycation by glyoxals. Acts on early glycation intermediates (hemithioacetals and aminocarbinols), preventing the formation of advanced glycation endproducts (AGE) that cause irreversible damage (PubMed:25416785, PubMed:28013050, PubMed:26995087). Also functions as a nucleotide deglycase able to repair glycated guanine in the free nucleotide pool (GTP, GDP, GMP, dGTP) and in DNA and RNA. Is thus involved in a major nucleotide repair system named guanine glycation repair (GG repair), dedicated to reversing methylglyoxal and glyoxal damage via nucleotide sanitization and direct nucleic acid repair (PubMed:28596309). Protects histones from adduction by methylglyoxal, controls the levels of methylglyoxal-derived argininine modifications on chromatin (PubMed:30150385). Able to remove the glycations and restore histone 3, histone glycation disrupts both local and global chromatin architecture by altering histone-DNA interactions as well as histone acetylation and ubiquitination levels (PubMed:30150385, PubMed:30894531). Displays a very low glyoxalase activity that may reflect its deglycase activity (PubMed:22523093, PubMed:31653696, PubMed:28993701). Eliminates hydrogen peroxide and protects cells against hydrogen peroxide-induced cell death (PubMed:16390825). Required for correct mitochondrial morphology and function as well as for autophagy of dysfunctional mitochondria (PubMed:19229105, PubMed:16632486). Plays a role in regulating expression or stability of the mitochondrial uncoupling proteins SLC25A14 and SLC25A27 in dopaminergic neurons of the substantia nigra pars compacta and attenuates the oxidative stress induced by calcium entry into the neurons via L-type channels during pacemaking (PubMed:18711745). Regulates astrocyte inflammatory responses, may modulate lipid rafts-dependent endocytosis in astrocytes and neuronal cells (PubMed:23847046). In pancreatic islets, involved in the maintenance of mitochondrial reactive oxygen species (ROS) levels and glucose homeostasis in an age- and diet dependent manner. Protects pancreatic beta cells from cell death induced by inflammatory and cytotoxic setting (By similarity). Binds to a number of mRNAs containing multiple copies of GG or CC motifs and partially inhibits their translation but dissociates following oxidative stress (PubMed:18626009). Metal-binding protein able to bind copper as well as toxic mercury ions, enhances the cell protection mechanism against induced metal toxicity (PubMed:23792957). In macrophages, interacts with the NADPH oxidase subunit NCF1 to direct NADPH oxidase-dependent ROS production, and protects against sepsis (By similarity). {ECO:0000250|UniProtKB:Q99LX0, ECO:0000269|PubMed:11477070, ECO:0000269|PubMed:12612053, ECO:0000269|PubMed:12855764, ECO:0000269|PubMed:12939276, ECO:0000269|PubMed:14749723, ECO:0000269|PubMed:15181200, ECO:0000269|PubMed:15502874, ECO:0000269|PubMed:15976810, ECO:0000269|PubMed:16390825, ECO:0000269|PubMed:17015834, ECO:0000269|PubMed:18626009, ECO:0000269|PubMed:18711745, ECO:0000269|PubMed:19229105, ECO:0000269|PubMed:20186336, ECO:0000269|PubMed:20304780, ECO:0000269|PubMed:21097510, ECO:0000269|PubMed:22523093, ECO:0000269|PubMed:23792957, ECO:0000269|PubMed:23847046, ECO:0000269|PubMed:25416785, ECO:0000269|PubMed:26995087, ECO:0000269|PubMed:28013050, ECO:0000269|PubMed:28596309, ECO:0000269|PubMed:28993701, ECO:0000269|PubMed:30150385, ECO:0000269|PubMed:30894531, ECO:0000269|PubMed:9070310}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Acetylation;Autophagy;Cell membrane;Chaperone;Copper;Cytoplasm;DNA damage;DNA repair;Direct protein sequencing;Disease variant;Endoplasmic reticulum;Fertilization;Hydrolase;Inflammatory response;Isopeptide bond;Lipoprotein;Membrane;Mitochondrion;Neurodegeneration;Nucleus;Oxidation;Palmitate;Parkinson disease;Parkinsonism;Phosphoprotein;Protease;RNA-binding;Reference proteome;Stress response;Tumor suppressor;Ubl conjugation;Zymogen</p>
+<p>3D-structure; Acetylation; Autophagy; Cell membrane; Chaperone; Copper; Cytoplasm; DNA damage; DNA repair; Direct protein sequencing; Disease variant; Endoplasmic reticulum; Fertilization; Hydrolase; Inflammatory response; Isopeptide bond; Lipoprotein; Membrane; Mitochondrion; Neurodegeneration; Nucleus; Oxidation; Palmitate; Parkinson disease; Parkinsonism; Phosphoprotein; Protease; RNA-binding; Reference proteome; Stress response; Tumor suppressor; Ubl conjugation; Zymogen</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q99497" class="uri">https://www.uniprot.org/uniprot/Q99497</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-398d191a0a3d4492c307" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-398d191a0a3d4492c307">{"x":{"data":[{"x":[1,1,189,189,1],"y":[0,1,1,0,0],"text":"Positions: 1-189 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-8.4,198.4],"tickmode":"array","ticktext":["1","50","100","150","189"],"tickvals":[1,50,100,150,189],"categoryorder":"array","categoryarray":["1","50","100","150","189"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef7a403195b0":{"text":{},"xmin":{},"xmax":{},"type":"scatter"}},"cur_data":"ef7a403195b0","visdat":{"ef7a403195b0":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>No domain info.</p></p>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

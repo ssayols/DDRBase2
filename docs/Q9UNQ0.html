@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: ABCG2</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,77 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Broad substrate specificity ATP-dependent transporter of the ATP-binding cassette (ABC) family that actively extrudes a wide variety of physiological compounds, dietary toxins and xenobiotics from cells (PubMed:11306452, PubMed:12958161, PubMed:19506252, PubMed:20705604, PubMed:28554189, PubMed:30405239, PubMed:31003562). Involved in porphyrin homeostasis, mediating the export of protoporphyrin IX (PPIX) from both mitochondria to cytosol and cytosol to extracellular space, it also functions in the cellular export of heme (PubMed:20705604, PubMed:23189181). Also mediates the efflux of sphingosine-1-P from cells (PubMed:20110355). Acts as a urate exporter functioning in both renal and extrarenal urate excretion (PubMed:19506252, PubMed:20368174, PubMed:22132962, PubMed:31003562). In kidney, it also functions as a physiological exporter of the uremic toxin indoxyl sulfate (By similarity). Also involved in the excretion of steroids like estrone 3-sulfate/E1S, 3beta-sulfooxy-androst-5-en-17-one/DHEAS, and other sulfate conjugates (PubMed:12682043, PubMed:28554189, PubMed:30405239). Mediates the secretion of the riboflavin and biotin vitamins into milk (By similarity). Extrudes pheophorbide a, a phototoxic porphyrin catabolite of chlorophyll, reducing its bioavailability (By similarity). Plays an important role in the exclusion of xenobiotics from the brain (Probable). It confers to cells a resistance to multiple drugs and other xenobiotics including mitoxantrone, pheophorbide, camptothecin, methotrexate, azidothymidine, and the anthracyclines daunorubicin and doxorubicin, through the control of their efflux (PubMed:11306452, PubMed:12477054, PubMed:15670731, PubMed:18056989, PubMed:31254042). In placenta, it limits the penetration of drugs from the maternal plasma into the fetus (By similarity). May play a role in early stem cell self-renewal by blocking differentiation (By similarity). {ECO:0000250|UniProtKB:Q7TMS5, ECO:0000269|PubMed:11306452, ECO:0000269|PubMed:12477054, ECO:0000269|PubMed:12682043, ECO:0000269|PubMed:12958161, ECO:0000269|PubMed:15670731, ECO:0000269|PubMed:18056989, ECO:0000269|PubMed:19506252, ECO:0000269|PubMed:20110355, ECO:0000269|PubMed:20368174, ECO:0000269|PubMed:20705604, ECO:0000269|PubMed:22132962, ECO:0000269|PubMed:23189181, ECO:0000269|PubMed:28554189, ECO:0000269|PubMed:30405239, ECO:0000269|PubMed:31003562, ECO:0000269|PubMed:31254042, ECO:0000305|PubMed:12958161}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;ATP-binding;Alternative splicing;Cell membrane;Disulfide bond;Glycoprotein;Membrane;Mitochondrion;Nucleotide-binding;Phosphoprotein;Reference proteome;Translocase;Transmembrane;Transmembrane helix;Transport</p>
+<p>3D-structure; ATP-binding; Alternative splicing; Cell membrane; Disulfide bond; Glycoprotein; Membrane; Mitochondrion; Nucleotide-binding; Phosphoprotein; Reference proteome; Translocase; Transmembrane; Transmembrane helix; Transport</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q9UNQ0" class="uri">https://www.uniprot.org/uniprot/Q9UNQ0</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-99a2252130b7b73f3cff" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-99a2252130b7b73f3cff">{"x":{"data":[{"x":[1,1,655,655,1],"y":[0,1,1,0,0],"text":"Positions: 1-655 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[389,389,651,651,389],"y":[0,1,1,0,0],"text":"Positions: 389-651 - domain ABC transmembrane type-2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"ABC transmembrane type-2","legendgroup":"ABC transmembrane type-2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[37,37,286,286,37],"y":[0,1,1,0,0],"text":"Positions: 37-286 - domain ABC transporter","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(223,83,107,1)","hoveron":"fills","name":"ABC transporter","legendgroup":"ABC transporter","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-31.7,687.7],"tickmode":"array","ticktext":["1","100","200","300","400","500","600","655"],"tickvals":[1,100,200,300,400,500,600,655],"categoryorder":"array","categoryarray":["1","100","200","300","400","500","600","655"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef4bf601b03":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef4b2634de04":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef4bf601b03","visdat":{"ef4bf601b03":["function (y) ","x"],"ef4b2634de04":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ABC transporter
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+286
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00434
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ABC transmembrane type-2
+</td>
+<td style="text-align:right;">
+389
+</td>
+<td style="text-align:right;">
+651
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

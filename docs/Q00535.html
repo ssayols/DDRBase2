@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: CDK5</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,63 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Proline-directed serine/threonine-protein kinase essential for neuronal cell cycle arrest and differentiation and may be involved in apoptotic cell death in neuronal diseases by triggering abortive cell cycle re-entry. Interacts with D1 and D3-type G1 cyclins. Phosphorylates SRC, NOS3, VIM/vimentin, p35/CDK5R1, MEF2A, SIPA1L1, SH3GLB1, PXN, PAK1, MCAM/MUC18, SEPT5, SYN1, DNM1, AMPH, SYNJ1, CDK16, RAC1, RHOA, CDC42, TONEBP/NFAT5, MAPT/TAU, MAP1B, histone H1, p53/TP53, HDAC1, APEX1, PTK2/FAK1, huntingtin/HTT, ATM, MAP2, NEFH and NEFM. Regulates several neuronal development and physiological processes including neuronal survival, migration and differentiation, axonal and neurite growth, synaptogenesis, oligodendrocyte differentiation, synaptic plasticity and neurotransmission, by phosphorylating key proteins. Activated by interaction with CDK5R1 (p35) and CDK5R2 (p39), especially in post-mitotic neurons, and promotes CDK5R1 (p35) expression in an autostimulation loop. Phosphorylates many downstream substrates such as Rho and Ras family small GTPases (e.g. PAK1, RAC1, RHOA, CDC42) or microtubule-binding proteins (e.g. MAPT/TAU, MAP2, MAP1B), and modulates actin dynamics to regulate neurite growth and/or spine morphogenesis. Phosphorylates also exocytosis associated proteins such as MCAM/MUC18, SEPT5, SYN1, and CDK16/PCTAIRE1 as well as endocytosis associated proteins such as DNM1, AMPH and SYNJ1 at synaptic terminals. In the mature central nervous system (CNS), regulates neurotransmitter movements by phosphorylating substrates associated with neurotransmitter release and synapse plasticity; synaptic vesicle exocytosis, vesicles fusion with the presynaptic membrane, and endocytosis. Promotes cell survival by activating anti-apoptotic proteins BCL2 and STAT3, and negatively regulating of JNK3/MAPK10 activity. Phosphorylation of p53/TP53 in response to genotoxic and oxidative stresses enhances its stabilization by preventing ubiquitin ligase-mediated proteasomal degradation, and induces transactivation of p53/TP53 target genes, thus regulating apoptosis. Phosphorylation of p35/CDK5R1 enhances its stabilization by preventing calpain-mediated proteolysis producing p25/CDK5R1 and avoiding ubiquitin ligase-mediated proteasomal degradation. During aberrant cell-cycle activity and DNA damage, p25/CDK5 activity elicits cell-cycle activity and double-strand DNA breaks that precedes neuronal death by deregulating HDAC1. DNA damage triggered phosphorylation of huntingtin/HTT in nuclei of neurons protects neurons against polyglutamine expansion as well as DNA damage mediated toxicity. Phosphorylation of PXN reduces its interaction with PTK2/FAK1 in matrix-cell focal adhesions (MCFA) during oligodendrocytes (OLs) differentiation. Negative regulator of Wnt/beta-catenin signaling pathway. Activator of the GAIT (IFN-gamma-activated inhibitor of translation) pathway, which suppresses expression of a post-transcriptional regulon of proinflammatory genes in myeloid cells; phosphorylates the linker domain of glutamyl-prolyl tRNA synthetase (EPRS) in a IFN-gamma-dependent manner, the initial event in assembly of the GAIT complex. Phosphorylation of SH3GLB1 is required for autophagy induction in starved neurons. Phosphorylation of TONEBP/NFAT5 in response to osmotic stress mediates its rapid nuclear localization. MEF2 is inactivated by phosphorylation in nucleus in response to neurotoxin, thus leading to neuronal apoptosis. APEX1 AP-endodeoxyribonuclease is repressed by phosphorylation, resulting in accumulation of DNA damage and contributing to neuronal death. NOS3 phosphorylation down regulates NOS3-derived nitrite (NO) levels. SRC phosphorylation mediates its ubiquitin-dependent degradation and thus leads to cytoskeletal reorganization. May regulate endothelial cell migration and angiogenesis via the modulation of lamellipodia formation. Involved in dendritic spine morphogenesis by mediating the EFNA1-EPHA4 signaling. The complex p35/CDK5 participates in the regulation of the circadian clock by modulating the function of CLOCK protein: phosphorylates CLOCK at ‘Thr-451’ and ‘Thr-461’ and regulates the transcriptional activity of the CLOCK-ARNTL/BMAL1 heterodimer in association with altered stability and subcellular distribution. {ECO:0000269|PubMed:12393264, ECO:0000269|PubMed:12691662, ECO:0000269|PubMed:15992363, ECO:0000269|PubMed:17009320, ECO:0000269|PubMed:17121855, ECO:0000269|PubMed:17591690, ECO:0000269|PubMed:17611284, ECO:0000269|PubMed:17671990, ECO:0000269|PubMed:18042622, ECO:0000269|PubMed:19081376, ECO:0000269|PubMed:19693690, ECO:0000269|PubMed:20061803, ECO:0000269|PubMed:20213743, ECO:0000269|PubMed:20826806, ECO:0000269|PubMed:21209322, ECO:0000269|PubMed:21220307, ECO:0000269|PubMed:21442427, ECO:0000269|PubMed:21465480, ECO:0000269|PubMed:21499257, ECO:0000269|PubMed:24235147, ECO:0000269|PubMed:9822744}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;ATP-binding;Acetylation;Alternative splicing;Apoptosis;Biological rhythms;Cell cycle;Cell division;Cell junction;Cell membrane;Cell projection;Cytoplasm;Kinase;Lissencephaly;Membrane;Neurodegeneration;Neurogenesis;Nucleotide-binding;Nucleus;Phosphoprotein;Reference proteome;Serine/threonine-protein kinase;Synapse;Transferase</p>
+<p>3D-structure; ATP-binding; Acetylation; Alternative splicing; Apoptosis; Biological rhythms; Cell cycle; Cell division; Cell junction; Cell membrane; Cell projection; Cytoplasm; Kinase; Lissencephaly; Membrane; Neurodegeneration; Neurogenesis; Nucleotide-binding; Nucleus; Phosphoprotein; Reference proteome; Serine/threonine-protein kinase; Synapse; Transferase</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/Q00535" class="uri">https://www.uniprot.org/uniprot/Q00535</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-2120ca9ffcede36eea5e" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2120ca9ffcede36eea5e">{"x":{"data":[{"x":[1,1,292,292,1],"y":[0,1,1,0,0],"text":"Positions: 1-292 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4,4,286,286,4],"y":[0,1,1,0,0],"text":"Positions: 4-286 - domain Protein kinase","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Protein kinase","legendgroup":"Protein kinase","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-13.55,306.55],"tickmode":"array","ticktext":["1","50","100","150","200","250","292"],"tickvals":[1,50,100,150,200,250,292],"categoryorder":"array","categoryarray":["1","50","100","150","200","250","292"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef4f2346fb4d":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef4f4b32541d":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef4f2346fb4d","visdat":{"ef4f2346fb4d":["function (y) ","x"],"ef4f4b32541d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Protein kinase
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+286
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00159
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

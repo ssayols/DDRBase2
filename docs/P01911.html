@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: HLA-DRB1</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,63 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: A beta chain of antigen-presenting major histocompatibility complex class II (MHCII) molecule. In complex with the alpha chain HLA-DRA, displays antigenic peptides on professional antigen presenting cells (APCs) for recognition by alpha-beta T cell receptor (TCR) on HLA-DRB1-restricted CD4-positive T cells. This guides antigen-specific T-helper effector functions, both antibody-mediated immune response and macrophage activation, to ultimately eliminate the infectious agents and transformed cells (PubMed:29884618, PubMed:22327072, PubMed:27591323, PubMed:8642306, PubMed:15265931, PubMed:31495665, PubMed:16148104). Typically presents extracellular peptide antigens of 10 to 30 amino acids that arise from proteolysis of endocytosed antigens in lysosomes (PubMed:8145819). In the tumor microenvironment, presents antigenic peptides that are primarily generated in tumor-resident APCs likely via phagocytosis of apoptotic tumor cells or macropinocytosis of secreted tumor proteins (PubMed:31495665). Presents peptides derived from intracellular proteins that are trapped in autolysosomes after macroautophagy, a mechanism especially relevant for T cell selection in the thymus and central immune tolerance (PubMed:17182262, PubMed:23783831). The selection of the immunodominant epitopes follows two processing modes: ‘bind first, cut/trim later’ for pathogen-derived antigenic peptides and ‘cut first, bind later’ for autoantigens/self-peptides (PubMed:25413013). The anchor residue at position 1 of the peptide N-terminus, usually a large hydrophobic residue, is essential for high affinity interaction with MHCII molecules (PubMed:8145819). {ECO:0000269|PubMed:15265931, ECO:0000269|PubMed:17182262, ECO:0000269|PubMed:22327072, ECO:0000269|PubMed:23783831, ECO:0000269|PubMed:25413013, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:29884618, ECO:0000269|PubMed:31495665, ECO:0000269|PubMed:8145819, ECO:0000269|PubMed:8642306}.; FUNCTION: Allele DRB1<em>01:01: Displays an immunodominant epitope derived from Bacillus anthracis pagA/protective antigen, PA (KLPLYISNPNYKVNVYAVT), to both naive and PA-specific memory CD4-positive T cells (PubMed:22327072). Presents immunodominant HIV-1 gag peptide (FRDYVDRFYKTLRAEQASQE) on infected dendritic cells for recognition by TRAV24-TRBV2 TCR on CD4-positive T cells and controls viral load (PubMed:29884618). May present to T-helper 1 cells several HRV-16 epitopes derived from capsid proteins VP1 (PRFSLPFLSIASAYYMFYDG) and VP2 (PHQFINLRSNNSATLIVPYV), contributing to viral clearance (PubMed:27591323). Displays commonly recognized peptides derived from IAV external protein HA (PKYVKQNTLKLAT and SNGNFIAPEYAYKIVK) and from internal proteins M, NP and PB1, with M-derived epitope (GLIYNRMGAVTTEV) being the most immunogenic (PubMed:8145819, PubMed:9075930, PubMed:25413013, PubMed:32668259). Presents a self-peptide derived from COL4A3 (GWISLWKGFSF) to TCR (TRAV14 biased) on CD4-positive, FOXP3-positive regulatory T cells and mediates immune tolerance to self (PubMed:28467828). May present peptides derived from oncofetal trophoblast glycoprotein TPBG 5T4, known to be recognized by both T-helper 1 and regulatory T cells (PubMed:31619516). Displays with low affinity a self-peptide derived from MBP (VHFFKNIVTPRTP) (PubMed:9075930). {ECO:0000269|PubMed:22327072, ECO:0000269|PubMed:25413013, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:28467828, ECO:0000269|PubMed:29884618, ECO:0000269|PubMed:31619516, ECO:0000269|PubMed:32668259, ECO:0000269|PubMed:8145819, ECO:0000269|PubMed:9075930}.; FUNCTION: Allele DRB1</em>03:01: May present to T-helper 1 cells an HRV-16 epitope derived from capsid protein VP2 (NEKQPSDDNWLNFDGTLLGN), contributing to viral clearance (PubMed:27591323). Displays self-peptides derived from retinal SAG (NRERRGIALDGKIKHE) and thyroid TG (LSSVVVDPSIRHFDV) (PubMed:25413013). Presents viral epitopes derived from HHV-6B gH/U48 and U85 antigens to polyfunctional CD4-positive T cells with cytotoxic activity implicated in control of HHV-6B infection (PubMed:31020640). Presents several immunogenic epitopes derived from C. tetani neurotoxin tetX, playing a role in immune recognition and long-term protection (PubMed:19830726). {ECO:0000269|PubMed:19830726, ECO:0000269|PubMed:25413013, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:31020640}.; FUNCTION: Allele DRB1<em>04:01: Presents an immunodominant bacterial epitope derived from M. tuberculosis esxB/culture filtrate antigen CFP-10 (EISTNIRQAGVQYSR), eliciting CD4-positive T cell effector functions such as IFNG production and cytotoxic activity (PubMed:15265931). May present to T-helper 1 cells an HRV-16 epitope derived from capsid protein VP2 (NEKQPSDDNWLNFDGTLLGN), contributing to viral clearance (PubMed:27591323). Presents tumor epitopes derived from melanoma-associated TYR antigen (QNILLSNAPLGPQFP and DYSYLQDSDPDSFQD), triggering CD4-positive T cell effector functions such as GMCSF production (PubMed:8642306). Displays preferentially citrullinated self-peptides derived from VIM (GVYATR/citSSAVR and SAVRAR/citSSVPGVR) and ACAN (VVLLVATEGR/ CitVRVNSAYQDK) (PubMed:24190431). Displays self-peptides derived from COL2A1 (PubMed:9354468). {ECO:0000269|PubMed:15265931, ECO:0000269|PubMed:24190431, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:8642306, ECO:0000269|PubMed:9354468}.; FUNCTION: Allele DRB1</em>04:02: Displays native or citrullinated self-peptides derived from VIM. {ECO:0000269|PubMed:24190431}.; FUNCTION: Allele DRB1<em>04:04: May present to T-helper 1 cells several HRV-16 epitopes derived from capsid proteins VP1 (HIVMQYMYVPPGAPIPTTRN) and VP2 (RGDSTITSQDVANAVVGYGV), contributing to viral clearance (PubMed:27591323). Displays preferentially citrullinated self-peptides derived from VIM (SAVRAR/citSSVPGVR) (PubMed:24190431). {ECO:0000269|PubMed:24190431, ECO:0000269|PubMed:27591323}.; FUNCTION: Allele DRB1</em>04:05: May present to T-helper 1 cells an immunogenic epitope derived from tumor-associated antigen WT1 (KRYFKLSHLQMHSRKH), likely providing for effective antitumor immunity in a wide range of solid and hematological malignancies. {ECO:0000269|PubMed:19120973}.; FUNCTION: Allele DRB1<em>05:01: Presents an immunodominant HIV-1 gag peptide (FRDYVDRFYKTLRAEQASQE) on infected dendritic cells for recognition by TRAV24-TRBV2 TCR on CD4-positive T cells and controls viral load. {ECO:0000269|PubMed:29884618}.; FUNCTION: Allele DRB1</em>07:01: Upon EBV infection, presents latent antigen EBNA2 peptide (PRSPTVFYNIPPMPLPPSQL) to CD4-positive T cells, driving oligoclonal expansion and selection of a dominant virus-specific memory T cell subset with cytotoxic potential to directly eliminate virus-infected B cells (PubMed:31308093). May present to T-helper 1 cells several HRV-16 epitopes derived from capsid proteins VP1 (PRFSLPFLSIASAYYMFYDG) and VP2 (VPYVNAVPMDSMVRHNNWSL), contributing to viral clearance (PubMed:27591323). In the context of tumor immunesurveillance, may present to T-helper 1 cells an immunogenic epitope derived from tumor-associated antigen WT1 (MTEYKLVVVGAVGVGKSALTIQLI), likely providing for effective antitumor immunity in a wide range of solid and hematological malignancies (PubMed:22929521). In metastatic epithelial tumors, presents to intratumoral CD4-positive T cells a KRAS neoantigen (MTEYKLVVVGAVGVGKSALTIQLI) carrying G12V hotspot driver mutation and may mediate tumor regression (PubMed:30282837). {ECO:0000269|PubMed:22929521, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:30282837, ECO:0000269|PubMed:31308093}.; FUNCTION: Allele DRB1<em>11:01: Displays an immunodominant HIV-1 gag peptide (FRDYVDRFYKTLRAEQASQE) on infected dendritic cells for recognition by TRAV24-TRBV2 TCR on CD4-positive T cells and controls viral load (PubMed:29884618). May present to T-helper 1 cells an HRV-16 epitope derived from capsid protein VP2 (SDRIIQITRGDSTITSQDVA), contributing to viral clearance (PubMed:27591323). Presents several immunogenic epitopes derived from C. tetani neurotoxin tetX, playing a role in immune recognition and longterm protection (PubMed:19830726). In the context of tumor immunesurveillance, may present tumor-derived neoantigens to CD4-positive T cells and trigger anti-tumor helper functions (PubMed:31495665). {ECO:0000269|PubMed:19830726, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:29884618, ECO:0000269|PubMed:31495665}.; FUNCTION: Allele DRB1</em>13:01: Presents viral epitopes derived from HHV-6B antigens to polyfunctional CD4-positive T cells implicated in control of HHV-6B infection. {ECO:0000269|PubMed:31020640}.; FUNCTION: Allele DRB1<em>15:01: May present to T-helper 1 cells an HRV-16 epitope derived from capsid protein VP2 (SNNSATLIVPYVNAVPMDSM), contributing to viral clearance (PubMed:27591323). Displays a self-peptide derived from MBP (ENPVVHFFKNIVTPR) (PubMed:9782128, PubMed:25413013). May present to T-helper 1 cells an immunogenic epitope derived from tumor-associated antigen WT1 (KRYFKLSHLQMHSRKH), likely providing for effective antitumor immunity in a wide range of solid and hematological malignancies. {ECO:0000269|PubMed:19120973, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:9782128}.; FUNCTION: Allele DRB1</em>15:02: Displays an immunodominant HIV-1 gag peptide (FRDYVDRFYKTLRAEQASQE) on infected dendritic cells for recognition by TRAV24-TRBV2 TCR on CD4-positive T cells and controls viral load (PubMed:29884618). May present to T-helper 1 cells an immunogenic epitope derived from tumor-associated antigen WT1 (KRYFKLSHLQMHSRKH), likely providing for effective antitumor immunity in a wide range of solid and hematological malignancies (PubMed:19120973). {ECO:0000269|PubMed:19120973, ECO:0000269|PubMed:29884618}.; FUNCTION: (Microbial infection) Acts as a receptor for Epstein-Barr virus on lymphocytes. {ECO:0000269|PubMed:11864610, ECO:0000269|PubMed:9151859}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Adaptive immunity;Cell membrane;Cytoplasmic vesicle;Direct protein sequencing;Disulfide bond;Endoplasmic reticulum;Endosome;Glycoprotein;Immunity;Isopeptide bond;Lysosome;MHC II;Membrane;Reference proteome;Signal;Transmembrane;Transmembrane helix;Ubl conjugation</p>
+<p>3D-structure; Adaptive immunity; Cell membrane; Cytoplasmic vesicle; Direct protein sequencing; Disulfide bond; Endoplasmic reticulum; Endosome; Glycoprotein; Immunity; Isopeptide bond; Lysosome; MHC II; Membrane; Reference proteome; Signal; Transmembrane; Transmembrane helix; Ubl conjugation</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P01911" class="uri">https://www.uniprot.org/uniprot/P01911</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-a2ff1310a228c6efe17a" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a2ff1310a228c6efe17a">{"x":{"data":[{"x":[1,1,266,266,1],"y":[0,1,1,0,0],"text":"Positions: 1-266 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[126,126,214,214,126],"y":[0,1,1,0,0],"text":"Positions: 126-214 - domain Ig-like C1-type","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Ig-like C1-type","legendgroup":"Ig-like C1-type","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-12.25,279.25],"tickmode":"array","ticktext":["1","50","100","150","200","250","266"],"tickvals":[1,50,100,150,200,250,266],"categoryorder":"array","categoryarray":["1","50","100","150","200","250","266"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef4f301033":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef4f4d905944":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef4f301033","visdat":{"ef4f301033":["function (y) ","x"],"ef4f4d905944":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Ig-like C1-type
+</td>
+<td style="text-align:right;">
+126
+</td>
+<td style="text-align:right;">
+214
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

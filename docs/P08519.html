@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>DDRBase: LPA</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2033,7 +2037,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2095,15 +2109,595 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="function">Function</h2>
 <p>FUNCTION: Apo(a) is the main constituent of lipoprotein(a) (Lp(a)). It has serine proteinase activity and is able of autoproteolysis. Inhibits tissue-type plasminogen activator 1. Lp(a) may be a ligand for megalin/Gp 330. {ECO:0000269|PubMed:2531657}.</p>
 <h2 id="keywords">Keywords</h2>
-<p>3D-structure;Atherosclerosis;Autocatalytic cleavage;Disulfide bond;Glycoprotein;Hydrolase;Kringle;Lipid transport;Protease;Reference proteome;Repeat;Serine protease;Signal;Transport</p>
+<p>3D-structure; Atherosclerosis; Autocatalytic cleavage; Disulfide bond; Glycoprotein; Hydrolase; Kringle; Lipid transport; Protease; Reference proteome; Repeat; Serine protease; Signal; Transport</p>
 <p>
-Source: <a href="https://www.uniprot.org/" class="uri">https://www.uniprot.org/</a>
+Source: <a href="https://www.uniprot.org/uniprot/P08519" class="uri">https://www.uniprot.org/uniprot/P08519</a>
 </p>
+<h2 id="domains-phosphorylated-positions">Domains &amp; Phosphorylated positions</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-3213324c75f7f512e39f" style="width:624px;height:192px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3213324c75f7f512e39f">{"x":{"data":[{"x":[1,1,4548,4548,1],"y":[0,1,1,0,0],"text":"Positions: 1-4548 - protein ","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(204,204,204,1)","hoveron":"fills","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[20,20,130,130,20],"y":[0,1,1,0,0],"text":"Positions: 20-130 - domain Kringle 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,0,0,1)","hoveron":"fills","name":"Kringle 1","legendgroup":"Kringle 1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1043,1043,1156,1156,1043],"y":[0,1,1,0,0],"text":"Positions: 1043-1156 - domain Kringle 10","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(41,15,19,1)","hoveron":"fills","name":"Kringle 10","legendgroup":"Kringle 10","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1157,1157,1270,1270,1157],"y":[0,1,1,0,0],"text":"Positions: 1157-1270 - domain Kringle 11","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(82,30,39,1)","hoveron":"fills","name":"Kringle 11","legendgroup":"Kringle 11","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1271,1271,1384,1384,1271],"y":[0,1,1,0,0],"text":"Positions: 1271-1384 - domain Kringle 12","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(123,45,59,1)","hoveron":"fills","name":"Kringle 12","legendgroup":"Kringle 12","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1385,1385,1498,1498,1385],"y":[0,1,1,0,0],"text":"Positions: 1385-1498 - domain Kringle 13","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(164,61,78,1)","hoveron":"fills","name":"Kringle 13","legendgroup":"Kringle 13","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1499,1499,1612,1612,1499],"y":[0,1,1,0,0],"text":"Positions: 1499-1612 - domain Kringle 14","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(205,76,98,1)","hoveron":"fills","name":"Kringle 14","legendgroup":"Kringle 14","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1613,1613,1726,1726,1613],"y":[0,1,1,0,0],"text":"Positions: 1613-1726 - domain Kringle 15","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(209,96,104,1)","hoveron":"fills","name":"Kringle 15","legendgroup":"Kringle 15","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1727,1727,1840,1840,1727],"y":[0,1,1,0,0],"text":"Positions: 1727-1840 - domain Kringle 16","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(186,119,98,1)","hoveron":"fills","name":"Kringle 16","legendgroup":"Kringle 16","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1841,1841,1954,1954,1841],"y":[0,1,1,0,0],"text":"Positions: 1841-1954 - domain Kringle 17","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(163,142,93,1)","hoveron":"fills","name":"Kringle 17","legendgroup":"Kringle 17","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[1955,1955,2068,2068,1955],"y":[0,1,1,0,0],"text":"Positions: 1955-2068 - domain Kringle 18","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(140,165,88,1)","hoveron":"fills","name":"Kringle 18","legendgroup":"Kringle 18","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2069,2069,2182,2182,2069],"y":[0,1,1,0,0],"text":"Positions: 2069-2182 - domain Kringle 19","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(116,188,83,1)","hoveron":"fills","name":"Kringle 19","legendgroup":"Kringle 19","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[131,131,244,244,131],"y":[0,1,1,0,0],"text":"Positions: 131-244 - domain Kringle 2","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(95,206,82,1)","hoveron":"fills","name":"Kringle 2","legendgroup":"Kringle 2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2183,2183,2296,2296,2183],"y":[0,1,1,0,0],"text":"Positions: 2183-2296 - domain Kringle 20","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(83,196,110,1)","hoveron":"fills","name":"Kringle 20","legendgroup":"Kringle 20","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2297,2297,2410,2410,2297],"y":[0,1,1,0,0],"text":"Positions: 2297-2410 - domain Kringle 21","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(72,185,138,1)","hoveron":"fills","name":"Kringle 21","legendgroup":"Kringle 21","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2411,2411,2524,2524,2411],"y":[0,1,1,0,0],"text":"Positions: 2411-2524 - domain Kringle 22","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(60,175,166,1)","hoveron":"fills","name":"Kringle 22","legendgroup":"Kringle 22","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2525,2525,2638,2638,2525],"y":[0,1,1,0,0],"text":"Positions: 2525-2638 - domain Kringle 23","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(48,164,194,1)","hoveron":"fills","name":"Kringle 23","legendgroup":"Kringle 23","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2639,2639,2752,2752,2639],"y":[0,1,1,0,0],"text":"Positions: 2639-2752 - domain Kringle 24","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,154,222,1)","hoveron":"fills","name":"Kringle 24","legendgroup":"Kringle 24","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2753,2753,2866,2866,2753],"y":[0,1,1,0,0],"text":"Positions: 2753-2866 - domain Kringle 25","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(34,160,229,1)","hoveron":"fills","name":"Kringle 25","legendgroup":"Kringle 25","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2867,2867,2980,2980,2867],"y":[0,1,1,0,0],"text":"Positions: 2867-2980 - domain Kringle 26","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(35,174,229,1)","hoveron":"fills","name":"Kringle 26","legendgroup":"Kringle 26","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[2981,2981,3094,3094,2981],"y":[0,1,1,0,0],"text":"Positions: 2981-3094 - domain Kringle 27","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(37,188,229,1)","hoveron":"fills","name":"Kringle 27","legendgroup":"Kringle 27","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3095,3095,3208,3208,3095],"y":[0,1,1,0,0],"text":"Positions: 3095-3208 - domain Kringle 28","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(38,202,229,1)","hoveron":"fills","name":"Kringle 28","legendgroup":"Kringle 28","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3209,3209,3322,3322,3209],"y":[0,1,1,0,0],"text":"Positions: 3209-3322 - domain Kringle 29","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(39,216,229,1)","hoveron":"fills","name":"Kringle 29","legendgroup":"Kringle 29","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[245,245,358,358,245],"y":[0,1,1,0,0],"text":"Positions: 245-358 - domain Kringle 3","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(48,214,226,1)","hoveron":"fills","name":"Kringle 3","legendgroup":"Kringle 3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3323,3323,3436,3436,3323],"y":[0,1,1,0,0],"text":"Positions: 3323-3436 - domain Kringle 30","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(79,175,219,1)","hoveron":"fills","name":"Kringle 30","legendgroup":"Kringle 30","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3437,3437,3550,3550,3437],"y":[0,1,1,0,0],"text":"Positions: 3437-3550 - domain Kringle 31","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(109,135,211,1)","hoveron":"fills","name":"Kringle 31","legendgroup":"Kringle 31","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3551,3551,3664,3664,3551],"y":[0,1,1,0,0],"text":"Positions: 3551-3664 - domain Kringle 32","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(139,95,204,1)","hoveron":"fills","name":"Kringle 32","legendgroup":"Kringle 32","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3665,3665,3770,3770,3665],"y":[0,1,1,0,0],"text":"Positions: 3665-3770 - domain Kringle 33","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(170,56,196,1)","hoveron":"fills","name":"Kringle 33","legendgroup":"Kringle 33","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3771,3771,3884,3884,3771],"y":[0,1,1,0,0],"text":"Positions: 3771-3884 - domain Kringle 34","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(200,16,189,1)","hoveron":"fills","name":"Kringle 34","legendgroup":"Kringle 34","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3885,3885,3998,3998,3885],"y":[0,1,1,0,0],"text":"Positions: 3885-3998 - domain Kringle 35","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(211,40,160,1)","hoveron":"fills","name":"Kringle 35","legendgroup":"Kringle 35","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[3999,3999,4112,4112,3999],"y":[0,1,1,0,0],"text":"Positions: 3999-4112 - domain Kringle 36","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(218,75,129,1)","hoveron":"fills","name":"Kringle 36","legendgroup":"Kringle 36","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4113,4113,4226,4226,4113],"y":[0,1,1,0,0],"text":"Positions: 4113-4226 - domain Kringle 37","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(226,109,97,1)","hoveron":"fills","name":"Kringle 37","legendgroup":"Kringle 37","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4227,4227,4327,4327,4227],"y":[0,1,1,0,0],"text":"Positions: 4227-4327 - domain Kringle 38","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(233,144,65,1)","hoveron":"fills","name":"Kringle 38","legendgroup":"Kringle 38","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[359,359,472,472,359],"y":[0,1,1,0,0],"text":"Positions: 359-472 - domain Kringle 4","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(240,179,34,1)","hoveron":"fills","name":"Kringle 4","legendgroup":"Kringle 4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[473,473,586,586,473],"y":[0,1,1,0,0],"text":"Positions: 473-586 - domain Kringle 5","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(238,195,27,1)","hoveron":"fills","name":"Kringle 5","legendgroup":"Kringle 5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[587,587,700,700,587],"y":[0,1,1,0,0],"text":"Positions: 587-700 - domain Kringle 6","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(222,188,53,1)","hoveron":"fills","name":"Kringle 6","legendgroup":"Kringle 6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[701,701,814,814,701],"y":[0,1,1,0,0],"text":"Positions: 701-814 - domain Kringle 7","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(206,180,79,1)","hoveron":"fills","name":"Kringle 7","legendgroup":"Kringle 7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[815,815,928,928,815],"y":[0,1,1,0,0],"text":"Positions: 815-928 - domain Kringle 8","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(190,173,105,1)","hoveron":"fills","name":"Kringle 8","legendgroup":"Kringle 8","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[929,929,1042,1042,929],"y":[0,1,1,0,0],"text":"Positions: 929-1042 - domain Kringle 9","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(174,165,131,1)","hoveron":"fills","name":"Kringle 9","legendgroup":"Kringle 9","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}},{"x":[4328,4328,4546,4546,4328],"y":[0,1,1,0,0],"text":"Positions: 4328-4546 - domain Peptidase S1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(158,158,158,1)","hoveron":"fills","name":"Peptidase S1","legendgroup":"Peptidase S1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null,"hoverlabel":{"bgcolor":"#232F34"}}],"layout":{"margin":{"t":39.7442922374429,"r":7.30593607305936,"b":53.6986301369863,"l":10.958904109589},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-226.35,4775.35],"tickmode":"array","ticktext":["1","1000","2000","3000","4000","4548"],"tickvals":[1.00000000000003,1000,2000,3000,4000,4548],"categoryorder":"array","categoryarray":["1","1000","2000","3000","4000","4548"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Position","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.05,1.05],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Domains","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","hoverClosestCartesian","hoverCompareCartesian","zoomIn2d","zoomOut2d","autoScale2d","toggleSpikelines"]},"source":"A","attrs":{"ef48802a614":{"text":{},"xmin":{},"xmax":{},"type":"scatter"},"ef484a191e48":{"text":{},"xmin":{},"xmax":{},"fill":{}}},"cur_data":"ef48802a614","visdat":{"ef48802a614":["function (y) ","x"],"ef484a191e48":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<h3 id="domains">Domains</h3>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+start
+</th>
+<th style="text-align:right;">
+end
+</th>
+<th style="text-align:left;">
+evidence
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Kringle 1
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+130
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 2
+</td>
+<td style="text-align:right;">
+131
+</td>
+<td style="text-align:right;">
+244
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 3
+</td>
+<td style="text-align:right;">
+245
+</td>
+<td style="text-align:right;">
+358
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 4
+</td>
+<td style="text-align:right;">
+359
+</td>
+<td style="text-align:right;">
+472
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 5
+</td>
+<td style="text-align:right;">
+473
+</td>
+<td style="text-align:right;">
+586
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 6
+</td>
+<td style="text-align:right;">
+587
+</td>
+<td style="text-align:right;">
+700
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 7
+</td>
+<td style="text-align:right;">
+701
+</td>
+<td style="text-align:right;">
+814
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 8
+</td>
+<td style="text-align:right;">
+815
+</td>
+<td style="text-align:right;">
+928
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 9
+</td>
+<td style="text-align:right;">
+929
+</td>
+<td style="text-align:right;">
+1042
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 10
+</td>
+<td style="text-align:right;">
+1043
+</td>
+<td style="text-align:right;">
+1156
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 11
+</td>
+<td style="text-align:right;">
+1157
+</td>
+<td style="text-align:right;">
+1270
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 12
+</td>
+<td style="text-align:right;">
+1271
+</td>
+<td style="text-align:right;">
+1384
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 13
+</td>
+<td style="text-align:right;">
+1385
+</td>
+<td style="text-align:right;">
+1498
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 14
+</td>
+<td style="text-align:right;">
+1499
+</td>
+<td style="text-align:right;">
+1612
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 15
+</td>
+<td style="text-align:right;">
+1613
+</td>
+<td style="text-align:right;">
+1726
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 16
+</td>
+<td style="text-align:right;">
+1727
+</td>
+<td style="text-align:right;">
+1840
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 17
+</td>
+<td style="text-align:right;">
+1841
+</td>
+<td style="text-align:right;">
+1954
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 18
+</td>
+<td style="text-align:right;">
+1955
+</td>
+<td style="text-align:right;">
+2068
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 19
+</td>
+<td style="text-align:right;">
+2069
+</td>
+<td style="text-align:right;">
+2182
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 20
+</td>
+<td style="text-align:right;">
+2183
+</td>
+<td style="text-align:right;">
+2296
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 21
+</td>
+<td style="text-align:right;">
+2297
+</td>
+<td style="text-align:right;">
+2410
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 22
+</td>
+<td style="text-align:right;">
+2411
+</td>
+<td style="text-align:right;">
+2524
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 23
+</td>
+<td style="text-align:right;">
+2525
+</td>
+<td style="text-align:right;">
+2638
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 24
+</td>
+<td style="text-align:right;">
+2639
+</td>
+<td style="text-align:right;">
+2752
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 25
+</td>
+<td style="text-align:right;">
+2753
+</td>
+<td style="text-align:right;">
+2866
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 26
+</td>
+<td style="text-align:right;">
+2867
+</td>
+<td style="text-align:right;">
+2980
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 27
+</td>
+<td style="text-align:right;">
+2981
+</td>
+<td style="text-align:right;">
+3094
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 28
+</td>
+<td style="text-align:right;">
+3095
+</td>
+<td style="text-align:right;">
+3208
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 29
+</td>
+<td style="text-align:right;">
+3209
+</td>
+<td style="text-align:right;">
+3322
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 30
+</td>
+<td style="text-align:right;">
+3323
+</td>
+<td style="text-align:right;">
+3436
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 31
+</td>
+<td style="text-align:right;">
+3437
+</td>
+<td style="text-align:right;">
+3550
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 32
+</td>
+<td style="text-align:right;">
+3551
+</td>
+<td style="text-align:right;">
+3664
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 33
+</td>
+<td style="text-align:right;">
+3665
+</td>
+<td style="text-align:right;">
+3770
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 34
+</td>
+<td style="text-align:right;">
+3771
+</td>
+<td style="text-align:right;">
+3884
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 35
+</td>
+<td style="text-align:right;">
+3885
+</td>
+<td style="text-align:right;">
+3998
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 36
+</td>
+<td style="text-align:right;">
+3999
+</td>
+<td style="text-align:right;">
+4112
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 37
+</td>
+<td style="text-align:right;">
+4113
+</td>
+<td style="text-align:right;">
+4226
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kringle 38
+</td>
+<td style="text-align:right;">
+4227
+</td>
+<td style="text-align:right;">
+4327
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Peptidase S1
+</td>
+<td style="text-align:right;">
+4328
+</td>
+<td style="text-align:right;">
+4546
+</td>
+<td style="text-align:left;">
+ECO:0000255|PROSITE-ProRule:PRU00274
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="phosphorylated-positions">Phosphorylated positions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><p>Not detected.</p></p>
+</div>
 <h2 id="phosphorylation">Phosphorylation</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>Not detected.</code></pre>
+<p><p>Not detected.</p></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
