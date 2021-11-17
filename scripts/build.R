@@ -13,7 +13,7 @@
 ##
 ###############
 library(parallel)
-CORES = 8#64
+CORES = 64
 
 ## 1-prepare build environment
 unlink(c("staging", "docs"), recursive=TRUE)
@@ -45,7 +45,7 @@ system.time({
 
     # hack for parallel pandoc processing
     clean_tmpfiles_mod <- function() { invisible(0) }
-    assignInNamespace("clean_tmpfiles", clean_tmpfiles_mod, ns = "rmarkdown")
+    assignInNamespace("clean_tmpfiles", clean_tmpfiles_mod, ns="rmarkdown")
     
     # copy build environment to a temp location
     domain_data  <- tempfile()
@@ -81,6 +81,7 @@ system.time({
         rmd  <- file.path(cwd, "staging", paste0(proteins$Entry[i], ".Rmd"))
         writeLines(x, rmd)
         try(suppressWarnings(rmarkdown::render_site(rmd, envir=new.env(), quiet=TRUE)))
+        rmd
     })
     file.remove(unlist(rmd), domain_data, phospho_data)
     
