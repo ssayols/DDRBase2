@@ -6,13 +6,7 @@ site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
-library(ggplot2)
-library(plotly)
-knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE, error=TRUE)
 ```
 
 # <<GENE.ID>> ❯ <<PROTEIN.ID>>
@@ -28,37 +22,126 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <p>Source: https://www.uniprot.org/uniprot/<<PROTEIN.ID>></p>
 
+## Domains & Phosphorylated positions
+
+```{r domain_load}
+data <- readRDS("<<DOMAIN_DATA>>")
+
+# parse domain data
+domains <- do.call(rbind, lapply(unlist(strsplit(data$domains, "~"))[-1], function(domain) {
+  fields <- unlist(strsplit(domain, ";\\s+",))
+  names(fields) <- sub("^/(.+)=(.+)$", "\\1", fields)
+  fields        <- sub("^/(.+)=(.+)$", "\\2", fields)
+  data.frame(start =as.integer(sub("^(\\d+)..(\\d+)$", "\\1", fields["domain"])),
+             end   =as.integer(sub("^(\\d+)..(\\d+)$", "\\2", fields["domain"])),
+             evidence=fields["evidence"],
+             row.names=fields["note"])
+}))
+
+# parse phospho-site data
+phospho_sites <- do.call(rbind, Map(strsplit(data$positions$Mod..position, ";"), data$positions$Sequence.window, f=function(pos, seq) {
+  data.frame(position=as.integer(pos), seq.window=rep(seq, length(pos)))
+}))
+```
+
+```{r domain_plot, fig.height=2}
+x <- data.frame(start=c(1          , domains$start, phospho_sites$position),
+                end  =c(data$length, domains$end  , phospho_sites$position),
+                type =c("protein"  , rep("domain", max(c(0, nrow(domains)))), rep("phospho", max(c(0, nrow(phospho_sites))))),
+                name =c(""         , rownames(domains), rep("", max(c(0, nrow(phospho_sites))))))
+x$label <- paste0("Positions: ", x$start, "-", x$end, " - ", x$type, " ", x$name)
+
+xlims <- pretty(c(1, 395))
+xlims[1] <- x$start[x$type == "protein"]
+xlims[length(xlims)] <- x$end[x$type == "protein"]
+
+pal <- function(x) {
+  if(x <= length(palette())) {
+    palette()
+  } else {
+    colorRampPalette(palette())(x)
+  }
+}
+
+p <- ggplot(mapping=aes(text=label)) +
+       geom_rect(data=subset(x, type=="protein"), aes(xmin=start, xmax=end), ymin=0, ymax=1, fill="grey80") +
+       scale_x_continuous(breaks=xlims) +
+       labs(x="Position", y="") +
+       theme_minimal()
+
+if(any(x$type == "domain")) {
+  p <- p + geom_rect(data=subset(x, type=="domain"),  aes(xmin=start, xmax=end, fill=name), ymin=0, ymax=1) +
+             scale_fill_manual("Domains", values=pal(sum(x$type=="domain")))
+}
+if(any(x$type == "phospho")) {
+  p <- p + geom_rect(data=subset(x, type=="phospho"), aes(xmin=start, xmax=end), ymin=-0.1, ymax=1.1, color="red", fill=NA, alpha=2/3, size=1)
+}
+
+tryCatch({
+  ggplotly(p, tooltip="text") |>
+  style(hoverlabel=label, marker.color="#232F34AA") |>   # tooltip with sort of partially transparent black bg
+  config(displaylogo=FALSE,
+         modeBarButtonsToRemove=c("zoom2d", "pan2d", "select2d", "lasso2d",
+                                  "hoverClosestCartesian", "hoverCompareCartesian",
+                                  "zoomIn2d", "zoomOut2d", "autoScale2d", "toggleSpikelines"))
+}, error=function(e) { htmltools::p("No domain info.") })
+```
+
+### Domains
+
+```{r domain_table1}
+tryCatch({
+  domains |>
+    kbl(col.names=c("start", "end", "evidence")) |>   # will stop if `domains` has no rows, therefore display "No domain info."
+    kable_styling(bootstrap_options=c("striped", "hover", "condensed", "responsive"), full_width=FALSE, position="left")
+}, error=function(e) { htmltools::p("No domain info.") })
+```
+
+### Phosphorylated positions
+
+```{r domain_table2}
+tryCatch({
+  phospho_sites[order(phospho_sites$position), ] |>
+    kbl(row.names=FALSE, col.names=c("position", "sequence window")) |>   # will stop if `domains` has no rows, therefore display "Not detected."
+    kable_styling(bootstrap_options=c("striped", "hover", "condensed", "responsive"), full_width=FALSE, position="left")
+}, error=function(e) { htmltools::p("Not detected.") })
+```
 
 ## Phosphorylation
 
 ```{r phospho_plot, fig.height=<<FIG_HEATMAP_HEIGHT>>}
 # read data
-data <- readRDS("<<DATA>>")
+data <- readRDS("<<PHOSPHO_DATA>>")
 
 if(nrow(data) > 0) {
-  # convert back to wide. Some positions have to read-outs: aggregate them (max log2FC)
-  treatments <- c("Aphidicoline",  "Camptothecin", "Etoposide", "Formaldehyd", "Gemcitabine", "Hydrogen peroxide",  "Hydroxyurea", "Methyl methanesulfonate", "Sodium Arsentie (NaAsO2)", "UV-C", "X-ray")
-  m <- reshape2::dcast(data[, c("Mod..position", "Treatment", "log2FC")],
-                       Mod..position ~ Treatment,
-                       value.var="log2FC",
-                       fun.aggregate=max) %>% reshape2::melt()
-  o    <- rev(order(as.numeric(sapply(unique(m$Mod..position), function(x) strsplit(x, ";")[[1]][1]))))  # 1st coord order
-  m$position  <- factor(m$Mod..position, levels=unique(m$Mod..position)[o])
-  m$treatment <- m$variable
-  m$log2FC    <- round(m$value, digits=2)
+  # some positions have multiple read-outs: aggregate them by max(log2FC) [assuming it will have min(FDR)]
+  m <- do.call(rbind, lapply(split(data, ~ Mod..position + Treatment), function(x) {
+    x[which.max(abs(x$log2FC)), ]
+  }))
+
+  # prepare data for plotting
+  o <- rev(order(as.numeric(sapply(unique(m$Mod..position), function(x) strsplit(x, ";")[[1]][1]))))  # 1st coord order
+  m$Position <- factor(m$Mod..position, levels=unique(m$Mod..position)[o])
+  m$log2FC   <- round(m$log2FC, digits=2)
+  m$sig      <- factor(ifelse(m$FDR < .001, "***", ifelse(m$FDR < .01, "**", ifelse(m$FDR < .05, "*", ""))), levels=c("", "*", "**", "***"))
+  m$FDR      <- format.pval(m$FDR)
   
   ggplotly(
-    ggplot(m, aes(x=treatment, y=position, fill=log2FC)) +
+    ggplot(m, aes(x=Treatment, y=Position,fill=log2FC,
+                  text=paste("Treatment:", Treatment, "\nPosition:", Position, "\nlog2FC:", log2FC, "\nFDR:", FDR, "\nSequence window:", Localization.prob.))) +
       geom_tile() +
       scale_fill_gradient2(name="log2 FC", low="#DC3220", mid="white", high="#005AB5", midpoint=0) +
+      geom_text(aes(label=as.character(sig), size=5)) +
       labs(x="", y="") +
       theme_minimal() +
-      theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))
+      theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1)),
+    tooltip="text"
   ) %>% config(displaylogo= FALSE, 
                modeBarButtonsToRemove=c("zoom2d", "pan2d", "select2d", "lasso2d",
                                         "hoverClosestCartesian", "hoverCompareCartesian",
                                         "zoomIn2d", "zoomOut2d", "autoScale2d", "toggleSpikelines"))
 } else {
-  cat("Not detected.", fill=TRUE)
+  htmltools::p("Not detected.")
 }
 ```
+

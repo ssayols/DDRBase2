@@ -13,7 +13,7 @@
 ##
 ###############
 library(parallel)
-CORES = 64
+CORES = 8#64
 
 ## 1-prepare build environment
 unlink(c("staging", "docs"), recursive=TRUE)
@@ -25,51 +25,64 @@ file.copy(c("_site.yml", "_footer.html", "about.Rmd", "datasets.Rmd", "downloads
 rmarkdown::render_site("staging")#, quiet=TRUE)
 
 ## 3-for each protein listed in data/uniprot.tab
-proteins <- read.delim("data/uniprot.tab")
+proteins <- read.delim(gzfile("data/uniprot.tab.gz"))
 phospho  <- read.delim(gzfile("data/Phospho_database.processed.txt.gz"))
-template <- paste(readLines("templates/protein.Rmd"), collapse="\n")
 
 i <- proteins$Gene.names...primary.. == ""
 proteins[i, "Gene.names...primary.."] <- proteins$Entry.name[i]
-phospho$Mod..position <- sapply(strsplit(phospho$Mod..position, ";"), function(x) paste(sort(unique(x)), collapse=";"))
+treatments <- length(unique(phospho$Treatment))
+template <- paste(readLines("templates/protein.Rmd"), collapse="\n")
 
 ## 3-fills in the template/protein.Rmd as <<uniprot_id>>.Rmd and renders it to html
 system.time({
   mclapply(split(proteins, cut(seq_len(nrow(proteins)), CORES)), function(proteins) {
+    # load the libraries needed to render the Rmd, as this will be done in this R session
+    library(kableExtra)
+    library(ggplot2)
+    library(plotly)
+    library(reshape2)
+    library(htmltools)
+
     # hack for parallel pandoc processing
     clean_tmpfiles_mod <- function() { invisible(0) }
     assignInNamespace("clean_tmpfiles", clean_tmpfiles_mod, ns = "rmarkdown")
     
     # copy build environment to a temp location
-    dir.create(cwd <- tempfile("buildenv"))
+    domain_data  <- tempfile()
+    phospho_data <- tempfile()
+    cwd          <- tempfile("buildenv")
+    dir.create(cwd)
     file.copy("staging", cwd, recursive=TRUE)
     
     # process protein RMD one by one
-    invisible({
-      treatments <- length(unique(phospho$Treatment))
-      lapply(seq_len(nrow(proteins)), function(i) {
-          # pass data to template
-          j <- grepl(proteins$Entry[i], phospho$Uniprot.IDs)
-          saveRDS(phospho[j, ], tmp)
+    rmd <- lapply(seq_len(nrow(proteins)), function(i) {
+        # pass phospho data to template
+        j <- grepl(proteins$Entry[i], phospho$Uniprot.IDs)
+        saveRDS(phospho[j, c("Mod..position", "Treatment", "log2FC", "FDR", "Localization.prob.")], phospho_data)
 
-          # the metadata section
-          x <- gsub("<<GENE.ID>>", proteins$Gene.names...primary..[i],
-               gsub("<<PROTEIN.ID>>", proteins$Entry[i],
-               gsub("<<GENE.NAME>>", proteins$Gene.names[i],
-               gsub("<<PROTEIN.NAME>>", proteins$Protein.names[i],
-               gsub("<<FUNCTION>>", proteins$Function..CC.[i],
-               gsub("<<KEYWORDS>>", proteins$Keywords[i],
-               gsub("<<DATA>>", tmp <- tempfile(proteins$Entry[i]),
-               gsub("<<FIG_HEATMAP_HEIGHT>>", 3 + round(1/3 * sum(j) / treatments), template))))))))
+        # pass domain data to template
+        saveRDS(list(domains  =gsub("DOMAIN ", "~/domain=", proteins$Domain..FT.[i]),  # define a new field separator
+                     length   =proteins$Length[i],
+                     positions=unique(phospho[j, c("Mod..position", "Sequence.window")], MARGIN=1)),
+                domain_data)
 
-          # save RMD file and compile
-          rmd  <- file.path(cwd, "staging", paste0(proteins$Entry[i], ".Rmd"))
-          html <- paste0(proteins$Entry[i], ".html")
-          writeLines(x, rmd)
-          try(suppressWarnings(rmarkdown::render_site(rmd, envir=new.env(), quiet=TRUE)))
-          file.remove(rmd, tmp)
-      })
+        # the metadata section
+        x <- gsub("<<GENE.ID>>"           , proteins$Gene.names...primary..[i],
+             gsub("<<PROTEIN.ID>>"        , proteins$Entry[i],
+             gsub("<<GENE.NAME>>"         , proteins$Gene.names[i],
+             gsub("<<PROTEIN.NAME>>"      , proteins$Protein.names[i],
+             gsub("<<FUNCTION>>"          , proteins$Function..CC.[i],
+             gsub("<<KEYWORDS>>"          , gsub(";", "; ", proteins$Keywords[i]),
+             gsub("<<DOMAIN_DATA>>"       , domain_data,
+             gsub("<<PHOSPHO_DATA>>"      , phospho_data,
+             gsub("<<FIG_HEATMAP_HEIGHT>>", 4 + (1/4) * (sum(j) / treatments), template)))))))))
+
+        # save RMD file and compile
+        rmd  <- file.path(cwd, "staging", paste0(proteins$Entry[i], ".Rmd"))
+        writeLines(x, rmd)
+        try(suppressWarnings(rmarkdown::render_site(rmd, envir=new.env(), quiet=TRUE)))
     })
+    file.remove(unlist(rmd), domain_data, phospho_data)
     
     # merge staging folders from each core
     invisible({

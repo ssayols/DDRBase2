@@ -5,9 +5,9 @@
 4. Heatmaps:
   (+)- Change colors: different colors for up / downregulation; use colorblind-friendly colors
   (+)- Rather than keeping the heatmap the same size, display a bigger heatmap if there are more sites (keep the zooming option)
-  (?)- Only display the site position of the canonical protein isofom
-  (?)- it's nice to get the site information when hovering over the heatmap. Please add the FDR and the sequence window (middle -/+6)
-  - indicate significantly regulated sites with an asterik
+  (+)- Only display the site position of the canonical protein isoform
+  (+)- it's nice to get the site information when hovering over the heatmap. Please add the FDR and the sequence window (middle -/+6)
+  (+)- indicate significantly regulated sites with an asterik
   (+)- what are the functions ("show closest data on hover, ... ") doing?
     --? Nothing at all for heatmaps. Removed
   (?)-is it possible to add a link from the phospho sites to the phosphosite plus site?

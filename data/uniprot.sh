@@ -1,0 +1,2 @@
+#!/bin/bash
+wget -qO- 'https://www.uniprot.org/uniprot/?query=reviewed:yes+AND+organism:9606&format=tab&columns=id,entry name,reviewed,protein names,genes,length,genes(PREFERRED),keywords,database(RefSeq),comment(FUNCTION),comment(MISCELLANEOUS),feature(COILED COIL),feature(COMPOSITIONAL BIAS),feature(DOMAIN EXTENT),feature(MOTIF),feature(REGION),feature(REPEAT),feature(ZINC FINGER)' | gzip > uniprot.tab.gz
