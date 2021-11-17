@@ -51,7 +51,7 @@ x <- data.frame(start=c(1          , domains$start, phospho_sites$position),
                 name =c(""         , rownames(domains), rep("", max(c(0, nrow(phospho_sites))))))
 x$label <- paste0("Positions: ", x$start, "-", x$end, " - ", x$type, " ", x$name)
 
-xlims <- pretty(c(1, 395))
+xlims <- pretty(c(1, x$end[x$type == "protein"]))
 xlims[1] <- x$start[x$type == "protein"]
 xlims[length(xlims)] <- x$end[x$type == "protein"]
 
@@ -79,7 +79,7 @@ if(any(x$type == "phospho")) {
 
 tryCatch({
   ggplotly(p, tooltip="text") |>
-  style(hoverlabel=label, marker.color="#232F34AA") |>   # tooltip with sort of partially transparent black bg
+  style(hoverlabel=list(bgcolor="#232F34")) |>   # tooltip with sort of partially transparent black bg
   config(displaylogo=FALSE,
          modeBarButtonsToRemove=c("zoom2d", "pan2d", "select2d", "lasso2d",
                                   "hoverClosestCartesian", "hoverCompareCartesian",
@@ -136,7 +136,7 @@ if(nrow(data) > 0) {
       theme_minimal() +
       theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1)),
     tooltip="text"
-  ) %>% config(displaylogo= FALSE, 
+  ) %>% config(displaylogo=FALSE, 
                modeBarButtonsToRemove=c("zoom2d", "pan2d", "select2d", "lasso2d",
                                         "hoverClosestCartesian", "hoverCompareCartesian",
                                         "zoomIn2d", "zoomOut2d", "autoScale2d", "toggleSpikelines"))
