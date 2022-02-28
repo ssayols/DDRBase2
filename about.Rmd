@@ -1,7 +1,7 @@
 ---
 title: "About DDRBase"
 description: |
-  Some additional details about DDRBase
+  Copyright 2022, [Beli lab](https://www.imb.de/research/beli/research).
 ---
 
 ```{r setup, include=FALSE}

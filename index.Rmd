@@ -1,7 +1,6 @@
 ---
-title: "DDRBase"
+title: "Welcome to DDRBase"
 description: |
-  Welcome to DDRBase. I hope you enjoy it!
 site: distill::distill_website
 ---
 

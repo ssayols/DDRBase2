@@ -18,7 +18,7 @@ CORES = 64
 ## 1-prepare build environment
 unlink(c("staging", "docs"), recursive=TRUE)
 dir.create("staging")
-file.copy(c("_site.yml", "_footer.html", "about.Rmd", "datasets.Rmd", "downloads.Rmd", "index.Rmd", "images"),
+file.copy(c("_site.yml", "_footer.html", "about.Rmd", "datasets.Rmd", "index.Rmd", "images"),
           "staging", recursive=TRUE)
 
 ## 2-statically build the root of the website

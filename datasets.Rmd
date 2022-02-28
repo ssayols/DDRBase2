@@ -1,7 +1,7 @@
 ---
-title: "DDRBase"
+title: "Available Datasets"
 description: |
-  Welcome to the datasets section of DDRBase. I hope you enjoy it!
+  Phosphorylation data shown in this website can be found [here](https://github.com/belilab/DDRBase/raw/main/data/Phospho_database.processed.txt.gz).
 site: distill::distill_website
 ---
 
